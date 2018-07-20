@@ -23,7 +23,7 @@ rm(list=ls())
 
 ### Set working directory 
 work_dir <- c("~/SACS")
-setwd("~/SACS")
+setwd(work_dir)
 
 
 ### Set data containing working directory
@@ -79,8 +79,7 @@ rm_extra_ws <- function(x){
 
 
 ### Prepare loop over years
-years <- c("0304", "0405", "0506", "0607", "0708", "0809", "0910", 
-           "1011", "1112", "1213", "1314", "1415", "1516", "1617")
+years <- paste0(sprintf("%02d",seq(3, 16)), sprintf("%02d",seq(4, 17)))
 
 
 for (i in seq_along(years)){
