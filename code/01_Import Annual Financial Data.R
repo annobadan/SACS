@@ -3,8 +3,9 @@
 ###'
 ###' Import Annual Financial Data
 ###' 
-###' Import MS Access (.mdb format) files
+###' Import Raw MS Access (.mdb format) files
 ###' 
+###' (Converted & Downloaded as .txt file due to 64bit OS issue)
 ###' 
 ###' 20180702 JoonHo Lee
 ###' 
@@ -36,7 +37,6 @@ library(foreign)
 library(haven)
 library(dplyr)
 library(ggplot2)
-
 
 
 
@@ -251,12 +251,7 @@ for (i in seq_along(years)){
   
   ### Save Cleaned UserGL and UserGL_Totals
   save(UserGL_merged, file = "UserGL_merged.rda")
-  write_dta(UserGL_merged, "UserGL_merged.dta")
-  write.csv(UserGL_merged, "UserGL_merged.csv")
-  
   save(UserGL_Totals_merged, file = "UserGL_Totals_merged.rda")
-  write_dta(UserGL_Totals_merged, "UserGL_Totals_merged.dta")
-  write.csv(UserGL_Totals_merged, "UserGL_Totals_merged.csv")
   
   
   ### Save lookup tables altogether

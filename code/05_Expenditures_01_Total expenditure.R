@@ -71,14 +71,6 @@ load(file = "UserGL_merged.rda")
 df <- UserGL_merged 
 
 
-###   
-
-class(df$Object)
-
-
-table(df$Object)
-
-
 
 
 

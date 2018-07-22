@@ -9,16 +9,13 @@
 ###' 
 ###' 
 
-
 ###'######################################################################
 ###'
 ###' Basic settings
 ###'
 ###'
 
-
 ### Remove previous workspace
-
 rm(list=ls())
 
 
@@ -63,7 +60,6 @@ CPI <- CPI %>%
 
 
 
-
 ###'######################################################################
 ###'
 ###' CPI conversion over years
@@ -72,9 +68,7 @@ CPI <- CPI %>%
 
 years <- paste0(sprintf("%02d",seq(3, 16)), sprintf("%02d",seq(4, 17)))
 
-
 for (i in seq_along(years)){
-  
   
   ### Assign fiscal year: letter and numeric
   year_chr <- years[i]
@@ -108,12 +102,7 @@ for (i in seq_along(years)){
 
   ### Save data with Value2016 
   save(UserGL_merged, file = "UserGL_merged.rda")
-  write_dta(UserGL_merged, "UserGL_merged.dta")
-  write.csv(UserGL_merged, "UserGL_merged.csv")
-  
   save(UserGL_Totals_merged, file = "UserGL_Totals_merged.rda")
-  write_dta(UserGL_Totals_merged, "UserGL_Totals_merged.dta")
-  write.csv(UserGL_Totals_merged, "UserGL_Totals_merged.csv")
 
   ### End of for loop
 }
