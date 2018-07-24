@@ -107,7 +107,7 @@ for (i in seq_along(years)){  # Loop over years
       df_outgo <- df_outgo_pre
     } else {     # Definition 2
       df_outgo <- df_outgo_pre %>%
-        filter(Fund %in% c(1, 3, 6))
+        filter(Fund %in% c(1, 3, 6))  # filter only general funds
     }
     
     
@@ -155,7 +155,7 @@ for (i in seq_along(years)){  # Loop over years
         # Assume that K12ADA = RegularADA + SpecialEdADA
         # Excluding Regional Occupation Center/Program (ROCPADA) and Adult Education (AdultEdADA)
         # ROCPADA and AdultEdADA are available only for FY0304-0708
-        mutate(K12ADA = rowSums(df_ADA[, c("RegularADA", "SpecialEdADA")])) %>%
+        mutate(K12ADA = rowSums(.[, c("RegularADA", "SpecialEdADA")])) %>%
         left_join(df_cur_exp_ADA, by = c("Ccode", "Dcode"))
     }
     
@@ -209,19 +209,60 @@ for (i in seq_along(years)){  # Loop over years
     ### Store in the `j`th list
     temp_list[[j]] <- df_exp_perADA
     
+    ### Print iterations
+    cat("Fiscal Year =", year_chr, "/", "Definition =", definitions[j], "\n", sep = " ")
+    
   } # End of loop over definitions (j)
   
-  ### Merge data frames from the two definitions
-  def1 <- temp_list[[1]]
-  def2 <- temp_list[[2]]
   
-  names(def2)[-(1:5)] <- paste0(names(def2)[-(1:5)], "_d2")
+  ### Merge data frames from the two definitions
+  
+  for (k in seq_along(definitions)){
+    temp <- temp_list[[k]]
+    idx_vars <- c(grep("TotalExp", names(temp)), grep("COE_prorate", names(temp)))
+    names(temp)[idx_vars] <- paste0("D", k, "_", names(temp)[idx_vars])
+    assign(paste0("def", k), temp)
+  }
 
-  temp_merged <- left_join(def1, select(def2, -Fiscalyear, -Dname, -Dtype, -contains("ADA")), 
-                           by = c("Ccode", "Dcode"))
+  def12_merged <- left_join(def1, select(def2, -Fiscalyear, -Dname, -Dtype, -contains("ADA")), 
+                            by = c("Ccode", "Dcode"))
+  
+  
+  ### Merge the data from the current expense of education
+  
+  df_cur_exp_TotalExp <- df_cur_exp %>%
+    filter(FiscalYear == 2000 + as.numeric(substr(year_chr, 1, 2))) %>%
+    rename(C_TotalExp = TotalExp_C, C_TotalExp_PP = TotalExp_K12_C) %>%
+    select(Ccode, Dcode, contains("TotalExp"))
+  
+  temp_merged <- left_join(def12_merged, df_cur_exp_TotalExp, by = c("Ccode", "Dcode"))
+  
   
   ### Append to previous dataframe
-  df_exp_perADA_allyears <- rbind.data.frame(df_exp_perADA_allyears, temp_merged)
-    
+  df_exp_perADA_allyears <- bind_rows(df_exp_perADA_allyears, temp_merged)
+  
 } # End of loop over years (i)
 
+
+
+###'######################################################################
+###'
+###' Reorder variables and save the resulting dataset
+###'
+###'
+
+### Reorder variables and arrange by rows
+df_exp_perADA_allyears <- df_exp_perADA_allyears %>%
+  arrange(Ccode, Dcode, Fiscalyear) %>%
+  select(Fiscalyear:Dtype, contains("ADA"),
+         ends_with("TotalExp"), ends_with("TotalExp16"), 
+         ends_with("TotalExp_PP"), ends_with("TotalExp16_PP"), 
+         ends_with("TotalExp_PP_COE"), ends_with("TotalExp16_PP_COE"), 
+         ends_with("COE_prorate"), ends_with("COE_prorate16"))
+
+
+### Save as various file types
+setwd(file.path(paste0(work_dir, "/table")))
+save(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.rda")
+write.csv(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.csv")
+write.dta(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.dta")
