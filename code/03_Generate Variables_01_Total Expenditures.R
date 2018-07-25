@@ -36,8 +36,36 @@ library(dplyr)
 library(ggplot2)
 
 
-### Import datasets
-df_cur_exp <- read.csv(file = "table/current_expense_of_education_allyears.csv")
+
+###'######################################################################
+###'
+###' Import two external datasets:
+###' 
+###' (1) Current expense of education
+###' (2) CPI-U Deflator
+###' 
+###' Apply CPI-U Deflator to the current expense of education data
+###' 
+###' 
+
+### Read CSV files
+df_cur_exp <- read.csv(file = "data/current_expense_of_education_allyears.csv")
+CPI <- read.csv(file = "data/CPI_1913-2017.csv", header = TRUE)
+
+
+###' Calculate the conversion factors based on 2016 dollars
+###' ex) $1.00 (2006) : $x (2016) = 201.6 : 240.0
+###'     $x (2016) = 240.0 / 201.6   
+CPI <- CPI %>% 
+  mutate(cvt_factor = 240.0/CPI)
+
+
+### CPI conversion over years
+df_cur_exp <- df_cur_exp %>%
+  left_join(CPI, by = c("FiscalYear" = "Year")) %>%
+  mutate(TotalExp16_C = round(TotalExp_C*cvt_factor, 2), 
+         TotalExp16_K12_C = round(TotalExp_K12_C*cvt_factor, 2)) %>%
+  select(-CPI, -cvt_factor)
 
 
 
@@ -232,7 +260,8 @@ for (i in seq_along(years)){  # Loop over years
   
   df_cur_exp_TotalExp <- df_cur_exp %>%
     filter(FiscalYear == 2000 + as.numeric(substr(year_chr, 1, 2))) %>%
-    rename(C_TotalExp = TotalExp_C, C_TotalExp_PP = TotalExp_K12_C) %>%
+    rename(C_TotalExp = TotalExp_C, C_TotalExp_PP = TotalExp_K12_C,  
+           C_TotalExp16 = TotalExp16_C, C_TotalExp16_PP = TotalExp16_K12_C) %>%
     select(Ccode, Dcode, contains("TotalExp"))
   
   temp_merged <- left_join(def12_merged, df_cur_exp_TotalExp, by = c("Ccode", "Dcode"))
