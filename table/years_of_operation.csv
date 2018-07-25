@@ -1,0 +1,1008 @@
+"","Ccode","Dcode","Dname","Dtype","first","last","opr_years"
+"1",1,61119,"Alameda City Unified","UNIFIED",2003,2016,14
+"2",1,61127,"Albany City Unified","UNIFIED",2003,2016,14
+"3",1,61143,"Berkeley Unified","UNIFIED",2003,2016,14
+"4",1,61150,"Castro Valley Unified","UNIFIED",2003,2016,14
+"5",1,61168,"Emery Unified","UNIFIED",2003,2016,14
+"6",1,61176,"Fremont Unified","UNIFIED",2003,2016,14
+"7",1,61192,"Hayward Unified","UNIFIED",2003,2016,14
+"8",1,61200,"Livermore Valley Joint Unified","UNIFIED",2003,2016,14
+"9",1,61218,"Mountain House Elementary","ELEMENTARY",2003,2016,14
+"10",1,61234,"Newark Unified","UNIFIED",2003,2016,14
+"11",1,61242,"New Haven Unified","UNIFIED",2003,2016,14
+"12",1,61259,"Oakland Unified","UNIFIED",2003,2016,14
+"13",1,61275,"Piedmont City Unified","UNIFIED",2003,2016,14
+"14",1,61291,"San Leandro Unified","UNIFIED",2003,2016,14
+"15",1,61309,"San Lorenzo Unified","UNIFIED",2003,2016,14
+"16",1,75093,"Dublin Unified","UNIFIED",2003,2016,14
+"17",1,75101,"Pleasanton Unified","UNIFIED",2003,2016,14
+"18",1,75119,"Sunol Glen Unified","UNIFIED",2003,2016,14
+"19",2,61333,"Alpine County Unified","UNIFIED",2003,2016,14
+"20",3,73981,"Amador County Unified","UNIFIED",2003,2016,14
+"21",4,61382,"Bangor Union Elementary","ELEMENTARY",2003,2016,14
+"22",4,61408,"Biggs Unified","UNIFIED",2003,2016,14
+"23",4,61424,"Chico Unified","UNIFIED",2003,2016,14
+"24",4,61432,"Durham Unified","UNIFIED",2003,2016,14
+"25",4,61440,"Feather Falls Union Elementary","ELEMENTARY",2003,2016,14
+"26",4,61457,"Golden Feather Union Elementary","ELEMENTARY",2003,2016,14
+"27",4,61499,"Manzanita Elementary","ELEMENTARY",2003,2016,14
+"28",4,61507,"Oroville City Elementary","ELEMENTARY",2003,2016,14
+"29",4,61515,"Oroville Union High","HIGH",2003,2016,14
+"30",4,61523,"Palermo Union Elementary","ELEMENTARY",2003,2016,14
+"31",4,61531,"Paradise Unified","UNIFIED",2003,2016,14
+"32",4,61549,"Thermalito Union Elementary","ELEMENTARY",2003,2016,14
+"33",4,73379,"Pioneer Union Elementary","ELEMENTARY",2003,2016,14
+"34",4,75507,"Gridley Unified","UNIFIED",2003,2016,14
+"35",5,61556,"Bret Harte Union High","HIGH",2003,2016,14
+"36",5,61564,"Calaveras Unified","UNIFIED",2003,2016,14
+"37",5,61572,"Mark Twain Union Elementary","ELEMENTARY",2003,2016,14
+"38",5,61580,"Vallecito Union Elementary","ELEMENTARY",2003,2016,14
+"39",6,61598,"Colusa Unified","UNIFIED",2003,2016,14
+"40",6,61606,"Maxwell Unified","UNIFIED",2003,2016,14
+"41",6,61614,"Pierce Joint Unified","UNIFIED",2003,2016,14
+"42",6,61622,"Williams Unified","UNIFIED",2003,2016,14
+"43",7,61630,"Acalanes Union High","HIGH",2003,2016,14
+"44",7,61648,"Antioch Unified","UNIFIED",2003,2016,14
+"45",7,61655,"Brentwood Union Elementary","ELEMENTARY",2003,2016,14
+"46",7,61663,"Byron Union Elementary","ELEMENTARY",2003,2016,14
+"47",7,61671,"Canyon Elementary","ELEMENTARY",2003,2016,14
+"48",7,61697,"John Swett Unified","UNIFIED",2003,2016,14
+"49",7,61705,"Knightsen Elementary","ELEMENTARY",2003,2016,14
+"50",7,61713,"Lafayette Elementary","ELEMENTARY",2003,2016,14
+"51",7,61721,"Liberty Union High","HIGH",2003,2016,14
+"52",7,61739,"Martinez Unified","UNIFIED",2003,2016,14
+"53",7,61747,"Moraga Elementary","ELEMENTARY",2003,2016,14
+"54",7,61754,"Mt. Diablo Unified","UNIFIED",2003,2016,14
+"55",7,61762,"Oakley Union Elementary","ELEMENTARY",2003,2016,14
+"56",7,61770,"Orinda Union Elementary","ELEMENTARY",2003,2016,14
+"57",7,61788,"Pittsburg Unified","UNIFIED",2003,2016,14
+"58",7,61796,"West Contra Costa Unified","UNIFIED",2003,2016,14
+"59",7,61804,"San Ramon Valley Unified","UNIFIED",2003,2016,14
+"60",7,61812,"Walnut Creek Elementary","ELEMENTARY",2003,2016,14
+"61",8,61820,"Del Norte County Unified","UNIFIED",2003,2016,14
+"62",9,61838,"Buckeye Union Elementary","ELEMENTARY",2003,2016,14
+"63",9,61846,"Camino Union Elementary","ELEMENTARY",2003,2016,14
+"64",9,61853,"El Dorado Union High","HIGH",2003,2016,14
+"65",9,61879,"Gold Oak Union Elementary","ELEMENTARY",2003,2016,14
+"66",9,61887,"Gold Trail Union Elementary","ELEMENTARY",2003,2016,14
+"67",9,61895,"Indian Diggings Elementary","ELEMENTARY",2003,2016,14
+"68",9,61903,"Lake Tahoe Unified","UNIFIED",2003,2016,14
+"69",9,61911,"Latrobe Elementary","ELEMENTARY",2003,2016,14
+"70",9,61929,"Mother Lode Union Elementary","ELEMENTARY",2003,2016,14
+"71",9,61945,"Pioneer Union Elementary","ELEMENTARY",2003,2016,14
+"72",9,61952,"Placerville Union Elementary","ELEMENTARY",2003,2016,14
+"73",9,61960,"Pollock Pines Elementary","ELEMENTARY",2003,2016,14
+"74",9,61978,"Rescue Union Elementary","ELEMENTARY",2003,2016,14
+"75",9,61986,"Silver Fork Elementary","ELEMENTARY",2003,2016,14
+"76",9,73783,"Black Oak Mine Unified","UNIFIED",2003,2016,14
+"77",10,61994,"Alvina Elementary","ELEMENTARY",2003,2016,14
+"78",10,62000,"American Union Elementary","ELEMENTARY",2003,2011,9
+"79",10,62026,"Big Creek Elementary","ELEMENTARY",2003,2016,14
+"80",10,62042,"Burrel Union Elementary","ELEMENTARY",2003,2016,14
+"81",10,62109,"Clay Joint Elementary","ELEMENTARY",2003,2016,14
+"82",10,62117,"Clovis Unified","UNIFIED",2003,2016,14
+"83",10,62125,"Coalinga/Huron Joint Unified","UNIFIED",2003,2016,14
+"84",10,62158,"Fowler Unified","UNIFIED",2003,2016,14
+"85",10,62166,"Fresno Unified","UNIFIED",2003,2016,14
+"86",10,62174,"West Fresno Elementary","ELEMENTARY",2003,2011,9
+"87",10,62240,"Kingsburg Joint Union Elementary","ELEMENTARY",2003,2016,14
+"88",10,62257,"Kingsburg Joint Union High","HIGH",2003,2016,14
+"89",10,62265,"Kings Canyon Joint Unified","UNIFIED",2003,2016,14
+"90",10,62281,"Laton Joint Unified","UNIFIED",2003,2016,14
+"91",10,62323,"Monroe Elementary","ELEMENTARY",2003,2016,14
+"92",10,62331,"Orange Center Elementary","ELEMENTARY",2003,2016,14
+"93",10,62356,"Pacific Union Elementary","ELEMENTARY",2003,2016,14
+"94",10,62364,"Parlier Unified","UNIFIED",2003,2016,14
+"95",10,62372,"Pine Ridge Elementary","ELEMENTARY",2003,2016,14
+"96",10,62380,"Raisin City Elementary","ELEMENTARY",2003,2016,14
+"97",10,62414,"Sanger Unified","UNIFIED",2003,2016,14
+"98",10,62430,"Selma Unified","UNIFIED",2003,2016,14
+"99",10,62513,"Washington Colony Elementary","ELEMENTARY",2003,2016,14
+"100",10,62521,"Washington Union High","HIGH",2003,2011,9
+"101",10,62539,"West Park Elementary","ELEMENTARY",2003,2016,14
+"102",10,62547,"Westside Elementary","ELEMENTARY",2003,2016,14
+"103",10,73809,"Firebaugh-Las Deltas Unified","UNIFIED",2003,2016,14
+"104",10,73965,"Central Unified","UNIFIED",2003,2016,14
+"105",10,73999,"Kerman Unified","UNIFIED",2003,2016,14
+"106",10,75127,"Mendota Unified","UNIFIED",2003,2016,14
+"107",10,75234,"Golden Plains Unified","UNIFIED",2003,2016,14
+"108",10,75275,"Sierra Unified","UNIFIED",2003,2016,14
+"109",10,75408,"Riverdale Joint Unified","UNIFIED",2003,2016,14
+"110",10,75598,"Caruthers Unified","UNIFIED",2003,2016,14
+"111",10,76778,"Washington Unified","UNIFIED",2011,2016,6
+"112",11,62554,"Capay Joint Union Elementary","ELEMENTARY",2003,2016,14
+"113",11,62570,"Hamilton Union Elementary","ELEMENTARY",2003,2009,7
+"114",11,62588,"Hamilton Union High","HIGH",2003,2009,7
+"115",11,62596,"Lake Elementary","ELEMENTARY",2003,2016,14
+"116",11,62638,"Plaza Elementary","ELEMENTARY",2003,2016,14
+"117",11,62646,"Princeton Joint Unified","UNIFIED",2003,2016,14
+"118",11,62653,"Stony Creek Joint Unified","UNIFIED",2003,2016,14
+"119",11,62661,"Willows Unified","UNIFIED",2003,2016,14
+"120",11,75481,"Orland Joint Unified","UNIFIED",2003,2016,14
+"121",11,76562,"Hamilton Unified","UNIFIED",2009,2016,8
+"122",12,62679,"Arcata Elementary","ELEMENTARY",2003,2016,14
+"123",12,62687,"Northern Humboldt Union High","HIGH",2003,2016,14
+"124",12,62695,"Big Lagoon Union Elementary","ELEMENTARY",2003,2016,14
+"125",12,62703,"Blue Lake Union Elementary","ELEMENTARY",2003,2016,14
+"126",12,62729,"Bridgeville Elementary","ELEMENTARY",2003,2016,14
+"127",12,62737,"Cuddeback Union Elementary","ELEMENTARY",2003,2016,14
+"128",12,62745,"Cutten Elementary","ELEMENTARY",2003,2016,14
+"129",12,62794,"Fieldbrook Elementary","ELEMENTARY",2003,2016,14
+"130",12,62802,"Fortuna Union Elementary","ELEMENTARY",2003,2012,10
+"131",12,62810,"Fortuna Union High","HIGH",2003,2016,14
+"132",12,62828,"Freshwater Elementary","ELEMENTARY",2003,2016,14
+"133",12,62836,"Garfield Elementary","ELEMENTARY",2003,2016,14
+"134",12,62851,"Green Point Elementary","ELEMENTARY",2003,2016,14
+"135",12,62885,"Hydesville Elementary","ELEMENTARY",2003,2016,14
+"136",12,62893,"Jacoby Creek Elementary","ELEMENTARY",2003,2016,14
+"137",12,62901,"Klamath-Trinity Joint Unified","UNIFIED",2003,2016,14
+"138",12,62919,"Kneeland Elementary","ELEMENTARY",2003,2016,14
+"139",12,62927,"Loleta Union Elementary","ELEMENTARY",2003,2016,14
+"140",12,62935,"Maple Creek Elementary","ELEMENTARY",2003,2016,14
+"141",12,62950,"Mckinleyville Union Elementary","ELEMENTARY",2003,2016,14
+"142",12,62968,"Orick Elementary","ELEMENTARY",2003,2016,14
+"143",12,62976,"Pacific Union Elementary","ELEMENTARY",2003,2016,14
+"144",12,62984,"Peninsula Union Elementary","ELEMENTARY",2003,2016,14
+"145",12,63008,"Rio Dell Elementary","ELEMENTARY",2003,2016,14
+"146",12,63016,"Rohnerville Elementary","ELEMENTARY",2003,2012,10
+"147",12,63024,"Scotia Union Elementary","ELEMENTARY",2003,2016,14
+"148",12,63032,"South Bay Union Elementary","ELEMENTARY",2003,2016,14
+"149",12,63040,"Southern Humboldt Joint Unified","UNIFIED",2003,2016,14
+"150",12,63057,"Trinidad Union Elementary","ELEMENTARY",2003,2016,14
+"151",12,75374,"Ferndale Unified","UNIFIED",2003,2016,14
+"152",12,75382,"Mattole Unified","UNIFIED",2003,2016,14
+"153",12,75515,"Eureka City Unified","UNIFIED",2003,2016,14
+"154",12,76802,"Fortuna Elementary","ELEMENTARY",2012,2016,5
+"155",13,63073,"Brawley Elementary","ELEMENTARY",2003,2016,14
+"156",13,63081,"Brawley Union High","HIGH",2003,2016,14
+"157",13,63099,"Calexico Unified","UNIFIED",2003,2016,14
+"158",13,63107,"Calipatria Unified","UNIFIED",2003,2016,14
+"159",13,63115,"Central Union High","HIGH",2003,2016,14
+"160",13,63123,"El Centro Elementary","ELEMENTARY",2003,2016,14
+"161",13,63131,"Heber Elementary","ELEMENTARY",2003,2016,14
+"162",13,63149,"Holtville Unified","UNIFIED",2003,2016,14
+"163",13,63164,"Imperial Unified","UNIFIED",2003,2016,14
+"164",13,63172,"Magnolia Union Elementary","ELEMENTARY",2003,2016,14
+"165",13,63180,"Mccabe Union Elementary","ELEMENTARY",2003,2016,14
+"166",13,63198,"Meadows Union Elementary","ELEMENTARY",2003,2016,14
+"167",13,63206,"Mulberry Elementary","ELEMENTARY",2003,2016,14
+"168",13,63214,"San Pasqual Valley Unified","UNIFIED",2003,2016,14
+"169",13,63222,"Seeley Union Elementary","ELEMENTARY",2003,2016,14
+"170",13,63230,"Westmorland Union Elementary","ELEMENTARY",2003,2016,14
+"171",14,63248,"Big Pine Unified","UNIFIED",2003,2016,14
+"172",14,63255,"Bishop Union Elementary","ELEMENTARY",2003,2009,7
+"173",14,63263,"Bishop Joint Union High","HIGH",2003,2009,7
+"174",14,63271,"Death Valley Unified","UNIFIED",2003,2016,14
+"175",14,63289,"Lone Pine Unified","UNIFIED",2003,2016,14
+"176",14,63297,"Owens Valley Unified","UNIFIED",2003,2016,14
+"177",14,63305,"Round Valley Joint Elementary","ELEMENTARY",2003,2016,14
+"178",14,76687,"Bishop Unified","UNIFIED",2010,2016,7
+"179",15,63313,"Arvin Union Elementary","ELEMENTARY",2003,2016,14
+"180",15,63321,"Bakersfield City Elementary","ELEMENTARY",2003,2016,14
+"181",15,63339,"Beardsley Elementary","ELEMENTARY",2003,2016,14
+"182",15,63347,"Belridge Elementary","ELEMENTARY",2003,2016,14
+"183",15,63354,"Blake Elementary","ELEMENTARY",2003,2016,14
+"184",15,63362,"Panama Buena Vista Union Elementary","ELEMENTARY",2003,2016,14
+"185",15,63370,"Buttonwillow Union Elementary","ELEMENTARY",2003,2016,14
+"186",15,63388,"Caliente Union Elementary","ELEMENTARY",2003,2016,14
+"187",15,63404,"Delano Union Elementary","ELEMENTARY",2003,2016,14
+"188",15,63412,"Delano Joint Union High","HIGH",2003,2016,14
+"189",15,63420,"Di Giorgio Elementary","ELEMENTARY",2003,2016,14
+"190",15,63438,"Edison Elementary","ELEMENTARY",2003,2016,14
+"191",15,63446,"Elk Hills Elementary","ELEMENTARY",2003,2016,14
+"192",15,63461,"Fairfax Elementary","ELEMENTARY",2003,2016,14
+"193",15,63479,"Fruitvale Elementary","ELEMENTARY",2003,2016,14
+"194",15,63487,"General Shafter Elementary","ELEMENTARY",2003,2016,14
+"195",15,63503,"Greenfield Union Elementary","ELEMENTARY",2003,2016,14
+"196",15,63529,"Kern Union High","HIGH",2003,2016,14
+"197",15,63545,"Kernville Union Elementary","ELEMENTARY",2003,2016,14
+"198",15,63552,"Lakeside Union Elementary","ELEMENTARY",2003,2016,14
+"199",15,63560,"Lamont Elementary","ELEMENTARY",2003,2016,14
+"200",15,63578,"Richland Union Elementary","ELEMENTARY",2003,2016,14
+"201",15,63586,"Linns Valley-Poso Flat Union","ELEMENTARY",2003,2016,14
+"202",15,63594,"Lost Hills Union Elementary","ELEMENTARY",2003,2016,14
+"203",15,63610,"Maple Elementary","ELEMENTARY",2003,2016,14
+"204",15,63628,"Maricopa Unified","UNIFIED",2003,2016,14
+"205",15,63651,"Mckittrick Elementary","ELEMENTARY",2003,2016,14
+"206",15,63669,"Midway Elementary","ELEMENTARY",2003,2016,14
+"207",15,63677,"Mojave Unified","UNIFIED",2003,2016,14
+"208",15,63685,"Muroc Joint Unified","UNIFIED",2003,2016,14
+"209",15,63693,"Norris Elementary","ELEMENTARY",2003,2016,14
+"210",15,63719,"Pond Union Elementary","ELEMENTARY",2003,2016,14
+"211",15,63750,"Rosedale Union Elementary","ELEMENTARY",2003,2016,14
+"212",15,63768,"Semitropic Elementary","ELEMENTARY",2003,2016,14
+"213",15,63776,"Southern Kern Unified","UNIFIED",2003,2016,14
+"214",15,63784,"South Fork Union Elementary","ELEMENTARY",2003,2016,14
+"215",15,63792,"Standard Elementary","ELEMENTARY",2003,2016,14
+"216",15,63800,"Taft City Elementary","ELEMENTARY",2003,2016,14
+"217",15,63818,"Taft Union High","HIGH",2003,2016,14
+"218",15,63826,"Tehachapi Unified","UNIFIED",2003,2016,14
+"219",15,63834,"Vineland Elementary","ELEMENTARY",2003,2016,14
+"220",15,63842,"Wasco Union Elementary","ELEMENTARY",2003,2016,14
+"221",15,63859,"Wasco Union High","HIGH",2003,2016,14
+"222",15,73544,"Rio Bravo-Greeley Union Elementary","ELEMENTARY",2003,2016,14
+"223",15,73742,"Sierra Sands Unified","UNIFIED",2003,2016,14
+"224",15,73908,"Mcfarland Unified","UNIFIED",2003,2016,14
+"225",15,75168,"El Tejon Unified","UNIFIED",2003,2016,14
+"226",16,63875,"Armona Union Elementary","ELEMENTARY",2003,2016,14
+"227",16,63883,"Central Union Elementary","ELEMENTARY",2003,2016,14
+"228",16,63891,"Corcoran Joint Unified","UNIFIED",2003,2016,14
+"229",16,63909,"Delta View Joint Union Elementary","ELEMENTARY",2003,2009,7
+"230",16,63917,"Hanford Elementary","ELEMENTARY",2003,2016,14
+"231",16,63925,"Hanford Joint Union High","HIGH",2003,2016,14
+"232",16,63933,"Island Union Elementary","ELEMENTARY",2003,2016,14
+"233",16,63941,"Kings River-Hardwick Union Elementary","ELEMENTARY",2003,2016,14
+"234",16,63958,"Kit Carson Union Elementary","ELEMENTARY",2003,2016,14
+"235",16,63966,"Lakeside Union Elementary","ELEMENTARY",2003,2016,14
+"236",16,63974,"Lemoore Union Elementary","ELEMENTARY",2003,2016,14
+"237",16,63982,"Lemoore Union High","HIGH",2003,2016,14
+"238",16,63990,"Pioneer Union Elementary","ELEMENTARY",2003,2016,14
+"239",16,73932,"Reef-Sunset Unified","UNIFIED",2003,2016,14
+"240",17,64014,"Kelseyville Unified","UNIFIED",2003,2016,14
+"241",17,64022,"Konocti Unified","UNIFIED",2003,2016,14
+"242",17,64030,"Lakeport Unified","UNIFIED",2003,2016,14
+"243",17,64048,"Lucerne Elementary","ELEMENTARY",2003,2016,14
+"244",17,64055,"Middletown Unified","UNIFIED",2003,2016,14
+"245",17,64063,"Upper Lake Union Elementary","ELEMENTARY",2003,2016,14
+"246",17,64071,"Upper Lake Union High","HIGH",2003,2016,14
+"247",17,76976,"Upper Lake Unified","UNIFIED",2016,2016,1
+"248",18,64089,"Big Valley Joint Unified","UNIFIED",2003,2016,14
+"249",18,64105,"Janesville Union Elementary","ELEMENTARY",2003,2016,14
+"250",18,64113,"Johnstonville Elementary","ELEMENTARY",2003,2016,14
+"251",18,64139,"Lassen Union High","HIGH",2003,2016,14
+"252",18,64162,"Ravendale Elementary","ELEMENTARY",2003,2016,14
+"253",18,64170,"Richmond Elementary","ELEMENTARY",2003,2016,14
+"254",18,64188,"Shaffer Union Elementary","ELEMENTARY",2003,2016,14
+"255",18,64196,"Susanville Elementary","ELEMENTARY",2003,2016,14
+"256",18,64204,"Westwood Unified","UNIFIED",2003,2016,14
+"257",18,75036,"Fort Sage Unified","UNIFIED",2003,2016,14
+"258",19,40725,"Alhambra City Elementary/High","Comm Admin Dist",2003,2003,1
+"259",19,64212,"Abc Unified","UNIFIED",2003,2016,14
+"260",19,64246,"Antelope Valley Union High","HIGH",2003,2016,14
+"261",19,64261,"Arcadia Unified","UNIFIED",2003,2016,14
+"262",19,64279,"Azusa Unified","UNIFIED",2003,2016,14
+"263",19,64287,"Baldwin Park Unified","UNIFIED",2003,2016,14
+"264",19,64295,"Bassett Unified","UNIFIED",2003,2016,14
+"265",19,64303,"Bellflower Unified","UNIFIED",2003,2016,14
+"266",19,64311,"Beverly Hills Unified","UNIFIED",2003,2016,14
+"267",19,64329,"Bonita Unified","UNIFIED",2003,2016,14
+"268",19,64337,"Burbank Unified","UNIFIED",2003,2016,14
+"269",19,64345,"Castaic Union Elementary","ELEMENTARY",2003,2016,14
+"270",19,64352,"Centinela Valley Union High","HIGH",2003,2016,14
+"271",19,64378,"Charter Oak Unified","UNIFIED",2003,2016,14
+"272",19,64394,"Claremont Unified","UNIFIED",2003,2016,14
+"273",19,64436,"Covina-Valley Unified","UNIFIED",2003,2016,14
+"274",19,64444,"Culver City Unified","UNIFIED",2003,2016,14
+"275",19,64451,"Downey Unified","UNIFIED",2003,2016,14
+"276",19,64469,"Duarte Unified","UNIFIED",2003,2016,14
+"277",19,64477,"Eastside Union Elementary","ELEMENTARY",2003,2016,14
+"278",19,64485,"East Whittier City Elementary","ELEMENTARY",2003,2016,14
+"279",19,64501,"El Monte City Elementary","ELEMENTARY",2003,2016,14
+"280",19,64519,"El Monte Union High","HIGH",2003,2016,14
+"281",19,64527,"El Rancho Unified","UNIFIED",2003,2016,14
+"282",19,64535,"El Segundo Unified","UNIFIED",2003,2016,14
+"283",19,64550,"Garvey Elementary","ELEMENTARY",2003,2016,14
+"284",19,64568,"Glendale Unified","UNIFIED",2003,2016,14
+"285",19,64576,"Glendora Unified","UNIFIED",2003,2016,14
+"286",19,64584,"Gorman Elementary","ELEMENTARY",2003,2016,14
+"287",19,64592,"Hawthorne Elementary","ELEMENTARY",2003,2016,14
+"288",19,64600,"Hermosa Beach City Elementary","ELEMENTARY",2003,2016,14
+"289",19,64626,"Hughes-Elizabeth Lakes Union Elementary","ELEMENTARY",2003,2016,14
+"290",19,64634,"Inglewood Unified","UNIFIED",2003,2016,14
+"291",19,64642,"Keppel Union Elementary","ELEMENTARY",2003,2016,14
+"292",19,64659,"La Canada Unified","UNIFIED",2003,2016,14
+"293",19,64667,"Lancaster Elementary","ELEMENTARY",2003,2016,14
+"294",19,64683,"Las Virgenes Unified","UNIFIED",2003,2016,14
+"295",19,64691,"Lawndale Elementary","ELEMENTARY",2003,2016,14
+"296",19,64709,"Lennox Elementary","ELEMENTARY",2003,2016,14
+"297",19,64717,"Little Lake City Elementary","ELEMENTARY",2003,2016,14
+"298",19,64725,"Long Beach Unified","UNIFIED",2003,2016,14
+"299",19,64733,"Los Angeles Unified","UNIFIED",2003,2016,14
+"300",19,64758,"Los Nietos Elementary","ELEMENTARY",2003,2016,14
+"301",19,64766,"Lowell Joint Elementary","ELEMENTARY",2003,2016,14
+"302",19,64774,"Lynwood Unified","UNIFIED",2003,2016,14
+"303",19,64790,"Monrovia Unified","UNIFIED",2003,2016,14
+"304",19,64808,"Montebello Unified","UNIFIED",2003,2016,14
+"305",19,64816,"Mountain View Elementary","ELEMENTARY",2003,2016,14
+"306",19,64832,"Newhall Elementary","ELEMENTARY",2003,2016,14
+"307",19,64840,"Norwalk-La Mirada Unified","UNIFIED",2003,2016,14
+"308",19,64857,"Palmdale Elementary","ELEMENTARY",2003,2016,14
+"309",19,64865,"Palos Verdes Peninsula Unified","UNIFIED",2003,2016,14
+"310",19,64873,"Paramount Unified","UNIFIED",2003,2016,14
+"311",19,64881,"Pasadena Unified","UNIFIED",2003,2016,14
+"312",19,64907,"Pomona Unified","UNIFIED",2003,2016,14
+"313",19,64931,"Rosemead Elementary","ELEMENTARY",2003,2016,14
+"314",19,64964,"San Marino Unified","UNIFIED",2003,2016,14
+"315",19,64980,"Santa Monica-Malibu Unified","UNIFIED",2003,2016,14
+"316",19,64998,"Saugus Union Elementary","ELEMENTARY",2003,2016,14
+"317",19,65029,"South Pasadena Unified","UNIFIED",2003,2016,14
+"318",19,65037,"South Whittier Elementary","ELEMENTARY",2003,2016,14
+"319",19,65045,"Sulphur Springs Union Elementary","ELEMENTARY",2003,2016,14
+"320",19,65052,"Temple City Unified","UNIFIED",2003,2016,14
+"321",19,65060,"Torrance Unified","UNIFIED",2003,2016,14
+"322",19,65078,"Valle Lindo Elementary","ELEMENTARY",2003,2016,14
+"323",19,65094,"West Covina Unified","UNIFIED",2003,2016,14
+"324",19,65102,"Westside Union Elementary","ELEMENTARY",2003,2016,14
+"325",19,65110,"Whittier City Elementary","ELEMENTARY",2003,2016,14
+"326",19,65128,"Whittier Union High","HIGH",2003,2016,14
+"327",19,65136,"William S. Hart Union High","HIGH",2003,2016,14
+"328",19,65151,"Wilsona Elementary","ELEMENTARY",2003,2016,14
+"329",19,65169,"Wiseburn Elementary","ELEMENTARY",2003,2014,12
+"330",19,73437,"Compton Unified","UNIFIED",2003,2016,14
+"331",19,73445,"Hacienda La Puente Unified","UNIFIED",2003,2016,14
+"332",19,73452,"Rowland Unified","UNIFIED",2003,2016,14
+"333",19,73460,"Walnut Valley Unified","UNIFIED",2003,2016,14
+"334",19,75291,"San Gabriel Unified","UNIFIED",2003,2016,14
+"335",19,75309,"Acton-Agua Dulce Unified","UNIFIED",2003,2016,14
+"336",19,75333,"Manhattan Beach Unified","UNIFIED",2003,2016,14
+"337",19,75341,"Redondo Beach Unified","UNIFIED",2003,2016,14
+"338",19,75663,"SBE - New West Charter Middle School","ELEMENTARY",2005,2016,12
+"339",19,75697,"State Board of Education Charter","HIGH",2003,2012,10
+"340",19,75713,"Alhambra Unified","UNIFIED",2004,2016,13
+"341",19,76737,"SBE - Todays Fresh Start Charter","UNIFIED",2010,2013,4
+"342",19,76869,"Wiseburn Unified","UNIFIED",2014,2016,3
+"343",20,65177,"Alview-Dairyland Union Elementary","ELEMENTARY",2003,2016,14
+"344",20,65185,"Bass Lake Elementary","ELEMENTARY",2003,2016,14
+"345",20,65193,"Chowchilla Elementary","ELEMENTARY",2003,2016,14
+"346",20,65201,"Chowchilla Union High","HIGH",2003,2016,14
+"347",20,65219,"Coarsegold Union Elementary","ELEMENTARY",2003,2006,4
+"348",20,65243,"Madera Unified","UNIFIED",2003,2016,14
+"349",20,65276,"Raymond-Knowles Union Elementary","ELEMENTARY",2003,2016,14
+"350",20,73734,"Yosemite Union High","HIGH",2003,2006,4
+"351",20,75580,"Golden Valley Unified","UNIFIED",2003,2016,14
+"352",20,75606,"Chawanakee Unified","UNIFIED",2003,2016,14
+"353",20,76414,"Yosemite Unified","UNIFIED",2006,2016,11
+"354",21,65300,"Bolinas-Stinson Union Elementary","ELEMENTARY",2003,2016,14
+"355",21,65318,"Dixie Elementary","ELEMENTARY",2003,2016,14
+"356",21,65334,"Kentfield Elementary","ELEMENTARY",2003,2016,14
+"357",21,65342,"Laguna Joint Elementary","ELEMENTARY",2003,2016,14
+"358",21,65359,"Lagunitas Elementary","ELEMENTARY",2003,2016,14
+"359",21,65367,"Larkspur Elementary","ELEMENTARY",2003,2016,14
+"360",21,65375,"Lincoln Elementary","ELEMENTARY",2003,2016,14
+"361",21,65391,"Mill Valley Elementary","ELEMENTARY",2003,2016,14
+"362",21,65409,"Nicasio Elementary","ELEMENTARY",2003,2016,14
+"363",21,65417,"Novato Unified","UNIFIED",2003,2016,14
+"364",21,65425,"Reed Union Elementary","ELEMENTARY",2003,2016,14
+"365",21,65433,"Ross Elementary","ELEMENTARY",2003,2016,14
+"366",21,65458,"San Rafael City Elementary","ELEMENTARY",2003,2016,14
+"367",21,65466,"San Rafael City High","HIGH",2003,2016,14
+"368",21,65474,"Sausalito Elementary","ELEMENTARY",2003,2016,14
+"369",21,65482,"Tamalpais Union High","HIGH",2003,2016,14
+"370",21,65516,"Union Joint Elementary","ELEMENTARY",2003,2016,14
+"371",21,73361,"Shoreline Unified","UNIFIED",2003,2016,14
+"372",21,75002,"Ross Valley Elementary","ELEMENTARY",2003,2016,14
+"373",22,65532,"Mariposa County Unified","UNIFIED",2003,2016,14
+"374",23,65540,"Anderson Valley Unified","UNIFIED",2003,2016,14
+"375",23,65557,"Arena Union Elementary","ELEMENTARY",2003,2003,1
+"376",23,65565,"Fort Bragg Unified","UNIFIED",2003,2016,14
+"377",23,65573,"Manchester Union Elementary","ELEMENTARY",2003,2016,14
+"378",23,65581,"Mendocino Unified","UNIFIED",2003,2016,14
+"379",23,65599,"Point Arena Joint Union High","HIGH",2003,2003,1
+"380",23,65607,"Round Valley Unified","UNIFIED",2003,2016,14
+"381",23,65615,"Ukiah Unified","UNIFIED",2003,2016,14
+"382",23,65623,"Willits Unified","UNIFIED",2003,2016,14
+"383",23,73866,"Potter Valley Community Unified","UNIFIED",2003,2016,14
+"384",23,73916,"Laytonville Unified","UNIFIED",2003,2016,14
+"385",23,75218,"Leggett Valley Unified","UNIFIED",2003,2016,14
+"386",23,76349,"Arena Union Elementary/Point Arena Joint Unio","Comm Admin Dist",2004,2016,13
+"387",24,65631,"Atwater Elementary","ELEMENTARY",2003,2016,14
+"388",24,65649,"Ballico-Cressey Elementary","ELEMENTARY",2003,2016,14
+"389",24,65680,"El Nido Elementary","ELEMENTARY",2003,2016,14
+"390",24,65698,"Hilmar Unified","UNIFIED",2003,2016,14
+"391",24,65722,"Le Grand Union Elementary","ELEMENTARY",2003,2016,14
+"392",24,65730,"Le Grand Union High","HIGH",2003,2016,14
+"393",24,65748,"Livingston Union Elementary","ELEMENTARY",2003,2016,14
+"394",24,65755,"Los Banos Unified","UNIFIED",2003,2016,14
+"395",24,65763,"Mcswain Union Elementary","ELEMENTARY",2003,2016,14
+"396",24,65771,"Merced City Elementary","ELEMENTARY",2003,2016,14
+"397",24,65789,"Merced Union High","HIGH",2003,2016,14
+"398",24,65813,"Plainsburg Union Elementary","ELEMENTARY",2003,2016,14
+"399",24,65821,"Planada Elementary","ELEMENTARY",2003,2016,14
+"400",24,65839,"Snelling-Merced Falls Union Elementary","ELEMENTARY",2003,2016,14
+"401",24,65862,"Weaver Union Elementary","ELEMENTARY",2003,2016,14
+"402",24,65870,"Winton Elementary","ELEMENTARY",2003,2016,14
+"403",24,73619,"Gustine Unified","UNIFIED",2003,2016,14
+"404",24,73726,"Merced River Union Elementary","ELEMENTARY",2003,2016,14
+"405",24,75317,"Dos Palos Oro Loma Jt. Unified","UNIFIED",2003,2016,14
+"406",24,75366,"Delhi Unified","UNIFIED",2003,2016,14
+"407",25,65896,"Surprise Valley Joint Unified","UNIFIED",2003,2016,14
+"408",25,73585,"Modoc Joint Unified","UNIFIED",2003,2016,14
+"409",25,73593,"Tulelake Basin Joint Unified","UNIFIED",2003,2016,14
+"410",26,73668,"Eastern Sierra Unified","UNIFIED",2003,2016,14
+"411",26,73692,"Mammoth Unified","UNIFIED",2003,2016,14
+"412",27,65961,"Alisal Union Elementary","ELEMENTARY",2003,2016,14
+"413",27,65979,"Bradley Union Elementary","ELEMENTARY",2003,2016,14
+"414",27,65987,"Carmel Unified","UNIFIED",2003,2016,14
+"415",27,65995,"Chualar Union Elementary","ELEMENTARY",2003,2016,14
+"416",27,66027,"Graves Elementary","ELEMENTARY",2003,2016,14
+"417",27,66035,"Greenfield Union Elementary","ELEMENTARY",2003,2016,14
+"418",27,66050,"King City Union Elementary","ELEMENTARY",2003,2016,14
+"419",27,66068,"King City Joint Union High","HIGH",2003,2016,14
+"420",27,66076,"Lagunita Elementary","ELEMENTARY",2003,2016,14
+"421",27,66084,"Mission Union Elementary","ELEMENTARY",2003,2016,14
+"422",27,66092,"Monterey Peninsula Unified","UNIFIED",2003,2016,14
+"423",27,66134,"Pacific Grove Unified","UNIFIED",2003,2016,14
+"424",27,66142,"Salinas City Elementary","ELEMENTARY",2003,2016,14
+"425",27,66159,"Salinas Union High","HIGH",2003,2016,14
+"426",27,66167,"San Antonio Union Elementary","ELEMENTARY",2003,2016,14
+"427",27,66175,"San Ardo Union Elementary","ELEMENTARY",2003,2016,14
+"428",27,66183,"San Lucas Union Elementary","ELEMENTARY",2003,2016,14
+"429",27,66191,"Santa Rita Union Elementary","ELEMENTARY",2003,2016,14
+"430",27,66225,"Spreckels Union Elementary","ELEMENTARY",2003,2016,14
+"431",27,66233,"Washington Union Elementary","ELEMENTARY",2003,2016,14
+"432",27,73825,"North Monterey County Unified","UNIFIED",2003,2016,14
+"433",27,75150,"Pacific Unified","UNIFIED",2003,2016,14
+"434",27,75440,"Soledad Unified","UNIFIED",2003,2016,14
+"435",27,75473,"Gonzales Unified","UNIFIED",2003,2016,14
+"436",28,66241,"Calistoga Joint Unified","UNIFIED",2003,2016,14
+"437",28,66258,"Howell Mountain Elementary","ELEMENTARY",2003,2016,14
+"438",28,66266,"Napa Valley Unified","UNIFIED",2003,2016,14
+"439",28,66282,"Pope Valley Union Elementary","ELEMENTARY",2003,2016,14
+"440",28,66290,"St. Helena Unified","UNIFIED",2003,2016,14
+"441",29,66316,"Chicago Park Elementary","ELEMENTARY",2003,2016,14
+"442",29,66324,"Clear Creek Elementary","ELEMENTARY",2003,2016,14
+"443",29,66332,"Grass Valley Elementary","ELEMENTARY",2003,2016,14
+"444",29,66340,"Nevada City Elementary","ELEMENTARY",2003,2016,14
+"445",29,66357,"Nevada Joint Union High","HIGH",2003,2016,14
+"446",29,66373,"Pleasant Ridge Union Elementary","ELEMENTARY",2003,2016,14
+"447",29,66381,"Pleasant Valley Elementary","ELEMENTARY",2003,2014,12
+"448",29,66399,"Ready Springs Union Elementary","ELEMENTARY",2003,2014,12
+"449",29,66407,"Union Hill Elementary","ELEMENTARY",2003,2016,14
+"450",29,66415,"Twin Ridges Elementary","ELEMENTARY",2003,2016,14
+"451",29,76877,"Penn Valley Union Elementary","ELEMENTARY",2014,2016,3
+"452",30,66423,"Anaheim Elementary","ELEMENTARY",2003,2016,14
+"453",30,66431,"Anaheim Union High","HIGH",2003,2016,14
+"454",30,66449,"Brea-Olinda Unified","UNIFIED",2003,2016,14
+"455",30,66456,"Buena Park Elementary","ELEMENTARY",2003,2016,14
+"456",30,66464,"Capistrano Unified","UNIFIED",2003,2016,14
+"457",30,66472,"Centralia Elementary","ELEMENTARY",2003,2016,14
+"458",30,66480,"Cypress Elementary","ELEMENTARY",2003,2016,14
+"459",30,66498,"Fountain Valley Elementary","ELEMENTARY",2003,2016,14
+"460",30,66506,"Fullerton Elementary","ELEMENTARY",2003,2016,14
+"461",30,66514,"Fullerton Joint Union High","HIGH",2003,2016,14
+"462",30,66522,"Garden Grove Unified","UNIFIED",2003,2016,14
+"463",30,66530,"Huntington Beach City Elementary","ELEMENTARY",2003,2016,14
+"464",30,66548,"Huntington Beach Union High","HIGH",2003,2016,14
+"465",30,66555,"Laguna Beach Unified","UNIFIED",2003,2016,14
+"466",30,66563,"La Habra City Elementary","ELEMENTARY",2003,2016,14
+"467",30,66589,"Magnolia Elementary","ELEMENTARY",2003,2016,14
+"468",30,66597,"Newport-Mesa Unified","UNIFIED",2003,2016,14
+"469",30,66613,"Ocean View Elementary","ELEMENTARY",2003,2016,14
+"470",30,66621,"Orange Unified","UNIFIED",2003,2016,14
+"471",30,66647,"Placentia-Yorba Linda Unified","UNIFIED",2003,2016,14
+"472",30,66670,"Santa Ana Unified","UNIFIED",2003,2016,14
+"473",30,66696,"Savanna Elementary","ELEMENTARY",2003,2016,14
+"474",30,66746,"Westminster Elementary","ELEMENTARY",2003,2016,14
+"475",30,73635,"Saddleback Valley Unified","UNIFIED",2003,2016,14
+"476",30,73643,"Tustin Unified","UNIFIED",2003,2016,14
+"477",30,73650,"Irvine Unified","UNIFIED",2003,2016,14
+"478",30,73924,"Los Alamitos Unified","UNIFIED",2003,2016,14
+"479",31,66761,"Ackerman Elementary","ELEMENTARY",2003,2016,14
+"480",31,66779,"Alta-Dutch Flat Union Elementary","ELEMENTARY",2003,2016,14
+"481",31,66787,"Auburn Union Elementary","ELEMENTARY",2003,2016,14
+"482",31,66795,"Colfax Elementary","ELEMENTARY",2003,2016,14
+"483",31,66803,"Dry Creek Joint Elementary","ELEMENTARY",2003,2016,14
+"484",31,66829,"Eureka Union Elementary","ELEMENTARY",2003,2016,14
+"485",31,66837,"Foresthill Union Elementary","ELEMENTARY",2003,2016,14
+"486",31,66845,"Loomis Union Elementary","ELEMENTARY",2003,2016,14
+"487",31,66852,"Newcastle Elementary","ELEMENTARY",2003,2016,14
+"488",31,66860,"Ophir Elementary","ELEMENTARY",2003,2008,6
+"489",31,66878,"Penryn Elementary","ELEMENTARY",2003,2005,3
+"490",31,66886,"Placer Hills Union Elementary","ELEMENTARY",2003,2016,14
+"491",31,66894,"Placer Union High","HIGH",2003,2016,14
+"492",31,66910,"Roseville City Elementary","ELEMENTARY",2003,2016,14
+"493",31,66928,"Roseville Joint Union High","HIGH",2003,2016,14
+"494",31,66944,"Tahoe-Truckee Unified","UNIFIED",2003,2016,14
+"495",31,66951,"Western Placer Unified","UNIFIED",2003,2016,14
+"496",31,75085,"Rocklin Unified","UNIFIED",2003,2016,14
+"497",31,76570,"SBE - Western Sierra Collegiate Academy","UNIFIED",2009,2013,5
+"498",32,66969,"Plumas Unified","UNIFIED",2003,2016,14
+"499",33,66977,"Alvord Unified","UNIFIED",2003,2016,14
+"500",33,66985,"Banning Unified","UNIFIED",2003,2016,14
+"501",33,66993,"Beaumont Unified","UNIFIED",2003,2016,14
+"502",33,67033,"Corona-Norco Unified","UNIFIED",2003,2016,14
+"503",33,67041,"Desert Center Unified","UNIFIED",2003,2016,14
+"504",33,67058,"Desert Sands Unified","UNIFIED",2003,2016,14
+"505",33,67082,"Hemet Unified","UNIFIED",2003,2016,14
+"506",33,67090,"Jurupa Unified","UNIFIED",2003,2016,14
+"507",33,67116,"Menifee Union Elementary","ELEMENTARY",2003,2016,14
+"508",33,67124,"Moreno Valley Unified","UNIFIED",2003,2016,14
+"509",33,67157,"Nuview Union Elementary","ELEMENTARY",2003,2016,14
+"510",33,67173,"Palm Springs Unified","UNIFIED",2003,2016,14
+"511",33,67181,"Palo Verde Unified","UNIFIED",2003,2016,14
+"512",33,67199,"Perris Elementary","ELEMENTARY",2003,2016,14
+"513",33,67207,"Perris Union High","HIGH",2003,2016,14
+"514",33,67215,"Riverside Unified","UNIFIED",2003,2016,14
+"515",33,67231,"Romoland Elementary","ELEMENTARY",2003,2016,14
+"516",33,67249,"San Jacinto Unified","UNIFIED",2003,2016,14
+"517",33,73676,"Coachella Valley Unified","UNIFIED",2003,2016,14
+"518",33,75176,"Lake Elsinore Unified","UNIFIED",2003,2016,14
+"519",33,75192,"Temecula Valley Unified","UNIFIED",2003,2016,14
+"520",33,75200,"Murrieta Valley Unified","UNIFIED",2003,2016,14
+"521",33,75242,"Val Verde Unified","UNIFIED",2003,2016,14
+"522",34,67280,"Arcohe Union Elementary","ELEMENTARY",2003,2016,14
+"523",34,67306,"Del Paso Heights Elementary","ELEMENTARY",2003,2008,6
+"524",34,67314,"Elk Grove Unified","UNIFIED",2003,2016,14
+"525",34,67322,"Elverta Joint Elementary","ELEMENTARY",2003,2016,14
+"526",34,67330,"Folsom-Cordova Unified","UNIFIED",2003,2016,14
+"527",34,67348,"Galt Joint Union Elementary","ELEMENTARY",2003,2016,14
+"528",34,67355,"Galt Joint Union High","HIGH",2003,2016,14
+"529",34,67363,"Grant Joint Union High","HIGH",2003,2008,6
+"530",34,67397,"North Sacramento Elementary","ELEMENTARY",2003,2008,6
+"531",34,67405,"Rio Linda Union Elementary","ELEMENTARY",2003,2008,6
+"532",34,67413,"River Delta Joint Unified","UNIFIED",2003,2016,14
+"533",34,67421,"Robla Elementary","ELEMENTARY",2003,2016,14
+"534",34,67439,"Sacramento City Unified","UNIFIED",2003,2016,14
+"535",34,67447,"San Juan Unified","UNIFIED",2003,2016,14
+"536",34,73973,"Center Joint Unified","UNIFIED",2003,2016,14
+"537",34,75283,"Natomas Unified","UNIFIED",2003,2016,14
+"538",34,76505,"Twin Rivers Unified","UNIFIED",2008,2016,9
+"539",35,67454,"Bitterwater-Tully Union Elemen","ELEMENTARY",2003,2016,14
+"540",35,67462,"Cienega Union Elementary","ELEMENTARY",2003,2016,14
+"541",35,67470,"Hollister Elementary","ELEMENTARY",2003,2016,14
+"542",35,67488,"Jefferson Elementary","ELEMENTARY",2003,2016,14
+"543",35,67504,"North County Joint Union Elementary","ELEMENTARY",2003,2016,14
+"544",35,67520,"Panoche Elementary","ELEMENTARY",2003,2016,14
+"545",35,67538,"San Benito High","HIGH",2003,2016,14
+"546",35,67553,"Southside Elementary","ELEMENTARY",2003,2016,14
+"547",35,67561,"Tres Pinos Union Elementary","ELEMENTARY",2003,2016,14
+"548",35,67579,"Willow Grove Union Elementary","ELEMENTARY",2003,2016,14
+"549",35,75259,"Aromas/San Juan Unified","UNIFIED",2003,2016,14
+"550",36,67587,"Adelanto Elementary","ELEMENTARY",2003,2016,14
+"551",36,67595,"Alta Loma Elementary","ELEMENTARY",2003,2016,14
+"552",36,67611,"Barstow Unified","UNIFIED",2003,2016,14
+"553",36,67637,"Bear Valley Unified","UNIFIED",2003,2016,14
+"554",36,67645,"Central Elementary","ELEMENTARY",2003,2016,14
+"555",36,67652,"Chaffey Union High","HIGH",2003,2016,14
+"556",36,67678,"Chino Valley Unified","UNIFIED",2003,2016,14
+"557",36,67686,"Colton Joint Unified","UNIFIED",2003,2016,14
+"558",36,67694,"Cucamonga Elementary","ELEMENTARY",2003,2016,14
+"559",36,67702,"Etiwanda Elementary","ELEMENTARY",2003,2016,14
+"560",36,67710,"Fontana Unified","UNIFIED",2003,2016,14
+"561",36,67736,"Helendale Elementary","ELEMENTARY",2003,2016,14
+"562",36,67777,"Morongo Unified","UNIFIED",2003,2016,14
+"563",36,67785,"Mountain View Elementary","ELEMENTARY",2003,2016,14
+"564",36,67793,"Mt. Baldy Joint Elementary","ELEMENTARY",2003,2016,14
+"565",36,67801,"Needles Unified","UNIFIED",2003,2016,14
+"566",36,67819,"Ontario-Montclair Elementary","ELEMENTARY",2003,2016,14
+"567",36,67827,"Oro Grande Elementary","ELEMENTARY",2003,2016,14
+"568",36,67843,"Redlands Unified","UNIFIED",2003,2016,14
+"569",36,67850,"Rialto Unified","UNIFIED",2003,2016,14
+"570",36,67868,"Rim of The World Unified","UNIFIED",2003,2016,14
+"571",36,67876,"San Bernardino City Unified","UNIFIED",2003,2016,14
+"572",36,67892,"Trona Joint Unified","UNIFIED",2003,2016,14
+"573",36,67918,"Victor Elementary","ELEMENTARY",2003,2016,14
+"574",36,67934,"Victor Valley Union High","HIGH",2003,2016,14
+"575",36,67959,"Yucaipa-Calimesa Jt. Unified","UNIFIED",2003,2016,14
+"576",36,73858,"Baker Valley Unified","UNIFIED",2003,2016,14
+"577",36,73890,"Silver Valley Unified","UNIFIED",2003,2016,14
+"578",36,73957,"Snowline Joint Unified","UNIFIED",2003,2016,14
+"579",36,75044,"Hesperia Unified","UNIFIED",2003,2016,14
+"580",36,75051,"Lucerne Valley Unified","UNIFIED",2003,2016,14
+"581",36,75069,"Upland Unified","UNIFIED",2003,2016,14
+"582",36,75077,"Apple Valley Unified","UNIFIED",2003,2016,14
+"583",37,67967,"Alpine Union Elementary","ELEMENTARY",2003,2016,14
+"584",37,67975,"Bonsall Union Elementary","ELEMENTARY",2003,2014,12
+"585",37,67983,"Borrego Springs Unified","UNIFIED",2003,2016,14
+"586",37,67991,"Cajon Valley Union Elementary","ELEMENTARY",2003,2016,14
+"587",37,68007,"Cardiff Elementary","ELEMENTARY",2003,2016,14
+"588",37,68023,"Chula Vista Elementary","ELEMENTARY",2003,2016,14
+"589",37,68031,"Coronado Unified","UNIFIED",2003,2016,14
+"590",37,68049,"Dehesa Elementary","ELEMENTARY",2003,2016,14
+"591",37,68056,"Del Mar Union Elementary","ELEMENTARY",2003,2016,14
+"592",37,68080,"Encinitas Union Elementary","ELEMENTARY",2003,2016,14
+"593",37,68098,"Escondido Union Elementary","ELEMENTARY",2003,2016,14
+"594",37,68106,"Escondido Union High","HIGH",2003,2016,14
+"595",37,68114,"Fallbrook Union Elementary","ELEMENTARY",2003,2016,14
+"596",37,68122,"Fallbrook Union High","HIGH",2003,2016,14
+"597",37,68130,"Grossmont Union High","HIGH",2003,2016,14
+"598",37,68155,"Jamul-Dulzura Union Elementary","ELEMENTARY",2003,2016,14
+"599",37,68163,"Julian Union Elementary","ELEMENTARY",2003,2016,14
+"600",37,68171,"Julian Union High","HIGH",2003,2016,14
+"601",37,68189,"Lakeside Union Elementary","ELEMENTARY",2003,2016,14
+"602",37,68197,"La Mesa-Spring Valley","ELEMENTARY",2003,2016,14
+"603",37,68205,"Lemon Grove Elementary","ELEMENTARY",2003,2016,14
+"604",37,68213,"Mountain Empire Unified","UNIFIED",2003,2016,14
+"605",37,68221,"National Elementary","ELEMENTARY",2003,2016,14
+"606",37,68296,"Poway Unified","UNIFIED",2003,2016,14
+"607",37,68304,"Ramona City Unified","UNIFIED",2003,2016,14
+"608",37,68312,"Rancho Santa Fe Elementary","ELEMENTARY",2003,2016,14
+"609",37,68338,"San Diego City Unified","UNIFIED",2003,2016,14
+"610",37,68346,"San Dieguito Union High","HIGH",2003,2016,14
+"611",37,68353,"San Pasqual Union Elementary","ELEMENTARY",2003,2016,14
+"612",37,68361,"Santee Elementary","ELEMENTARY",2003,2016,14
+"613",37,68379,"San Ysidro Elementary","ELEMENTARY",2003,2016,14
+"614",37,68387,"Solana Beach Elementary","ELEMENTARY",2003,2016,14
+"615",37,68395,"South Bay Union Elementary","ELEMENTARY",2003,2016,14
+"616",37,68403,"Spencer Valley Elementary","ELEMENTARY",2003,2016,14
+"617",37,68411,"Sweetwater Union High","HIGH",2003,2016,14
+"618",37,68437,"Vallecitos Elementary","ELEMENTARY",2003,2016,14
+"619",37,68452,"Vista Unified","UNIFIED",2003,2016,14
+"620",37,73551,"Carlsbad Unified","UNIFIED",2003,2016,14
+"621",37,73569,"Oceanside City Unified","UNIFIED",2003,2016,14
+"622",37,73791,"San Marcos Unified","UNIFIED",2003,2016,14
+"623",37,75416,"Warner Unified","UNIFIED",2003,2016,14
+"624",37,75614,"Valley Center-Pauma Unified","UNIFIED",2003,2016,14
+"625",37,76851,"Bonsall Unified","UNIFIED",2014,2016,3
+"626",38,68478,"San Francisco Unified","UNIFIED",2003,2016,14
+"627",39,68486,"Banta Elementary","ELEMENTARY",2003,2016,14
+"628",39,68502,"Escalon Unified","UNIFIED",2003,2016,14
+"629",39,68536,"Holt Union Elementary","ELEMENTARY",2003,2007,5
+"630",39,68544,"Jefferson Elementary","ELEMENTARY",2003,2016,14
+"631",39,68551,"Lammersville Elementary","ELEMENTARY",2003,2011,9
+"632",39,68569,"Lincoln Unified","UNIFIED",2003,2016,14
+"633",39,68577,"Linden Unified","UNIFIED",2003,2016,14
+"634",39,68585,"Lodi Unified","UNIFIED",2003,2016,14
+"635",39,68593,"Manteca Unified","UNIFIED",2003,2016,14
+"636",39,68619,"New Hope Elementary","ELEMENTARY",2003,2016,14
+"637",39,68627,"New Jerusalem Elementary","ELEMENTARY",2003,2016,14
+"638",39,68635,"Oak View Union Elementary","ELEMENTARY",2003,2016,14
+"639",39,68650,"Ripon Unified","UNIFIED",2003,2016,14
+"640",39,68676,"Stockton City Unified","UNIFIED",2003,2016,14
+"641",39,75499,"Tracy Joint Unified","UNIFIED",2003,2016,14
+"642",39,76760,"Lammersville Joint Unified","UNIFIED",2011,2016,6
+"643",40,68700,"Atascadero Unified","UNIFIED",2003,2016,14
+"644",40,68726,"Cayucos Elementary","ELEMENTARY",2003,2016,14
+"645",40,68759,"Lucia Mar Unified","UNIFIED",2003,2016,14
+"646",40,68791,"Pleasant Valley Joint Union Elementary","ELEMENTARY",2003,2016,14
+"647",40,68809,"San Luis Coastal Unified","UNIFIED",2003,2016,14
+"648",40,68825,"San Miguel Joint Union Elementary","ELEMENTARY",2003,2016,14
+"649",40,68833,"Shandon Joint Unified","UNIFIED",2003,2016,14
+"650",40,68841,"Templeton Unified","UNIFIED",2003,2016,14
+"651",40,75457,"Paso Robles Joint Unified","UNIFIED",2003,2016,14
+"652",40,75465,"Coast Unified","UNIFIED",2003,2016,14
+"653",41,68858,"Bayshore Elementary","ELEMENTARY",2003,2016,14
+"654",41,68866,"Belmont-Redwood Shores Elementary","ELEMENTARY",2003,2016,14
+"655",41,68874,"Brisbane Elementary","ELEMENTARY",2003,2016,14
+"656",41,68882,"Burlingame Elementary","ELEMENTARY",2003,2016,14
+"657",41,68890,"Cabrillo Unified","UNIFIED",2003,2016,14
+"658",41,68908,"Hillsborough City Elementary","ELEMENTARY",2003,2016,14
+"659",41,68916,"Jefferson Elementary","ELEMENTARY",2003,2016,14
+"660",41,68924,"Jefferson Union High","HIGH",2003,2016,14
+"661",41,68932,"Pacifica School District","ELEMENTARY",2003,2016,14
+"662",41,68940,"La Honda-Pescadero Unified","UNIFIED",2003,2016,14
+"663",41,68957,"Las Lomitas Elementary","ELEMENTARY",2003,2016,14
+"664",41,68965,"Menlo Park City Elementary","ELEMENTARY",2003,2016,14
+"665",41,68973,"Millbrae Elementary","ELEMENTARY",2003,2016,14
+"666",41,68981,"Portola Valley Elementary","ELEMENTARY",2003,2016,14
+"667",41,68999,"Ravenswood City Elementary","ELEMENTARY",2003,2016,14
+"668",41,69005,"Redwood City Elementary","ELEMENTARY",2003,2016,14
+"669",41,69013,"San Bruno Park Elementary","ELEMENTARY",2003,2016,14
+"670",41,69021,"San Carlos Elementary","ELEMENTARY",2003,2016,14
+"671",41,69039,"San Mateo-Foster City Elementary","ELEMENTARY",2003,2016,14
+"672",41,69047,"San Mateo Union High","HIGH",2003,2016,14
+"673",41,69062,"Sequoia Union High","HIGH",2003,2016,14
+"674",41,69070,"South San Francisco Unified","UNIFIED",2003,2016,14
+"675",41,69088,"Woodside Elementary","ELEMENTARY",2003,2016,14
+"676",42,69104,"Ballard Elementary","ELEMENTARY",2003,2016,14
+"677",42,69112,"Blochman Union Elementary","ELEMENTARY",2003,2016,14
+"678",42,69120,"Santa Maria-Bonita Elementary","ELEMENTARY",2003,2016,14
+"679",42,69138,"Buellton Union Elementary","ELEMENTARY",2003,2016,14
+"680",42,69146,"Carpinteria Unified","UNIFIED",2003,2016,14
+"681",42,69153,"Casmalia Elementary","ELEMENTARY",2003,2008,6
+"682",42,69161,"Cold Spring Elementary","ELEMENTARY",2003,2016,14
+"683",42,69179,"College Elementary","ELEMENTARY",2003,2016,14
+"684",42,69195,"Goleta Union Elementary","ELEMENTARY",2003,2016,14
+"685",42,69203,"Guadalupe Union Elementary","ELEMENTARY",2003,2016,14
+"686",42,69211,"Hope Elementary","ELEMENTARY",2003,2016,14
+"687",42,69229,"Lompoc Unified","UNIFIED",2003,2016,14
+"688",42,69237,"Los Alamos Elementary","ELEMENTARY",2003,2011,9
+"689",42,69245,"Los Olivos Elementary","ELEMENTARY",2003,2016,14
+"690",42,69252,"Montecito Union Elementary","ELEMENTARY",2003,2016,14
+"691",42,69260,"Orcutt Union Elementary","ELEMENTARY",2003,2016,14
+"692",42,69278,"Santa Barbara Elementary","ELEMENTARY",2003,2004,2
+"693",42,69286,"Santa Barbara High","HIGH",2003,2004,2
+"694",42,69310,"Santa Maria Joint Union High","HIGH",2003,2016,14
+"695",42,69328,"Santa Ynez Valley Union High","HIGH",2003,2016,14
+"696",42,69336,"Solvang Elementary","ELEMENTARY",2003,2016,14
+"697",42,69344,"Vista Del Mar Union Elementary","ELEMENTARY",2003,2016,14
+"698",42,75010,"Cuyama Joint Unified","UNIFIED",2003,2016,14
+"699",42,76406,"Santa Barbara School Districts","Comm Admin Dist",2005,2011,7
+"700",42,76786,"Santa Barbara Unified","UNIFIED",2011,2016,6
+"701",43,69369,"Alum Rock Union Elementary","ELEMENTARY",2003,2016,14
+"702",43,69377,"Berryessa Union Elementary","ELEMENTARY",2003,2016,14
+"703",43,69385,"Cambrian Elementary","ELEMENTARY",2003,2016,14
+"704",43,69393,"Campbell Union Elementary","ELEMENTARY",2003,2016,14
+"705",43,69401,"Campbell Union High","HIGH",2003,2016,14
+"706",43,69419,"Cupertino Union Elementary","ELEMENTARY",2003,2016,14
+"707",43,69427,"East Side Union High","HIGH",2003,2016,14
+"708",43,69435,"Evergreen Elementary","ELEMENTARY",2003,2016,14
+"709",43,69450,"Franklin-McKinley Elementary","ELEMENTARY",2003,2016,14
+"710",43,69468,"Fremont Union High","HIGH",2003,2016,14
+"711",43,69484,"Gilroy Unified","UNIFIED",2003,2016,14
+"712",43,69492,"Lakeside Joint Elementary","ELEMENTARY",2003,2016,14
+"713",43,69500,"Loma Prieta Joint Union Elemen","ELEMENTARY",2003,2016,14
+"714",43,69518,"Los Altos Elementary","ELEMENTARY",2003,2016,14
+"715",43,69526,"Los Gatos Union Elementary","ELEMENTARY",2003,2016,14
+"716",43,69534,"Los Gatos-Saratoga Joint Union High","HIGH",2003,2016,14
+"717",43,69542,"Luther Burbank Elementary","ELEMENTARY",2003,2016,14
+"718",43,69567,"Montebello Elementary","ELEMENTARY",2003,2009,7
+"719",43,69575,"Moreland Elementary","ELEMENTARY",2003,2016,14
+"720",43,69583,"Morgan Hill Unified","UNIFIED",2003,2016,14
+"721",43,69591,"Mountain View-Whisman Elementary","ELEMENTARY",2003,2016,14
+"722",43,69609,"Mountain View-Los Altos Union High","HIGH",2003,2016,14
+"723",43,69617,"Mt. Pleasant Elementary","ELEMENTARY",2003,2016,14
+"724",43,69625,"Oak Grove Elementary","ELEMENTARY",2003,2016,14
+"725",43,69633,"Orchard Elementary","ELEMENTARY",2003,2016,14
+"726",43,69641,"Palo Alto Unified","UNIFIED",2003,2016,14
+"727",43,69666,"San Jose Unified","UNIFIED",2003,2016,14
+"728",43,69674,"Santa Clara Unified","UNIFIED",2003,2016,14
+"729",43,69682,"Saratoga Union Elementary","ELEMENTARY",2003,2016,14
+"730",43,69690,"Sunnyvale Elementary","ELEMENTARY",2003,2016,14
+"731",43,69708,"Union Elementary","ELEMENTARY",2003,2016,14
+"732",43,73387,"Milpitas Unified","UNIFIED",2003,2016,14
+"733",44,40261,"Santa Cruz City Elementary/High","Comm Admin Dist",2003,2016,14
+"734",44,69732,"Bonny Doon Union Elementary","ELEMENTARY",2003,2016,14
+"735",44,69757,"Happy Valley Elementary","ELEMENTARY",2003,2016,14
+"736",44,69765,"Live Oak Elementary","ELEMENTARY",2003,2016,14
+"737",44,69773,"Mountain Elementary","ELEMENTARY",2003,2016,14
+"738",44,69781,"Pacific Elementary","ELEMENTARY",2003,2016,14
+"739",44,69799,"Pajaro Valley Unified","UNIFIED",2003,2016,14
+"740",44,69807,"San Lorenzo Valley Unified","UNIFIED",2003,2016,14
+"741",44,69823,"Santa Cruz City High","HIGH",2015,2016,2
+"742",44,69849,"Soquel Elementary","ELEMENTARY",2003,2016,14
+"743",44,75432,"Scotts Valley Unified","UNIFIED",2003,2016,14
+"744",45,69856,"Anderson Union High","HIGH",2003,2016,14
+"745",45,69872,"Bella Vista Elementary","ELEMENTARY",2003,2016,14
+"746",45,69880,"Black Butte Union Elementary","ELEMENTARY",2003,2016,14
+"747",45,69914,"Cascade Union Elementary","ELEMENTARY",2003,2016,14
+"748",45,69922,"Castle Rock Union Elementary","ELEMENTARY",2003,2016,14
+"749",45,69948,"Columbia Elementary","ELEMENTARY",2003,2016,14
+"750",45,69955,"Cottonwood Union Elementary","ELEMENTARY",2003,2016,14
+"751",45,69971,"Enterprise Elementary","ELEMENTARY",2003,2016,14
+"752",45,69989,"Fall River Joint Unified","UNIFIED",2003,2016,14
+"753",45,69997,"French Gulch-Whiskeytown Elementary","ELEMENTARY",2003,2016,14
+"754",45,70003,"Grant Elementary","ELEMENTARY",2003,2016,14
+"755",45,70011,"Happy Valley Union Elementary","ELEMENTARY",2003,2016,14
+"756",45,70029,"Igo, Ono, Platina Union Elementary","ELEMENTARY",2003,2016,14
+"757",45,70037,"Indian Springs Elementary","ELEMENTARY",2003,2016,14
+"758",45,70045,"Junction Elementary","ELEMENTARY",2003,2016,14
+"759",45,70052,"Millville Elementary","ELEMENTARY",2003,2016,14
+"760",45,70078,"North Cow Creek Elementary","ELEMENTARY",2003,2016,14
+"761",45,70086,"Oak Run Elementary","ELEMENTARY",2003,2016,14
+"762",45,70094,"Pacheco Union Elementary","ELEMENTARY",2003,2016,14
+"763",45,70110,"Redding Elementary","ELEMENTARY",2003,2016,14
+"764",45,70128,"Shasta Union Elementary","ELEMENTARY",2003,2016,14
+"765",45,70136,"Shasta Union High","HIGH",2003,2016,14
+"766",45,70169,"Whitmore Union Elementary","ELEMENTARY",2003,2016,14
+"767",45,73700,"Mountain Union Elementary","ELEMENTARY",2003,2016,14
+"768",45,75267,"Gateway Unified","UNIFIED",2003,2016,14
+"769",46,70177,"Sierra-Plumas Joint Unified","UNIFIED",2003,2016,14
+"770",47,70185,"Big Springs Union Elementary","ELEMENTARY",2003,2016,14
+"771",47,70193,"Bogus Elementary","ELEMENTARY",2003,2016,14
+"772",47,70201,"Butteville Union Elementary","ELEMENTARY",2003,2016,14
+"773",47,70227,"Delphic Elementary","ELEMENTARY",2003,2016,14
+"774",47,70243,"Dunsmuir Elementary","ELEMENTARY",2003,2016,14
+"775",47,70250,"Dunsmuir Joint Union High","HIGH",2003,2016,14
+"776",47,70268,"Etna Union Elementary","ELEMENTARY",2003,2007,5
+"777",47,70276,"Etna Union High","HIGH",2003,2007,5
+"778",47,70292,"Forks of Salmon Elementary","ELEMENTARY",2003,2016,14
+"779",47,70300,"Fort Jones Union Elementary","ELEMENTARY",2003,2007,5
+"780",47,70318,"Gazelle Union Elementary","ELEMENTARY",2003,2016,14
+"781",47,70326,"Grenada Elementary","ELEMENTARY",2003,2016,14
+"782",47,70334,"Happy Camp Union Elementary","ELEMENTARY",2003,2016,14
+"783",47,70359,"Hornbrook Elementary","ELEMENTARY",2003,2016,14
+"784",47,70367,"Junction Elementary","ELEMENTARY",2003,2016,14
+"785",47,70375,"Klamath River Union Elementary","ELEMENTARY",2003,2016,14
+"786",47,70383,"Little Shasta Elementary","ELEMENTARY",2003,2016,14
+"787",47,70409,"McCloud Union Elementary","ELEMENTARY",2003,2016,14
+"788",47,70417,"Montague Elementary","ELEMENTARY",2003,2016,14
+"789",47,70425,"Mt. Shasta Union Elementary","ELEMENTARY",2003,2016,14
+"790",47,70433,"Quartz Valley Elementary","ELEMENTARY",2003,2007,5
+"791",47,70458,"Seiad Elementary","ELEMENTARY",2003,2016,14
+"792",47,70466,"Siskiyou Union High","HIGH",2003,2016,14
+"793",47,70482,"Weed Union Elementary","ELEMENTARY",2003,2016,14
+"794",47,70490,"Willow Creek Elementary","ELEMENTARY",2003,2016,14
+"795",47,70508,"Yreka Union Elementary","ELEMENTARY",2003,2016,14
+"796",47,70516,"Yreka Union High","HIGH",2003,2016,14
+"797",47,73684,"Butte Valley Unified","UNIFIED",2003,2016,14
+"798",47,76455,"Scott Valley Unified","UNIFIED",2007,2016,10
+"799",48,70524,"Benicia Unified","UNIFIED",2003,2016,14
+"800",48,70532,"Dixon Unified","UNIFIED",2003,2016,14
+"801",48,70540,"Fairfield-Suisun Unified","UNIFIED",2003,2016,14
+"802",48,70565,"Travis Unified","UNIFIED",2003,2016,14
+"803",48,70573,"Vacaville Unified","UNIFIED",2003,2016,14
+"804",48,70581,"Vallejo City Unified","UNIFIED",2003,2016,14
+"805",49,40246,"Petaluma City Elementary/Joint Union High","Comm Admin Dist",2003,2016,14
+"806",49,40253,"Santa Rosa Elementary/High, City of","Comm Admin Dist",2003,2016,14
+"807",49,70599,"Alexander Valley Union Elementary","ELEMENTARY",2003,2016,14
+"808",49,70607,"West Sonoma County Union High","HIGH",2003,2016,14
+"809",49,70615,"Bellevue Union Elementary","ELEMENTARY",2003,2016,14
+"810",49,70623,"Bennett Valley Union Elementary","ELEMENTARY",2003,2016,14
+"811",49,70649,"Cinnabar Elementary","ELEMENTARY",2003,2016,14
+"812",49,70656,"Cloverdale Unified","UNIFIED",2003,2016,14
+"813",49,70672,"Dunham Elementary","ELEMENTARY",2003,2016,14
+"814",49,70680,"Forestville Union Elementary","ELEMENTARY",2003,2016,14
+"815",49,70698,"Fort Ross Elementary","ELEMENTARY",2003,2016,14
+"816",49,70706,"Geyserville Unified","UNIFIED",2003,2016,14
+"817",49,70714,"Gravenstein Union Elementary","ELEMENTARY",2003,2016,14
+"818",49,70722,"Guerneville Elementary","ELEMENTARY",2003,2016,14
+"819",49,70730,"Harmony Union Elementary","ELEMENTARY",2003,2016,14
+"820",49,70763,"Horicon Elementary","ELEMENTARY",2003,2016,14
+"821",49,70789,"Kenwood Elementary","ELEMENTARY",2003,2016,14
+"822",49,70797,"Liberty Elementary","ELEMENTARY",2003,2016,14
+"823",49,70805,"Mark West Union Elementary","ELEMENTARY",2003,2016,14
+"824",49,70813,"Monte Rio Union Elementary","ELEMENTARY",2003,2016,14
+"825",49,70821,"Montgomery Elementary","ELEMENTARY",2003,2016,14
+"826",49,70839,"Oak Grove Union Elementary","ELEMENTARY",2003,2016,14
+"827",49,70847,"Old Adobe Union Elementary","ELEMENTARY",2003,2016,14
+"828",49,70854,"Petaluma City Elementary","ELEMENTARY",2003,2016,14
+"829",49,70870,"Piner-Olivet Union Elementary","ELEMENTARY",2003,2016,14
+"830",49,70888,"Kashia Elementary","ELEMENTARY",2003,2016,14
+"831",49,70896,"Rincon Valley Union Elementary","ELEMENTARY",2003,2016,14
+"832",49,70904,"Roseland Elementary","ELEMENTARY",2003,2016,14
+"833",49,70912,"Santa Rosa Elementary","ELEMENTARY",2003,2016,13
+"834",49,70920,"Santa Rosa High [Common Admin Member]","HIGH",2005,2009,4
+"835",49,70938,"Sebastopol Union Elementary","ELEMENTARY",2003,2016,14
+"836",49,70953,"Sonoma Valley Unified","UNIFIED",2003,2016,14
+"837",49,70961,"Twin Hills Union Elementary","ELEMENTARY",2003,2016,14
+"838",49,70979,"Two Rock Union Elementary","ELEMENTARY",2003,2016,14
+"839",49,70995,"Waugh Elementary","ELEMENTARY",2003,2016,14
+"840",49,71001,"West Side Union Elementary","ELEMENTARY",2003,2016,14
+"841",49,71019,"Wilmar Union Elementary","ELEMENTARY",2003,2016,14
+"842",49,71035,"Wright Elementary","ELEMENTARY",2003,2016,14
+"843",49,73882,"Cotati-Rohnert Park Unified","UNIFIED",2003,2016,14
+"844",49,75358,"Windsor Unified","UNIFIED",2003,2016,14
+"845",49,75390,"Healdsburg Unified","UNIFIED",2003,2016,14
+"846",49,76604,"SBE - River Montessori Elementary Charter","UNIFIED",2009,2013,5
+"847",50,40717,"Modesto City Schools","Comm Admin Dist",2003,2016,14
+"848",50,71043,"Ceres Unified","UNIFIED",2003,2016,14
+"849",50,71050,"Chatom Union Elementary","ELEMENTARY",2003,2016,14
+"850",50,71068,"Denair Unified","UNIFIED",2003,2016,14
+"851",50,71076,"Empire Union Elementary","ELEMENTARY",2003,2016,14
+"852",50,71084,"Gratton Elementary","ELEMENTARY",2003,2016,14
+"853",50,71092,"Hart-Ransom Union Elementary","ELEMENTARY",2003,2016,14
+"854",50,71100,"Hickman Elementary","ELEMENTARY",2003,2016,14
+"855",50,71134,"Keyes Union Elementary","ELEMENTARY",2003,2016,14
+"856",50,71142,"Knights Ferry Elementary","ELEMENTARY",2003,2016,14
+"857",50,71159,"La Grange Elementary","ELEMENTARY",2003,2012,10
+"858",50,71209,"Paradise Elementary","ELEMENTARY",2003,2016,14
+"859",50,71217,"Patterson Joint Unified","UNIFIED",2003,2016,14
+"860",50,71233,"Roberts Ferry Union Elementary","ELEMENTARY",2003,2016,14
+"861",50,71266,"Salida Union Elementary","ELEMENTARY",2003,2016,14
+"862",50,71274,"Shiloh Elementary","ELEMENTARY",2003,2016,14
+"863",50,71282,"Stanislaus Union Elementary","ELEMENTARY",2003,2016,14
+"864",50,71290,"Sylvan Union Elementary","ELEMENTARY",2003,2016,14
+"865",50,71308,"Turlock Joint Elementary","ELEMENTARY",2003,2004,2
+"866",50,71316,"Turlock Joint Union High","HIGH",2003,2004,2
+"867",50,71324,"Valley Home Joint Elementary","ELEMENTARY",2003,2016,14
+"868",50,73601,"Newman-Crows Landing Unified","UNIFIED",2003,2016,14
+"869",50,75549,"Hughson Unified","UNIFIED",2003,2016,14
+"870",50,75556,"Riverbank Unified","UNIFIED",2003,2016,14
+"871",50,75564,"Oakdale Joint Unified","UNIFIED",2003,2016,14
+"872",50,75572,"Waterford Unified","UNIFIED",2003,2016,14
+"873",50,75739,"Turlock Unified","UNIFIED",2004,2016,13
+"874",51,71357,"Brittan Elementary","ELEMENTARY",2003,2016,14
+"875",51,71365,"Browns Elementary","ELEMENTARY",2003,2016,14
+"876",51,71373,"East Nicolaus Joint Union High","HIGH",2003,2016,14
+"877",51,71381,"Franklin Elementary","ELEMENTARY",2003,2016,14
+"878",51,71399,"Live Oak Unified","UNIFIED",2003,2016,14
+"879",51,71407,"Marcum-Illinois Union Elementary","ELEMENTARY",2003,2016,14
+"880",51,71415,"Meridian Elementary","ELEMENTARY",2003,2016,14
+"881",51,71423,"Nuestro Elementary","ELEMENTARY",2003,2016,14
+"882",51,71431,"Pleasant Grove Joint Union Elementary","ELEMENTARY",2003,2016,14
+"883",51,71449,"Sutter Union High","HIGH",2003,2016,14
+"884",51,71456,"Winship Elementary","ELEMENTARY",2003,2016,14
+"885",51,71464,"Yuba City Unified","UNIFIED",2003,2016,14
+"886",52,71472,"Antelope Elementary","ELEMENTARY",2003,2016,14
+"887",52,71480,"Bend Elementary","ELEMENTARY",2003,2012,10
+"888",52,71498,"Corning Union Elementary","ELEMENTARY",2003,2016,14
+"889",52,71506,"Corning Union High","HIGH",2003,2016,14
+"890",52,71514,"Elkins Elementary","ELEMENTARY",2003,2016,14
+"891",52,71522,"Evergreen Union Elementary","ELEMENTARY",2003,2016,14
+"892",52,71530,"Flournoy Union Elementary","ELEMENTARY",2003,2016,14
+"893",52,71548,"Gerber Union Elementary","ELEMENTARY",2003,2016,14
+"894",52,71555,"Kirkwood Elementary","ELEMENTARY",2003,2016,14
+"895",52,71563,"Lassen View Union Elementary","ELEMENTARY",2003,2016,14
+"896",52,71571,"Los Molinos Unified","UNIFIED",2003,2016,14
+"897",52,71589,"Manton Joint Union Elementary","ELEMENTARY",2003,2013,11
+"898",52,71605,"Mineral Elementary","ELEMENTARY",2003,2013,11
+"899",52,71613,"Plum Valley Elementary","ELEMENTARY",2003,2013,11
+"900",52,71621,"Red Bluff Union Elementary","ELEMENTARY",2003,2016,14
+"901",52,71639,"Red Bluff Union High","HIGH",2003,2016,14
+"902",52,71647,"Reeds Creek Elementary","ELEMENTARY",2003,2016,14
+"903",52,71654,"Richfield Elementary","ELEMENTARY",2003,2016,14
+"904",53,71662,"Burnt Ranch Elementary","ELEMENTARY",2003,2016,14
+"905",53,71670,"Coffee Creek Elementary","ELEMENTARY",2003,2016,14
+"906",53,71688,"Cox Bar Elementary","ELEMENTARY",2003,2014,12
+"907",53,71696,"Douglas City Elementary","ELEMENTARY",2003,2016,14
+"908",53,71738,"Junction City Elementary","ELEMENTARY",2003,2016,14
+"909",53,71746,"Lewiston Elementary","ELEMENTARY",2003,2016,14
+"910",53,71761,"Trinity Center Elementary","ELEMENTARY",2003,2016,14
+"911",53,71779,"Trinity Union High","HIGH",2003,2008,6
+"912",53,71787,"Weaverville Elementary","ELEMENTARY",2003,2008,6
+"913",53,73833,"Southern Trinity Joint Unified","UNIFIED",2003,2016,14
+"914",53,75028,"Mountain Valley Unified","UNIFIED",2003,2016,14
+"915",53,76513,"Trinity Alps Unified","UNIFIED",2008,2016,9
+"916",54,71795,"Allensworth Elementary","ELEMENTARY",2003,2016,14
+"917",54,71803,"Alpaugh Unified","UNIFIED",2003,2016,14
+"918",54,71811,"Alta Vista Elementary","ELEMENTARY",2003,2016,14
+"919",54,71829,"Buena Vista Elementary","ELEMENTARY",2003,2016,14
+"920",54,71837,"Burton Elementary","ELEMENTARY",2003,2016,14
+"921",54,71845,"Citrus South Tule Elementary","ELEMENTARY",2003,2015,13
+"922",54,71852,"Columbine Elementary","ELEMENTARY",2003,2016,14
+"923",54,71860,"Cutler-Orosi Joint Unified","UNIFIED",2003,2016,14
+"924",54,71894,"Ducor Union Elementary","ELEMENTARY",2003,2016,14
+"925",54,71902,"Earlimart Elementary","ELEMENTARY",2003,2016,14
+"926",54,71910,"Exeter Union Elementary","ELEMENTARY",2003,2013,11
+"927",54,71928,"Exeter Union High","HIGH",2003,2013,11
+"928",54,71944,"Hope Elementary","ELEMENTARY",2003,2016,14
+"929",54,71951,"Hot Springs Elementary","ELEMENTARY",2003,2016,14
+"930",54,71969,"Kings River Union Elementary","ELEMENTARY",2003,2016,14
+"931",54,71985,"Liberty Elementary","ELEMENTARY",2003,2016,14
+"932",54,71993,"Lindsay Unified","UNIFIED",2003,2016,14
+"933",54,72009,"Monson-Sultana Joint Union Elementary","ELEMENTARY",2003,2016,14
+"934",54,72017,"Oak Valley Union Elementary","ELEMENTARY",2003,2016,14
+"935",54,72025,"Outside Creek Elementary","ELEMENTARY",2003,2016,14
+"936",54,72033,"Palo Verde Union Elementary","ELEMENTARY",2003,2016,14
+"937",54,72041,"Pixley Union Elementary","ELEMENTARY",2003,2016,14
+"938",54,72058,"Pleasant View Elementary","ELEMENTARY",2003,2016,14
+"939",54,72082,"Richgrove Elementary","ELEMENTARY",2003,2016,14
+"940",54,72090,"Rockford Elementary","ELEMENTARY",2003,2016,14
+"941",54,72108,"Saucelito Elementary","ELEMENTARY",2003,2016,14
+"942",54,72116,"Sequoia Union Elementary","ELEMENTARY",2003,2016,14
+"943",54,72132,"Springville Union Elementary","ELEMENTARY",2003,2016,14
+"944",54,72140,"Stone Corral Elementary","ELEMENTARY",2003,2016,14
+"945",54,72157,"Strathmore Union Elementary","ELEMENTARY",2003,2016,14
+"946",54,72165,"Strathmore Union High","HIGH",2003,2004,2
+"947",54,72173,"Sundale Union Elementary","ELEMENTARY",2003,2016,14
+"948",54,72181,"Sunnyside Union Elementary","ELEMENTARY",2003,2016,14
+"949",54,72199,"Terra Bella Union Elementary","ELEMENTARY",2003,2016,14
+"950",54,72207,"Three Rivers Union Elementary","ELEMENTARY",2003,2016,14
+"951",54,72215,"Tipton Elementary","ELEMENTARY",2003,2016,14
+"952",54,72223,"Traver Joint Elementary","ELEMENTARY",2003,2016,14
+"953",54,72231,"Tulare City Elementary","ELEMENTARY",2003,2016,14
+"954",54,72249,"Tulare Joint Union High","HIGH",2003,2016,14
+"955",54,72256,"Visalia Unified","UNIFIED",2003,2016,14
+"956",54,72264,"Waukena Joint Union Elementary","ELEMENTARY",2003,2016,14
+"957",54,72272,"Woodlake Union Elementary","ELEMENTARY",2003,2012,10
+"958",54,72280,"Woodlake Union High","HIGH",2003,2012,10
+"959",54,72298,"Woodville Elementary","ELEMENTARY",2003,2016,14
+"960",54,75325,"Farmersville Unified","UNIFIED",2003,2016,14
+"961",54,75523,"Porterville Unified","UNIFIED",2003,2016,14
+"962",54,75531,"Dinuba Unified","UNIFIED",2003,2016,14
+"963",54,76794,"Woodlake Unified","UNIFIED",2012,2016,5
+"964",54,76836,"Exeter Unified","UNIFIED",2013,2016,4
+"965",55,72306,"Belleview Elementary","ELEMENTARY",2003,2016,14
+"966",55,72330,"Chinese Camp Elementary","ELEMENTARY",2003,2009,7
+"967",55,72348,"Columbia Union Elementary","ELEMENTARY",2003,2016,14
+"968",55,72355,"Curtis Creek Elementary","ELEMENTARY",2003,2016,14
+"969",55,72363,"Jamestown Elementary","ELEMENTARY",2003,2016,14
+"970",55,72371,"Sonora Elementary","ELEMENTARY",2003,2016,14
+"971",55,72389,"Sonora Union High","HIGH",2003,2016,14
+"972",55,72397,"Soulsbyville Elementary","ELEMENTARY",2003,2016,14
+"973",55,72405,"Summerville Elementary","ELEMENTARY",2003,2016,14
+"974",55,72413,"Summerville Union High","HIGH",2003,2016,14
+"975",55,72421,"Twain Harte-Long Barn Union Elementary","ELEMENTARY",2003,2016,14
+"976",55,75184,"Big Oak Flat-Groveland Unified","UNIFIED",2003,2016,14
+"977",56,72447,"Briggs Elementary","ELEMENTARY",2003,2016,14
+"978",56,72454,"Fillmore Unified","UNIFIED",2003,2016,14
+"979",56,72462,"Hueneme Elementary","ELEMENTARY",2003,2016,14
+"980",56,72470,"Mesa Union Elementary","ELEMENTARY",2003,2016,14
+"981",56,72504,"Mupu Elementary","ELEMENTARY",2003,2016,14
+"982",56,72512,"Ocean View Elementary","ELEMENTARY",2003,2016,14
+"983",56,72520,"Ojai Unified","UNIFIED",2003,2016,14
+"984",56,72538,"Oxnard Elementary","ELEMENTARY",2003,2016,14
+"985",56,72546,"Oxnard Union High","HIGH",2003,2016,14
+"986",56,72553,"Pleasant Valley School","ELEMENTARY",2003,2016,14
+"987",56,72561,"Rio Elementary","ELEMENTARY",2003,2016,14
+"988",56,72579,"Santa Clara Elementary","ELEMENTARY",2003,2016,14
+"989",56,72587,"Santa Paula Elementary","ELEMENTARY",2003,2013,11
+"990",56,72595,"Santa Paula Union High","HIGH",2003,2013,11
+"991",56,72603,"Simi Valley Unified","UNIFIED",2003,2016,14
+"992",56,72611,"Somis Union Elementary","ELEMENTARY",2003,2016,14
+"993",56,72652,"Ventura Unified","UNIFIED",2003,2016,14
+"994",56,73759,"Conejo Valley Unified","UNIFIED",2003,2016,14
+"995",56,73874,"Oak Park Unified","UNIFIED",2003,2016,14
+"996",56,73940,"Moorpark Unified","UNIFIED",2003,2016,14
+"997",56,76828,"Santa Paula Unified","UNIFIED",2013,2016,4
+"998",57,72678,"Davis Joint Unified","UNIFIED",2003,2016,14
+"999",57,72686,"Esparto Unified","UNIFIED",2003,2016,14
+"1000",57,72694,"Washington Unified","UNIFIED",2003,2016,14
+"1001",57,72702,"Winters Joint Unified","UNIFIED",2003,2016,14
+"1002",57,72710,"Woodland Joint Unified","UNIFIED",2003,2016,14
+"1003",58,72728,"Camptonville Elementary","ELEMENTARY",2003,2016,14
+"1004",58,72736,"Marysville Joint Unified","UNIFIED",2003,2016,14
+"1005",58,72744,"Plumas Elementary","ELEMENTARY",2003,2016,14
+"1006",58,72751,"Wheatland Elementary","ELEMENTARY",2003,2016,14
+"1007",58,72769,"Wheatland Union High","HIGH",2003,2016,14

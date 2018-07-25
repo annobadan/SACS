@@ -262,7 +262,7 @@ df_exp_perADA_allyears <- df_exp_perADA_allyears %>%
 
 
 ### Save as various file types
-setwd(file.path(paste0(work_dir, "/table")))
+setwd(file.path(paste0(work_dir, "/data")))
 save(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.rda")
 write.csv(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.csv")
 write.dta(df_exp_perADA_allyears, file = "Total_Expenditures_PerADA_allyears.dta")
