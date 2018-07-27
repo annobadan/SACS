@@ -32,10 +32,7 @@ data_dir <- c("D:/Data/LCFF/Financial/Annual Financial Data")
 ### Call libraries
 library(readxl)
 library(foreign)
-library(haven)
 library(tidyverse)
-library(dplyr)
-library(ggplot2)
 library(scales)
 
 
@@ -124,6 +121,16 @@ filename <- c("Total Expenditure perADA_01_Definition1_Not inflation adjusted.pd
 ggsave(paste0("figure/", filename, ".pdf"), p, width = 9, height = 5)
 
 
+plot_timetrend(data = df_plot, 
+               x = Fiscalyear, 
+               y = mean_value, 
+               # group = key, 
+               # facet = Dtype,
+               ref_line = TRUE, 
+               ref_line_pos = 2013, 
+               ylim = c(8000, 18000), 
+               xbreak = 14)
+
 
 ###'######################################################################
 ###'
@@ -177,6 +184,16 @@ p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) +
 filename <- c("Total Expenditure perADA_02_Inflation adjusted vs not adjusted.pdf")
 ggsave(paste0("figure/", filename, ".pdf"), p, width = 9, height = 6)
 
+
+plot_timetrend(data = df_plot, 
+               x = Fiscalyear, 
+               y = mean_value, 
+               group = key,
+               # facet = Dtype,
+               ref_line = TRUE, 
+               ref_line_pos = 2013, 
+               ylim = c(8000, 18000), 
+               xbreak = 14)
 
 
 ###'######################################################################
