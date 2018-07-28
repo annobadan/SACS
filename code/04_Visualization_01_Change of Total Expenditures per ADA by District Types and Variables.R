@@ -51,6 +51,17 @@ df <- df_exp_perADA_allyears  # assign brief name
 
 ###'######################################################################
 ###'
+###' Call plot_trend functions
+###' 
+###'
+
+setwd(work_dir)
+source("code/plot_trend_functions.R")
+
+
+
+###'######################################################################
+###'
 ###' Remove districts with insufficient years of data
 ###' 
 ###' => Analyze only traditional schools in elementary, high, and unified 
@@ -94,23 +105,9 @@ df_plot <- df_opr14 %>%
   summarise(mean_value = round(weighted.mean(D1_TotalExp_PP, K12ADA_C, na.rm = TRUE), 0))
 
 
-### Plot
-p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value)) + 
-  geom_point(size = 3.0) +  # point
-  geom_path(size = 1.0) +  # path  
-  geom_text(aes(label = comma(mean_value)), hjust = 0.5, vjust = 2.0) + # value label
-  geom_vline(aes(xintercept = 2013), color = "red", linetype = "dashed") +
-  
-  # Settings
-  theme_bw() + 
-  theme(panel.background = element_blank(),
-        panel.grid = element_blank(), 
-        legend.position = "bottom", 
-        legend.title = element_blank()) + 
-  
-  # Labels
-  scale_x_continuous(breaks = pretty_breaks(n = 14)) +
-  scale_y_continuous(labels = comma, limits = c(8000, 18000)) +  
+### Plot 
+p <- plot_trend_xy(df_plot, Fiscalyear, mean_value, yline = 2013, ylim = c(8000, 18000))
+p <- p + 
   labs(title = "Total expenditures per student (Not inflation adjusted)",
        subtitle = "Definition 1 (All funds), Weighted averages by ADA", 
        caption = "Source: Annual Financial Data, California Department of Education", 
@@ -120,16 +117,6 @@ p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value)) +
 filename <- c("Total Expenditure perADA_01_Definition1_Not inflation adjusted.pdf")
 ggsave(paste0("figure/", filename, ".pdf"), p, width = 9, height = 5)
 
-
-plot_timetrend(data = df_plot, 
-               x = Fiscalyear, 
-               y = mean_value, 
-               # group = key, 
-               # facet = Dtype,
-               ref_line = TRUE, 
-               ref_line_pos = 2013, 
-               ylim = c(8000, 18000), 
-               xbreak = 14)
 
 
 ###'######################################################################
@@ -155,26 +142,9 @@ df_plot$key <- factor(df_plot$key, levels = c("D1_TotalExp16_PP", "D1_TotalExp_P
 
 
 ### Plot
-p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) + 
-  # Point
-  geom_point(aes(shape = key, color = key), size = 3.0) + 
-  scale_linetype_manual(values = c("solid", "dashed")) + 
-  # Path
-  geom_path(aes(linetype = key, color = key), size = 1.0) + 
-  scale_color_manual(values = c("firebrick1", "dodgerblue1")) + 
-  # Value label
-  geom_text(aes(label = comma(mean_value)), hjust = 0.5, vjust = 2.5) +
-  # Reference line
-  geom_vline(aes(xintercept = 2013), color = "red", linetype = "dashed") +
-  # Settings
-  theme_bw() + 
-  theme(panel.background = element_blank(),
-        panel.grid = element_blank(), 
-        legend.position = "bottom", 
-        legend.title = element_blank()) + 
-  # Labels
-  scale_x_continuous(breaks = pretty_breaks(n = 14)) +
-  scale_y_continuous(labels = comma, limits = c(8000, 18000)) +  
+p <- plot_trend_grp(df_plot, Fiscalyear, mean_value, key, 
+                    yline = 2013, ylim = c(8000, 18000))
+p <- p + 
   labs(title = "Effect of the inflation adjustment using CPI-U deflator on district per-pupil expenditures",
        subtitle = "Definition 1 (All funds), Weighted averages by ADA", 
        caption = "Source: Annual Financial Data, California Department of Education", 
@@ -184,16 +154,6 @@ p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) +
 filename <- c("Total Expenditure perADA_02_Inflation adjusted vs not adjusted.pdf")
 ggsave(paste0("figure/", filename, ".pdf"), p, width = 9, height = 6)
 
-
-plot_timetrend(data = df_plot, 
-               x = Fiscalyear, 
-               y = mean_value, 
-               group = key,
-               # facet = Dtype,
-               ref_line = TRUE, 
-               ref_line_pos = 2013, 
-               ylim = c(8000, 18000), 
-               xbreak = 14)
 
 
 ###'######################################################################
@@ -225,26 +185,9 @@ df_plot$key <- factor(df_plot$key,
 
 
 ### Plot
-p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) + 
-  # Point
-  geom_point(aes(shape = key, color = key), size = 3.0) + 
-  scale_linetype_manual(values = c("solid", "dashed", "dotted")) + 
-  # Path
-  geom_path(aes(linetype = key, color = key), size = 1.0) + 
-  scale_color_manual(values = c("firebrick1", "dodgerblue1", "forestgreen")) + 
-  # Value label
-  geom_text(aes(label = comma(mean_value)), size = 3.0, hjust = 0.5, vjust = 2.0) +
-  # Reference line
-  geom_vline(aes(xintercept = 2013), color = "red", linetype = "dashed") +
-  # Settings
-  theme_bw() + 
-  theme(panel.background = element_blank(),
-        panel.grid = element_blank(), 
-        legend.position = "bottom", 
-        legend.title = element_blank()) + 
-  # Labels
-  scale_x_continuous(breaks = pretty_breaks(n = 14)) +
-  scale_y_continuous(labels = comma, limits = c(8000, 18000)) +  
+p <- plot_trend_grp(df_plot, Fiscalyear, mean_value, key, 
+                    yline = 2013, ylim = c(8000, 18000))
+p <- p + 
   labs(title = "District per-pupil expenditures based on All funds vs. General funds",
        subtitle = "Inflation adjusted using the CPI-U deflator, Weighted averages by ADA",
        caption = "Source: Annual Financial Data, California Department of Education", 
@@ -284,28 +227,10 @@ df_plot$Dtype <- factor(df_plot$Dtype,
 
 
 ### Plot
-p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) + 
-  # Point
-  geom_point(aes(shape = key, color = key), size = 3.0) + 
-  scale_linetype_manual(values = c("solid", "dashed")) + 
-  # Path
-  geom_path(aes(linetype = key, color = key), size = 1.0) + 
-  scale_color_manual(values = c("firebrick1", "dodgerblue1")) + 
-  # Value label
-  geom_text(aes(label = comma(mean_value)), size = 3, hjust = 0.5, vjust = 2.0) +
-  # Reference line
-  geom_vline(aes(xintercept = 2013), color = "red", linetype = "dashed") + 
-  # Facetting
-  facet_grid(~Dtype) + 
-  # Settings
-  theme_bw() + 
-  theme(panel.background = element_blank(),
-        panel.grid = element_blank(), 
-        legend.position = "bottom", 
-        legend.title = element_blank()) + 
-  # Labels
-  scale_x_continuous(breaks = pretty_breaks(n = 14)) +
-  scale_y_continuous(labels = comma, limits = c(8000, 18000)) +  
+p <- plot_trend_grp_facet(df_plot, Fiscalyear, mean_value, 
+                          key, .~Dtype, 
+                          yline = 2013, ylim = c(8000, 18000))
+p <- p +  
   labs(title = "District per-pupil expenditures by district type and definitions",
        subtitle = "Inflation adjusted using the CPI-U deflator, Weighted averages by ADA",
        caption = "Source: Annual Financial Data, California Department of Education", 
@@ -340,26 +265,9 @@ df_plot$key <- factor(df_plot$key, levels = c("D1_TotalExp16_PP", "D1_TotalExp16
 
 
 ### Plot
-p <- ggplot(data = df_plot, aes(x = Fiscalyear, y = mean_value, group = key)) + 
-  # Point
-  geom_point(aes(shape = key, color = key), size = 3.0) + 
-  scale_linetype_manual(values = c("solid", "dashed")) + 
-  # Path
-  geom_path(aes(linetype = key, color = key), size = 1.0) + 
-  scale_color_manual(values = c("firebrick1", "dodgerblue1")) + 
-  # Value label
-  geom_text(aes(label = comma(mean_value)), size = 3.0, hjust = 0.5, vjust = 2.5) +
-  # Reference line
-  geom_vline(aes(xintercept = 2013), color = "red", linetype = "dashed") +
-  # Settings
-  theme_bw() + 
-  theme(panel.background = element_blank(),
-        panel.grid = element_blank(), 
-        legend.position = "bottom", 
-        legend.title = element_blank()) + 
-  # Labels
-  scale_x_continuous(breaks = pretty_breaks(n = 14)) +
-  scale_y_continuous(labels = comma, limits = c(8000, 18000)) +  
+p <- plot_trend_grp(df_plot, Fiscalyear, mean_value, key, 
+                    yline = 2013, ylim = c(8000, 18000))
+p <- p + 
   labs(title = "Effect of the COE proration on district per-pupil expenditures - Definition 1 (All funds)",
        subtitle = "Inflation adjusted using the CPI-U deflator, Weighted averages by ADA", 
        caption = "Source: Annual Financial Data, California Department of Education", 
