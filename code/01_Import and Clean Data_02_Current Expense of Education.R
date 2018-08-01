@@ -26,16 +26,15 @@ setwd(work_dir)
 
 
 ### Set data containing working directory
-data_dir <- c("D:/Data/LCFF/Financial/Current Expense of Education & Per-pupil Spending")
+data_dir <- c("D:/Data/LCFF/Financial/Current Expense of Education")
 
 
 ### Call libraries
+library(tidyverse)
 library(readxl)
 library(foreign)
 library(haven)
-library(dplyr)
-library(ggplot2)
-library(stringr)
+
 
 
 ###'######################################################################
@@ -83,6 +82,25 @@ for (i in seq_along(years)){
 }
 
 
+
+###'######################################################################
+###'
+###' Generate CPI adjusted expenditures
+###'
+###'
+
+### Call functions
+setwd(work_dir)
+source("code/functions/CPI_converter.R")
+
+
+### Generated CPI adjusted variables
+df <- current_expense_allyears
+df <- CPI_converter(df, 2016, FiscalYear, TotalExp_C)
+df <- CPI_converter(df, 2016, FiscalYear, TotalExp_K12_C)
+
+
+
 ###'######################################################################
 ###'
 ###' Save the resulting data frame
@@ -91,10 +109,9 @@ for (i in seq_along(years)){
 
 ### as .csv table
 setwd(work_dir)
-write.csv(current_expense_allyears, 
-          file = "table/current_expense_of_education_allyears.csv")
+write.csv(df, file = "data/current_expense_of_education_allyears.csv")
 
 ### as .rda file
 setwd(data_dir)
-save(current_expense_allyears, file = "current_expense_of_education_allyears.rda")
+save(df, file = "current_expense_of_education_allyears.rda")
 

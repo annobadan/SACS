@@ -1,11 +1,10 @@
 
 ###'######################################################################
 ###'
-###' (1) Defining Total Expenditures
+###' (2) Defining Student and Non-Student Spending
 ###' 
-###' => This forms the base for other calculations
 ###' 
-###' 20180719 JoonHo Lee
+###' 20180731 JoonHo Lee
 ###' 
 ###' 
 
@@ -29,14 +28,42 @@ data_dir <- c("D:/Data/LCFF/Financial/Annual Financial Data")
 
 
 ### Call libraries
+library(tidyverse)
 library(readxl)
-library(foreign)
 library(haven)
-library(dplyr)
-library(ggplot2)
+library(foreign)
 
-### Import the dataset: Current expense of education
+
+
+###'######################################################################
+###'
+###' Import two external datasets:
+###' 
+###' (1) Current expense of education
+###' (2) CPI-U Deflator
+###' 
+###' Apply CPI-U Deflator to the current expense of education data
+###' 
+###' 
+
+### Read CSV files
 df_cur_exp <- read.csv(file = "data/current_expense_of_education_allyears.csv")
+CPI <- read.csv(file = "data/CPI_1913-2017.csv", header = TRUE)
+
+
+###' Calculate the conversion factors based on 2016 dollars
+###' ex) $1.00 (2006) : $x (2016) = 201.6 : 240.0
+###'     $x (2016) = 240.0 / 201.6   
+CPI <- CPI %>% 
+  mutate(cvt_factor = 240.0/CPI)
+
+
+### CPI conversion over years
+df_cur_exp <- df_cur_exp %>%
+  left_join(CPI, by = c("FiscalYear" = "Year")) %>%
+  mutate(TotalExp16_C = round(TotalExp_C*cvt_factor, 2), 
+         TotalExp16_K12_C = round(TotalExp_K12_C*cvt_factor, 2)) %>%
+  select(-CPI, -cvt_factor)
 
 
 
@@ -222,7 +249,7 @@ for (i in seq_along(years)){  # Loop over years
     names(temp)[idx_vars] <- paste0("D", k, "_", names(temp)[idx_vars])
     assign(paste0("def", k), temp)
   }
-
+  
   def12_merged <- left_join(def1, select(def2, -Fiscalyear, -Dname, -Dtype, -contains("ADA")), 
                             by = c("Ccode", "Dcode"))
   
