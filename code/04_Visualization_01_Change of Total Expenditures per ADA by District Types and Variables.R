@@ -43,9 +43,13 @@ library(scales)
 ###' 
 ###'   
 
+### Version 1.0
 load("data/Total_Expenditures_PerADA_allyears.rda")
 
 df <- df_exp_perADA_allyears  # assign brief name
+
+### Version 2.0
+load(file = "data/collect_dist_measures.RData")
 
 
 
@@ -56,7 +60,7 @@ df <- df_exp_perADA_allyears  # assign brief name
 ###'
 
 setwd(work_dir)
-source("code/functions_plot_trend.R")
+source("code/functions/plot_trend.R")
 
 
 
@@ -80,6 +84,7 @@ years_of_operation <- df %>%
             opr_years = n())
 
 write.csv(years_of_operation, file = "table/years_of_operation.csv")
+save(years_of_operation, file = "data/years_of_operation.rda")
 
 
 ### Merge with the original data and filter only 14 years of operation
