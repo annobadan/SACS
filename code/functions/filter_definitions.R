@@ -267,11 +267,7 @@ gen_nonstd_sub <- function(){
                           !!Object %in% c(3701, 3702) | 
                           !!Object >= 3800 & !!Object <= 3899)))
   
-  
-  
-  
-  df$nonstd_sub <- 
-    
+
 
   
   
