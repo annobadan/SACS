@@ -29,11 +29,11 @@ data_dir <- c("D:/Data/LCFF/Financial/Annual Financial Data")
 
 
 ### Call libraries
+library(tidyverse)
 library(readxl)
 library(foreign)
 library(haven)
-library(dplyr)
-library(ggplot2)
+
 
 ### Import the dataset: Current expense of education
 df_cur_exp <- read.csv(file = "data/current_expense_of_education_allyears.csv")
@@ -89,6 +89,10 @@ for (i in seq_along(years)){  # Loop over years
   load(file = "UserGL_merged.rda")
   
   df <- UserGL_merged; rm(UserGL_merged) 
+  
+  df <- df %>%
+    gen_exp_vs_rev() %>%
+    tag_exp_definitions() 
   
   
   for(j in seq_along(definitions)){  # Loop over two definitions  
