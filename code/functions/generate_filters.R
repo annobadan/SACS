@@ -1,7 +1,7 @@
 
 ###'######################################################################
 ###'
-###' Generate filters 
+###' Generate categories 
 ###' 
 ###' to define the (sub)categories of SACS expenditures and revenues
 ###'  
@@ -13,26 +13,76 @@
 library(tidyverse)
 
 
-# ### Import data for testing
-# data_dir <- c("D:/Data/LCFF/Financial/Annual Financial Data")
-# years <- paste0(sprintf("%02d",seq(3, 16)), sprintf("%02d",seq(4, 17)))
-# i = 1
-# year_chr <- years[i]
-# setwd(paste0(data_dir, "/sacs", year_chr))
-# load(file = "UserGL_merged.rda")
-# df <- UserGL_merged
+
+###'######################################################################
+###'
+###' Import data for testing
+###' 
+###' 
+
+data_dir <- c("D:/Data/LCFF/Financial/Annual Financial Data")
+years <- paste0(sprintf("%02d",seq(3, 16)), sprintf("%02d",seq(4, 17)))
+i = 1
+year_chr <- years[i]
+setwd(paste0(data_dir, "/sacs", year_chr))
+load(file = "UserGL_merged.rda")
+df <- UserGL_merged
 
 
-### Define the function
-generate_filters <- function(df){
+
+###'######################################################################
+###'
+###' Define a helper function to generate filter
+###' 
+###' 
+
+gen_factor <- function(df, 
+                       varname, 
+                       remainders,     
+                       condition_vector, 
+                       idx_list, 
+                       name_vec){
+  
+  # Generate a uniform vector
+  df$newvar <- remainders
+  
+  #' Include only cases satisfying the pre-condition
+  idx_NA <- which(condition_vector %in% c(FALSE, NA))
+  df[idx_NA, "newvar"] <- NA
+  
+  # Recode categories
+  for (i in seq_along(name_vec)){
+    df[idx_list[[i]], "newvar"] <- name_vec[i]
+  }
+  
+  # Convert to a factor
+  df$newvar <- factor(df$newvar, levels = c(name_vec, remainders))
+  
+  # Rename variable
+  names(df)[names(df) == "newvar"] <- varname
+  
+  return(df)
+}
+
+
+
+###'######################################################################
+###'
+###' Define a function generating categories
+###' 
+###' 
+
+generate_categories <- function(df){
+  
  
   ###'######################################################################
   ###'
-  ###' (1) Generate a factor variable contrasting expenditures vs. revenues
-  ###'     while excluding some categories  
+  ###' Expenditures vs. Revenues
+  ###'     
+  ###' Exclude some categories  
   ###'     
   ###' 
-  ###' 1-1. << EXPENDITURES >>:
+  ###' << EXPENDITURES >>:
   ###' 
   ###' total expenditures as all SACS outgo (objects 1000-7999)
   ###' 
@@ -48,7 +98,7 @@ generate_filters <- function(df){
   ###' elsewhere and thus should be taken out to avoid double-counting.
   ###'
   ###'
-  ###' 1-2. << REVENUES >>:
+  ###' << REVENUES >>:
   ###' 
   ###' total revenues as all SACS revenues (objects 8000-8999)
   ###' 
@@ -101,7 +151,8 @@ generate_filters <- function(df){
   
   ###'######################################################################
   ###'
-  ###' Tag entries for Definition 1 & 2 for total expenditures 
+  ###' Definition 1 & 2 for total expenditures 
+  ###' 
   ###' 
   ###' Definition 1: All fund
   ###' 
@@ -127,16 +178,15 @@ generate_filters <- function(df){
   
   ###'######################################################################
   ###' 
-  ###' Generate a factor variable separating total expenditures into 
-  ###' Student and Non-Student spending
+  ###' Student vs. Non-Student Spending
   ###'
-  ###' 3-1. STUDENT SPENDING
+  ###' STUDENT SPENDING
   ###' 
   ###'      parallels the CDE definition of Current Expense of Education
   ###'      All total expenditure except the non-student spending
   ###'      
   ###'      
-  ###' 3-2. NON-STUDENT SPENDING
+  ###' NON-STUDENT SPENDING
   ###' 
   ###' - Debt service (Object 7430-7439)
   ###' - Capital Outlay and Facilities (Function 8500  OR  Object 6000-6499)
@@ -172,7 +222,7 @@ generate_filters <- function(df){
   
   ###'######################################################################
   ###' 
-  ###' Generate a factor variable for the subcategories of Non-student spending 
+  ###'  Subcategories of Non-student spending 
   ###'          
   ###' - Debt Service (Object 7430-7439)
   ###' - Capital Outlay and Facilities (Function 8500  OR  Object 6000-6499)
@@ -183,15 +233,11 @@ generate_filters <- function(df){
   ###' 
   ###' 
   
-  # Generate a uniform vector
-  df$nonstd_sub <- "Other Non-Student Spending"
+  varname <- "nonstd_sub"
   
-  # Exclude NA, revenues, student spending
-  idx_NA <- which(with(df, std_vs_nonstd == "Non-student Spending") %in% c(FALSE, NA))
-  df[idx_NA, "nonstd_sub"] <- NA
+  remainders <- "Other Non-Student Spending"
   
-  # Recode Non-student spending subcategories
-  nonstd_TRUE <- df$std_vs_nonstd == "Non-student Spending"
+  condition_vector <- df$std_vs_nonstd == "Non-student Spending"
   
   idx_list <- list(
     with(df, which(nonstd_TRUE & (Object >= 7430 & Object <= 7439))), 
@@ -202,7 +248,7 @@ generate_filters <- function(df){
                                     Goal >= 4000 & Goal <= 4749 | Goal == 5710 ))), 
     with(df, which(nonstd_TRUE & (Object %in% c(3701, 3702)))), 
     with(df, which(nonstd_TRUE & (Object >= 3800 & Object <= 3899)))
-    )
+  )
   
   name_vec <- c("Debt Service", 
                 "Capital Outlay and Facilities", 
@@ -211,19 +257,17 @@ generate_filters <- function(df){
                 "Retiree Benefits", 
                 "PERS Reductions")
   
-  for (i in seq_along(name_vec)){
-    df[idx_list[[i]], "nonstd_sub"] <- name_vec[i]
-  }
-  
-  # Convert to a factor
-  df$nonstd_sub <- factor(df$nonstd_sub, levels = c(name_vec, "Other Non-Student Spending"))
+  df <- gen_factor(df, varname, remainders, condition_vector, idx_list, name_vec)
+
+  summary(df$nonstd_sub)  
+
   
   
   ###'######################################################################
   ###' 
-  ###' Defining subcategories of student spending
+  ###' Subcategories of Student Spending 
   ###' 
-  ###' (1) By Object codes
+  ###' (1) By object codes
   ###' 
   ###' - Salaries (object 1000-2999)
   ###' - Employee Benefits (object 3000-3999)
@@ -240,7 +284,7 @@ generate_filters <- function(df){
   idx_NA <- which(with(df, std_vs_nonstd == "Student Spending") %in% c(FALSE, NA))
   df[idx_NA, "std_sub"] <- NA
   
-  # Recode Non-student spending subcategories
+  # Recode Student spending subcategories
   std_TRUE <- df$std_vs_nonstd == "Student Spending"
   
   idx_list <- list(
@@ -267,7 +311,7 @@ generate_filters <- function(df){
   
   ###'######################################################################
   ###' 
-  ###' Defining subcategories of Salaries
+  ###' Subcategories of Salaries
   ###' 
   ###' - Certificated Teachers (object 1100)
   ###' - Administrators and Supervisors (object 1300, 2300)
@@ -308,7 +352,7 @@ generate_filters <- function(df){
   
   ###'######################################################################
   ###' 
-  ###' Defining subcategories of Employee Benefits
+  ###' Subcategories of Employee Benefits
   ###' 
   ###' - Current Health and Welfare, Certificated (object 3401)
   ###' - Current Health and Welfare, Classified (object 3402)
@@ -345,6 +389,61 @@ generate_filters <- function(df){
   
   # Convert to a factor
   df$benefits <- factor(df$benefits, levels = c(name_vec, "Other Benefits"))
+  
+  
+  ###'######################################################################
+  ###' 
+  ###' Subcategories of Student Spending (All Instructional Expenditures)
+  ###' 
+  ###' (2) By Goal codes
+  ###' 
+  ###' - General Education, K-12 (Goal 1000-3999)
+  ###' - Supplemental Education, K-12 (Goal 4750-4999)
+  ###' - Special Education  (Goal 5000-5999)
+  ###' - ROC/P (Goal 6000-6999)
+  ###' - Child Care & Development (Goal 8500-8599)
+  ###' 
+  ###' 
+  
+  # Generate a uniform vector
+  df$goals <- "Other Goals"
+  
+  # Include only Student Spending
+  idx_NA <- which(with(df, std_vs_nonstd == "Student Spending") %in% c(FALSE, NA))
+  df[idx_NA, "goals"] <- NA
+  
+  # Recode Goals categories
+  std_TRUE <- df$std_vs_nonstd == "Student Spending"
+  
+  idx_list <- list(
+    with(df, which(std_TRUE & (Goal >= 1000 & Goal <= 3999))),
+    with(df, which(std_TRUE & (Goal >= 4750 & Goal <= 4999))),
+    with(df, which(std_TRUE & (Goal >= 5000 & Goal <= 5999))),
+    with(df, which(std_TRUE & (Goal >= 6000 & Goal <= 6999))), 
+    with(df, which(std_TRUE & (Goal >= 8500 & Goal <= 8599)))
+  )
+  
+  name_vec <- c("General Education, K-12", 
+                "Supplemental Education, K-12", 
+                "Special Education", 
+                "ROC/P", 
+                "Child Care & Development")
+  
+  for (i in seq_along(name_vec)){
+    df[idx_list[[i]], "goals"] <- name_vec[i]
+  }
+  
+  # Convert to a factor
+  df$goals <- factor(df$goals, levels = c(name_vec, "Other Goals"))
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   return(df)
 }
