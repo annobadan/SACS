@@ -92,6 +92,30 @@ get_weighted_mean <- function(df,
 }
 
 
+###' (3) Calculate the y-limits and height for the PDF file
+
+auto_ylim <- function(value_vec = NULL){
+  
+  ### The optimal y-limits
+  bottom <- min(value_vec) - (min(value_vec) - 0)/5
+  ceiling <- max(value_vec) + (min(value_vec) - 0)/5
+  
+  ### Return objects
+  auto_ylim <- c(bottom, ceiling)
+  return(auto_ylim)
+}
+
+auto_height <- function(factor_vec = NULL){
+
+  ### The height for the PDF file
+  num_factor <- length(levels(factor_vec))
+  height <- ifelse(num_factor <= 4, 6, num_factor + 3)
+  
+  ### Return objects
+  return(height)
+}
+
+
 
 ###'######################################################################
 ###'
@@ -104,7 +128,6 @@ df_names <- c("total_exp",
               "std_vs_nonstd", "nonstd_sub", "std_sub", "salaries", "benefits", 
               "goals", "general_Ed", "supp_Ed", "SPED", "functions", "SPED_inst", 
               "pupil_services")
-
 
 ### Elements for ggplot
 title_vec <- c("Total Expenditure per ADA", 
@@ -142,60 +165,98 @@ xlab <- "Fiscal Year"
 ###'
 ###'
 
-for (i in seq_along(df_names)){
+for (i in seq_along(df_names)){              # (1) Loop over variables
   
-  ### Extract the dataframe from the list
-  idx_list <- which(names(list_expenditures_def_1) == df_names[i])
-  df <- list_expenditures_def_1[[idx_list]]
-  
-  
-  ### Sort out districts with continuous operation
-  df <- operation14(df)
-  
-  
-  ### Get weighted averages
-  if (i == 1){
-    df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C)
+  for (j in seq_along(sub_definition_vec)){  # (2) Loop over definitions
     
-    ### Calculate the optimal y-limits
-    num_vec <- df_plot$mean_value
-    bottom <- min(num_vec) - (min(num_vec) - 0)/5
-    ceiling <- max(num_vec) + (min(num_vec) - 0)/5
-    
-    ### Plot 
-    p <- plot_trend_xy(df_plot, Fiscalyear, mean_value, yline = 2013, 
-                       ylim = c(bottom, ceiling))
-  } else {
-    names(df)[names(df) == df_names[i]] <- "factor"
-    df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C, factor)
-    
-    ### Calculate the optimal y-limits
-    num_vec <- df_plot$mean_value
-    bottom <- min(num_vec) - (min(num_vec) - 0)/5
-    ceiling <- max(num_vec) + (min(num_vec) - 0)/5
+    ### Extract the dataframe from the list
+    datalist <- get(paste0("list_expenditures_def_", j))
+    idx <- which(names(datalist) == df_names[i])
+    df <- datalist[[idx]]
 
-    ### Plot 
-    p <- plot_trend_grp(df_plot, Fiscalyear, mean_value, factor, yline = 2013, 
-                        ylim = c(bottom, ceiling))
+        
+    ### Sort out districts with continuous operation
+    df <- operation14(df)
     
-    ### Calculate the optimal height for the pdf file
-    num_factor <- length(levels(df_plot$factor))
-    height <- ifelse(num_factor <= 4, 6, num_factor + 3)
-  }
-  
-  ### Labels
-  p <- p + 
-    labs(title = title_vec[i],
-         subtitle = paste0(sub_definition_vec[1], ", ", sub_weighted), 
-         caption = caption, 
-         y = ylab,  
-         x = xlab)
-  
-  ### Save as pdf file
-  filename <- paste0("Expenditures_", sprintf("%02d", i), "_", title_vec[i])
-  
-  ggsave(paste0("figure/", filename, ".pdf"), p, 
-         width = 9, height = ifelse(i == 1, 6, height))
-}  # End of loop over df_names
+    
+    ### Plot
+    
+    if (i == 1){  # (1) Total Expenditure: "zero" factor
+      
+      ### Plot 1: with "0" factor, no facet
+      df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C)
+      
+      p1 <- plot_trend_xy(df_plot, Fiscalyear, mean_value, yline = 2013, 
+                          ylim = auto_ylim(df_plot$mean_value))
+      
+      
+      ### Plot 2: factoring with District type
+      df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C, Dtype)
+      df_plot %>% filter(Dtype != "Comm Admin Dist") -> df_plot
+      
+      p2 <- plot_trend_grp(df_plot, Fiscalyear, mean_value, Dtype, yline = 2013, 
+                           ylim = auto_ylim(df_plot$mean_value))
+      
+      
+      ### Labels
+      labels <- labs(title = title_vec[i],
+                     subtitle = paste0(sub_definition_vec[j], ", ", sub_weighted), 
+                     caption = caption, 
+                     y = ylab,  
+                     x = xlab) 
+      
+      p1 <- p1 + labels
+      p2 <- p2 + labels + labs(title = paste0(title_vec[i], " by District Type"))
+      
+      
+      ### Save as pdf file
+      filename_p1 <- paste0("Expenditures_", "Definition", j, "_", 
+                            sprintf("%02d", i), "_", title_vec[i])
+      filename_p2 <- paste0(filename_p1, "_by District Type")
+      
+      ggsave(paste0("figure/", filename_p1, ".pdf"), p1, width = 9, height = 6)
+      ggsave(paste0("figure/", filename_p2, ".pdf"), p2, width = 9, height = 6)      
+      
+      
+    } else {   # (2) Other plots with one factor
+      
+      ### Plot 1: with one factor, zero facet
+      names(df)[names(df) == df_names[i]] <- "factor"
+      df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C, factor)
+      
+      p1 <- plot_trend_grp(df_plot, Fiscalyear, mean_value, factor, yline = 2013, 
+                           ylim = auto_ylim(df_plot$mean_value))
+      
+      
+      ### Plot 2: with one factor, facet with District Type
+      df_plot <- get_weighted_mean(df, Fiscalyear, sum_value_PP_16, K12ADA_C, factor, Dtype)
+      df_plot %>% filter(Dtype != "Comm Admin Dist") -> df_plot
+      
+      p2 <- plot_trend_grp_facet(df_plot, Fiscalyear, mean_value, factor, .~ Dtype,  
+                                 yline = 2013, ylim = auto_ylim(df_plot$mean_value))
+      
+      ### Labels
+      labels <- labs(title = title_vec[i],
+                     subtitle = paste0(sub_definition_vec[j], ", ", sub_weighted), 
+                     caption = caption, 
+                     y = ylab,  
+                     x = xlab) 
+      
+      p1 <- p1 + labels
+      p2 <- p2 + labels + labs(title = paste0(title_vec[i], " by District Type"))
+      
+      
+      ### Save as pdf file
+      filename_p1 <- paste0("Expenditures_", "Definition", j, "_", 
+                            sprintf("%02d", i), "_", title_vec[i])
+      filename_p2 <- paste0(filename_p1, "_by District Type")
+      
+      ggsave(paste0("figure/", filename_p1, ".pdf"), p1, 
+             width = 9, height = auto_height(df_plot$factor))
+      ggsave(paste0("figure/", filename_p2, ".pdf"), p2, 
+             width = 18, height = auto_height(df_plot$factor))  
+    }
+  }  # End of loop over definitions
+}    # End of loop over variables
 
 
