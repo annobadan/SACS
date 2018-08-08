@@ -32,6 +32,7 @@ theme_trend <-
   theme(panel.background = element_blank(),
         panel.grid = element_blank(), 
         legend.position = "bottom", 
+        legend.direction = "horizontal", 
         legend.title = element_blank())
 
 ### Temporary labels
@@ -41,9 +42,10 @@ temp_labels <- labs(title = "Enter title here",
                     y = "Enter ylabel here",  
                     x = "Enter xlabel here")
 
-### Color palette
-mypalette <- c("firebrick1", "dodgerblue1", "forestgreen", "darkorchid1", "darkgoldenrod1", 
-               "red", "blue", "green", "purple", "gold")    
+### Define manual palettes
+color_palette <- c("firebrick1", "dodgerblue1", "forestgreen", "darkorchid1", "darkgoldenrod1", 
+                   "blue", "green", "purple", "gold", "red")    
+shape_palette <- c(16, 17, 15, 18, 1, 2, 0, 5, 6, 4, 3, 8, 10, 7, 9) 
 
 
 ###'######################################################################
@@ -146,7 +148,8 @@ plot_trend_grp <- function(dataframe,
   
   ### Themes, temporary labels, and manual colors
   p + theme_trend + temp_labels + 
-    scale_color_manual(values = mypalette[seq(unique(dataframe$groupvar))])
+    scale_color_manual(values = color_palette[seq(unique(dataframe$groupvar))]) + 
+    scale_shape_manual(values = shape_palette[seq(unique(dataframe$groupvar))])
 }
 
 # ### Test the code
@@ -206,7 +209,8 @@ plot_trend_grp_facet <- function(dataframe,
   
   ### Themes, temporary labels, and manual colors
   p + theme_trend + temp_labels + 
-    scale_color_manual(values = mypalette[seq(unique(dataframe$groupvar))])
+    scale_color_manual(values = color_palette[seq(unique(dataframe$groupvar))]) + 
+    scale_shape_manual(values = shape_palette[seq(unique(dataframe$groupvar))])
 }
 
 # ### Test the code
