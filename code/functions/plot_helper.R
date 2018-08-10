@@ -272,22 +272,22 @@ get_weighted_mean <- function(df,
 ###' 
 ###' 
 
-auto_ylim <- function(value_vec = NULL){
+auto_ylim <- function(value_vec = NULL, tweak = 5){
   
   ### The optimal y-limits
-  bottom <- min(value_vec) - (min(value_vec) - 0)/5
-  ceiling <- max(value_vec) + (min(value_vec) - 0)/5
+  bottom <- min(value_vec) - (min(value_vec) - 0)/tweak
+  ceiling <- max(value_vec) + (min(value_vec) - 0)/tweak
   
   ### Return objects
   auto_ylim <- c(bottom, ceiling)
   return(auto_ylim)
 }
 
-auto_height <- function(factor_vec = NULL){
+auto_height <- function(factor_vec = NULL, tweak = 3){
   
   ### The height for the PDF file
   num_factor <- length(levels(factor_vec))
-  height <- ifelse(num_factor <= 4, 6, num_factor + 3)
+  height <- ifelse(num_factor <= 4, 6, num_factor + tweak)
   
   ### Return objects
   return(height)
@@ -321,14 +321,4 @@ group_percent <- function(df,
            label_text = paste0(sprintf("%.0f", percent), "%")) -> df
   return(df)
 }
-
-
-
-
-
-
-
-
-
-
 
