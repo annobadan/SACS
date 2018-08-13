@@ -20,12 +20,12 @@ library(tidyverse)
 ### Function dependency: generate_categories
 work_dir <- c("~/SACS")
 setwd(work_dir)
-source("code/functions/generate_categories.R")
+source("functions/generate_categories.R")
 
 
 ### Data dependency: df_ADA_allyears
 setwd(work_dir)
-load(file = "data/df_ADA_allyears.rda")
+load(file = "processed_data/df_ADA_allyears.rda")
 
 
 

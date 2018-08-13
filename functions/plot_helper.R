@@ -231,11 +231,12 @@ plot_trend_grp_facet <- function(dataframe,
 ###'    in California from 2003 through 2017
 
 setwd(work_dir)
-load(file = "data/years_of_operation.rda")   # Data dependency: years_of_operation.csv
+load(file = "processed_data/years_of_operation.rda")   # Data dependency: years_of_operation.csv
 
 operation14 <- function(df){
   df %>%
-    left_join(select(years_of_operation, -Dname, -Dtype), by = c("Ccode", "Dcode")) %>%
+    left_join(years_of_operation[, !names(years_of_operation) %in% c("Dname", "Dtype")], 
+              by = c("Ccode", "Dcode")) %>%
     filter(opr_years == 14)
 }
 

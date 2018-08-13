@@ -54,7 +54,7 @@ library(tidyverse)
 
 
 ### Call functions
-list.files("code/functions", full.names = TRUE) %>% walk(source)
+list.files("functions", full.names = TRUE) %>% walk(source)
 
 
 
@@ -74,6 +74,7 @@ library(raster)
 library(tigris)
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
+library(USAboundaries) # STATES/counties data
 
 
 ### Packages to load and manipulate American Community Survey (ACS) data
@@ -104,27 +105,65 @@ tidycensus::census_api_key("b6eb1ab42bceaa4ddd3f6d8979b73dab7f95acb5")
 ###'
 ###'
 
+### Assign FIPS for whole US states
 fips <- tidycensus::fips_codes
+
+
+### Subset only CA counties
+fips_CA <- fips %>%
+  filter(state == "CA")
+
+
+### (1) Subset CA counties around Bay Area
+BA <- c(
+  "San Francisco County", 
+  "San Mateo County", 
+  "Contra Costa County", 
+  "Alameda County", 
+  "Santa Clara County",
+  "Santa Cruz County", 
+  "Marin County", 
+  "Sonoma County", 
+  "Napa County", 
+  "Solano County"
+)
+
+fips_BA <- fips_CA %>% filter(county %in% BA)
+
+
+### (2) Subset CA counties around Los Angeles
+LA <- c(
+  "Los Angeles County", 
+  # "Ventura County", 
+  "Orange County"
+)
+
+fips_LA <- fips_CA %>% filter(county %in% LA)
 
 
 
 ###'######################################################################
 ###'
 ###' Fetch shape files
-###' (1) Census tracts for Whole California 
+###' (1) Census tracts for Whole California
+###' (2) Census tracts for Bay Area
+###' (3) Census tracts for Los Angeles Area 
 ###' 
 ###'
 
 ###' Download a Census tracts shapefile
 ###' Get a generalized (1:500k) tracts file, 
 ###' rather than the most detailed TIGER/Line file
-CA_tracts <- tracts("CA", cb = TRUE)
+CA_tracts <- tracts(state = "CA", cb = TRUE)
+BA_tracts <- tracts(state = "CA", county = fips_BA$county_code, cb = TRUE)
+LA_tracts <- tracts(state = "CA", county = fips_LA$county_code, cb = TRUE)
 
 
 ### Check the imported shape file
 summary(CA_tracts)
-# plot(CA_tracts)
-# ggplot(CA_tracts) + geom_sf()
+ggplot(CA_tracts) + geom_sf()
+ggplot(BA_tracts) + geom_sf()
+ggplot(LA_tracts) + geom_sf()
 
 
 
@@ -163,6 +202,8 @@ names(CA_income_wide) <- c("GEOID", "tract_name",
 
 ### Merge with the feature geometry
 CA_tracts_merged <- sp::merge(CA_tracts, CA_income_wide, by = "GEOID")
+BA_tracts_merged <- sp::merge(BA_tracts, CA_income_wide, by = "GEOID")
+LA_tracts_merged <- sp::merge(LA_tracts, CA_income_wide, by = "GEOID")
 
 
 
@@ -239,122 +280,196 @@ for (i in seq_along(Dtype_vec)){
 
 ###'######################################################################
 ###'
-###' Build a thematic map: Unified School Districts
+###' Spatial subsetting for the 
+###' 
+###' CA_unified, CA_elementary, and CA_secondary
 ###'
 ###'
 
-# (1) Census tract layer
-tm_shape(CA_tracts_merged) +
-  tm_fill(col = "median_inc_est", 
-          # convert2density = TRUE,
-          # style= "kmeans",
-          title = "Median Income", 
-          palette = "Blues") +
-  tm_borders(alpha = 0.2, lwd = 0.05) + 
+### Define a function to grab school districts in metropolitan area
+
+metro_districts <- function(metro_name, sch_dists) {
   
-# (2) School district layers - Unified
-  tm_shape(CA_unified) +
-  tm_borders(lwd = 0.3, alpha = 0.5, col = "grey60") + 
-  tm_text("Dist_label", size = 0.05, col = "grey30", just = "bottom") + 
-  tm_bubbles(col = "sum_value_PP_16", 
-             # size = "K12ADA", 
-             border.col = "gray40", 
-             border.lwd = 0.1, 
-             border.alpha = 0.2, 
-             scale = 0.05, 
-             alpha = 1, 
-             size.lim = c(0, 30000), 
-             n = 5, 
-             style = "quantile", 
-             palette = "-RdYlBu", 
-             title.size = "K-12 Enrollment", 
-             title.col = "Per-pupil Expenditure", 
-             just = c("center", "center")) 
-
-tmap_save(filename = "unified_2016.pdf")
-             
-             
-
-
-###'######################################################################
-###'
-###' Build a thematic map: Elementary School Districts
-###'
-###'
-
-# (1) Census tract layer
-tm_shape(CA_tracts_merged) +
-  tm_fill(col = "median_inc_est", 
-          # convert2density = TRUE,
-          # style= "kmeans",
-          title = "Median Income", 
-          palette = "Blues") +
-  tm_borders(alpha = 0.2, lwd = 0.05) + 
+  # (1) identify which states intersect the metro area using the
+  # `states` function in tigris
+  st <- states(cb = TRUE)
+  cb <- core_based_statistical_areas(cb = TRUE)
+  metro <- filter(cb, grepl(metro_name, NAME))
   
-  # (2) School district layers - Unified
-  tm_shape(CA_elementary) +
-  tm_borders(lwd = 0.3, alpha = 0.5, col = "grey60") + 
-  tm_text("Dist_label", size = 0.1, col = "grey30", just = "bottom") + 
-  tm_bubbles(col = "sum_value_PP_16", 
-             # size = "K12ADA", 
-             border.col = "gray40", 
-             border.lwd = 0.1, 
-             border.alpha = 0.2, 
-             scale = 0.1, 
-             alpha = 1, 
-             size.lim = c(0, 30000), 
-             n = 5, 
-             style = "cont", 
-             palette = "-RdYlBu", 
-             title.size = "K-12 Enrollment", 
-             title.col = "Per-pupil Expenditure", 
-             just = c("center", "center")) 
+  stcodes <- st[metro,]$STATEFP
+  
+  
+  # (2) find out which school districts are intersect the metro area
+  intersect <- st_intersects(sch_dists, metro)
+  
+  intersect_lgl <- map_lgl(intersect, function(x) {
+    if (length(x) == 1) {
+      return(TRUE)
+    } else {
+      return(FALSE)
+    }
+  })
+  
+  # (3) subset and return the output
+  output <- sch_dists[intersect_lgl,]
+  
+  return(output)
+}
 
-tmap_save(filename = "elementary_2016.pdf")
+
+### Loop over 3 District Types and 2 metropolitan areas
+
+Dtype_vec <- c("unified", "elementary", "secondary")
+
+metro_vec <- c("BA", "LA")
+
+metro_name_vec <- c("San Francisco", "Los Angeles")
+
+
+for (i in seq_along(Dtype_vec)){
+  
+  for (j in seq_along(metro_vec)){
+    
+    sch_dists <- get(paste0("CA_", Dtype_vec[i]))
+    
+    assign(paste0("CA_", Dtype_vec[i], "_", metro_vec[j]), 
+           metro_districts(metro_name_vec[j], sch_dists))
+  }
+}
 
 
 
 ###'######################################################################
 ###'
-###' Build a thematic map: Secondary School Districts
+###' Build a thematic map: Whole California
 ###'
 ###'
 
-# (1) Census tract layer
-tm_shape(CA_tracts_merged) +
-  tm_fill(col = "median_inc_est", 
-          # convert2density = TRUE,
-          # style= "kmeans",
-          title = "Median Income", 
-          palette = "Blues") +
-  tm_borders(alpha = 0.2, lwd = 0.05) + 
+Dtype_vec <- c("unified", "elementary", "secondary")
+
+Dist_label_vec <- c(" Unified", "Elementary", "High")
+
+setwd(work_dir)
+
+
+for (i in seq_along(Dtype_vec)){
   
-  # (2) School district layers - Unified
-  tm_shape(CA_secondary) +
-  tm_borders(lwd = 0.3, alpha = 0.5, col = "grey60") + 
-  tm_text("Dist_label", size = 0.1, col = "grey30", just = "bottom") + 
-  tm_bubbles(col = "sum_value_PP_16", 
-             # size = "K12ADA", 
-             border.col = "gray40", 
-             border.lwd = 0.1, 
-             border.alpha = 0.2, 
-             scale = 0.1, 
-             alpha = 1, 
-             size.lim = c(0, 30000), 
-             n = 5, 
-             style = "cont", 
-             palette = "-RdYlBu", 
-             title.size = "K-12 Enrollment", 
-             title.col = "Per-pupil Expenditure", 
-             just = c("center", "center")) 
-
-tmap_save(filename = "secondary_2016.pdf")
-             
-     
+  # Census tract 
+  tracts <- get("CA_tracts_merged")
   
+  # School districts
+  sch_dists <- get(paste0("CA_", Dtype_vec[i]))
   
+  # Thematic plot
+  # (1) Census tract layer
+  tm_shape(tracts) +
+    tm_fill(col = "median_inc_est", 
+            # convert2density = TRUE,
+            # style= "kmeans",
+            title = "Median Income", 
+            palette = "Blues") +
+    tm_borders(alpha = 0.2, lwd = 0.05) + 
+    
+    # (2) School district layers
+    tm_shape(sch_dists) +
+    tm_borders(lwd = 0.3, alpha = 0.5, col = "grey20") + 
+    tm_bubbles(col = "sum_value_PP_16", 
+               size = "K12ADA", 
+               border.col = "gray40", 
+               border.lwd = 0.1, 
+               border.alpha = 0.2, 
+               scale = 1, 
+               alpha = 1, 
+               size.lim = c(0, 30000),
+               n = 5, 
+               style = "quantile", 
+               palette = "-RdYlBu", 
+               title.size = "K-12 Enrollment", 
+               title.col = "Per-pupil Expenditure", 
+               just = c("center", "center")) + 
+    tm_text("Dist_label", size = 0.05, col = "grey30", just = "bottom") + 
+    tm_layout(
+      title = paste0(Dist_label_vec[i], " School Districts"),
+      title.size = 0.5, 
+      legend.title.size = 1,
+      legend.text.size = 1,
+      legend.outside = FALSE, 
+      legend.position = c("left","bottom"),
+      legend.bg.alpha = 1
+    )
+  
+  tmap_save(filename = paste0("figures/", "CA_", Dtype_vec[i], "_2016", ".pdf"))
+}
 
 
 
+###'######################################################################
+###'
+###' Build a thematic map: Two metropolitan areas
+###' (1) Bay Area
+###' (2) Los Angeles
+###'
+###'
+
+Dtype_vec <- c("unified", "elementary", "secondary")
+
+Dist_label_vec <- c(" Unified", "Elementary", "High")
+
+metro_vec <- c("BA", "LA")
+
+metro_name_vec <- c("San Francisco", "Los Angeles")
+
+setwd(work_dir)
 
 
+for (i in seq_along(Dtype_vec)){
+  
+  for (j in seq_along(metro_vec)){
+    
+    # Census tract 
+    tracts <- get(paste0(metro_vec[j], "_tracts_merged"))
+    
+    # School districts
+    sch_dists <- get(paste0("CA_", Dtype_vec[i], "_", metro_vec[j]))
+    
+    # Thematic plot
+    # (1) Census tract layer
+    tm_shape(tracts) +
+      tm_fill(col = "median_inc_est", 
+              # convert2density = TRUE,
+              # style= "kmeans",
+              title = "Median Income", 
+              palette = "Blues") +
+      tm_borders(alpha = 0.2, lwd = 0.05) + 
+      
+      # (2) School district layers
+      tm_shape(sch_dists) +
+      tm_borders(lwd = 0.3, alpha = 0.5, col = "grey20") + 
+      tm_bubbles(col = "sum_value_PP_16", 
+                 size = "K12ADA", 
+                 border.col = "gray40", 
+                 border.lwd = 0.1, 
+                 border.alpha = 0.2, 
+                 scale = 0.5, 
+                 alpha = 1, 
+                 size.lim = c(0, 30000), 
+                 n = 5, 
+                 style = "quantile", 
+                 palette = "-RdYlBu", 
+                 title.size = "K-12 Enrollment", 
+                 title.col = "Per-pupil Expenditure", 
+                 just = c("center", "center")) + 
+      tm_text("Dist_label", size = 0.2, col = "grey30", just = "bottom") + 
+      tm_layout(
+        title = paste0(Dist_label_vec[i], " School Districts"),
+        title.size = 0.5, 
+        legend.title.size = 0.7,
+        legend.text.size = 0.5,
+        legend.outside = FALSE, 
+        legend.position = c("left","bottom"),
+        legend.bg.alpha = 1
+        )
+    
+    tmap_save(filename = paste0("figures/", metro_vec[j], "_", Dtype_vec[i], "_2016", ".pdf"))
+  }
+}
