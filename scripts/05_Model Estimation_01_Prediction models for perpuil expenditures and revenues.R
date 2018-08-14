@@ -74,20 +74,39 @@ load(file = "processed_data/funding_snapshot_3year.RData")
 ###' 
 ###' (2) Per-pupil concentration grant: Conc_{d} = Base_{d} * max[UPP - 0.55, 0]
 ###' 
-###' (3) Simulated instrumental variable: Z_{d} = Supp_{d} + Conc_{d} 
+###' (3) Simulated instrumental variable: SimIV_{d} = Supp_{d} + Conc_{d} 
 ###' 
 ###' => The state's allocation of Supplemental and Concentration Grants is
 ###'    the focal point of our use of the funding formula 
 ###'    to isolate exogenous changes in district-level revenue 
 ###'    caused by the state policy change
 ###'
+###' (4) Formula weight: 0.20 * UPP + max[UPP - 0.55, 0]
+###'
 ###'
 
+### Remove charter school entries
+df <- fund1314
+df <- df %>%
+  filter(LEA_type == "School District")
 
 
+### Generate simulated IV: SimIV_{d}
+df <- df %>%
+  mutate(SimSupp = round(Base*0.2*Unduplicated, 0), 
+         SimConc = round(Base*max(Unduplicated - 0.55, 0), 0), 
+         SimIV = SimSupp + SimConc, 
+         Supp_Conc = Supplemental + Concentration) %>%
+  select(CountyCode, DistrictCode, District, Total_ADA, Unduplicated, 
+         Base, Supplemental, SimSupp, Concentration, SimConc, Supp_Conc, SimIV, 
+         everything())
 
 
-
+### Generate formula weight
+df <- df %>%
+  mutate(formula_weight = 0.2*Unduplicated + 
+           ifelse(Unduplicated > 0.55, Unduplicated - 0.55, 0))
+summary(df$formula_weight)
 
 
 
