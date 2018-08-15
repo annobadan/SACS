@@ -86,27 +86,24 @@ load(file = "processed_data/funding_snapshot_3year.RData")
 ###'
 
 ### Remove charter school entries
-df <- fund1314
-df <- df %>%
+df <- fund1314 %>%
   filter(LEA_type == "School District")
 
 
-### Generate simulated IV: SimIV_{d}
+### Generate simulated IV and formula weight
 df <- df %>%
-  mutate(SimSupp = round(Base*0.2*Unduplicated, 0), 
-         SimConc = round(Base*max(Unduplicated - 0.55, 0), 0), 
+  mutate(formula_weight = 0.2 * Unduplicated + 
+           ifelse(Unduplicated > 0.55, 0.5 * (Unduplicated - 0.55), 0), 
+         SimSupp = Base * 0.2 * Unduplicated, 
+         SimConc = ifelse(Unduplicated > 0.55, 0.5 * Base * (Unduplicated - 0.55), 0),
          SimIV = SimSupp + SimConc, 
          Supp_Conc = Supplemental + Concentration) %>%
-  select(CountyCode, DistrictCode, District, Total_ADA, Unduplicated, 
+  select(CountyCode, DistrictCode, LEA, Total_ADA, Unduplicated, formula_weight,  
          Base, Supplemental, SimSupp, Concentration, SimConc, Supp_Conc, SimIV, 
          everything())
 
 
-### Generate formula weight
-df <- df %>%
-  mutate(formula_weight = 0.2*Unduplicated + 
-           ifelse(Unduplicated > 0.55, Unduplicated - 0.55, 0))
-summary(df$formula_weight)
+
 
 
 
