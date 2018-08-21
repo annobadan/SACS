@@ -43,6 +43,7 @@ data_dir <- c("D:/Data/LCFF")
 
 ### Call libraries
 library(tidyverse)
+library(car)
 
 
 ### Call functions
@@ -84,6 +85,18 @@ load(file = "processed_data/funding_snapshot_3year.RData")
 ###' (4) Formula weight: 0.20 * UPP + max[UPP - 0.55, 0]
 ###'
 ###'
+###' *** The meaning of the simulated IV
+###' => The reform-induced changes in district spending
+###' => Supplemental and concentration grant
+###' 
+###' Importantly, these reform-induced changes in district spending, 
+###' which are credibly identified from the funding formula 
+###' (and which serve as the instrumental variables), 
+###' are unrelated to changes in child family and neighborhood characteristics 
+###' conditional on the baseline level of disadvantage in each district.
+###' (After controlling for UPP => Conditional exogeneity)
+###'
+###'
 
 ### Remove charter school entries
 df <- fund1314 %>%
@@ -103,7 +116,57 @@ df <- df %>%
          everything())
 
 
+### Round the simulated values for the visual comparison
+cols_to_round <- which(names(df) %in% c("Base", "SimSupp", "SimConc", "SimIV"))
 
+df <- df %>% 
+  mutate_at(cols_to_round, round, 0)
+
+
+### Are the simulated values consistent with the provided values?
+df_nonzeroBase <- df %>% 
+  filter(Base != 0)
+
+all.equal(df_nonzeroBase$SimSupp, df_nonzeroBase$Supplemental)
+all.equal(df_nonzeroBase$SimConc, df_nonzeroBase$Concentration)
+all.equal(df_nonzeroBase$SimIV, df_nonzeroBase$Supp_Conc)
+
+
+### Check the distribution of funding formula weights
+ggplot(df, aes(formula_weight)) +
+  geom_density()
+
+
+
+###'######################################################################
+###'
+###' The first stage model predicting average per-pupil spending
+###' 
+###' in district "d" in year "t"
+###'
+###'
+###'
+
+### Merge FY1314 funding snapshot to per-pupil expenditure panel data
+
+assign(names(list_expenditures_def_1)[[1]], list_expenditures_def_1[[1]])
+
+df <- df %>%
+  mutate(Ccode = as.numeric(CountyCode), 
+         Dcode = as.numeric(DistrictCode)) %>%
+  select(Ccode, Dcode, everything()) %>%
+  select(-(CountyCode:DistrictCode))
+
+total_exp <- left_join(total_exp, df, by = c("Ccode", "Dcode"))
+
+
+###  
+
+p_trend <- scatterplot(sum_value_PP_16 ~ Fiscalyear, 
+                       boxplots = FALSE, 
+                       smooth = TRUE, 
+                       reg.line = FALSE, 
+                       data = total_exp)
 
 
 
