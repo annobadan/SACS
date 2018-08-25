@@ -319,7 +319,7 @@ group_percent <- function(df,
            percent = !!value/group_sum * 100, 
            # don't need to calculate the label positions from ggplot 2.1.0 
            # position = cumsum(amount) - 0.5 * amount,  
-           label_text = paste0(sprintf("%.0f", percent), "%")) -> df
+           label_text = paste0(sprintf("%.1f", percent), "%")) -> df
   return(df)
 }
 

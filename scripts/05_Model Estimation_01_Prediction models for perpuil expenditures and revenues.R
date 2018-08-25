@@ -302,7 +302,7 @@ df$Fiscalyear <- relevel(df$Fiscalyear, "2013")
 mm <- model.matrix(~ decile*Fiscalyear, df)
 write.csv(mm, file = "tables/model_matrix.csv")
 
-fit_lm <-lm(log_y ~ mm + factor(Dcode) + 0, data = df)
+fit_lm <-lm(log_y ~ mm + factor(Dcode), data = df)
 summary(fit_lm)
 
 
@@ -334,13 +334,24 @@ coef_2013 <- data.frame(decile = as.character(2:10),
                         year = rep(2013, 9), 
                         coef = rep(0, 9))
 
-coef_int <- bind_rows(coef_int, coef_2013)
+coef_int <- coef_int %>%
+  bind_rows(coef_2013) %>%
+  arrange(decile, year)
 
 
 p1 <- plot_trend_grp(coef_int, year, coef, decile, yline = 2013, 
                      ylim = auto_ylim(coef_int$coef))
 
+labels <- labs(title = "Effects of LCFF funding formula on per-pupil expenditure",
+               subtitle = "Definition 1, Inflation-adjusted by CPI-U deflator", 
+               x = "Fiscal Year",  
+               y = "Difference in district per-pupil expenditures compared to 2013 & Decile 1") 
+
+p1 <- p1 + labels
+
 p1
+
+
 
 
 
