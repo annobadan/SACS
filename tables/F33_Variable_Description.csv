@@ -1,0 +1,67 @@
+Data Item ,Description
+IDCENSUS,School System Identification Number
+NAME,School System Name
+CONUM,ANSI State and County Code
+CSA,Consolidated Statistical Area
+CBSA,Core-Based Statistical Area
+NCESID,NCES Identification Number
+ENROLL,Fall Membership
+TOTALREV,Total Elementary-Secondary Revenue
+TFEDREV,Revenue from Federal Sources: Total
+FEDRCOMP,Revenue from Federal Sources: Compensatory (Title I)
+FEDRSPEC,Revenue from Federal Sources: Children with disabilities
+FEDRNUTR,Revenue from Federal Sources: Child Nutrition Act
+FEDROTHR,Revenue from Federal Sources: All other federal aid
+TSTREV,Revenue from State Sources: Total
+STRFORM,Revenue from State Sources: General formula assistance
+STRSPEC,Revenue from State Sources: Special education programs
+STRTRANS,Revenue from State Sources: Transportation programs
+STROTHR,Revenue from State Sources: All other state revenue
+TLOCREV,Revenue from Local Sources: Total
+LOCRTAX,Revenue from Local Sources: All taxes
+LOCRPROP,Revenue from Local Sources: Property taxes
+LOCRPAR,Revenue from Local Sources: Parent government contributions
+LOCRCICO,Revenue from Local Sources: Revenue from cities and counties
+LOCROSCH,Revenue from Local Sources: Revenue from other school systems
+LOCRCHAR,Revenue from Local Sources: Charges
+LOCROTHR,Revenue from Local Sources: Other local revenues
+TOTALEXP,Total Elementary-Secondary Expenditure
+TCURSPND,Current Spending: Total
+TSALWAGE,Current Spending: Total salaries and wages
+TEMPBENE,Current Spending: Total employee benefit payments
+TCURINST,Current Spending for Instruction: Total 
+TCURISAL,Current Spending for Instruction: Salaries and wages for instruction
+TCURIBEN,Current Spending for Instruction: Employee benefits for instruction
+TCURSSVC,Current Spending for Support Services: Total
+TCURSPUP,Current Spending for Support Services: Pupil support
+TCURSSTA,Current Spending for Support Services: Instructional staff support
+TCURSGEN,Current Spending for Support Services: General administration
+TCURSSCH,Current Spending for Support Services: School administration
+TCURSOTH,Current Spending for Support Services: Other and nonspecified
+TCURONON,Other Current Spending
+TCAPOUT,Capital Outlay Expenditure
+TPAYOTH,Payments to Other Governments
+TINTRST,Interest on School System Indebtedness
+DEBTOUT,Long-term debt outstanding at end of the fiscal year
+LONGISSU,Long-term debt issued during the fiscal year
+LONGRET,Long-term debt retired during the fiscal year
+PCTTOTAL,Percent - Total Elementary-Secondary Revenue
+PCTFTOT,Percent - Total Revenue from Federal Sources
+PCTFCOMP,Percent - Compensatory (Title I)
+PCTSTOT,Percent - Total Revenue from State Sources
+PCTSFORM,Percent - General formula assistance
+PCTLTOT,Percent - Total Revenue from Local Sources
+PCTLTAXP,Percent - Taxes and parent government contributions
+PCTLOTHG,Percent - Revenue from other local governments
+PCTLCHAR,Percent - Charges
+PPCSTOT,Per Pupil - Total Current Spending (Elementary-secondary)
+PPSALWG,Per Pupil - Total salaries and wages
+PPEMPBEN,Per Pupil - Total employee benefit payments
+PPITOTAL,Per Pupil - Total Current Spending for Instruction
+PPISALWG,Per Pupil - Salaries and wages
+PPIEMBEN,Per Pupil - Employee benefits
+PPSTOTAL,Per Pupil - Total Current Spending for Support Services
+PPSPUPIL,Per Pupil - Pupil support
+PPSSTAFF,Per Pupil - Instructional staff support
+PPSGENAD,Per Pupil - General administration
+PPSSCHAD,Per Pupil - School administration
