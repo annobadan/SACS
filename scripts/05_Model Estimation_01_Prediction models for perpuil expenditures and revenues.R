@@ -69,6 +69,10 @@ load(file = "processed_data/list_revenues.rda")
 load(file = "processed_data/funding_snapshot_3year.RData")
 
 
+### The State of California's overall and local revenues/expenditures data
+state_df <- read.csv(file = "processed_data/May_Revision_Budget_2000_to_2016.csv")
+
+
 
 ###'######################################################################
 ###'
@@ -255,6 +259,73 @@ p <- ggplot(df_plot_fit, aes(x = Fiscalyear, y = log_y)) +
   # geom_point(shape = 19) +
   stat_summary(fun.y = mean, geom = "point", size = 5, shape = 1) + 
   geom_line(aes(y = fitted), lwd = 1.5)
+
+
+
+###'######################################################################
+###'
+###' Per-pupil revenue prediction model
+###'
+###'
+
+### Outcome variable: per-pupil revenue across years 2003-2016
+total_rev <- list_revenues[["total_rev"]]
+
+
+### Total state-level ADA across years 2003-2016
+state_ADA <- total_exp %>%
+  group_by(Fiscalyear) %>%
+  summarise(stateADA = sum(K12ADA_C, na.rm = TRUE)) %>%
+  filter(!is.na(Fiscalyear))
+  
+
+###' Generate the two state-level predictors
+###' (1) CAExp: the total non K-12 state expenditures per pupil for birth cohort
+###' (2) CALocalAssist: the state local assistance provided (excluding education)
+
+state_operations_df <- state_df %>%
+  filter(Category_1 == "State Operations") %>%
+  filter(!(Category_2 %in% c("Education"))) %>%
+  group_by(Fiscalyear) %>%
+  summarise(CAExp = sum(value_16, na.rm = TRUE)) %>%
+  left_join(state_ADA, by = c("Fiscalyear")) %>%
+  mutate(CAExp_PP = CAExp/stateADA)
+
+local_assistance_df <- state_df %>%
+  filter(Category_1 == "Local Assistance") %>%
+  filter(!(Category_2 %in% c("Public Schools - K-12"))) %>%
+  group_by(Fiscalyear) %>%
+  summarise(CALocalAssist = sum(value_16, na.rm = TRUE)) %>%
+  left_join(state_ADA, by = c("Fiscalyear")) %>%
+  mutate(CALocalAssist_PP = CALocalAssist/stateADA)
+
+state_predictors <- left_join(state_operations_df, local_assistance_df, 
+                              by = c("Fiscalyear"))
+
+
+### Merge predictors to dataset with outcome variable
+df_rev_pred <- total_rev %>%
+  left_join(state_predictors, by = c("Fiscalyear"))
+
+df_rev_pred <- df_rev_pred %>%
+  left_join(df, by = c("Ccode", "Dcode")) %>%
+  mutate(timetrend = Fiscalyear - 2003)
+
+
+### Fit the regression model
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
