@@ -289,7 +289,9 @@ state_operations_df <- state_df %>%
   group_by(Fiscalyear) %>%
   summarise(CAExp = sum(value_16, na.rm = TRUE)) %>%
   left_join(state_ADA, by = c("Fiscalyear")) %>%
-  mutate(CAExp_PP = CAExp/stateADA)
+  mutate(CAExp_PP = CAExp/stateADA) %>%
+  filter(!is.na(CAExp_PP))
+
 
 local_assistance_df <- state_df %>%
   filter(Category_1 == "Local Assistance") %>%
@@ -297,33 +299,72 @@ local_assistance_df <- state_df %>%
   group_by(Fiscalyear) %>%
   summarise(CALocalAssist = sum(value_16, na.rm = TRUE)) %>%
   left_join(state_ADA, by = c("Fiscalyear")) %>%
-  mutate(CALocalAssist_PP = CALocalAssist/stateADA)
+  mutate(CALocalAssist_PP = CALocalAssist/stateADA) %>%
+  filter(!is.na(CALocalAssist_PP))
 
-state_predictors <- left_join(state_operations_df, local_assistance_df, 
-                              by = c("Fiscalyear"))
+
+state_predictors <- state_operations_df %>%
+  select(-stateADA) %>% 
+  left_join(local_assistance_df, by = c("Fiscalyear"))
+
+
+plot_trend_xy(state_predictors, x = Fiscalyear, y = CAExp_PP)
+plot_trend_xy(state_predictors, x = Fiscalyear, y = CAExp)
+plot_trend_xy(state_predictors, x = Fiscalyear, y = CALocalAssist_PP)
+plot_trend_xy(state_predictors, x = Fiscalyear, y = CALocalAssist)
 
 
 ### Merge predictors to dataset with outcome variable
 df_rev_pred <- total_rev %>%
-  left_join(state_predictors, by = c("Fiscalyear"))
-
-df_rev_pred <- df_rev_pred %>%
+  left_join(state_predictors, by = c("Fiscalyear")) %>%
   left_join(df, by = c("Ccode", "Dcode")) %>%
   mutate(timetrend = Fiscalyear - 2003)
 
 
-### Fit the regression model
+###' Fit the regression model to estimate the counterfactual district revenue
+###' from state if LCFF had not occurred
+###' 
+###' (1) Run only for 2003-2012, just prior to LCFF, get coefficients
+###' (2) Predict the level of district per-pupil revenues from state sources
+###'     for all years in the data, including the post-LCFF era (2013-2016)
+
+df_pre <- df_rev_pred %>%
+  filter(!(Fiscalyear %in% c(2013, 2014, 2015, 2016))) %>%
+  select(sum_value_PP_16, CAExp_PP, CALocalAssist_PP, timetrend, formula_weight, Dcode) %>%
+  rename(total_rev_PP_16 = sum_value_PP_16)
+
+valid_Dcode <- unique(df_pre$Dcode[complete.cases(df_pre)])
+
+df_pre <- df_pre %>%
+  filter(Dcode %in% valid_Dcode)
+
+fit_preLCFF <- lm(total_rev_PP_16 ~ CAExp_PP + CALocalAssist_PP + 
+                    timetrend*formula_weight + factor(Dcode), data = df_pre)
+
+df_prepost <- df_rev_pred %>%
+  select(sum_value_PP_16, CAExp_PP, CALocalAssist_PP, timetrend, formula_weight, Dcode) %>%
+  rename(total_rev_PP_16 = sum_value_PP_16) %>%
+  filter(Dcode %in% valid_Dcode)
+
+df_prepost$total_rev_PP_16_pred <- predict(fit_preLCFF, df_prepost)
+
+df_prepost$Fiscalyear <- df_prepost$timetrend + 2003
+
+df_actual_pred <- df_prepost %>%
+  group_by(Fiscalyear) %>%
+  summarise(actual_revenue = mean(total_rev_PP_16, na.rm = TRUE), 
+            predicted_revenue = mean(total_rev_PP_16_pred, na.rm = TRUE)) %>%
+  gather(actual_vs_pred, mean_rev_PP_16, 2:3)
+
+plot_trend_grp(df_actual_pred, Fiscalyear, mean_rev_PP_16, actual_vs_pred, yline = 2013)
 
 
 
-
-
-
-
-
-
-
-
+###'######################################################################
+###'
+###' Replicate Figure 10: Using actual vs. predicted per-pupil revenue difference
+###'
+###'
 
 
 
@@ -346,26 +387,33 @@ df_rev_pred <- df_rev_pred %>%
 ###'
 ###'
 
-### Convert to factors and set reference category
+### Merge predicted revenues
 df <- total_exp
+df_prepost_merge <- df_prepost %>%
+  select(Fiscalyear, Dcode, total_rev_PP_16, total_rev_PP_16_pred)
 
+df <- df %>%
+  left_join(df_prepost_merge, by = c("Fiscalyear", "Dcode"))
+
+
+### Convert to factors and set reference category
 df$Fiscalyear <- factor(df$Fiscalyear)
 df$decile <- factor(df$decile)
 df$Fiscalyear <- relevel(df$Fiscalyear, "2013")
 
 
 ### Tidy up analytical sample
-df <- total_exp %>%
+df <- df %>%
   filter(Dtype %in% c("ELEMENTARY", "HIGH", "UNIFIED")) %>%
-  select(log_y, decile, Fiscalyear, Dcode) 
+  select(log_y, decile, Fiscalyear, Dcode, total_rev_PP_16_pred) 
 
 
-### Filter only complete cases
-df <- df[complete.cases(df), ]
+### Filter only valid district
+df <- df %>%
+  filter(Dcode %in% valid_Dcode)
 
 
 ### Fixed effects using least squares dummy variable model
-
 df$Fiscalyear <- factor(df$Fiscalyear)
 df$decile <- factor(df$decile)
 df$Fiscalyear <- relevel(df$Fiscalyear, "2013")
@@ -373,7 +421,7 @@ df$Fiscalyear <- relevel(df$Fiscalyear, "2013")
 mm <- model.matrix(~ decile*Fiscalyear, df)
 write.csv(mm, file = "tables/model_matrix.csv")
 
-fit_lm <-lm(log_y ~ mm + factor(Dcode), data = df)
+fit_lm <-lm(log_y ~ mm + total_rev_PP_16_pred + factor(Dcode), data = df)
 summary(fit_lm)
 
 
