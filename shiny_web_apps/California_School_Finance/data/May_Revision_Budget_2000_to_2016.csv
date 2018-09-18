@@ -1,0 +1,885 @@
+"","rev_vs_exp","Category_1","Category_2","Category_3","Fiscalyear","value","value_16"
+"1","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2000,285027,397261.76
+"2","Cash Receipts","Revenues","Corporation Tax","Total",2000,6546270,9123987.36
+"3","Cash Receipts","Revenues","Cigarette Tax","Total",2000,126743,176650.45
+"4","Cash Receipts","Revenues","Horse Racing Fees","Total",2000,3866,5388.31
+"5","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2000,1109757,1546744.76
+"6","Cash Receipts","Revenues","Insurance Companies Tax","Total",2000,1501455,2092681.24
+"7","Cash Receipts","Revenues","Personal Income Tax","Total",2000,44772001,62401821.39
+"8","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2000,21290637,29674227.15
+"9","Cash Receipts","Revenues","Vehicle License Fees","Total",2000,NA,NA
+"10","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2000,836686,1166146.9
+"11","Cash Receipts","Revenues","Not Otherwise Classified","Total",2000,1114762,1553720.58
+"12","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2000,230695,321535.51
+"13","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2000,171463,238979.79
+"14","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2000,NA,NA
+"15","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2000,NA,NA
+"16","Cash Receipts","Nonrevenues","Miscellaneous","Total",2000,341044,475336.51
+"17","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2000,1047188,1459538.04
+"18","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2000,465333,648566.65
+"19","Cash Disbursements","State Operations","Transportation","Total",2000,43963,61274.26
+"20","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2000,48083,67016.59
+"21","Cash Disbursements","State Operations","Resources","Total",2000,1816778,2532168.63
+"22","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2000,318920,444500.77
+"23","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2000,253520,353348.28
+"24","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2000,455378,634691.68
+"25","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2000,366087,510240.67
+"26","Cash Disbursements","State Operations","Education","University of California",2000,3160156,4404527.07
+"27","Cash Disbursements","State Operations","Education","State Universities and Colleges",2000,2399161,3343875.92
+"28","Cash Disbursements","State Operations","Education","Other Education",2000,171491,239018.82
+"29","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2000,4595721,6405372.88
+"30","Cash Disbursements","State Operations","Governmental Operations","Total",2000,NA,NA
+"31","Cash Disbursements","State Operations","General Government","Total",2000,1047796,1460385.45
+"32","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2000,-28114,-39184.42
+"33","Cash Disbursements","State Operations","Debt Service","Total",2000,2265419,3157470.49
+"34","Cash Disbursements","State Operations","Interest on Loans","Total",2000,6253,8715.24
+"35","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2000,26063406,36326364.02
+"36","Cash Disbursements","Local Assistance","Community Colleges","Total",2000,2743161,3823332.42
+"37","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2000,NA,NA
+"38","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2000,902353,1257671.52
+"39","Cash Disbursements","Local Assistance","Other Education","Total",2000,1922204,2679108.1
+"40","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2000,20733,28897.01
+"41","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2000,117227,163387.34
+"42","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2000,169919,236827.81
+"43","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2000,8762549,12212968.05
+"44","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2000,442550,616812.41
+"45","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2000,946779,1319591.1
+"46","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2000,363011,505953.43
+"47","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2000,3277035,4567429.38
+"48","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2000,2757458,3843259.13
+"49","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2000,914903,1275163.32
+"50","Cash Disbursements","Local Assistance","Tax Relief","Total",2000,4657699,6491755.89
+"51","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2000,4031535,5619028
+"52","Cash Disbursements","Capital Outlay","Total","Total",2000,1866906,2602035.47
+"53","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2001,296452,401753.56
+"54","Cash Receipts","Revenues","Corporation Tax","Total",2001,5088175,6895525.79
+"55","Cash Receipts","Revenues","Cigarette Tax","Total",2001,113748,154151.98
+"56","Cash Receipts","Revenues","Horse Racing Fees","Total",2001,3153,4272.96
+"57","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2001,1000488,1355867.44
+"58","Cash Receipts","Revenues","Insurance Companies Tax","Total",2001,1590753,2155798.17
+"59","Cash Receipts","Revenues","Personal Income Tax","Total",2001,33295428,45122167.07
+"60","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2001,21368831,28959170.08
+"61","Cash Receipts","Revenues","Vehicle License Fees","Total",2001,NA,NA
+"62","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2001,480244,650829.6
+"63","Cash Receipts","Revenues","Not Otherwise Classified","Total",2001,1104561,1496907.8
+"64","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2001,10280,13931.52
+"65","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2001,1761202,2386791.69
+"66","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2001,NA,NA
+"67","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2001,116300,157610.47
+"68","Cash Receipts","Nonrevenues","Miscellaneous","Total",2001,374893,508057.28
+"69","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2001,1226718,1662455.71
+"70","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2001,468095,634365.2
+"71","Cash Disbursements","State Operations","Transportation","Total",2001,25586,34674.3
+"72","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2001,37273,50512.6
+"73","Cash Disbursements","State Operations","Resources","Total",2001,1091844,1479673.65
+"74","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2001,374420,507416.27
+"75","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2001,237110,321332.92
+"76","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2001,493537,668844.35
+"77","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2001,551025,746752.44
+"78","Cash Disbursements","State Operations","Education","University of California",2001,3332938,4516817.9
+"79","Cash Disbursements","State Operations","Education","State Universities and Colleges",2001,2598314,3521250.98
+"80","Cash Disbursements","State Operations","Education","Other Education",2001,189586,256928.1
+"81","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2001,4896279,6635467.16
+"82","Cash Disbursements","State Operations","Governmental Operations","Total",2001,NA,NA
+"83","Cash Disbursements","State Operations","General Government","Total",2001,1128620,1529512.71
+"84","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2001,-95249,-129082.03
+"85","Cash Disbursements","State Operations","Debt Service","Total",2001,2309911,3130405.47
+"86","Cash Disbursements","State Operations","Interest on Loans","Total",2001,110647,149949.49
+"87","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2001,26333915,35687882.2
+"88","Cash Disbursements","Local Assistance","Community Colleges","Total",2001,2727234,3695964.15
+"89","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2001,NA,NA
+"90","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2001,871774,1181433.44
+"91","Cash Disbursements","Local Assistance","Other Education","Total",2001,2400337,3252951.34
+"92","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2001,18122,24559.04
+"93","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2001,129261,175175.3
+"94","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2001,246186,333632.77
+"95","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2001,10049311,13618887.55
+"96","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2001,461558,625506.22
+"97","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2001,1439799,1951224.39
+"98","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2001,334730,453628.14
+"99","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2001,3646084,4941195.27
+"100","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2001,2608193,3534639.06
+"101","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2001,1003533,1359994.04
+"102","Cash Disbursements","Local Assistance","Tax Relief","Total",2001,3032914,4110223.55
+"103","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2001,3000275,4065990.98
+"104","Cash Disbursements","Capital Outlay","Total","Total",2001,411461,557614.46
+"105","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2002,289428,386129.77
+"106","Cash Receipts","Revenues","Corporation Tax","Total",2002,6509506,8684419.16
+"107","Cash Receipts","Revenues","Cigarette Tax","Total",2002,121909,162640.43
+"108","Cash Receipts","Revenues","Horse Racing Fees","Total",2002,NA,NA
+"109","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2002,932005,1243400.36
+"110","Cash Receipts","Revenues","Insurance Companies Tax","Total",2002,1870608,2495603.19
+"111","Cash Receipts","Revenues","Personal Income Tax","Total",2002,32464931,43311899.36
+"112","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2002,22265071,29704129.49
+"113","Cash Receipts","Revenues","Vehicle License Fees","Total",2002,NA,NA
+"114","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2002,211318,281922.17
+"115","Cash Receipts","Revenues","Not Otherwise Classified","Total",2002,3964437,5289008.51
+"116","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2002,NA,NA
+"117","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2002,3272198,4365483.19
+"118","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2002,NA,NA
+"119","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2002,6094067,8130176.42
+"120","Cash Receipts","Nonrevenues","Miscellaneous","Total",2002,591541,789182.77
+"121","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2002,1229072,1639721.42
+"122","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2002,460492,614348.55
+"123","Cash Disbursements","State Operations","Transportation","Total",2002,7048,9402.83
+"124","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2002,29281,39064.17
+"125","Cash Disbursements","State Operations","Resources","Total",2002,831227,1108951.08
+"126","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2002,160918,214682.86
+"127","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2002,231038,308230.89
+"128","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2002,523091,697862.71
+"129","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2002,607942,811063.57
+"130","Cash Disbursements","State Operations","Education","University of California",2002,3127953,4173044
+"131","Cash Disbursements","State Operations","Education","State Universities and Colleges",2002,2708162,3612995.2
+"132","Cash Disbursements","State Operations","Education","Other Education",2002,182656,243683.82
+"133","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2002,5499497,7336952.62
+"134","Cash Disbursements","State Operations","Governmental Operations","Total",2002,NA,NA
+"135","Cash Disbursements","State Operations","General Government","Total",2002,1112680,1484441.29
+"136","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2002,-79398,-105925.94
+"137","Cash Disbursements","State Operations","Debt Service","Total",2002,1727045,2304073.87
+"138","Cash Disbursements","State Operations","Interest on Loans","Total",2002,313007,417586.83
+"139","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2002,25276094,33721175.61
+"140","Cash Disbursements","Local Assistance","Community Colleges","Total",2002,2747690,3665730.04
+"141","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2002,NA,NA
+"142","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2002,975522,1301456.97
+"143","Cash Disbursements","Local Assistance","Other Education","Total",2002,2360827,3149610.93
+"144","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2002,13943,18601.54
+"145","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2002,135057,180181.35
+"146","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2002,232148,309711.76
+"147","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2002,10804814,14414847.1
+"148","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2002,449423,599581.24
+"149","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2002,1547315,2064293.67
+"150","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2002,479292,639429.88
+"151","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2002,4074085,5435291.38
+"152","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2002,2801636,3737700.12
+"153","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2002,1308893,1746211.69
+"154","Cash Disbursements","Local Assistance","Tax Relief","Total",2002,4677000,6239648.35
+"155","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2002,2517359,3358442.37
+"156","Cash Disbursements","Capital Outlay","Total","Total",2002,160138,213642.25
+"157","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2003,311872,406801.43
+"158","Cash Receipts","Revenues","Corporation Tax","Total",2003,7964152,10388327.33
+"159","Cash Receipts","Revenues","Cigarette Tax","Total",2003,116903,152486.62
+"160","Cash Receipts","Revenues","Horse Racing Fees","Total",2003,NA,NA
+"161","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2003,574510,749382.73
+"162","Cash Receipts","Revenues","Insurance Companies Tax","Total",2003,2113933,2757384.33
+"163","Cash Receipts","Revenues","Personal Income Tax","Total",2003,36752037,47938837.74
+"164","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2003,23699237,30912949.86
+"165","Cash Receipts","Revenues","Vehicle License Fees","Total",2003,NA,NA
+"166","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2003,120126,156690.66
+"167","Cash Receipts","Revenues","Not Otherwise Classified","Total",2003,3830077,4995898.32
+"168","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2003,2524497,3292918.21
+"169","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2003,895577,1168177.98
+"170","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2003,11254000,14679558.58
+"171","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2003,NA,NA
+"172","Cash Receipts","Nonrevenues","Miscellaneous","Total",2003,482897,629884.02
+"173","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2003,1261202,1645094.07
+"174","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2003,468069,610542.59
+"175","Cash Disbursements","State Operations","Transportation","Total",2003,5719,7459.78
+"176","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2003,7521,9810.29
+"177","Cash Disbursements","State Operations","Resources","Total",2003,714746,932304.58
+"178","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2003,77648,101282.95
+"179","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2003,229969,299968.31
+"180","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2003,524381,683995.17
+"181","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2003,632042,824426.65
+"182","Cash Disbursements","State Operations","Education","University of California",2003,2919292,3807883.23
+"183","Cash Disbursements","State Operations","Education","State Universities and Colleges",2003,2615895,3412136.47
+"184","Cash Disbursements","State Operations","Education","Other Education",2003,153346,200022.36
+"185","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2003,5042508,6577376.18
+"186","Cash Disbursements","State Operations","Governmental Operations","Total",2003,NA,NA
+"187","Cash Disbursements","State Operations","General Government","Total",2003,1149718,1499675.91
+"188","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2003,-146560,-191170.79
+"189","Cash Disbursements","State Operations","Debt Service","Total",2003,1860442,2426734.26
+"190","Cash Disbursements","State Operations","Interest on Loans","Total",2003,282573,368584.23
+"191","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2003,25678841,33495117.35
+"192","Cash Disbursements","Local Assistance","Community Colleges","Total",2003,2280341,2974444.58
+"193","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2003,NA,NA
+"194","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2003,509763,664927.65
+"195","Cash Disbursements","Local Assistance","Other Education","Total",2003,2135899,2786036.47
+"196","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2003,13953,18200.1
+"197","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2003,144739,188795.51
+"198","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2003,209868,273748.85
+"199","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2003,10852486,14155829.39
+"200","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2003,446401,582279.16
+"201","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2003,1602228,2089923.56
+"202","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2003,383796,500618.08
+"203","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2003,4219940,5504430.11
+"204","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2003,3035140,3958993.73
+"205","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2003,1074323,1401331.74
+"206","Cash Disbursements","Local Assistance","Tax Relief","Total",2003,3654364,4766700.76
+"207","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2003,2595966,3386141.37
+"208","Cash Disbursements","Capital Outlay","Total","Total",2003,385372,502673.79
+"209","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2004,312671,397264.31
+"210","Cash Receipts","Revenues","Corporation Tax","Total",2004,12496503,15877438.83
+"211","Cash Receipts","Revenues","Cigarette Tax","Total",2004,122206,155268.9
+"212","Cash Receipts","Revenues","Horse Racing Fees","Total",2004,NA,NA
+"213","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2004,452679,575151.56
+"214","Cash Receipts","Revenues","Insurance Companies Tax","Total",2004,2228317,2831189.4
+"215","Cash Receipts","Revenues","Personal Income Tax","Total",2004,42476251,53968224.32
+"216","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2004,25506531,32407337.14
+"217","Cash Receipts","Revenues","Vehicle License Fees","Total",2004,NA,NA
+"218","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2004,167339,212612.66
+"219","Cash Receipts","Revenues","Not Otherwise Classified","Total",2004,1684799,2140622.31
+"220","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2004,1448000,1839757.2
+"221","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2004,487988,620013.42
+"222","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2004,NA,NA
+"223","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2004,NA,NA
+"224","Cash Receipts","Nonrevenues","Miscellaneous","Total",2004,553658,703450.48
+"225","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2004,1298574,1649903.92
+"226","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2004,509350,647154.93
+"227","Cash Disbursements","State Operations","Transportation","Total",2004,3386,4302.08
+"228","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2004,NA,NA
+"229","Cash Disbursements","State Operations","Resources","Total",2004,761199,967141.81
+"230","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2004,50461,64113.25
+"231","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2004,258528,328472.89
+"232","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2004,571258,725812.17
+"233","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2004,589512,749004.8
+"234","Cash Disbursements","State Operations","Education","University of California",2004,2670057,3392442.41
+"235","Cash Disbursements","State Operations","Education","State Universities and Colleges",2004,2488257,3161456.31
+"236","Cash Disbursements","State Operations","Education","Other Education",2004,146158,185701.13
+"237","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2004,6364036,8085829.48
+"238","Cash Disbursements","State Operations","Governmental Operations","Total",2004,NA,NA
+"239","Cash Disbursements","State Operations","General Government","Total",2004,1265848,1608323.88
+"240","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2004,-63151,-80236.54
+"241","Cash Disbursements","State Operations","Debt Service","Total",2004,3032522,3852972.51
+"242","Cash Disbursements","State Operations","Interest on Loans","Total",2004,89360,113536.4
+"243","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2004,29428525,37390428.8
+"244","Cash Disbursements","Local Assistance","Community Colleges","Total",2004,3042733,3865946.1
+"245","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2004,NA,NA
+"246","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2004,1148792,1459598.31
+"247","Cash Disbursements","Local Assistance","Other Education","Total",2004,2325743,2954974.06
+"248","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2004,NA,NA
+"249","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2004,214051,271962.62
+"250","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2004,227987,289669.01
+"251","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2004,11484288,14591368.5
+"252","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2004,495354,629372.3
+"253","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2004,1604536,2038644.11
+"254","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2004,98471,125112.38
+"255","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2004,4580336,5819548.45
+"256","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2004,2671866,3394740.83
+"257","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2004,1145377,1455259.38
+"258","Cash Disbursements","Local Assistance","Tax Relief","Total",2004,667334,847881.58
+"259","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2004,2582555,3281266.69
+"260","Cash Disbursements","Capital Outlay","Total","Total",2004,84665,107571.16
+"261","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2005,318518,391431.39
+"262","Cash Receipts","Revenues","Corporation Tax","Total",2005,10436025,12824982.35
+"263","Cash Receipts","Revenues","Cigarette Tax","Total",2005,113256,139181.94
+"264","Cash Receipts","Revenues","Horse Racing Fees","Total",2005,NA,NA
+"265","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2005,124849,153428.75
+"266","Cash Receipts","Revenues","Insurance Companies Tax","Total",2005,2212739,2719267.02
+"267","Cash Receipts","Revenues","Personal Income Tax","Total",2005,49946731,61380261.48
+"268","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2005,27537859,33841673.96
+"269","Cash Receipts","Revenues","Vehicle License Fees","Total",2005,NA,NA
+"270","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2005,380111,467123.92
+"271","Cash Receipts","Revenues","Not Otherwise Classified","Total",2005,2255456,2771762.56
+"272","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2005,NA,NA
+"273","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2005,240562,295630.13
+"274","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2005,NA,NA
+"275","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2005,NA,NA
+"276","Cash Receipts","Nonrevenues","Miscellaneous","Total",2005,736461,905047.59
+"277","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2005,1398060,1718096.19
+"278","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2005,527951,648806.63
+"279","Cash Disbursements","State Operations","Transportation","Total",2005,5517,6779.92
+"280","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2005,NA,NA
+"281","Cash Disbursements","State Operations","Resources","Total",2005,790643,971632.64
+"282","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2005,60783,74697.11
+"283","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2005,296825,364772.54
+"284","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2005,731931,899480.61
+"285","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2005,661863,813373.03
+"286","Cash Disbursements","State Operations","Education","University of California",2005,2842562,3493265.63
+"287","Cash Disbursements","State Operations","Education","State Universities and Colleges",2005,2599834,3194973.68
+"288","Cash Disbursements","State Operations","Education","Other Education",2005,154754,190179.43
+"289","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2005,7211404,8862198.87
+"290","Cash Disbursements","State Operations","Governmental Operations","Total",2005,NA,NA
+"291","Cash Disbursements","State Operations","General Government","Total",2005,1226683,1507488.51
+"292","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2005,-1553,-1908.5
+"293","Cash Disbursements","State Operations","Debt Service","Total",2005,3130365,3846950.91
+"294","Cash Disbursements","State Operations","Interest on Loans","Total",2005,83056,102068.72
+"295","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2005,31019476,38120283.54
+"296","Cash Disbursements","Local Assistance","Community Colleges","Total",2005,3342326,4107432.85
+"297","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2005,NA,NA
+"298","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2005,1081064,1328535.21
+"299","Cash Disbursements","Local Assistance","Other Education","Total",2005,2709883,3330214.49
+"300","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2005,NA,NA
+"301","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2005,293729,360967.82
+"302","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2005,222127,272975.09
+"303","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2005,12148396,14929339.88
+"304","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2005,598510,735517.61
+"305","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2005,1697585,2086186.81
+"306","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2005,649150,797749.84
+"307","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2005,4741450,5826836.61
+"308","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2005,2913578,3580538.22
+"309","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2005,1237135,1520333.13
+"310","Cash Disbursements","Local Assistance","Tax Relief","Total",2005,662584,814259.08
+"311","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2005,4084138,5019056.37
+"312","Cash Disbursements","Capital Outlay","Total","Total",2005,1450966,1783113.14
+"313","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2006,329407,392162.63
+"314","Cash Receipts","Revenues","Corporation Tax","Total",2006,10767189,12818456
+"315","Cash Receipts","Revenues","Cigarette Tax","Total",2006,111369,132586.01
+"316","Cash Receipts","Revenues","Horse Racing Fees","Total",2006,NA,NA
+"317","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2006,26686,31769.97
+"318","Cash Receipts","Revenues","Insurance Companies Tax","Total",2006,2175294,2589711.25
+"319","Cash Receipts","Revenues","Personal Income Tax","Total",2006,52353056,62326884.48
+"320","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2006,27515361,32757337.54
+"321","Cash Receipts","Revenues","Vehicle License Fees","Total",2006,NA,NA
+"322","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2006,574924,684453.3
+"323","Cash Receipts","Revenues","Not Otherwise Classified","Total",2006,1811937,2157130.77
+"324","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2006,NA,NA
+"325","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2006,868037,1033407.52
+"326","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2006,NA,NA
+"327","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2006,NA,NA
+"328","Cash Receipts","Nonrevenues","Miscellaneous","Total",2006,823992,980971.47
+"329","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2006,1433925,1707103.36
+"330","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2006,606846,722456.79
+"331","Cash Disbursements","State Operations","Transportation","Total",2006,5993,7134.73
+"332","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2006,NA,NA
+"333","Cash Disbursements","State Operations","Resources","Total",2006,1156321,1376612.77
+"334","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2006,64694,77018.91
+"335","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2006,194605,231679.38
+"336","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2006,864501,1029197.87
+"337","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2006,733560,873311.19
+"338","Cash Disbursements","State Operations","Education","University of California",2006,3052524,3634063.13
+"339","Cash Disbursements","State Operations","Education","State Universities and Colleges",2006,3126177,3721747.83
+"340","Cash Disbursements","State Operations","Education","Other Education",2006,165043,196485.49
+"341","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2006,8564486,10196114.04
+"342","Cash Disbursements","State Operations","Governmental Operations","Total",2006,NA,NA
+"343","Cash Disbursements","State Operations","General Government","Total",2006,1905851,2268936.41
+"344","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2006,3673,4372.75
+"345","Cash Disbursements","State Operations","Debt Service","Total",2006,3274615,3898464.89
+"346","Cash Disbursements","State Operations","Interest on Loans","Total",2006,90593,107851.96
+"347","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2006,36509412,43464853.4
+"348","Cash Disbursements","Local Assistance","Community Colleges","Total",2006,4259547,5071037.19
+"349","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2006,NA,NA
+"350","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2006,958573,1141191.62
+"351","Cash Disbursements","Local Assistance","Other Education","Total",2006,2871348,3418371.13
+"352","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2006,NA,NA
+"353","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2006,283562,337583.66
+"354","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2006,256096,304885.08
+"355","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2006,13218982,15737342.33
+"356","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2006,707902,842765.06
+"357","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2006,2008953,2391680.47
+"358","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2006,758947,903534.69
+"359","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2006,5051513,6013881.35
+"360","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2006,2466222,2936064.2
+"361","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2006,1184326,1409953.03
+"362","Cash Disbursements","Local Assistance","Tax Relief","Total",2006,671198,799068.54
+"363","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2006,3699294,4404049.88
+"364","Cash Disbursements","Capital Outlay","Total","Total",2006,2889634,3440140.81
+"365","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2007,326691,378235.05
+"366","Cash Receipts","Revenues","Corporation Tax","Total",2007,10124367,11721750.85
+"367","Cash Receipts","Revenues","Cigarette Tax","Total",2007,111394,128969.32
+"368","Cash Receipts","Revenues","Horse Racing Fees","Total",2007,NA,NA
+"369","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2007,14431,16707.87
+"370","Cash Receipts","Revenues","Insurance Companies Tax","Total",2007,2195628,2542045.78
+"371","Cash Receipts","Revenues","Personal Income Tax","Total",2007,54849291,63503202.05
+"372","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2007,26836793,31070999.41
+"373","Cash Receipts","Revenues","Vehicle License Fees","Total",2007,NA,NA
+"374","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2007,489200,566384.1
+"375","Cash Receipts","Revenues","Not Otherwise Classified","Total",2007,1431000,1656777.7
+"376","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2007,190174,220178.93
+"377","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2007,2696706,3122181.94
+"378","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2007,3313000,3835712.45
+"379","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2007,NA,NA
+"380","Cash Receipts","Nonrevenues","Miscellaneous","Total",2007,837496,969632.91
+"381","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2007,1575259,1823797.33
+"382","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2007,557654,645638.51
+"383","Cash Disbursements","State Operations","Transportation","Total",2007,3595,4162.21
+"384","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2007,NA,NA
+"385","Cash Disbursements","State Operations","Resources","Total",2007,1311350,1518249.78
+"386","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2007,73858,85511.03
+"387","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2007,264214,305900.67
+"388","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2007,1162768,1346225.08
+"389","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2007,726166,840737.69
+"390","Cash Disbursements","State Operations","Education","University of California",2007,3278752,3796060.93
+"391","Cash Disbursements","State Operations","Education","State Universities and Colleges",2007,2966847,3434944.76
+"392","Cash Disbursements","State Operations","Education","Other Education",2007,198678,230024.65
+"393","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2007,9177031,10624947.8
+"394","Cash Disbursements","State Operations","Governmental Operations","Total",2007,NA,NA
+"395","Cash Disbursements","State Operations","General Government","Total",2007,1947320,2254560.69
+"396","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2007,-20364,-23576.95
+"397","Cash Disbursements","State Operations","Debt Service","Total",2007,3391226,3926280.65
+"398","Cash Disbursements","State Operations","Interest on Loans","Total",2007,219870,254560.25
+"399","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2007,35595003,41211046.24
+"400","Cash Disbursements","Local Assistance","Community Colleges","Total",2007,4180172,4839703.53
+"401","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2007,NA,NA
+"402","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2007,1622917,1878974.63
+"403","Cash Disbursements","Local Assistance","Other Education","Total",2007,4400300,5094562.48
+"404","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2007,NA,NA
+"405","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2007,312370,361654.54
+"406","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2007,265166,307002.88
+"407","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2007,13828471,16010274.19
+"408","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2007,604465,699835.17
+"409","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2007,2150258,2489517.47
+"410","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2007,546174,632347.24
+"411","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2007,5265901,6096734.69
+"412","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2007,2357468,2729420.27
+"413","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2007,1517385,1756792.19
+"414","Cash Disbursements","Local Assistance","Tax Relief","Total",2007,669130,774702.77
+"415","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2007,3382394,3916055.17
+"416","Cash Disbursements","Capital Outlay","Total","Total",2007,1274339,1475399.33
+"417","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2008,333435,371693.54
+"418","Cash Receipts","Revenues","Corporation Tax","Total",2008,12260536,13667317.52
+"419","Cash Receipts","Revenues","Cigarette Tax","Total",2008,107415,119739.86
+"420","Cash Receipts","Revenues","Horse Racing Fees","Total",2008,NA,NA
+"421","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2008,18275,20371.88
+"422","Cash Receipts","Revenues","Insurance Companies Tax","Total",2008,2059909,2296264.24
+"423","Cash Receipts","Revenues","Personal Income Tax","Total",2008,43701844,48716220.74
+"424","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2008,23702413,26422042.6
+"425","Cash Receipts","Revenues","Vehicle License Fees","Total",2008,NA,NA
+"426","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2008,226399,252376.16
+"427","Cash Receipts","Revenues","Not Otherwise Classified","Total",2008,2768928,3086636.52
+"428","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2008,837902,934043.4
+"429","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2008,1081352,1205427
+"430","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2008,NA,NA
+"431","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2008,NA,NA
+"432","Cash Receipts","Nonrevenues","Miscellaneous","Total",2008,676544,754171.08
+"433","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2008,1471734,1640601.67
+"434","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2008,537149,598781.81
+"435","Cash Disbursements","State Operations","Transportation","Total",2008,4695,5233.71
+"436","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2008,NA,NA
+"437","Cash Disbursements","State Operations","Resources","Total",2008,1567600,1747467.4
+"438","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2008,61400,68445.07
+"439","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2008,210754,234936.04
+"440","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2008,1204252,1342428.62
+"441","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2008,626695,698602.37
+"442","Cash Disbursements","State Operations","Education","University of California",2008,3206579,3574503.87
+"443","Cash Disbursements","State Operations","Education","State Universities and Colleges",2008,2875470,3205403.21
+"444","Cash Disbursements","State Operations","Education","Other Education",2008,167672,186910.79
+"445","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2008,9016603,10051173.63
+"446","Cash Disbursements","State Operations","Governmental Operations","Total",2008,NA,NA
+"447","Cash Disbursements","State Operations","General Government","Total",2008,1496416,1668115.7
+"448","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2008,19807,22079.67
+"449","Cash Disbursements","State Operations","Debt Service","Total",2008,3995754,4454229.3
+"450","Cash Disbursements","State Operations","Interest on Loans","Total",2008,205634,229228.57
+"451","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2008,31186076,34764385.74
+"452","Cash Disbursements","Local Assistance","Community Colleges","Total",2008,4068798,4535654.41
+"453","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2008,NA,NA
+"454","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2008,1133088,1263099.22
+"455","Cash Disbursements","Local Assistance","Other Education","Total",2008,3623193,4038920.42
+"456","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2008,NA,NA
+"457","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2008,276343,308050.77
+"458","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2008,254842,284082.73
+"459","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2008,12645121,14096030.04
+"460","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2008,384433,428543.08
+"461","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2008,2338766,2607117.46
+"462","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2008,840415,936844.74
+"463","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2008,5025255,5601855.88
+"464","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2008,2849760,3176743.23
+"465","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2008,1503172,1675646.89
+"466","Cash Disbursements","Local Assistance","Tax Relief","Total",2008,482071,537384.13
+"467","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2008,3214001,3582777.47
+"468","Cash Disbursements","Capital Outlay","Total","Total",2008,1202612,1340600.45
+"469","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2009,323583,361999.03
+"470","Cash Receipts","Revenues","Corporation Tax","Total",2009,9446013,10567451.03
+"471","Cash Receipts","Revenues","Cigarette Tax","Total",2009,96213,107635.48
+"472","Cash Receipts","Revenues","Horse Racing Fees","Total",2009,NA,NA
+"473","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2009,7008,7840
+"474","Cash Receipts","Revenues","Insurance Companies Tax","Total",2009,2015489,2254769.43
+"475","Cash Receipts","Revenues","Personal Income Tax","Total",2009,44629412,49927850.61
+"476","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2009,26659015,29823994.06
+"477","Cash Receipts","Revenues","Vehicle License Fees","Total",2009,1370059,1532713.47
+"478","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2009,26025,29114.71
+"479","Cash Receipts","Revenues","Not Otherwise Classified","Total",2009,2016730,2256157.76
+"480","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2009,1103675,1234704.16
+"481","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2009,301034,336772.99
+"482","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2009,NA,NA
+"483","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2009,NA,NA
+"484","Cash Receipts","Nonrevenues","Miscellaneous","Total",2009,660685,739122.04
+"485","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2009,1467820,1642080.74
+"486","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2009,489950,548117.25
+"487","Cash Disbursements","State Operations","Transportation","Total",2009,417389,466941.75
+"488","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2009,NA,NA
+"489","Cash Disbursements","State Operations","Resources","Total",2009,1115364,1247780.88
+"490","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2009,52162,58354.71
+"491","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2009,209271,234115.82
+"492","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2009,1082781,1211329.6
+"493","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2009,511050,571722.25
+"494","Cash Disbursements","State Operations","Education","University of California",2009,1801720,2015621.6
+"495","Cash Disbursements","State Operations","Education","State Universities and Colleges",2009,1630282,1823830.35
+"496","Cash Disbursements","State Operations","Education","Other Education",2009,160544,179603.91
+"497","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2009,8111662,9074684.84
+"498","Cash Disbursements","State Operations","Governmental Operations","Total",2009,NA,NA
+"499","Cash Disbursements","State Operations","General Government","Total",2009,1516442,1696475.18
+"500","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2009,15886,17772
+"501","Cash Disbursements","State Operations","Debt Service","Total",2009,4703924,5262377.53
+"502","Cash Disbursements","State Operations","Interest on Loans","Total",2009,254988,285260.37
+"503","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2009,29151614,32612516.36
+"504","Cash Disbursements","Local Assistance","Community Colleges","Total",2009,3757261,4203325.96
+"505","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2009,NA,NA
+"506","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2009,1248045,1396213.88
+"507","Cash Disbursements","Local Assistance","Other Education","Total",2009,3351573,3749474.36
+"508","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2009,NA,NA
+"509","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2009,203469,227625
+"510","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2009,203151,227269.25
+"511","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2009,10236433,11451710.31
+"512","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2009,279796,313013.6
+"513","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2009,1895351,2120368.55
+"514","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2009,677190,757586.53
+"515","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2009,4248830,4753254.41
+"516","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2009,2367641,2648729.19
+"517","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2009,1420981,1589680.97
+"518","Cash Disbursements","Local Assistance","Tax Relief","Total",2009,439725,491929.5
+"519","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2009,1102389,1233265.48
+"520","Cash Disbursements","Capital Outlay","Total","Total",2009,1860643,2081539.99
+"521","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2010,333633,367218.77
+"522","Cash Receipts","Revenues","Corporation Tax","Total",2010,9804193,10791149.75
+"523","Cash Receipts","Revenues","Cigarette Tax","Total",2010,95691,105323.91
+"524","Cash Receipts","Revenues","Horse Racing Fees","Total",2010,NA,NA
+"525","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2010,8243,9072.8
+"526","Cash Receipts","Revenues","Insurance Companies Tax","Total",2010,2061933,2269501.2
+"527","Cash Receipts","Revenues","Personal Income Tax","Total",2010,50401571,55475335.93
+"528","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2010,27171866,29907170.83
+"529","Cash Receipts","Revenues","Vehicle License Fees","Total",2010,1352875,1489064.6
+"530","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2010,38461,42332.75
+"531","Cash Receipts","Revenues","Not Otherwise Classified","Total",2010,1964388,2162136.66
+"532","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2010,180291,198440.32
+"533","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2010,1442803,1588045.36
+"534","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2010,NA,NA
+"535","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2010,NA,NA
+"536","Cash Receipts","Nonrevenues","Miscellaneous","Total",2010,680431,748927.81
+"537","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2010,1382862,1522070.29
+"538","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2010,538237,592419.6
+"539","Cash Disbursements","State Operations","Transportation","Total",2010,412017,453493.43
+"540","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2010,NA,NA
+"541","Cash Disbursements","State Operations","Resources","Total",2010,925538,1018708.95
+"542","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2010,59212,65172.68
+"543","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2010,192898,212316.42
+"544","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2010,1169480,1287207.81
+"545","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2010,590688,650150.67
+"546","Cash Disbursements","State Operations","Education","University of California",2010,2912074,3205223.17
+"547","Cash Disbursements","State Operations","Education","State Universities and Colleges",2010,2577665,2837150.29
+"548","Cash Disbursements","State Operations","Education","Other Education",2010,166748,183533.99
+"549","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2010,9161540,10083802.93
+"550","Cash Disbursements","State Operations","Governmental Operations","Total",2010,NA,NA
+"551","Cash Disbursements","State Operations","General Government","Total",2010,1864586,2052287.91
+"552","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2010,-23207,-25543.17
+"553","Cash Disbursements","State Operations","Debt Service","Total",2010,4757649,5236586.31
+"554","Cash Disbursements","State Operations","Interest on Loans","Total",2010,210494,231683.76
+"555","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2010,29796246,32795738.77
+"556","Cash Disbursements","Local Assistance","Community Colleges","Total",2010,3945758,4342964.84
+"557","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2010,NA,NA
+"558","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2010,1257341,1383913.5
+"559","Cash Disbursements","Local Assistance","Other Education","Total",2010,3125702,3440356.42
+"560","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2010,NA,NA
+"561","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2010,202475,222857.51
+"562","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2010,171177,188408.84
+"563","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2010,12300969,13539268.2
+"564","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2010,247991,272955.46
+"565","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2010,2503708,2755748.28
+"566","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2010,470221,517556.64
+"567","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2010,4603353,5066757.82
+"568","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2010,2674751,2944009.63
+"569","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2010,1528406,1682265.74
+"570","Cash Disbursements","Local Assistance","Tax Relief","Total",2010,438083,482183.41
+"571","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2010,2167035,2385183.48
+"572","Cash Disbursements","Capital Outlay","Total","Total",2010,42813,47122.85
+"573","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2011,338178,360831.55
+"574","Cash Receipts","Revenues","Corporation Tax","Total",2011,8051423,8590764.07
+"575","Cash Receipts","Revenues","Cigarette Tax","Total",2011,100906,107665.4
+"576","Cash Receipts","Revenues","Horse Racing Fees","Total",2011,NA,NA
+"577","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2011,3991,4258.35
+"578","Cash Receipts","Revenues","Insurance Companies Tax","Total",2011,2187463,2333994.69
+"579","Cash Receipts","Revenues","Personal Income Tax","Total",2011,50699002,54095178.57
+"580","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2011,19438408,20740529.61
+"581","Cash Receipts","Revenues","Vehicle License Fees","Total",2011,83406,88993.12
+"582","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2011,25605,27320.2
+"583","Cash Receipts","Revenues","Not Otherwise Classified","Total",2011,2545502,2716017.67
+"584","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2011,715854,763806.95
+"585","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2011,2348551,2505873.5
+"586","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2011,NA,NA
+"587","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2011,NA,NA
+"588","Cash Receipts","Nonrevenues","Miscellaneous","Total",2011,1231498,1313992.42
+"589","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2011,1253131,1337074.55
+"590","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2011,590961,630547.73
+"591","Cash Disbursements","State Operations","Transportation","Total",2011,26876,28676.34
+"592","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2011,NA,NA
+"593","Cash Disbursements","State Operations","Resources","Total",2011,929868,992157.11
+"594","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2011,35694,38085.04
+"595","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2011,222734,237654.29
+"596","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2011,1232235,1314778.79
+"597","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2011,967807,1032637.54
+"598","Cash Disbursements","State Operations","Education","University of California",2011,2277772,2430353.23
+"599","Cash Disbursements","State Operations","Education","State Universities and Colleges",2011,1999976,2133948.49
+"600","Cash Disbursements","State Operations","Education","Other Education",2011,164030,175017.89
+"601","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2011,7991944,8527300.75
+"602","Cash Disbursements","State Operations","Governmental Operations","Total",2011,NA,NA
+"603","Cash Disbursements","State Operations","General Government","Total",2011,1914058,2042275.1
+"604","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2011,-6331,-6755.1
+"605","Cash Disbursements","State Operations","Debt Service","Total",2011,4744822,5062663.63
+"606","Cash Disbursements","State Operations","Interest on Loans","Total",2011,85767,91512.28
+"607","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2011,29269540,31230220.13
+"608","Cash Disbursements","Local Assistance","Community Colleges","Total",2011,3284018,3504004.68
+"609","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2011,NA,NA
+"610","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2011,1316108,1404270.19
+"611","Cash Disbursements","Local Assistance","Other Education","Total",2011,3482653,3715945.65
+"612","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2011,NA,NA
+"613","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2011,234339,250036.68
+"614","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2011,53548,57135.02
+"615","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2011,15096282,16107537.39
+"616","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2011,24062,25673.84
+"617","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2011,2097430,2237930.65
+"618","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2011,357495,381442.54
+"619","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2011,4497175,4798427.49
+"620","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2011,1744646,1861514.69
+"621","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2011,827068,882470.85
+"622","Cash Disbursements","Local Assistance","Tax Relief","Total",2011,433008,462013.93
+"623","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2011,1862287,1987036.11
+"624","Cash Disbursements","Capital Outlay","Total","Total",2011,190873,203659.02
+"625","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2012,360803,377166.85
+"626","Cash Receipts","Revenues","Corporation Tax","Total",2012,7620406,7966021.69
+"627","Cash Receipts","Revenues","Cigarette Tax","Total",2012,91172,95307.01
+"628","Cash Receipts","Revenues","Horse Racing Fees","Total",2012,NA,NA
+"629","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2012,4303,4498.16
+"630","Cash Receipts","Revenues","Insurance Companies Tax","Total",2012,2244313,2346101.51
+"631","Cash Receipts","Revenues","Personal Income Tax","Total",2012,67314600,70367584.53
+"632","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2012,20073343,20983748.85
+"633","Cash Receipts","Revenues","Vehicle License Fees","Total",2012,7493,7832.84
+"634","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2012,23426,24488.46
+"635","Cash Receipts","Revenues","Not Otherwise Classified","Total",2012,2338513,2444573.85
+"636","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2012,NA,NA
+"637","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2012,2051308,2144342.97
+"638","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2012,NA,NA
+"639","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2012,NA,NA
+"640","Cash Receipts","Nonrevenues","Miscellaneous","Total",2012,1294994,1353727.12
+"641","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2012,1000838,1046229.98
+"642","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2012,663371,693457.51
+"643","Cash Disbursements","State Operations","Transportation","Total",2012,3978,4158.42
+"644","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2012,NA,NA
+"645","Cash Disbursements","State Operations","Resources","Total",2012,1143350,1195205.46
+"646","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2012,34023,35566.08
+"647","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2012,217429,227290.27
+"648","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2012,1161511,1214190.14
+"649","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2012,469474,490766.51
+"650","Cash Disbursements","State Operations","Education","University of California",2012,2386114,2494333.75
+"651","Cash Disbursements","State Operations","Education","State Universities and Colleges",2012,2244988,2346807.12
+"652","Cash Disbursements","State Operations","Education","Other Education",2012,169881,177585.78
+"653","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2012,7788842,8142096.93
+"654","Cash Disbursements","State Operations","Governmental Operations","Total",2012,NA,NA
+"655","Cash Disbursements","State Operations","General Government","Total",2012,4270890,4464591.83
+"656","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2012,-6616,-6916.06
+"657","Cash Disbursements","State Operations","Debt Service","Total",2012,4482775,4686086.65
+"658","Cash Disbursements","State Operations","Interest on Loans","Total",2012,99862,104391.14
+"659","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2012,36476720,38131084.16
+"660","Cash Disbursements","Local Assistance","Community Colleges","Total",2012,3584580,3747154.94
+"661","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2012,NA,NA
+"662","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2012,1359675,1421341.66
+"663","Cash Disbursements","Local Assistance","Other Education","Total",2012,1813620,1895874.87
+"664","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2012,NA,NA
+"665","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2012,223654,233797.6
+"666","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2012,42770,44709.79
+"667","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2012,14391478,15044188.7
+"668","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2012,108352,113266.19
+"669","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2012,2037886,2130312.23
+"670","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2012,10664,11147.65
+"671","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2012,4453798,4655795.43
+"672","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2012,1348177,1409322.18
+"673","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2012,682154,713092.39
+"674","Cash Disbursements","Local Assistance","Tax Relief","Total",2012,427285,446664.07
+"675","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2012,1134295,1185739.78
+"676","Cash Disbursements","Capital Outlay","Total","Total",2012,117388,122712.01
+"677","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2013,329457,339427.39
+"678","Cash Receipts","Revenues","Corporation Tax","Total",2013,8511645,8769233.73
+"679","Cash Receipts","Revenues","Cigarette Tax","Total",2013,80152,82577.65
+"680","Cash Receipts","Revenues","Horse Racing Fees","Total",2013,NA,NA
+"681","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2013,8828,9095.16
+"682","Cash Receipts","Revenues","Insurance Companies Tax","Total",2013,2365974,2437575.7
+"683","Cash Receipts","Revenues","Personal Income Tax","Total",2013,66194590,68197843.22
+"684","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2013,22158717,22829308.37
+"685","Cash Receipts","Revenues","Vehicle License Fees","Total",2013,1951,2010.04
+"686","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2013,21351,21997.15
+"687","Cash Receipts","Revenues","Not Otherwise Classified","Total",2013,1899864,1957359.77
+"688","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2013,NA,NA
+"689","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2013,1197097,1233324.86
+"690","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2013,NA,NA
+"691","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2013,NA,NA
+"692","Cash Receipts","Nonrevenues","Miscellaneous","Total",2013,1196571,1232782.94
+"693","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2013,1478905,1523661.24
+"694","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2013,10667,10989.82
+"695","Cash Disbursements","State Operations","Transportation","Total",2013,593,610.95
+"696","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2013,NA,NA
+"697","Cash Disbursements","State Operations","Resources","Total",2013,1084230,1117042.16
+"698","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2013,40943,42182.06
+"699","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2013,235749,242883.49
+"700","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2013,1375451,1417076.41
+"701","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2013,517745,533413.57
+"702","Cash Disbursements","State Operations","Education","University of California",2013,2852368,2938689.49
+"703","Cash Disbursements","State Operations","Education","State Universities and Colleges",2013,2551907,2629135.61
+"704","Cash Disbursements","State Operations","Education","Other Education",2013,186421,192062.68
+"705","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2013,8785327,9051198.19
+"706","Cash Disbursements","State Operations","Governmental Operations","Total",2013,679501,700064.8
+"707","Cash Disbursements","State Operations","General Government","Total",2013,2136658,2201319.89
+"708","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2013,-57274,-59007.29
+"709","Cash Disbursements","State Operations","Debt Service","Total",2013,4505852,4642213.03
+"710","Cash Disbursements","State Operations","Interest on Loans","Total",2013,63266,65180.63
+"711","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2013,36842575,37957545.38
+"712","Cash Disbursements","Local Assistance","Community Colleges","Total",2013,4001929,4123039.76
+"713","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2013,NA,NA
+"714","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2013,1359827,1400979.57
+"715","Cash Disbursements","Local Assistance","Other Education","Total",2013,1744406,1797197.13
+"716","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2013,NA,NA
+"717","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2013,168313,173406.67
+"718","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2013,-254,-261.69
+"719","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2013,16995452,17509786.99
+"720","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2013,104234,107388.44
+"721","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2013,2653769,2734080.27
+"722","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2013,NA,NA
+"723","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2013,4615418,4755094.84
+"724","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2013,1481494,1526328.59
+"725","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2013,766416,789610.12
+"726","Cash Disbursements","Local Assistance","Tax Relief","Total",2013,421734,434496.98
+"727","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2013,1618298,1667272.71
+"728","Cash Disbursements","Capital Outlay","Total","Total",2013,154544,159220.98
+"729","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2014,386125,391460.12
+"730","Cash Receipts","Revenues","Corporation Tax","Total",2014,10254954,10396647.51
+"731","Cash Receipts","Revenues","Cigarette Tax","Total",2014,92281,93556.05
+"732","Cash Receipts","Revenues","Horse Racing Fees","Total",2014,NA,NA
+"733","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2014,3466,3513.89
+"734","Cash Receipts","Revenues","Insurance Companies Tax","Total",2014,2450009,2483860.97
+"735","Cash Receipts","Revenues","Personal Income Tax","Total",2014,76268212,77322015.91
+"736","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2014,23241632,23562763.46
+"737","Cash Receipts","Revenues","Vehicle License Fees","Total",2014,157,159.17
+"738","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2014,18374,18627.88
+"739","Cash Receipts","Revenues","Not Otherwise Classified","Total",2014,1562567,1584157.11
+"740","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2014,621400,629985.93
+"741","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2014,415465,421205.51
+"742","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2014,NA,NA
+"743","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2014,NA,NA
+"744","Cash Receipts","Nonrevenues","Miscellaneous","Total",2014,1070938,1085735.23
+"745","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2014,1422382,1442035.16
+"746","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2014,18867,19127.69
+"747","Cash Disbursements","State Operations","Transportation","Total",2014,49,49.68
+"748","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2014,NA,NA
+"749","Cash Disbursements","State Operations","Resources","Total",2014,1245744,1262956.54
+"750","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2014,47895,48556.77
+"751","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2014,243006,246363.63
+"752","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2014,1530646,1551795.06
+"753","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2014,544522,552045.7
+"754","Cash Disbursements","State Operations","Education","University of California",2014,2990656,3031978.13
+"755","Cash Disbursements","State Operations","Education","State Universities and Colleges",2014,2998093,3039517.89
+"756","Cash Disbursements","State Operations","Education","Other Education",2014,193214,195883.65
+"757","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2014,9654294,9787688.14
+"758","Cash Disbursements","State Operations","Governmental Operations","Total",2014,757198,767660.26
+"759","Cash Disbursements","State Operations","General Government","Total",2014,3979119,4034098.8
+"760","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2014,-102743,-104162.61
+"761","Cash Disbursements","State Operations","Debt Service","Total",2014,4946112,5014452.82
+"762","Cash Disbursements","State Operations","Interest on Loans","Total",2014,36811,37319.62
+"763","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2014,44235987,44847199.12
+"764","Cash Disbursements","Local Assistance","Community Colleges","Total",2014,4862623,4929810.25
+"765","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2014,NA,NA
+"766","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2014,1486004,1506536.23
+"767","Cash Disbursements","Local Assistance","Other Education","Total",2014,2489056,2523447.48
+"768","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2014,NA,NA
+"769","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2014,215106,218078.14
+"770","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2014,210,212.9
+"771","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2014,17064401,17300181.18
+"772","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2014,213566,216516.86
+"773","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2014,2862614,2902166.96
+"774","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2014,NA,NA
+"775","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2014,4802967,4869329.97
+"776","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2014,318900,323306.27
+"777","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2014,735344,745504.31
+"778","Cash Disbursements","Local Assistance","Tax Relief","Total",2014,416755,422513.34
+"779","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2014,2514340,2549080.83
+"780","Cash Disbursements","Capital Outlay","Total","Total",2014,164063,166329.87
+"781","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2015,366046,370663.72
+"782","Cash Receipts","Revenues","Corporation Tax","Total",2015,9690219,9812462.36
+"783","Cash Receipts","Revenues","Cigarette Tax","Total",2015,84787,85856.6
+"784","Cash Receipts","Revenues","Horse Racing Fees","Total",2015,NA,NA
+"785","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2015,2369,2398.89
+"786","Cash Receipts","Revenues","Insurance Companies Tax","Total",2015,2567453,2599841.75
+"787","Cash Receipts","Revenues","Personal Income Tax","Total",2015,79437856,80439974.79
+"788","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2015,24788981,25101697.19
+"789","Cash Receipts","Revenues","Vehicle License Fees","Total",2015,24,24.3
+"790","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2015,34370,34803.58
+"791","Cash Receipts","Revenues","Not Otherwise Classified","Total",2015,1787102,1809646.52
+"792","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2015,138000,139740.89
+"793","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2015,438053,443579.1
+"794","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2015,NA,NA
+"795","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2015,NA,NA
+"796","Cash Receipts","Nonrevenues","Miscellaneous","Total",2015,1082129,1095780.2
+"797","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2015,1395302,1412903.91
+"798","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2015,21766,22040.58
+"799","Cash Disbursements","State Operations","Transportation","Total",2015,7,7.09
+"800","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2015,NA,NA
+"801","Cash Disbursements","State Operations","Resources","Total",2015,1799620,1822322.44
+"802","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2015,49831,50459.62
+"803","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2015,257733,260984.34
+"804","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2015,1588381,1608418.63
+"805","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2015,589121,596552.84
+"806","Cash Disbursements","State Operations","Education","University of California",2015,3258870,3299981.07
+"807","Cash Disbursements","State Operations","Education","State Universities and Colleges",2015,3011334,3049322.37
+"808","Cash Disbursements","State Operations","Education","Other Education",2015,209832,212479.06
+"809","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2015,9870976,9995499.63
+"810","Cash Disbursements","State Operations","Governmental Operations","Total",2015,761128,770729.73
+"811","Cash Disbursements","State Operations","General Government","Total",2015,2642317,2675650.17
+"812","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2015,-35624,-36073.4
+"813","Cash Disbursements","State Operations","Debt Service","Total",2015,4977333,5040122.7
+"814","Cash Disbursements","State Operations","Interest on Loans","Total",2015,70403,71291.14
+"815","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2015,46919883,47511783.37
+"816","Cash Disbursements","Local Assistance","Community Colleges","Total",2015,5798568,5871717.68
+"817","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2015,NA,NA
+"818","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2015,1935287,1959700.89
+"819","Cash Disbursements","Local Assistance","Other Education","Total",2015,2667261,2700908.84
+"820","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2015,NA,NA
+"821","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2015,200516,203045.54
+"822","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2015,NA,NA
+"823","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2015,17764600,17988702.72
+"824","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2015,230103,233005.78
+"825","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2015,3163097,3202999.88
+"826","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2015,NA,NA
+"827","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2015,5806217,5879463.18
+"828","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2015,916979,928546.81
+"829","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2015,794459,804481.2
+"830","Cash Disbursements","Local Assistance","Tax Relief","Total",2015,413953,419175.07
+"831","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2015,2309239,2338370.35
+"832","Cash Disbursements","Capital Outlay","Total","Total",2015,146543,148391.66
+"833","Cash Receipts","Revenues","Alcoholic Beverage Excise Tax","Total",2016,370714,370714
+"834","Cash Receipts","Revenues","Corporation Tax","Total",2016,10112520,10112520
+"835","Cash Receipts","Revenues","Cigarette Tax","Total",2016,77837,77837
+"836","Cash Receipts","Revenues","Horse Racing Fees","Total",2016,NA,NA
+"837","Cash Receipts","Revenues","Estate, Inheritance, and Gift Tax","Total",2016,1360,1360
+"838","Cash Receipts","Revenues","Insurance Companies Tax","Total",2016,2428192,2428192
+"839","Cash Receipts","Revenues","Personal Income Tax","Total",2016,82717968,82717968
+"840","Cash Receipts","Revenues","Retail Sales and Use Taxes","Total",2016,24712418,24712418
+"841","Cash Receipts","Revenues","Vehicle License Fees","Total",2016,11,11
+"842","Cash Receipts","Revenues","Pooled Money Investment Interest","Total",2016,68896,68896
+"843","Cash Receipts","Revenues","Not Otherwise Classified","Total",2016,1417571,1417571
+"844","Cash Receipts","Nonrevenues","Transfers from Special Fund for Economic Uncertainties","Total",2016,NA,NA
+"845","Cash Receipts","Nonrevenues","Transfers from Other Funds","Total",2016,368222,368222
+"846","Cash Receipts","Nonrevenues","Transfer from Economic Recovery Fund","Total",2016,NA,NA
+"847","Cash Receipts","Nonrevenues","Transfers from Electric Power Fund","Total",2016,NA,NA
+"848","Cash Receipts","Nonrevenues","Miscellaneous","Total",2016,332357,332357
+"849","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Total",2016,1510165,1510165
+"850","Cash Disbursements","State Operations","Legislative/Judicial/Executive","Business, Consumer Services and Housing",2016,26596,26596
+"851","Cash Disbursements","State Operations","Transportation","Total",2016,3891,3891
+"852","Cash Disbursements","State Operations","Technology, Trade, and Commerce","Total",2016,NA,NA
+"853","Cash Disbursements","State Operations","Resources","Total",2016,1936381,1936381
+"854","Cash Disbursements","State Operations","Environmental Protection Agency","Total",2016,86499,86499
+"855","Cash Disbursements","State Operations","Health and Human Services","Health Care Services and Public Health",2016,281029,281029
+"856","Cash Disbursements","State Operations","Health and Human Services","Department of State Hospitals",2016,1737149,1737149
+"857","Cash Disbursements","State Operations","Health and Human Services","Other Health and Human Services",2016,660167,660167
+"858","Cash Disbursements","State Operations","Education","University of California",2016,3496496,3496496
+"859","Cash Disbursements","State Operations","Education","State Universities and Colleges",2016,3270842,3270842
+"860","Cash Disbursements","State Operations","Education","Other Education",2016,226831,226831
+"861","Cash Disbursements","State Operations","Dept. of Corrections and Rehabilitation","Total",2016,10362484,10362484
+"862","Cash Disbursements","State Operations","Governmental Operations","Total",2016,786576,786576
+"863","Cash Disbursements","State Operations","General Government","Total",2016,2398061,2398061
+"864","Cash Disbursements","State Operations","Public Employees Retirement System","Total",2016,-68443,-68443
+"865","Cash Disbursements","State Operations","Debt Service","Total",2016,4929778,4929778
+"866","Cash Disbursements","State Operations","Interest on Loans","Total",2016,45831,45831
+"867","Cash Disbursements","Local Assistance","Public Schools - K-12","Total",2016,46633480,46633480
+"868","Cash Disbursements","Local Assistance","Community Colleges","Total",2016,5497258,5497258
+"869","Cash Disbursements","Local Assistance","Debt Service-School Building Bonds","Total",2016,NA,NA
+"870","Cash Disbursements","Local Assistance","Contributions to State Teachers' Retirement System","Total",2016,2472993,2472993
+"871","Cash Disbursements","Local Assistance","Other Education","Total",2016,1877850,1877850
+"872","Cash Disbursements","Local Assistance","School Facilities Aid","Total",2016,NA,NA
+"873","Cash Disbursements","Local Assistance","Dept. of Corrections and Rehabilitation","Total",2016,265198,265198
+"874","Cash Disbursements","Local Assistance","Dept. of Alcohol and Drug Program","Total",2016,NA,NA
+"875","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Medical Assistance Program",2016,18783848,18783848
+"876","Cash Disbursements","Local Assistance","Health Care Services and Public Health","Other Health Care Services/Public Health",2016,478331,478331
+"877","Cash Disbursements","Local Assistance","Developmental Services - Regional Centers","Total",2016,3296929,3296929
+"878","Cash Disbursements","Local Assistance","Department of State Hospitals","Total (Dpt. Of Mental Health)",2016,NA,NA
+"879","Cash Disbursements","Local Assistance","Dept. of Social Services","SSI/SSP/IHSS",2016,5963886,5963886
+"880","Cash Disbursements","Local Assistance","Dept. of Social Services","CalWORKs",2016,1022924,1022924
+"881","Cash Disbursements","Local Assistance","Dept. of Social Services","Other Social Services",2016,892991,892991
+"882","Cash Disbursements","Local Assistance","Tax Relief","Total",2016,411030,411030
+"883","Cash Disbursements","Local Assistance","Other Local Assistance","Total",2016,2267817,2267817
+"884","Cash Disbursements","Capital Outlay","Total","Total",2016,1118668,1118668

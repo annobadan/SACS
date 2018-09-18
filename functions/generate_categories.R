@@ -657,7 +657,7 @@ generate_categories <- function(df){
   ###' - Revenue Limit Resources (Resource 2000-2999)
   ###' - Federal Resources (Resource 3000-5999) 
   ###' - State Resources (Resource 6000-7999)
-  ###' - Local Resources (Resource 8000-8999)
+  ###' - Local Resources (Resource 8000-9999)
   ###' 
   ###' 
 
@@ -671,7 +671,7 @@ generate_categories <- function(df){
     with(df, Resource >= 2000 & Resource <= 2999), 
     with(df, Resource >= 3000 & Resource <= 5999), 
     with(df, Resource >= 6000 & Resource <= 7999), 
-    with(df, Resource >= 8000 & Resource <= 8999)
+    with(df, Resource >= 8000 & Resource <= 9999)
   )
   
   name_vec <- c("Revenue Limit Resources", 

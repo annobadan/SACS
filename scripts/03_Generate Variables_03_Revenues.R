@@ -37,7 +37,7 @@ library(tidyverse)
 
 
 ### Call functions
-list.files("code/functions", full.names = TRUE) %>% walk(source)
+list.files("functions", full.names = TRUE) %>% walk(source)
 
 
 
@@ -199,7 +199,7 @@ list_revenues <- temp_list
 
 setwd(work_dir)
 
-save(list_revenues, file = "data/list_revenues.rda")
+save(list_revenues, file = "processed_data/list_revenues.rda")
 
 
 

@@ -48,6 +48,7 @@ color_palette <- c("firebrick1", "dodgerblue1", "forestgreen", "darkorchid1", "d
 shape_palette <- c(16, 17, 15, 18, 1, 2, 0, 5, 6, 4, 3, 8, 10, 7, 9) 
 
 
+
 ###'######################################################################
 ###'
 ###' (1) plot_trend_xy() 
@@ -224,51 +225,6 @@ plot_trend_grp_facet <- function(dataframe,
 
 ###'######################################################################
 ###'
-###' operation14(): Remove districts with insufficient years of data
-###' 
-###' => Analyze only traditional schools in elementary, high, and unified 
-###'    school districts that have been in continuous operation (14 years) 
-###'    in California from 2003 through 2017
-
-setwd(work_dir)
-load(file = "processed_data/years_of_operation.rda")   # Data dependency: years_of_operation.csv
-
-operation14 <- function(df){
-  df %>%
-    left_join(years_of_operation[, !names(years_of_operation) %in% c("Dname", "Dtype")], 
-              by = c("Ccode", "Dcode")) %>%
-    filter(opr_years == 14)
-}
-
-
-
-###'######################################################################
-###'
-###' get_weighted_mean(): Get weighted district averages
-###' 
-###' 
-
-get_weighted_mean <- function(df, 
-                              x = Fiscalyear, 
-                              y = sum_value_PP_16, 
-                              weight = K12ADA_C, 
-                              ...){
-  
-  ### Enquote variables
-  x <- enquo(x)
-  y <- enquo(y)
-  weight <- enquo(weight)
-  group_var <- quos(...)
-  
-  df %>% 
-    group_by(!!x, !!!group_var) %>%
-    summarise(mean_value = round(weighted.mean(!!y, !!weight, na.rm = TRUE), 0))
-}
-
-
-
-###'######################################################################
-###'
 ###' Calculate the y-limits and height for the PDF file
 ###' 
 ###' 
@@ -298,28 +254,87 @@ auto_height <- function(factor_vec = NULL, tweak = 3){
 
 ###'######################################################################
 ###'
-###' Calculate percentages based on groups
-###'
-###'
+###'  plot_proportions_grp() 
+###'  
+###'  - x-y variables
+###'  - With one group (factor)
+###'  - No facets
+###'     
 
-group_percent <- function(df, 
-                          value = mean_value, 
-                          ...){
+### Define function 
+plot_proportions_grp <- function(dataframe, 
+                                 x, 
+                                 y,
+                                 group, 
+                                 yline = NULL, 
+                                 ylim = NULL, 
+                                 xinterval = 1){
   
-  # Enquote variables
-  value <- enquo(value)
-  group <- quos(...)
-
+  ###' Enquote x, y, and group variables
+  ###' Renamed variables because scale::comma() didn't work with !!yvar
+  xvar <- enquo(x)
+  yvar <- enquo(y)
+  groupvar <- enquo(group)
+  dataframe <- dataframe %>%
+    rename(xvar = !!xvar, yvar = !!yvar, groupvar = !!groupvar)
   
-  #' (1) Calculate the percentages
+  
+  #' (1) Calculate the percentages based on groups
   #' (2) Format the labels and calculate their positions
-  df %>%
-    group_by(!!!group) %>%
-    mutate(group_sum = sum(!!value, na.rm = TRUE), 
-           percent = !!value/group_sum * 100, 
+  dataframe <- dataframe %>%
+    group_by(xvar) %>%
+    mutate(group_sum = sum(yvar, na.rm = TRUE), 
+           percent = yvar/group_sum * 100, 
            # don't need to calculate the label positions from ggplot 2.1.0 
            # position = cumsum(amount) - 0.5 * amount,  
-           label_text = paste0(sprintf("%.1f", percent), "%")) -> df
-  return(df)
+           label_text = paste0(sprintf("%.1f", percent), "%")) 
+  
+  
+  ### Calcluate the group total 
+  group_total <- dataframe %>%
+    group_by(xvar) %>%
+    summarise(group_sum = first(group_sum))
+  
+  
+  ### Assign data and aesthetic mappings
+  p <- ggplot(dataframe) + 
+    aes(x = xvar, y = yvar, fill = groupvar)
+  
+  ###' Add bar, percent label, and total value label layers
+  p <- p + 
+    geom_bar(position = position_stack(reverse = TRUE), 
+             stat = "identity", width = 0.7) +
+    geom_text(aes(label = label_text), 
+              position = position_stack(vjust = 0.5, reverse = TRUE), size = 3) +
+    geom_text(data = group_total,
+              aes(x = xvar, y = group_sum + mean(dataframe$group_sum)/30,
+                  label = comma(group_sum), fill = NULL),
+              size = 3)
+  
+  
+  ### Add vertical line layer
+  if (!is.null(yline)){
+    p <- p + geom_vline(aes(xintercept = yline), color = "red", linetype = "dashed")
+  }
+  
+  ### Scales
+  p <- p + 
+    scale_x_continuous(breaks = seq(min(dataframe$xvar), max(dataframe$xvar), 
+                                    by = xinterval)) + 
+    scale_y_continuous(labels = comma, limits = ylim)
+  
+  ### Themes, temporary labels, and manual colors
+  p <- p + theme_trend + temp_labels + 
+    scale_color_manual(values = color_palette[seq(unique(dataframe$groupvar))]) + 
+    scale_shape_manual(values = shape_palette[seq(unique(dataframe$groupvar))])
+  
+  
+  ### Guide (nrow = 2) and Paired pallette
+  p + guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
+    scale_fill_brewer(palette = "Paired")
 }
+
+# ### Test the code
+# plot_trend_grp(df_plot, Fiscalyear, mean_value, key, ylim = c(8000, 18000))
+
 

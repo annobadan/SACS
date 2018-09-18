@@ -1,0 +1,12 @@
+name: California_School_Finance
+title: California_School_Finance
+username:
+account: joonho
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 436250
+bundleId: 1582419
+url: https://joonho.shinyapps.io/California_School_Finance/
+when: 1536769444.98857
+asMultiple: FALSE
+asStatic: FALSE

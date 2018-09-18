@@ -1,0 +1,12 @@
+name: F33_trends
+title: F33_trends
+username:
+account: joonho
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 416372
+bundleId: 1564520
+url: https://joonho.shinyapps.io/F33_trends/
+when: 1535758235.28944
+asMultiple: FALSE
+asStatic: FALSE

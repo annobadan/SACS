@@ -35,7 +35,7 @@ library(tidyverse)
 
 
 ### Call functions
-list.files("code/functions", full.names = TRUE) %>% walk(source)
+list.files("functions", full.names = TRUE) %>% walk(source)
 
 
 
@@ -46,7 +46,7 @@ list.files("code/functions", full.names = TRUE) %>% walk(source)
 ###'
 
 ### Revenues per ADA
-load(file = "data/list_revenues.rda")
+load(file = "processed_data/list_revenues.rda")
 
 
 
@@ -182,9 +182,9 @@ for (i in seq_along(df_names)){ # (1) Loop over variables
                         sprintf("%02d", i), "_", title_vec[i])
   filename_p2 <- paste0(filename_p1, "_by District Type")
   
-  ggsave(paste0("figure/", filename_p1, ".pdf"), p1, 
+  ggsave(paste0("figures/", filename_p1, ".pdf"), p1, 
          width = 9, height = auto_height(df_plot$factor, tweak = 1))
-  ggsave(paste0("figure/", filename_p2, ".pdf"), p2, 
+  ggsave(paste0("figures/", filename_p2, ".pdf"), p2, 
          width = 20, height = auto_height(df_plot$factor, tweak = 1)) 
 
     

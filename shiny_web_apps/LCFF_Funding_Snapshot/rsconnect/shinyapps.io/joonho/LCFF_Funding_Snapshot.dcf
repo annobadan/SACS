@@ -1,0 +1,12 @@
+name: LCFF_Funding_Snapshot
+title: LCFF_Funding_Snapshot
+username:
+account: joonho
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 447616
+bundleId: 1586850
+url: https://joonho.shinyapps.io/LCFF_Funding_Snapshot/
+when: 1536997450.73463
+asMultiple: FALSE
+asStatic: FALSE

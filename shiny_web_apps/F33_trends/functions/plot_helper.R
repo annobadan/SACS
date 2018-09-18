@@ -222,23 +222,23 @@ plot_trend_grp_facet <- function(dataframe,
 
 
 
-###'######################################################################
-###'
-###' operation14(): Remove districts with insufficient years of data
-###' 
-###' => Analyze only traditional schools in elementary, high, and unified 
-###'    school districts that have been in continuous operation (14 years) 
-###'    in California from 2003 through 2017
-
-setwd(work_dir)
-load(file = "processed_data/years_of_operation.rda")   # Data dependency: years_of_operation.csv
-
-operation14 <- function(df){
-  df %>%
-    left_join(years_of_operation[, !names(years_of_operation) %in% c("Dname", "Dtype")], 
-              by = c("Ccode", "Dcode")) %>%
-    filter(opr_years == 14)
-}
+# ###'######################################################################
+# ###'
+# ###' operation14(): Remove districts with insufficient years of data
+# ###' 
+# ###' => Analyze only traditional schools in elementary, high, and unified 
+# ###'    school districts that have been in continuous operation (14 years) 
+# ###'    in California from 2003 through 2017
+# 
+# setwd(work_dir)
+# load(file = "processed_data/years_of_operation.rda")   # Data dependency: years_of_operation.csv
+# 
+# operation14 <- function(df){
+#   df %>%
+#     left_join(years_of_operation[, !names(years_of_operation) %in% c("Dname", "Dtype")], 
+#               by = c("Ccode", "Dcode")) %>%
+#     filter(opr_years == 14)
+# }
 
 
 

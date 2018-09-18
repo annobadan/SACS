@@ -275,7 +275,7 @@ df_plot <- df %>%
   summarise(mean_value = round(mean(value_16, na.rm = TRUE), 0))
 
 
-### Plot
+### Plot 1
 p <- plot_trend_grp(df_plot, Fiscalyear, mean_value, Category_2, yline = 2013, 
                     ylim = auto_ylim(df_plot$mean_value)) + labels
 
@@ -283,6 +283,25 @@ p <- p + labs(title = "General Fund Cash Disbursements: Local Assistance - Educa
 
 ggsave("figures/Cash_Disbursements_Trends_04_Local Assistance_Education.pdf", 
        p, width = 12, height = 8)
+
+
+### Plot 2: Only Contributions to State Teachers' Retirement System
+
+df_plot_sub <- df_plot %>%
+  filter(Category_2 == "Contributions to State Teachers' Retirement System") %>%
+  mutate(mean_value_million = round(mean_value/1000, 0))
+
+
+p <- plot_trend_xy(df_plot_sub, Fiscalyear, mean_value_million, yline = 2013, 
+                    ylim = auto_ylim(df_plot_sub$mean_value_million)) + labels
+
+p <- p + labs(title = "General Fund Cash Disbursements: Contributions to State Teachers' Retirement System", 
+              subtitle = "Local Assistance - Education", 
+              y = "Dollar amounts in millions")
+
+ggsave("figures/Cash_Disbursements_Trends_05_Local Assistance_Contributions to STAR.pdf", 
+       p, width = 9, height = 6)
+
 
 
 
