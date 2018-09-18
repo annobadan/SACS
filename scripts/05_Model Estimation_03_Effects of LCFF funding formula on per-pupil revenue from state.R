@@ -171,6 +171,7 @@ arrange_LCFF_effects <- function(df_coef = df_coef,
 ### Graph labels
 labels <- labs(title = "Effects of LCFF funding formula on per-pupil revenue",
                subtitle = NULL, 
+               caption = "Source: SACS Unaudited Data", 
                x = "Fiscal Year",  
                y = "Difference in district per-pupil revenues compared to 2013") 
 
@@ -211,6 +212,8 @@ p <- p + labels +
 ggsave("figures/LCFF funding formula effects_Model_01_pred_mod2_dist fixed effects.pdf", p, 
        width = 9, height = 7)
 
+write.csv(df_coef, file = "tables/df_coef.csv")
+
 
 
 ###' Model 2.Counterfactual prediction model #2 (full interaction) + 
@@ -236,6 +239,8 @@ p <- p + labels +
 
 ggsave("figures/LCFF funding formula effects_Model_02_pred_mod1_dist fixed effects.pdf", p, 
        width = 9, height = 7) 
+
+write.csv(df_coef, file = "tables/df_coef.csv")
 
 
 
@@ -263,6 +268,8 @@ p <- p + labels +
 ggsave("figures/LCFF funding formula effects_Model_03_pred_mod2 change scores_dist fixed effects.pdf", p, 
        width = 9, height = 7)
 
+write.csv(df_coef, file = "tables/df_coef.csv")
+
 
 
 ###' Model 4.Counterfactual prediction model #2 (full interaction) + 
@@ -289,6 +296,8 @@ p <- p + labels +
 ggsave("figures/LCFF funding formula effects_Model_04_pred_mod2_without dist fixed effects.pdf", p, 
        width = 9, height = 7)
 
+write.csv(df_coef, file = "tables/df_coef.csv")
+
 
 
 ###' Model 5.Counterfactual prediction model #2 (full interaction) + change score +
@@ -314,6 +323,8 @@ p <- p + labels +
 
 ggsave("figures/LCFF funding formula effects_Model_05_pred_mod2 change scores_without dist fixed effects.pdf", p, 
        width = 9, height = 7)
+
+write.csv(df_coef, file = "tables/df_coef.csv")
 
 
 

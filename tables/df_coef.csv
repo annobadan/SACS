@@ -1,0 +1,73 @@
+"","variable","estimate","std_error","t_value","p_value"
+"1","(Intercept)",2889.057,881.832,3.276,0.001
+"2","factor(quintile)2",-2876.877,1209.222,-2.379,0.017
+"3","factor(quintile)3",-3044.544,1213.895,-2.508,0.012
+"4","factor(quintile)4",-3181.396,1213.489,-2.622,0.009
+"5","factor(quintile)5",-3000.135,1221.839,-2.455,0.014
+"6","relevel(factor(Fiscalyear), ""2013"")2003",-3539.53,1205.177,-2.937,0.003
+"7","relevel(factor(Fiscalyear), ""2013"")2004",-3020.743,1205.177,-2.506,0.012
+"8","relevel(factor(Fiscalyear), ""2013"")2005",-2007.239,1205.177,-1.666,0.096
+"9","relevel(factor(Fiscalyear), ""2013"")2006",-2990.605,1205.177,-2.481,0.013
+"10","relevel(factor(Fiscalyear), ""2013"")2007",-3841.901,1205.177,-3.188,0.001
+"11","relevel(factor(Fiscalyear), ""2013"")2008",-3785.885,1205.177,-3.141,0.002
+"12","relevel(factor(Fiscalyear), ""2013"")2009",-3318.532,1205.177,-2.754,0.006
+"13","relevel(factor(Fiscalyear), ""2013"")2010",-3718.368,1205.177,-3.085,0.002
+"14","relevel(factor(Fiscalyear), ""2013"")2011",-3148.235,1205.177,-2.612,0.009
+"15","relevel(factor(Fiscalyear), ""2013"")2012",-757.907,1205.177,-0.629,0.529
+"16","relevel(factor(Fiscalyear), ""2013"")2014",-719.105,1206.77,-0.596,0.551
+"17","relevel(factor(Fiscalyear), ""2013"")2015",2142.202,1208.378,1.773,0.076
+"18","relevel(factor(Fiscalyear), ""2013"")2016",3426.136,1208.378,2.835,0.005
+"19","relevel(factor(Dtype), ""UNIFIED"")ELEMENTARY",134.812,246.699,0.546,0.585
+"20","relevel(factor(Dtype), ""UNIFIED"")HIGH",68.886,408.386,0.169,0.866
+"21","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2003",3298.953,1707.769,1.932,0.053
+"22","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2003",3656.259,1718.335,2.128,0.033
+"23","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2003",3783.67,1711.212,2.211,0.027
+"24","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2003",3649.962,1718.268,2.124,0.034
+"25","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2004",2940.884,1710.052,1.72,0.085
+"26","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2004",3094.457,1718.335,1.801,0.072
+"27","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2004",3273.314,1711.212,1.913,0.056
+"28","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2004",3100.178,1715.868,1.807,0.071
+"29","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2005",1899.378,1710.052,1.111,0.267
+"30","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2005",1936.699,1718.335,1.127,0.26
+"31","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2005",2100.547,1711.214,1.228,0.22
+"32","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2005",1925.876,1715.868,1.122,0.262
+"33","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2006",3308.481,1710.052,1.935,0.053
+"34","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2006",3184.76,1717.114,1.855,0.064
+"35","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2006",3304.678,1711.212,1.931,0.053
+"36","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2006",3149.743,1715.868,1.836,0.066
+"37","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2007",3370.118,1710.052,1.971,0.049
+"38","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2007",3965.298,1715.907,2.311,0.021
+"39","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2007",4171.197,1710.054,2.439,0.015
+"40","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2007",4008.811,1715.868,2.336,0.019
+"41","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2008",3867.319,1708.904,2.263,0.024
+"42","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2008",4130.718,1715.907,2.407,0.016
+"43","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2008",4295.215,1710.054,2.512,0.012
+"44","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2008",4082.184,1714.686,2.381,0.017
+"45","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2009",3435.689,1708.904,2.01,0.044
+"46","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2009",3677.322,1714.711,2.145,0.032
+"47","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2009",3804.9,1710.054,2.225,0.026
+"48","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2009",3592.758,1714.686,2.095,0.036
+"49","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2010",3516.416,1708.904,2.058,0.04
+"50","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2010",3684.121,1713.529,2.15,0.032
+"51","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2010",3944.062,1711.212,2.305,0.021
+"52","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2010",3793.617,1714.686,2.212,0.027
+"53","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2011",3164.211,1708.904,1.852,0.064
+"54","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2011",3191.886,1712.358,1.864,0.062
+"55","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2011",3396.059,1710.052,1.986,0.047
+"56","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2011",3260.184,1713.516,1.903,0.057
+"57","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2012",195.897,1708.904,0.115,0.909
+"58","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2012",414.878,1711.199,0.242,0.808
+"59","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2012",322.594,1708.904,0.189,0.85
+"60","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2012",280.264,1713.516,0.164,0.87
+"61","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2014",428.701,1712.334,0.25,0.802
+"62","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2014",584.694,1714.65,0.341,0.733
+"63","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2014",782.753,1710.028,0.458,0.647
+"64","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2014",903.557,1714.637,0.527,0.598
+"65","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2015",-821.079,1713.468,-0.479,0.632
+"66","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2015",-874.863,1715.782,-0.51,0.61
+"67","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2015",-706.275,1711.163,-0.413,0.68
+"68","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2015",-396.253,1715.769,-0.231,0.817
+"69","factor(quintile)2:relevel(factor(Fiscalyear), ""2013"")2016",-1986.962,1713.468,-1.16,0.246
+"70","factor(quintile)3:relevel(factor(Fiscalyear), ""2013"")2016",-2011.464,1718.156,-1.171,0.242
+"71","factor(quintile)4:relevel(factor(Fiscalyear), ""2013"")2016",-1980.282,1711.163,-1.157,0.247
+"72","factor(quintile)5:relevel(factor(Fiscalyear), ""2013"")2016",-1532.693,1715.769,-0.893,0.372
