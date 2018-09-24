@@ -16,6 +16,85 @@ library(scales)
 
 ###'######################################################################
 ###'
+###' tabdf(): Tabulate frequencies
+###' 
+###' Similar to the Stata command "tab"
+###'
+###'
+
+tabdf <- function(df, 
+                  variable){
+  
+  ### Enquote variables
+  x <- enquo(variable)
+  
+  ### Generate table
+  tibble_tbl <- df %>%
+    group_by(!!x) %>%
+    summarise(Freq = n()) %>%
+    ungroup() %>%
+    mutate(total_n = sum(Freq, na.rm = TRUE),
+           Percent = round((Freq/total_n)*100, 1), 
+           CumFreq = cumsum(Freq), 
+           CumPercent = round((CumFreq/total_n)*100, 1)) %>%
+    select(-total_n) 
+  
+  ### Display table as data.frame format
+  data.frame(tibble_tbl)
+  
+}
+
+
+
+###'######################################################################
+###'
+###' classmode(): Check classes and modes of selected variables
+###'
+###'
+
+classmode <- function(df, ...){
+  
+  ### Enquote variables
+  vars <- quos(...)  # any rules for select() works. ex) everything(), ends_with(), etc.
+  
+  ### Select variables
+  df_select <- df %>% 
+    select(!!!vars)
+  
+  ### Return classes and modes
+  mat <- cbind(sapply(df_select, class), 
+               sapply(df_select, mode))
+  
+  ### Convert to data.frame format
+  df_mat <- data.frame(rownames(mat), mat)
+  rownames(df_mat) <- NULL
+  names(df_mat) <- c("variable", "class", "mode")
+  
+  return(df_mat)
+}
+
+
+
+###'######################################################################
+###'
+###' empty_as_na(): Convert empty strings to NA
+###'
+###'
+
+empty_as_na <- function(x){
+  
+  if("factor" %in% class(x)) x <- as.character(x) 
+  
+  ## since ifelse wont work with factors
+  
+  ifelse(as.character(x) !="", x, NA)
+}
+
+
+
+
+###'######################################################################
+###'
 ###' operation14(): Remove districts with insufficient years of data
 ###' 
 ###' => Analyze only traditional schools in elementary, high, and unified 
@@ -114,7 +193,7 @@ is.numeric.elementwise <- function(vector){
 
 ###'######################################################################
 ###'
-###' Get a dataframe of regression estimates & 
+###' Get a dataframe of regression estimates 
 ###'
 ###'
 
