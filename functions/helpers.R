@@ -92,7 +92,6 @@ empty_as_na <- function(x){
 
 
 
-
 ###'######################################################################
 ###'
 ###' operation14(): Remove districts with insufficient years of data

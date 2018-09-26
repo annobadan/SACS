@@ -3,16 +3,17 @@
 ###'
 ###' Import and clean data files 
 ###' 
-###' - Staff Demographics
+###' - Staff Demographics + StaffFTE + Staff Credential Records
 ###' 
-###' 2012-13, 2013-14, 2014-15, 2015-16
+###'  2003-2011 (9 fiscal years)
+###' 
 ###' 
 ###'  
 ###' Just clean raw file - Manipulate variable later
 ###' 
 ###' 
 ###' 20170707 JoonHo Lee
-###' 20180923 JoonHo Lee
+###' 20180925 JoonHo Lee
 ###' 
 ###' 
 
@@ -55,11 +56,10 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 ###'
 
-StaffDemo_years <- sprintf("%02d",seq(12, 17))
+years <- sprintf("%02d",seq(3, 11))
 
 
-for (i in 1:length(StaffDemo_years)) {
-  
+for (i in seq_along(years)) {
   
   ###'######################################################################
   ###'
@@ -67,7 +67,7 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   ###' 
   
-  year_num <- StaffDemo_years[i]
+  year_num <- years[i]
   
   
   
@@ -82,7 +82,7 @@ for (i in 1:length(StaffDemo_years)) {
   
   
   ### Import tab delimited text file
-  df <- read.delim(file = paste0("StaffDemo", year_num, ".txt"), header = TRUE, 
+  df <- read.delim(file = paste0("paif", year_num, ".txt"), header = TRUE, 
                    colClasses = "character")
   
   classmode(df, everything())
@@ -92,17 +92,17 @@ for (i in 1:length(StaffDemo_years)) {
   df <- df %>% mutate_all(.funs = empty_as_na)
   
   
-  
+
   ###'######################################################################
   ###'
   ###' Academic year 
   ###'
   
+  df <- df %>%
+    mutate(AcademicYear = as.numeric(paste0(year_num, as.numeric(year_num) + 1)))
+  
   tabdf(df, AcademicYear)
   
-  df <- df %>%
-    mutate(AcademicYear = as.numeric(AcademicYear))
-
   
   
   ###'######################################################################
@@ -110,89 +110,77 @@ for (i in 1:length(StaffDemo_years)) {
   ###' RecID
   ###'
   
-  tabdf(df, RecID)
+  names(df)[1] <- "REC_ID"
+  
+  
+  tabdf(df, REC_ID)
+  classmode(df, REC_ID)
+  
   
   df <- df %>%
-    mutate(RecID = as.numeric(RecID))
+    mutate(REC_ID = as.numeric(REC_ID))
   
-
-
+  
+  
   ###'######################################################################
   ###'
-  ###' CDS Code:
+  ###' CDS code: 
   ###' 
-  ###' Split DistrictCode into "CountyCode" and "DistrictCode"
-  ###' 
+  ###' Generate County, District, and School Codes
+  ###'
   ###'
   
-  ### Rename DistrictCode to CDcode
-  tabdf(df, DistrictCode)
-  df <- df %>% rename(CD_code = DistrictCode)
+  ### Check number of characters: should be 14
+  table(nchar(df$CDS_CODE))
   
   
-  ### Check number of characters
-  table(nchar(df$CD_code))
-
-  
-  ### Substring CountyCode, DistrictCode
-  tabdf(df, CD_code)
+  ### Substring County, District, School Codes
   df <- df %>%
-    mutate(CountyCode = substr(CD_code, start = 1, stop = 2), 
-           DistrictCode = substr(CD_code, start = 3, stop = 7))
-  
-  
-  ### Convert to numeric
-  df <- df %>%
-    mutate_at(.vars = c("CountyCode", "DistrictCode"), 
-              .funs = as.numeric)
+    mutate(CountyCode = substr(CDS_CODE, start = 1, stop = 2), 
+           DistrictCode = substr(CDS_CODE, start = 3, stop = 7), 
+           SchoolCode = substr(CDS_CODE, start = 8, stop = 14))
   
   tabdf(df, CountyCode)
   tabdf(df, DistrictCode)
+  tabdf(df, SchoolCode)
   
   
-  ### Rearrange row and column
-  df <- df %>% 
-    select(AcademicYear, CD_code, CountyCode, DistrictCode, 
-           CountyName, DistrictName, RecID, everything()) %>%
-    arrange(CountyCode, DistrictCode, RecID)
+  ### Convert character to numeric
+  df <- df %>%
+    mutate_at(.vars = c("CountyCode", "DistrictCode", "SchoolCode"), 
+              .funs = as.numeric)
+  
+  classmode(df, ends_with("Code"))
   
   
-
+  ###' Rearrange row and column orders
+  ###' Note that COUNTY, DISTRICT, SCHOOL names are missing from 1993-2006
+  df <- df %>%
+    arrange(CountyCode, DistrictCode, SchoolCode, REC_ID) %>% 
+    select(AcademicYear, 
+           CDS_CODE, CountyCode, DistrictCode, SchoolCode,  
+           COUNTY, DISTRICT, SCHOOL, REC_ID,
+           everything())
+  
+  
+  
   ###'######################################################################
   ###' 
   ###' Gender Code: factor labeling
   ###' 
   ###' 
   
-  tabdf(df, GenderCode)
+  tabdf(df, GENDER)
   
   df <- df %>%
-    mutate(GenderCode = factor(GenderCode, 
+    mutate(GENDER = factor(GENDER, 
                                levels = c("F", "M"), 
                                labels = c("female", "male")))
   
-  classmode(df, GenderCode)
+  classmode(df, GENDER)
+  
+  
 
-  
-  
-  ###'######################################################################
-  ###' 
-  ###' Age variable
-  ###' 
-  
-  if(year_num %in% sprintf("%02d",seq(12, 17))) {
-    
-    idx <- which(names(df) %in% c("age", "Age"))
-    
-    df <- df %>%
-      mutate_at(.vars = names(df)[idx], 
-                .funs = as.numeric)
-  }
-  
-  classmode(df, everything())
-  
-  
-  
   ###'######################################################################
   ###' 
   ###' Education Level: Dummy for Master / Doctorate
@@ -212,22 +200,22 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   ###' 
   
-  tabdf(df, EducationLevel)
-  classmode(df, EducationLevel)
+  tabdf(df, ED_LEVEL)
+  classmode(df, ED_LEVEL)
   
   
   ### Recode missing values
-  df$EducationLevel[df$EducationLevel == "N"] <- NA
-  tabdf(df, EducationLevel)
+  df$ED_LEVEL[df$ED_LEVEL == "N"] <- NA
+  tabdf(df, ED_LEVEL)
   
-
+  
   ### Generate factor variable
   df <- df %>%
-    mutate(EducationLevel = factor(df$EducationLevel, 
+    mutate(ED_LEVEL = factor(df$ED_LEVEL, 
                                    levels = c("A", "B", "C", "F", "Y", "U", 
                                               "M", "V", "S", "D")))
   
-  tabdf(df, EducationLevel)
+  tabdf(df, ED_LEVEL)
   
   
   
@@ -247,23 +235,23 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   ###' 
   
-  tabdf(df, EthnicGroup)
+  tabdf(df, ETHNIC_GP)
   
-
+  
   ### Recode missing values
-  df$EthnicGroup[df$EthnicGroup == 0] <- NA  # Many missing values
+  df$ETHNIC_GP[df$ETHNIC_GP == 0] <- NA  # Many missing values
   
   
   ### Factor labeling
   df <- df %>%
-    mutate(EthnicGroup = factor(EthnicGroup, 
-                                levels = c(7, 5, 6, 2, 4, 3, 1, 9), 
-                                labels = c("White", "Hispanic/Latino", "Black", 
-                                           "Asian", "Filipino", "Pacific Islander", 
-                                           "American Indian/Alaska Native", 
-                                           "Two or more races")))
+    mutate(ETHNIC_GP = factor(ETHNIC_GP, 
+                              levels = c(7, 5, 6, 2, 4, 3, 1, 9), 
+                              labels = c("White", "Hispanic/Latino", "Black", 
+                                         "Asian", "Filipino", "Pacific Islander", 
+                                         "American Indian/Alaska Native", 
+                                         "Two or more races")))
   
-  tabdf(df, EthnicGroup)
+  tabdf(df, ETHNIC_GP)
   
   
   
@@ -271,20 +259,18 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   ###' Years Teaching / Years in district
   ###' 
-  ###' Dummy variables for being new teaching / new in district
-  ###' 
   ###' 
   
   ### Convert to numeric
   df <- df %>%
-    mutate_at(.vars = c("YearsInDistrict", "YearsTeaching"), 
+    mutate_at(.vars = c("YRS_TEACH", "YRS_DIST"), 
               .funs = as.numeric)
   
-  tabdf(df, YearsInDistrict)
-  tabdf(df, YearsTeaching)
+  tabdf(df, YRS_TEACH)
+  tabdf(df, YRS_DIST)
   
   
-
+  
   ###'######################################################################
   ###' 
   ###'  EmploymentStatusCode
@@ -297,53 +283,54 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   ###' 
   
-  tabdf(df, EmploymentStatusCode)
-
+  tabdf(df, STATUS)
+  
   
   ### Recode missing values
-  df$EmploymentStatusCode[!df$EmploymentStatusCode %in% c("L", "O", "P", "T")] <- NA
+  df$STATUS[!df$STATUS %in% c("L", "O", "P", "T")] <- NA
   
   
   ### Generate factor variable
   df <- df %>%
-    mutate(EmploymentStatusCode = factor(df$EmploymentStatusCode, 
-                                         levels = c("L", "P", "T", "O"), 
-                                         labels = c("Long term substitute/temporary", 
-                                                    "Probationary", 
-                                                    "Tenured", 
-                                                    "Other")))
+    mutate(STATUS = factor(df$STATUS, 
+                           levels = c("L", "P", "T", "O"), 
+                           labels = c("Long term substitute/temporary", 
+                                      "Probationary", 
+                                      "Tenured", 
+                                      "Other")))
   
-  tabdf(df, EmploymentStatusCode)
-  classmode(df, EmploymentStatusCode)
+  tabdf(df, STATUS)
+  classmode(df, STATUS)
   
   
   
   ###'######################################################################
   ###' 
-  ###' FTE variables
+  ###' FTE variables:
+  ###' 
+  ###' Teacher, Administrator, Pupil Services
   ###' 
   ###' 
+  
+  ### Check distributions: fine as it is 
+  tabdf(df, TEACH)
+  tabdf(df, PCTTEACH)
+  
+  tabdf(df, ADMIN)
+  tabdf(df, PCTADMIN)
+  
+  tabdf(df, PUPIL)
+  tabdf(df, PCTPUPIL)
+  
   
   ### Convert to numeric
-  idx <- grep("FTE", names(df), value = FALSE)
   df <- df %>%
-    mutate_at(.vars = names(df)[idx], 
+    mutate_at(.vars = c("TEACH", "PCTTEACH", 
+                        "ADMIN", "PCTADMIN", 
+                        "PUPIL", "PCTPUPIL"), 
               .funs = as.numeric)
   
-  classmode(df, contains("FTE"))
-  
-  
-  ### Change variable names
-  names(df)[idx] <- gsub("\\.", "_", names(df[idx]))
-  
-  
-  
-  ###'######################################################################
-  ###' 
-  ###' Delete file created date
-  ###'
-  
-  df <- df %>% select(-FileCreated)
+  classmode(df, everything())
   
   
   
@@ -358,8 +345,8 @@ for (i in 1:length(StaffDemo_years)) {
   
   
   ### Save the resulting dataset
-  save(df, file = paste0("StaffDemo", year_num, "_cleaned", ".rda"))
-  write.dta(df, file = paste0("StaffDemo", year_num, "_cleaned", ".dta"))
+  save(df, file = paste0("paif", year_num, "_cleaned", ".rda"))
+  write.dta(df, file = paste0("paif", year_num, "_cleaned", ".dta"))
   
   
   
@@ -369,7 +356,7 @@ for (i in 1:length(StaffDemo_years)) {
   ###' 
   
   cat(paste0("Year ", year_num, " completed", "\n"))
-
+  
   
   
   ###'######################################################################
