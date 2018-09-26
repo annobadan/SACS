@@ -97,9 +97,10 @@ for (i in seq_along(years)) {
   ###'
   ###' Academic year 
   ###'
+  ###'
   
   df <- df %>%
-    mutate(AcademicYear = as.numeric(paste0(year_num, as.numeric(year_num) + 1)))
+    mutate(AcademicYear = paste0(year_num, as.numeric(year_num) + 1))
   
   tabdf(df, AcademicYear)
   
@@ -107,7 +108,9 @@ for (i in seq_along(years)) {
   
   ###'######################################################################
   ###'
-  ###' RecID
+  ###' RecID: 
+  ###' DO NOT convert to numeric 
+  ###'
   ###'
   
   names(df)[1] <- "REC_ID"
@@ -117,8 +120,8 @@ for (i in seq_along(years)) {
   classmode(df, REC_ID)
   
   
-  df <- df %>%
-    mutate(REC_ID = as.numeric(REC_ID))
+  # df <- df %>%
+  #   mutate(REC_ID = as.numeric(REC_ID))
   
   
   
@@ -155,13 +158,25 @@ for (i in seq_along(years)) {
   
   ###' Rearrange row and column orders
   ###' Note that COUNTY, DISTRICT, SCHOOL names are missing from 1993-2006
-  df <- df %>%
-    arrange(CountyCode, DistrictCode, SchoolCode, REC_ID) %>% 
-    select(AcademicYear, 
-           CDS_CODE, CountyCode, DistrictCode, SchoolCode,  
-           COUNTY, DISTRICT, SCHOOL, REC_ID,
-           everything())
   
+  if (year_num %in% c("10", "11")){
+    
+    df <- df %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, REC_ID) %>% 
+      select(AcademicYear, 
+             CDS_CODE, CountyCode, DistrictCode, SchoolCode,  
+             COUNTY, DISTRICT, SCHOOL, REC_ID,
+             everything())
+    
+  } else if (year_num %in% c("09")) {
+    
+    df <- df %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, REC_ID) %>% 
+      select(AcademicYear, 
+             CDS_CODE, CountyCode, DistrictCode, SchoolCode, REC_ID,
+             everything())
+  }
+
   
   
   ###'######################################################################
@@ -266,8 +281,15 @@ for (i in seq_along(years)) {
     mutate_at(.vars = c("YRS_TEACH", "YRS_DIST"), 
               .funs = as.numeric)
   
+  
+  ### Check distributions
   tabdf(df, YRS_TEACH)
   tabdf(df, YRS_DIST)
+  
+  
+  ### Convert negative integers to missing varlues
+  df$YRS_TEACH[df$YRS_TEACH < 0] <- NA
+  df$YRS_DIST[df$YRS_DIST < 0] <- NA
   
   
   
