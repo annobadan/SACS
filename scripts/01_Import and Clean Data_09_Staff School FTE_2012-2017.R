@@ -103,8 +103,8 @@ for (i in seq_along(years)) {
   
   tabdf(df, AcademicYear)
   
-  df <- df %>%
-    mutate(AcademicYear = as.numeric(AcademicYear))
+  # df <- df %>%
+  #   mutate(AcademicYear = as.numeric(AcademicYear))
   
   classmode(df, AcademicYear)
   
@@ -112,13 +112,14 @@ for (i in seq_along(years)) {
   
   ###'######################################################################
   ###'
-  ###' RecID
+  ###' RecID:
+  ###' Do not convert to numeric
   ###'
   
   tabdf(df, RecID)
   
-  df <- df %>%
-    mutate(RecID = as.numeric(RecID))
+  # df <- df %>%
+  #   mutate(RecID = as.numeric(RecID))
   
   
   

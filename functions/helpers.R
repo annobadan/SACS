@@ -78,6 +78,8 @@ classmode <- function(df, ...){
 ###'######################################################################
 ###'
 ###' empty_as_na(): Convert empty strings to NA
+###' 
+###' : it's important to include "trimws" to remove blank spaces 
 ###'
 ###'
 
@@ -87,7 +89,7 @@ empty_as_na <- function(x){
   
   ## since ifelse wont work with factors
   
-  ifelse(as.character(x) !="", x, NA)
+  ifelse(trimws(as.character(x)) !="", x, NA)
 }
 
 
