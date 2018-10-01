@@ -3,7 +3,7 @@
 ###'
 ###' Import and clean data files 
 ###' 
-###' - (Class) Course Enrollment Record
+###' - Class Enrollment Record
 ###' 
 ###'  2012-2017 (6 fiscal years)
 ###' 
@@ -12,7 +12,7 @@
 ###' 
 ###' 
 ###' 20170707 JoonHo Lee
-###' 20180928 JoonHo Lee
+###' 20180929 JoonHo Lee
 ###' 
 ###' 
 
@@ -94,7 +94,7 @@ for (i in seq_along(years)) {
   
   
   ### Import tab delimited text file
-  df <- read.delim(file = paste0("CourseEnrollment", year_num, ".txt"), 
+  df <- read.delim(file = paste0("ClassEnrollment", year_num, ".txt"), 
                    header = TRUE, 
                    colClasses = "character")
   
@@ -103,6 +103,21 @@ for (i in seq_along(years)) {
   
   ### Convert empty strings to NA
   df <- df %>% mutate_all(.funs = empty_as_na)
+  
+  
+  
+  ###'######################################################################
+  ###'
+  ###' Academic year 
+  ###'
+  
+  ###' Rename Academic Year
+  ###' From 2015, coded as "academicyear"
+  idx <- names(df) %in% c("AcademicYear", "academicyear", 
+                          "Academicyear", "academicYear")
+  names(df)[idx] <- "AcademicYear"
+  
+  tabdf(df, AcademicYear)
   
   
   ### Remove wrongly imported row &  unnecessary column
@@ -115,14 +130,6 @@ for (i in seq_along(years)) {
   ### Replace . with _ in variable names
   names(df) <- gsub("\\.", "_", names(df))
   
-  
-  
-  ###'######################################################################
-  ###'
-  ###' Academic year 
-  ###'
-  
-  tabdf(df, AcademicYear)
   
   # df <- df %>%
   #   mutate(AcademicYear = as.numeric(AcademicYear))
@@ -170,7 +177,20 @@ for (i in seq_along(years)) {
   tabdf(df, SchoolCode)
   
   
-
+  
+  ###'######################################################################
+  ###'
+  ###' ClassCourseCodeOrMultCourseInd
+  ###' 
+  ###' AllClassCourseCodes
+  ###'
+  ###'
+  
+  tbl_multicourse <- tabdf(df, ClassCourseCodeOrMultCourseInd)
+  tbl_allcodes <- tabdf(df, AllClassCourseCodes)
+  
+  
+  
   ###'######################################################################
   ###'
   ###' GradeLevelCode
@@ -239,12 +259,13 @@ for (i in seq_along(years)) {
   df <- df %>% 
     select(AcademicYear, CD_code, CountyCode, DistrictCode, SchoolCode,  
            CountyName, DistrictName, SchoolName, 
-           ClassID, CourseCode, ClassCourseID, 
+           ClassID, ClassCourseCodeOrMultCourseInd,   
            GradeLevelCode, GenderCode,  
            everything()) %>%
     arrange(CountyCode, DistrictCode, SchoolCode, 
-            ClassID, CourseCode, ClassCourseID, 
+            ClassID, ClassCourseCodeOrMultCourseInd, 
             GradeLevelCode, GenderCode)
+  
   
   
   
@@ -264,57 +285,6 @@ for (i in seq_along(years)) {
   
   
   
-  
-  # ###'######################################################################
-  # ###'
-  # ###' Reshape to long format  
-  # ###'
-  # ###'
-  # 
-  # ### Gather to long data format
-  # df <- df %>% 
-  #   gather(key = "Subgroup", value = "Enrollment", starts_with("Enroll"))
-  # 
-  # 
-  # ### Generate factor variable
-  # df <- df %>%
-  #   mutate(Subgroup = factor(Subgroup, 
-  #                            levels = c("EnrollWhite", 
-  #                                       "EnrollHispanic", 
-  #                                       "EnrollAfrAm", 
-  #                                       "EnrollAsian", 
-  #                                       "EnrollFilipino", 
-  #                                       "EnrollPacIsl", 
-  #                                       "EnrollAmInd", 
-  #                                       "EnrollTwoOrMore", 
-  #                                       "EnrollNoEthRptd",
-  #                                       "EnrollTotal", 
-  #                                       "EnrollEL"), 
-  #                            labels = c("White", 
-  #                                       "Hispanic/Latino", 
-  #                                       "Black", 
-  #                                       "Asian", 
-  #                                       "Filipino", 
-  #                                       "Pacific Islander", 
-  #                                       "American Indian/Alaska Native", 
-  #                                       "Two or more races", 
-  #                                       "Race Not reported", 
-  #                                       "Total", 
-  #                                       "English learner")))
-  # 
-  # 
-  # 
-  # ###'######################################################################
-  # ###'
-  # ###' Enrollment: Convert to numeric
-  # ###'
-  # ###'
-  # 
-  # df <- df %>%
-  #   mutate(Enrollment = as.numeric(Enrollment))
-  
-  
-
   ###'######################################################################
   ###' 
   ###' Save data objects
@@ -326,8 +296,9 @@ for (i in seq_along(years)) {
   
   
   ### Save the resulting dataset
-  save(df, file = paste0("CourseEnrollment", year_num, "_cleaned", ".rda"))
-  write.dta(df, file = paste0("CourseEnrollment", year_num, "_cleaned", ".dta"))
+  save(df, file = paste0("ClassEnrollment", year_num, "_cleaned", ".rda"))
+  write.dta(df %>% select(-AllClassCourseCodes), 
+            file = paste0("ClassEnrollment", year_num, "_cleaned", ".dta"))
   
   
   
@@ -346,4 +317,5 @@ for (i in seq_along(years)) {
   ###' 
   
 }
+  
   

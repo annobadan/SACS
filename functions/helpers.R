@@ -77,6 +77,28 @@ classmode <- function(df, ...){
 
 ###'######################################################################
 ###'
+###' listvars(): list selected variables
+###'
+###'
+
+listvars <- function(df, ..., nrow = 100){
+  
+  ### Enquote variables
+  vars <- quos(...)  # any rules for select() works. ex) everything(), ends_with(), etc.
+  
+  ### Select variables
+  df_select <- df %>% 
+    select(!!!vars)
+  
+  ### Return rows for the selected variables
+  df_select[1:nrow, ]
+
+}
+
+
+
+###'######################################################################
+###'
 ###' empty_as_na(): Convert empty strings to NA
 ###' 
 ###' : it's important to include "trimws" to remove blank spaces 
