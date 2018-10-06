@@ -3,13 +3,7 @@
 ###'
 ###' Helper functions for plotting
 ###' 
-###' Plots summarizing longitudinal trends
 ###' 
-###' (1) plot_trend_xy
-###' (2) plot_trend_grp
-###' (3) plot_trend_grp_facet
-###' 
-###'  
 ###' 20180726 JoonHo Lee
 ###' 
 ###' 
@@ -110,7 +104,7 @@ plot_trend_xy <- function(dataframe,
 ###'     - No facets
 ###'     
 
-### Define function 'plot_trend_0fac'
+### Define function 'plot_trend_grp'
 plot_trend_grp <- function(dataframe, 
                            x, 
                            y,
@@ -336,5 +330,6 @@ plot_proportions_grp <- function(dataframe,
 
 # ### Test the code
 # plot_trend_grp(df_plot, Fiscalyear, mean_value, key, ylim = c(8000, 18000))
+
 
 

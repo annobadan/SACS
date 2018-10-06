@@ -41,7 +41,6 @@ tabdf <- function(df,
   
   ### Display table as data.frame format
   data.frame(tibble_tbl)
-  
 }
 
 
@@ -240,7 +239,53 @@ get_lm_est_df <- function(lm_fit){
 }
 
 
+###'######################################################################
+###'
+###' school_composition()
+###' 
+###' => Generate table for summarizing school-level compositions
+###'
+###'
 
-
-
+school_composition <- function(df, 
+                               var_to_count, 
+                               factor, 
+                               table_name){
+  
+  ### Enquote variables
+  var_to_count <- enquo(var_to_count)
+  factor <- enquo(factor)
+  
+  ### Calculate Subtotal
+  df_subtotal <- df %>%
+    group_by(CountyCode, DistrictCode, SchoolCode, 
+             CountyName, DistrictName, SchoolName) %>%
+    summarise(subtotal = n_distinct(!!var_to_count))
+  
+  ### Calculate Subgroup Counts
+  df_by_subgroup <- df %>% 
+    group_by(CountyCode, DistrictCode, SchoolCode, 
+             CountyName, DistrictName, SchoolName, 
+             !!factor) %>% 
+    summarise(N_subgroup = n_distinct(!!var_to_count))
+  
+  ### Calculate Subgroup Percentages
+  df_by_subgroup <- df_by_subgroup %>%
+    left_join(df_subtotal, 
+              by = c("CountyCode", "DistrictCode", "SchoolCode", 
+                     "CountyName", "DistrictName", "SchoolName")) %>%
+    mutate(PCT_subgroup = 100*(N_subgroup/subtotal))
+  
+  ### Add table name    
+  df_by_subgroup <- df_by_subgroup %>%
+    mutate(table = table_name)
+  
+  ### Rename factor variable, reorder variables
+  df_by_subgroup <- df_by_subgroup %>%
+    rename(factor = !!factor) %>%
+    select(CountyCode:SchoolName, 
+           table, factor, N_subgroup, PCT_subgroup, subtotal)
+  
+  return(df_by_subgroup)
+}
 
