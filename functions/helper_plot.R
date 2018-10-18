@@ -333,3 +333,41 @@ plot_proportions_grp <- function(dataframe,
 
 
 
+###'######################################################################
+###'
+###' tabdf_plot(): The visualized version of tabulating frequencies
+###' 
+###' Similar to the Stata command "tab" & "histogram"
+###'
+###'
+
+tabdf_plot <- function(df, 
+                       variable, 
+                       statistic = Percent, 
+                       limits = NULL){
+  
+  ### Enquote variables
+  x <- enquo(variable)
+  y <- enquo(statistic)
+  
+  ### Generate table
+  tibble_tbl <- df %>%
+    group_by(!!x) %>%
+    summarise(Freq = n()) %>%
+    ungroup() %>%
+    mutate(total_n = sum(Freq, na.rm = TRUE),
+           Percent = round((Freq/total_n)*100, 1), 
+           CumFreq = cumsum(Freq), 
+           CumPercent = round((CumFreq/total_n)*100, 1)) %>%
+    select(-total_n) 
+  
+  ### Generate ggplot
+  p <- ggplot(data = tibble_tbl, aes(x = !!x, y = !!y)) +
+    geom_bar(stat = "identity") + 
+    scale_x_continuous(limits = limits) + 
+    theme_bw()
+  
+  return(p)
+}
+
+

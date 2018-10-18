@@ -553,6 +553,11 @@ for (i in seq_along(years)) {
       mutate_at(.vars = c("PERC_TIME", "OVER_100"), 
                 .funs = as.numeric)
     
+    
+    ### Replace PERC_TIME: 0 => 100 if F_P_TIME == full time
+    df$PERC_TIME[df$F_P_TIME == "Full-time"] <- 100
+    
+    
     ### Reorder FTE-related variables 
     df <- df %>%
       select(AcademicYear:EmploymentStatusCode, 

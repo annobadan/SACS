@@ -155,7 +155,7 @@ get_weighted_mean <- function(df,
   
   df %>% 
     group_by(!!x, !!!group_var) %>%
-    summarise(mean_value = round(weighted.mean(!!y, !!weight, na.rm = TRUE), 0))
+    summarise(mean_value = round(weighted.mean(!!y, !!weight, na.rm = TRUE), 2))
 }
 
 
@@ -244,13 +244,16 @@ get_lm_est_df <- function(lm_fit){
 ###' school_composition()
 ###' 
 ###' => Generate table for summarizing school-level compositions
+###' => Based on "COUNTING" variable
 ###'
 ###'
 
 school_composition <- function(df, 
                                var_to_count, 
                                factor, 
-                               table_name){
+                               levels_to_replace = NULL, 
+                               table_name = "Staff Type", 
+                               year = NULL){
   
   ### Enquote variables
   var_to_count <- enquo(var_to_count)
@@ -258,34 +261,171 @@ school_composition <- function(df,
   
   ### Calculate Subtotal
   df_subtotal <- df %>%
-    group_by(CountyCode, DistrictCode, SchoolCode, 
-             CountyName, DistrictName, SchoolName) %>%
-    summarise(subtotal = n_distinct(!!var_to_count))
+    group_by(CountyCode, DistrictCode, SchoolCode) %>%
+    summarise(subtotal = n_distinct(!!var_to_count)) 
   
   ### Calculate Subgroup Counts
   df_by_subgroup <- df %>% 
     group_by(CountyCode, DistrictCode, SchoolCode, 
-             CountyName, DistrictName, SchoolName, 
              !!factor) %>% 
-    summarise(N_subgroup = n_distinct(!!var_to_count))
+    summarise(N = n_distinct(!!var_to_count)) 
   
   ### Calculate Subgroup Percentages
   df_by_subgroup <- df_by_subgroup %>%
     left_join(df_subtotal, 
-              by = c("CountyCode", "DistrictCode", "SchoolCode", 
-                     "CountyName", "DistrictName", "SchoolName")) %>%
-    mutate(PCT_subgroup = 100*(N_subgroup/subtotal))
+              by = c("CountyCode", "DistrictCode", "SchoolCode")) %>%
+    mutate(PCT = 100*(N/subtotal))
   
-  ### Add table name    
-  df_by_subgroup <- df_by_subgroup %>%
-    mutate(table = table_name)
+  ###' Reshape from long to wide data format 
+  ###' (1) Long data format to spread multiple variables
+  df_temp <- df_by_subgroup %>%
+    gather(stat, value, N, PCT)  
   
-  ### Rename factor variable, reorder variables
-  df_by_subgroup <- df_by_subgroup %>%
-    rename(factor = !!factor) %>%
-    select(CountyCode:SchoolName, 
-           table, factor, N_subgroup, PCT_subgroup, subtotal)
+  ###' (2) Recode factor levels to brief names
+  df_temp <- df_temp %>%
+    rename(factor = !!factor)
+
+  levels(df_temp$factor) <- levels_to_replace
   
-  return(df_by_subgroup)
+  ###' (3) Reshape to wide format 
+  df_temp <- df_temp %>%
+    unite(key, stat, factor) %>%
+    spread(key = key, value = value, fill = 0)
+  
+  ### Add table name & AcademicYear
+  df_temp <- df_temp %>%
+    mutate(table = table_name, 
+           AcademicYear = as.numeric(year))
+  
+  ### Reorder variables by factor levels
+  N_vars <- paste0("N_", levels_to_replace)
+  PCT_vars <- paste0("PCT_", levels_to_replace)
+  
+  N_vars_select <- N_vars[N_vars %in% names(df_temp)]
+  PCT_vars_select <- PCT_vars[PCT_vars %in% names(df_temp)]
+  
+  df_temp <- df_temp %>%
+    select(ends_with("Code"),
+           table, AcademicYear, subtotal,
+           N_vars_select, 
+           PCT_vars_select)
+  
+  return(df_temp)
 }
+
+
+
+###'######################################################################
+###'
+###' school_summarize()
+###' 
+###' => Generate descriptive statistics table 
+###'    for summarizing distribution of counituous variable
+###'
+###'
+
+school_summarize <- function(df, 
+                             var_to_summarize, 
+                             table_name, 
+                             year = NULL){
+  
+  ### Enquote variables
+  var_to_summarize <- enquo(var_to_summarize)
+  
+  ### Generate summary table
+  df_sum <- df %>%
+    group_by(CountyCode, DistrictCode, SchoolCode) %>%
+    summarise(N = sum(!is.na(!!var_to_summarize)),  
+              mean = mean(!!var_to_summarize, na.rm = TRUE), 
+              median = median(!!var_to_summarize, na.rm = TRUE), 
+              sd = sd(!!var_to_summarize, na.rm = TRUE), 
+              min = min(!!var_to_summarize, na.rm = TRUE), 
+              max = max(!!var_to_summarize, na.rm = TRUE))
+  
+  ### Add table name and year & reorder variables
+  df_sum <- df_sum %>%
+    mutate(table = table_name, 
+           AcademicYear = as.numeric(year)) %>%
+    select(CountyCode:SchoolCode, table, AcademicYear, 
+           everything())
+
+  return(df_sum)
+}
+
+
+
+###'######################################################################
+###'
+###' school_composition_sum()
+###' 
+###' => Generate table for summarizing school-level compositions
+###' => Based on "SUMMATION" of variable
+###'
+###'
+
+school_composition_sum <- function(df, 
+                                   var_to_sum, 
+                                   factor, 
+                                   levels_to_replace = NULL, 
+                                   table_name = "Staff Type", 
+                                   year = NULL){
+  
+  ### Enquote variables
+  var_to_sum <- enquo(var_to_sum)
+  factor <- enquo(factor)
+  
+  ### Calculate Subtotal
+  df_subtotal <- df %>%
+    group_by(CountyCode, DistrictCode, SchoolCode) %>%
+    summarise(subtotal = sum(!!var_to_sum, na.rm = TRUE)) 
+  
+  ### Calculate Subgroup Counts
+  df_by_subgroup <- df %>% 
+    group_by(CountyCode, DistrictCode, SchoolCode, 
+             !!factor) %>% 
+    summarise(N = sum(!!var_to_sum, na.rm = TRUE)) 
+  
+  ### Calculate Subgroup Percentages
+  df_by_subgroup <- df_by_subgroup %>%
+    left_join(df_subtotal, 
+              by = c("CountyCode", "DistrictCode", "SchoolCode")) %>%
+    mutate(PCT = 100*(N/subtotal))
+  
+  ###' Reshape from long to wide data format 
+  ###' (1) Long data format to spread multiple variables
+  df_temp <- df_by_subgroup %>%
+    gather(stat, value, N, PCT)  
+  
+  ###' (2) Recode factor levels to brief names
+  df_temp <- df_temp %>%
+    rename(factor = !!factor)
+  
+  levels(df_temp$factor) <- levels_to_replace
+  
+  ###' (3) Reshape to wide format 
+  df_temp <- df_temp %>%
+    unite(key, stat, factor) %>%
+    spread(key = key, value = value, fill = 0)
+  
+  ### Add table name & AcademicYear
+  df_temp <- df_temp %>%
+    mutate(table = table_name, 
+           AcademicYear = as.numeric(year))
+  
+  ### Reorder variables by factor levels
+  N_vars <- paste0("N_", levels_to_replace)
+  PCT_vars <- paste0("PCT_", levels_to_replace)
+  
+  N_vars_select <- N_vars[N_vars %in% names(df_temp)]
+  PCT_vars_select <- PCT_vars[PCT_vars %in% names(df_temp)]
+  
+  df_temp <- df_temp %>%
+    select(ends_with("Code"),
+           table, AcademicYear, subtotal,
+           N_vars_select, 
+           PCT_vars_select)
+  
+  return(df_temp)
+}
+
 
