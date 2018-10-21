@@ -3,9 +3,9 @@
 ###'
 ###' Generate Variables
 ###' 
-###' School-level Student Compositions 1993-2017
+###' School-level Student Compositions 
 ###' 
-###' - with Enrollment Data
+###' - with Enrollment Data 1993-2017
 ###' 
 ###' 
 ###' 20181007 JoonHo Lee
@@ -29,7 +29,7 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Public_K-12_Character/Enrollment")
+data_dir <- c("D:/Data/LCFF/Public_K-12_Character/01_Enrollment")
 
 
 ### Call libraries
