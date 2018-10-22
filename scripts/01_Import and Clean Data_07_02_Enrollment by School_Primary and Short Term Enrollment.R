@@ -49,7 +49,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 
 ###'######################################################################
 ###'
-###' Loop over years: 1993-2016
+###' Loop over years
 ###'
 ###'
 

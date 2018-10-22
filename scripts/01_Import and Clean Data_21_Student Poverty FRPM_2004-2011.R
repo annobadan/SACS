@@ -27,7 +27,7 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Public_K-12_Character/Student_Poverty_FRPM")
+data_dir <- c("D:/Data/LCFF/Public_K-12_Character/02_Student_Poverty_FRPM")
 
 
 ### Call libraries

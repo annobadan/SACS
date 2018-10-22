@@ -3,10 +3,10 @@
 ###'
 ###' Import and clean data files 
 ###' 
-###' - Student Poverty FRPM Data: 2012-2017
+###' - CALPADS Unduplicated Pupil Count Source File (K–12): 2013-2017
 ###' 
 ###' 
-###' 20181008 JoonHo Lee 
+###' 20181020 JoonHo Lee 
 ###' 
 ###' 
 
@@ -27,7 +27,7 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Public_K-12_Character/02_Student_Poverty_FRPM")
+data_dir <- c("D:/Data/LCFF/Public_K-12_Character/03_CALPADS_Unduplicated_Pupil_Count")
 
 
 ### Call libraries
@@ -48,7 +48,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 ###'
 
-years <- sprintf("%02d",seq(12, 17))
+years <- sprintf("%02d",seq(13, 17))
 
 for (i in seq_along(years)) {
   
@@ -72,34 +72,28 @@ for (i in seq_along(years)) {
   setwd(data_dir)
   
   
+  ### Assign filename
+  filename <- paste0("cupc", year_num, sprintf("%02d", as.numeric(year_num) + 1))
+  
+  
   ### Import MS Excel file
-  if (year_num %in% c("12", "13")){
+  if (year_num %in% c("13")){
     
-    df <- read_excel(paste0("frpm", 
-                            year_num, sprintf("%02d", as.numeric(year_num) + 1), 
-                            ".xls"), 
-                     sheet = 2, na = "NULL")
-
-  } else if (year_num %in% c("13")){
+    df <- read_excel(paste0(filename, ".xls"), sheet = 3, na = "")
     
-    df <- read_excel(paste0("frpm", 
-                            year_num, sprintf("%02d", as.numeric(year_num) + 1), 
-                            ".xls"), 
-                     sheet = 2, na = "N/A")
+  } else if (year_num %in% c("14")){
     
-  } else if (year_num %in% c("14", "15", "16")){
+    df <- read_excel(paste0(filename, ".xls"), sheet = 3, na = c("", "N/A"))
     
-    df <- read_excel(paste0("frpm", 
-                            year_num, sprintf("%02d", as.numeric(year_num) + 1), 
-                            ".xls"), 
-                     sheet = 2, na = "N/A", skip = 1)
+  } else if (year_num %in% c("15", "16")){
+    
+    df <- read_excel(paste0(filename, ".xls"), sheet = 3, na = c("", "N/A"), 
+                     skip = 2)
     
   } else if (year_num %in% c("17")){
     
-    df <- read_excel(paste0("frpm", 
-                            year_num, sprintf("%02d", as.numeric(year_num) + 1), 
-                            ".xlsx"), 
-                     sheet = 2, na = "N/A", skip = 1)
+    df <- read_excel(paste0(filename, ".xlsx"), sheet = 3, na = c("", "N/A"), 
+                     skip = 2)
     
   }
   
@@ -114,74 +108,47 @@ for (i in seq_along(years)) {
   ###'
   
   ### Rename imported variables
-  if (year_num %in% c("12")){
+  if (year_num %in% c("13")){
     
     names(df) <- c("AcademicYear", 
                    "CountyCode", "DistrictCode", "SchoolCode", 
-                   "CharterNum", 
-                   "NSLP_Provision",
-                   "Source", 
                    "CountyName", "DistrictName", "SchoolName", 
-                   "Low_Grade", "High_Grade", 
-                   "Enrollment_K-12", 
-                   "N_Free_K-12", 
-                   "PCT_Free_K-12", 
-                   "N_FRPM_K-12_Undup", 
-                   "PCT_FRPM_K-12", 
-                   "Enrollment_5-17", 
-                   "N_Free_5-17", 
-                   "PCT_Free_5-17", 
-                   "N_FRPM_5-17_Undup", 
-                   "PCT_FRPM_5-17")
-    
-  } else if (year_num %in% c("13")){
-    
-    names(df) <- c("AcademicYear", 
-                   "CountyCode", "DistrictCode", "SchoolCode",
-                   "CountyName", "DistrictName", "SchoolName", 
-                   "NSLP_Provision",
+                   "DistrictType", "SchoolType", 
+                   "NSLP_Provision", 
                    "CharterNum", "FundingType", 
                    "Low_Grade", "High_Grade",
-                   "Enrollment_K-12", 
-                   "N_Free_K-12_unadj",
-                   "N_Free_K-12_adj", 
-                   "PCT_Free_K-12_adj", 
-                   "N_FRPM_K-12_unadj",
-                   "N_FRPM_K-12_adj",
-                   "PCT_FRPM_K-12_adj", 
-                   "Enrollment_5-17", 
-                   "N_Free_5-17_unadj",
-                   "N_Free_5-17_adj", 
-                   "PCT_Free_5-17_adj", 
-                   "N_FRPM_5-17_unadj",
-                   "N_FRPM_5-17_adj",
-                   "PCT_FRPM_5-17_adj", 
-                   "CALPADS_status")
+                   "Enrollment_K12",
+                   "N_FRPM_Undup_unadj", 
+                   "N_EL", 
+                   "N_Foster", 
+                   "N_Undup_Pupil_unadj", 
+                   "N_Directly_Certfied", 
+                   "N_Undup_Pupil_adj",
+                   "N_Non_Juvenile_Hall", 
+                   "N_Juvenile_Hall", 
+                   "N_CALPADS_UPC", 
+                   "CALPADS_Certified")
     
   } else if (year_num %in% c("14", "15", "16", "17")){
     
     names(df) <- c("AcademicYear", 
-                   "CountyCode", "DistrictCode", "SchoolCode",
-                   "CountyName", "DistrictName", "SchoolName",
-                   "DistrictType", "SchoolType", "EdOptionType", 
-                   "NSLP_Provision",
+                   "CountyCode", "DistrictCode", "SchoolCode", 
+                   "CountyName", "DistrictName", "SchoolName", 
+                   "DistrictType", "SchoolType", "EdOptionType",  
+                   "NSLP_Provision", 
                    "Charter", "CharterNum", "FundingType", "IRC", 
                    "Low_Grade", "High_Grade",
-                   "Enrollment_K-12", 
-                   "N_Free_K-12",
-                   "PCT_Free_K-12", 
-                   "N_FRPM_K-12",
-                   "PCT_FRPM_K-12", 
-                   "Enrollment_5-17", 
-                   "N_Free_5-17",
-                   "PCT_Free_5-17", 
-                   "N_FRPM_5-17",
-                   "PCT_FRPM_5-17", 
-                   "CALPADS_status")
-    
+                   "Enrollment_K12",
+                   "N_FRPM",
+                   "N_Foster", 
+                   "N_Homeless", 
+                   "N_Migrant", 
+                   "N_Directly_Certified",
+                   "N_FRPM_Undup", 
+                   "N_EL", 
+                   "N_CALPADS_UPC", 
+                   "CALPADS_Certified")
   }
-  
-  classmode(df, everything())
   
   
   
@@ -195,14 +162,14 @@ for (i in seq_along(years)) {
   classmode(df, AcademicYear)
   
   df <- df %>%
-    mutate(AcademicYear = as.numeric(substr(AcademicYear, 3, 4)))
+    mutate(AcademicYear = as.numeric(year_num))
   
   ### Drop NA rows
   df <- df %>%
     filter(!is.na(AcademicYear))
-
-    
-
+  
+  
+  
   ###'######################################################################
   ###'
   ###' CDS Codes & District/School Names
@@ -218,7 +185,7 @@ for (i in seq_along(years)) {
   
   classmode(df, everything())
   
-
+  
   ### Reorder with CDS Names
   df <- df %>%
     select(AcademicYear, 
@@ -231,41 +198,13 @@ for (i in seq_along(years)) {
   ###'
   ###' Type variables
   ###' 
-  ###' => These will be merged from publischls data
+  ###' => These will be merged from publischls data. Leave as they are.
   ###'
   ###'
-   
-  # classmode(df, everything())
+  
   # tabdf(df, DistrictType)
   # tabdf(df, SchoolType)
   # tabdf(df, EdOptionType)
-  
-  
-  
-  ###'######################################################################
-  ###'
-  ###' Charter Number &  Funding Type
-  ###' 
-  ###' => Same information from public school listing "pubschls"
-  ###'
-  ###'
-  
-  # classmode(df, everything())
-  # tabdf(df, CharterNum)
-  # tabdf(df, FundingType)
-  
-  
-  
-  ###'######################################################################
-  ###' 
-  ###' Grade: Low Grade, High Grade
-  ###' 
-  ###' => leave as they are. Not that useful information
-  ###' 
-  ###' 
-  
-  # tabdf(df, Low_Grade)
-  # tabdf(df, High_Grade)
   
   
   
@@ -280,29 +219,85 @@ for (i in seq_along(years)) {
   
   tabdf(df, NSLP_Provision)
   
-  if (year_num %in% c("12", "13")){
+  if (year_num %in% c("13")){
     
     df <- df %>%
       mutate(NSLP_Provision = if_else(NSLP_Provision == "Y", 1, 0, 
                                       missing = NA_real_))
     
   }
-
+  
+  
+  
+  ###'######################################################################
+  ###'
+  ###' Charter Number &  Funding Type
+  ###' 
+  ###' => Same information from public school listing "pubschls"
+  ###'
+  ###'
+  
+  # classmode(df, everything())
+  # tabdf(df, CharterNum)
+  # tabdf(df, FundingType)
+  # tabdf(df, IRC)
+  
   
   
   ###'######################################################################
   ###' 
-  ###' FRPM Variables
+  ###' Grade: Low Grade, High Grade
+  ###' 
+  ###' => leave as they are. Not that useful information
+  ###' 
+  ###' 
+  
+  tabdf(df, Low_Grade)
+  tabdf(df, High_Grade)
+  
+  
+  
+  ###'######################################################################
+  ###' 
+  ###' Calculate Percentages
+  ###' 
   ###' - Check variable types
-  ###' - Convert percent scale: PCT_FRPM
+  ###' - Generate PCT variables
   ###' 
   ###' 
   
   classmode(df, everything())
   
+  if (year_num %in% c("13", "14", "15")){
+    
+    ### Copy multiple columns
+    df_PCT <- df %>%
+      select(names(df)[grepl("N_", names(df))])
+    
+    ### Rename variables
+    names(df_PCT) <- gsub("N_", "PCT_", names(df_PCT))
+    
+    ### Calculate percentages
+    df_PCT <- df_PCT %>%
+      mutate_at(.vars = names(df_PCT)[grepl("PCT_", names(df_PCT))], 
+                .funs = function(x) 100*(x/df$Enrollment_K12))
+    
+    ### Column bind with the original dataframe
+    df <- cbind.data.frame(df, df_PCT)
+  }
+  
+  
+  
+  ###'######################################################################
+  ###' 
+  ###' Delete "CALPADS_Certified"
+  ###' 
+  ###' 
+  
+  tabdf(df, CALPADS_Certified)
+  
   df <- df %>%
-    mutate_at(.vars = names(df)[grepl("PCT_", names(df))], 
-              .funs = function(x) x*100)
+    select(-CALPADS_Certified)
   
   
   
@@ -317,8 +312,8 @@ for (i in seq_along(years)) {
   
   
   ### Save the resulting dataset
-  save(df, file = paste0("frpm", year_num, "_cleaned", ".rda"))
-  write.dta(df, file = paste0("frpm", year_num, "_cleaned", ".dta"))
+  save(df, file = paste0(filename, "_cleaned",  ".rda"))
+  write.dta(df, file = paste0(filename, "_cleaned", ".dta"))
   
   
   
@@ -337,3 +332,4 @@ for (i in seq_along(years)) {
   ###' 
   
 }
+
