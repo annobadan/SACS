@@ -7,6 +7,8 @@
 ###' 
 ###' - with Enrollment Data: Primary & Short-Term Enrollment (2009-2017)
 ###' 
+###' - Generate the % of short-term enrollment => Proxy for student mobility 
+###' 
 ###' 
 ###' 20181020 JoonHo Lee
 ###' 
@@ -121,10 +123,11 @@ for (i in seq_along(years)) {
   names(df_ENR_TYPE)
   df_ENR_TYPE <- df_ENR_TYPE %>%
     select(-PCT_primary, -PCT_combined) %>%
-    mutate(N_shortterm = N_combined - N_primary)
+    mutate(N_shortterm = N_combined - N_primary, 
+           PCT_shortterm = (N_shortterm/N_combined)*100)
   
   tabdf(df_ENR_TYPE, N_shortterm)
-  
+  tabdf(df_ENR_TYPE, PCT_shortterm)
   
   
   ###'######################################################################
@@ -159,4 +162,58 @@ for (i in seq_along(years)) {
   ###' 
   
 }
+
+
+
+###'######################################################################
+###'
+###' Generate Longitudinal Dataset
+###' 
+###' Short-term enrollment 2009-2017
+###'
+###'
+
+### Set data containing working directory
+setwd(data_dir)
+
+
+### Prepare empty list to collect data frames
+meta_list <- list()
+
+
+### Import the cleaned dataframes and embed into list
+years <- c(sprintf("%02d",seq(9, 17)))
+
+for (i in seq_along(years)){
+  
+  ### Assign year
+  year_num <- years[i]
+  
+  ### Load the cleaned datafile
+  load(file = paste0("enr_short_term", year_num, ".rda"))
+  
+  ### Embed in the list
+  meta_list[[i]] <- df_ENR_TYPE
+  
+}
+
+
+### Bind rows!
+df_bind <- bind_rows(meta_list)
+
+
+### Arrange by school
+df_bind <- df_bind %>%
+  mutate(AcademicYear = AcademicYear + 2000) %>%
+  arrange(CountyCode, DistrictCode, SchoolCode, 
+          table, AcademicYear)
+
+
+### Save the resulting dataframe
+setwd(data_dir)
+save(df_bind, file = paste0("enr_short_term", "_0917", ".rda"))
+write.dta(df_bind, file = paste0("enr_short_term", "_0917", ".dta"))
+
+
+
 

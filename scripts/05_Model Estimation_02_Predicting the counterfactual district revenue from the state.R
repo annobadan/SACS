@@ -10,6 +10,7 @@
 ###'   
 ###' 20180903 JoonHo Lee
 ###' 
+###' 
 
 ###'######################################################################
 ###'
@@ -132,7 +133,7 @@ df_rev_state_sum_pred <- df_rev_state_sum %>%
 
 ###'######################################################################
 ###'
-###' PRediction model
+###' Prediction model
 ###' 
 ###' STEP #01. Run only for 2003-2012, just prior to LCFF, get coefficients
 ###'      

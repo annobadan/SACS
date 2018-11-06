@@ -241,19 +241,19 @@ get_lm_est_df <- function(lm_fit){
 
 ###'######################################################################
 ###'
-###' school_composition()
+###' school_composition_count()
 ###' 
 ###' => Generate table for summarizing school-level compositions
 ###' => Based on "COUNTING" variable
 ###'
 ###'
 
-school_composition <- function(df, 
-                               var_to_count, 
-                               factor, 
-                               levels_to_replace = NULL, 
-                               table_name = "Staff Type", 
-                               year = NULL){
+school_composition_count <- function(df, 
+                                     var_to_count, 
+                                     factor, 
+                                     levels_to_replace = NULL, 
+                                     table_name = "Staff Type", 
+                                     year = NULL){
   
   ### Enquote variables
   var_to_count <- enquo(var_to_count)
@@ -312,46 +312,6 @@ school_composition <- function(df,
   
   return(df_temp)
 }
-
-
-
-###'######################################################################
-###'
-###' school_summarize()
-###' 
-###' => Generate descriptive statistics table 
-###'    for summarizing distribution of counituous variable
-###'
-###'
-
-school_summarize <- function(df, 
-                             var_to_summarize, 
-                             table_name, 
-                             year = NULL){
-  
-  ### Enquote variables
-  var_to_summarize <- enquo(var_to_summarize)
-  
-  ### Generate summary table
-  df_sum <- df %>%
-    group_by(CountyCode, DistrictCode, SchoolCode) %>%
-    summarise(N = sum(!is.na(!!var_to_summarize)),  
-              mean = mean(!!var_to_summarize, na.rm = TRUE), 
-              median = median(!!var_to_summarize, na.rm = TRUE), 
-              sd = sd(!!var_to_summarize, na.rm = TRUE), 
-              min = min(!!var_to_summarize, na.rm = TRUE), 
-              max = max(!!var_to_summarize, na.rm = TRUE))
-  
-  ### Add table name and year & reorder variables
-  df_sum <- df_sum %>%
-    mutate(table = table_name, 
-           AcademicYear = as.numeric(year)) %>%
-    select(CountyCode:SchoolCode, table, AcademicYear, 
-           everything())
-
-  return(df_sum)
-}
-
 
 
 ###'######################################################################
@@ -426,6 +386,65 @@ school_composition_sum <- function(df,
            PCT_vars_select)
   
   return(df_temp)
+}
+
+
+
+
+###'######################################################################
+###'
+###' school_summarize()
+###' 
+###' => Generate descriptive statistics table 
+###'    for summarizing distribution of counituous variable
+###'
+###'
+
+school_summarize <- function(df, 
+                             var_to_summarize, 
+                             table_name, 
+                             year = NULL){
+  
+  ### Enquote variables
+  var_to_summarize <- enquo(var_to_summarize)
+  
+  ### Generate summary table
+  df_sum <- df %>%
+    group_by(CountyCode, DistrictCode, SchoolCode) %>%
+    summarise(N = sum(!is.na(!!var_to_summarize)),  
+              mean = mean(!!var_to_summarize, na.rm = TRUE), 
+              median = median(!!var_to_summarize, na.rm = TRUE), 
+              sd = sd(!!var_to_summarize, na.rm = TRUE), 
+              min = min(!!var_to_summarize, na.rm = TRUE), 
+              max = max(!!var_to_summarize, na.rm = TRUE))
+  
+  ### Add table name and year & reorder variables
+  df_sum <- df_sum %>%
+    mutate(table = table_name, 
+           AcademicYear = as.numeric(year)) %>%
+    select(CountyCode:SchoolCode, table, AcademicYear, 
+           everything())
+
+  return(df_sum)
+}
+
+
+
+###'######################################################################
+###'
+###' dualsave()
+###' 
+###' => save dataframe in both .rda and .dta formats
+###'
+###'
+
+dualsave <- function(df_to_save, 
+                     filename = "temp_name"){
+  
+  library(foreign)
+  save(df_to_save, file = paste0(filename, ".rda"))
+  write.dta(df_to_save, file = paste0(filename, ".dta"))
+  
 }
 
 

@@ -1,9 +1,11 @@
 
 ###'######################################################################
 ###'
-###' Data Management 
+###' Generate variables
 ###' 
-###' School-level Student Compositions 1993-2017
+###' School-level Student Compositions 
+###' 
+###' Enrollment 1993-2017
 ###' 
 ###' Generate Longitudinal Datasets (bind_rows)
 ###' 
