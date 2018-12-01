@@ -37,7 +37,7 @@ tabdf <- function(df,
            Percent = round((Freq/total_n)*100, 1), 
            CumFreq = cumsum(Freq), 
            CumPercent = round((CumFreq/total_n)*100, 1)) %>%
-    select(-total_n) 
+    dplyr::select(-total_n) 
   
   ### Display table as data.frame format
   data.frame(tibble_tbl)
@@ -54,11 +54,11 @@ tabdf <- function(df,
 classmode <- function(df, ...){
   
   ### Enquote variables
-  vars <- quos(...)  # any rules for select() works. ex) everything(), ends_with(), etc.
+  vars <- quos(...)  # any rules for dplyr::select() works. ex) everything(), ends_with(), etc.
   
   ### Select variables
   df_select <- df %>% 
-    select(!!!vars)
+    dplyr::select(!!!vars)
   
   ### Return classes and modes
   mat <- cbind(sapply(df_select, class), 
@@ -83,11 +83,11 @@ classmode <- function(df, ...){
 listvars <- function(df, ..., nrow = 100){
   
   ### Enquote variables
-  vars <- quos(...)  # any rules for select() works. ex) everything(), ends_with(), etc.
+  vars <- quos(...)  # any rules for dplyr::select() works. ex) everything(), ends_with(), etc.
   
   ### Select variables
   df_select <- df %>% 
-    select(!!!vars)
+    dplyr::select(!!!vars)
   
   ### Return rows for the selected variables
   df_select[1:nrow, ]
@@ -233,7 +233,7 @@ get_lm_est_df <- function(lm_fit){
   rownames(df) <- NULL
   
   df <- df %>% 
-    select(variable, everything())
+    dplyr::select(variable, everything())
   
   df
 }
@@ -305,7 +305,7 @@ school_composition_count <- function(df,
   PCT_vars_select <- PCT_vars[PCT_vars %in% names(df_temp)]
   
   df_temp <- df_temp %>%
-    select(ends_with("Code"),
+    dplyr::select(ends_with("Code"),
            table, AcademicYear, subtotal,
            N_vars_select, 
            PCT_vars_select)
@@ -380,7 +380,7 @@ school_composition_sum <- function(df,
   PCT_vars_select <- PCT_vars[PCT_vars %in% names(df_temp)]
   
   df_temp <- df_temp %>%
-    select(ends_with("Code"),
+    dplyr::select(ends_with("Code"),
            table, AcademicYear, subtotal,
            N_vars_select, 
            PCT_vars_select)
@@ -422,7 +422,7 @@ school_summarize <- function(df,
   df_sum <- df_sum %>%
     mutate(table = table_name, 
            AcademicYear = as.numeric(year)) %>%
-    select(CountyCode:SchoolCode, table, AcademicYear, 
+    dplyr::select(CountyCode:SchoolCode, table, AcademicYear, 
            everything())
 
   return(df_sum)
