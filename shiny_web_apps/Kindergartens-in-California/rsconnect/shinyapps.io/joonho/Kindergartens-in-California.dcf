@@ -1,0 +1,12 @@
+name: Kindergartens-in-California
+title: Kindergartens-in-California
+username:
+account: joonho
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 740053
+bundleId: 1900159
+url: https://joonho.shinyapps.io/Kindergartens-in-California/
+when: 1551166182.99038
+asMultiple: FALSE
+asStatic: FALSE

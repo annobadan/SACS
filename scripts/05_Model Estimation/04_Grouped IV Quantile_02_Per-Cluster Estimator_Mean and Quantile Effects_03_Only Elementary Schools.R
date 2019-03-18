@@ -70,7 +70,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 
 ### Student compositions + Teacher compositions 2003-2017
 setwd(work_dir)
-load(file = "processed_data/df_Teacher_Student_K12_character.rda")
+load(file = "processed_data/df_Teacher_Student_Course.rda")
 df <- df_to_save
 
 
@@ -88,16 +88,19 @@ df_pred <- df_to_save
 ###'
 
 ### Outcome variables
+### Outcome variables
 y_names_vec <- c("PCT_Teacher", "PCT_Admin", "PCT_Pupil_Serv", 
-                 "PCT_female", "PCT_White", "PCT_Latino", "PCT_Black", "PCT_Asian", 
+                 "PCT_female_Tch", "PCT_White_Tch", "PCT_Latino_Tch", 
+                 "PCT_Black_Tch", "PCT_Asian_Tch", 
                  "PCT_Master_Plus", "PCT_Bachelor_Minus", 
                  "mean_yrs_teach", "mean_yrs_in_dist", 
                  "PCT_New_teach", "PCT_New_in_dist",   
                  "PCT_Longterm_Sub",  "PCT_Probationary", 
                  "PCT_Tenured", "PCT_Other", 
-                 "ST_Ratio", "SS_Ratio", 
-                 "PCT_Reclass", "PCT_Dropout_Total", "PCT_UC_GRADS", 
-                 "TA_Rate_Susp", "TA_Rate_Exps")
+                 "PCT_Full_Cred", "PCT_Emergency", 
+                 "MN_classsize_ELA", "MN_classsize_Math", "MN_classsize_SelfCon", 
+                 "MN_periods_ELA", "MN_periods_Math", "MN_periods_SelfCon")
+
 
 y_labels_vec <- c("Percentage of Teachers", 
                   "Percentage of Administrators", 
@@ -117,13 +120,14 @@ y_labels_vec <- c("Percentage of Teachers",
                   "Percentage of probationary teachers", 
                   "Percentage of tenured teachers", 
                   "Percentage of teachers with other employment status", 
-                  "Student teacher ratio", 
-                  "Student staff ratio", 
-                  "EL Reclassification Rate", 
-                  "Dropout Rate", 
-                  "Percentage of graduated meeting A-G requirements", 
-                  "Suspension Rate", 
-                  "Expulsion Rate")
+                  "Percentage of teachers with full credential", 
+                  "Percentage of teachers with emergency credential", 
+                  "Average class size - ELA", 
+                  "Average class size - Math",
+                  "Average class size - Self-contained class", 
+                  "Average number of class periods assigned to teachers - ELA", 
+                  "Average number of class periods assigned to teachers - Math", 
+                  "Average number of class periods assigned to teachers - Self-contained class")
 
 all.equal(length(y_names_vec), length(y_labels_vec))
 
@@ -133,7 +137,7 @@ quantile_vec <- c(0.2, 0.5, 0.8)
 element_vec <- c(paste0("tau", quantile_vec*100), "mean")
 
 
-for (i in seq_along(y_names_vec)){
+for (i in 19:26){
   
   ###'######################################################################
   ###'
@@ -152,7 +156,7 @@ for (i in seq_along(y_names_vec)){
   folder_name <- paste0(sprintf("%02d", i), "_", y_label)
   
   folder_dir <- file.path(work_dir, "figures", 
-                          "17_Mean and Quantile Effects of LCFF-induced Increases_03_Elementary Schools", 
+                          "17_Grouped_IV_Effects", "Elementary_Schools", 
                           folder_name)
   
   dir.create(folder_dir, showWarnings = FALSE)
@@ -173,7 +177,7 @@ for (i in seq_along(y_names_vec)){
   ### Filter only Elementary schools
   tabdf(df_temp, SOC)
   df_temp <- df_temp %>%
-    filter(SOC == "Elementary School")
+    filter(SOC == "Elementary Schools (Public)")
   
   
   ### Nest dataset by District and Year

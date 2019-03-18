@@ -144,8 +144,12 @@ for (i in seq_along(years)) {
   ### Substring CountyCode, DistrictCode
   tabdf(df, CD_code)
   df <- df %>%
-    mutate(CountyCode = substr(CD_code, start = 1, stop = 2), 
-           DistrictCode = substr(CD_code, start = 3, stop = 7))
+    mutate(CountyCode = if_else(nchar(CD_code) == 7, 
+                                substr(CD_code, start = 1, stop = 2), 
+                                substr(CD_code, start = 1, stop = 1)), 
+           DistrictCode = if_else(nchar(CD_code) == 7, 
+                                  substr(CD_code, start = 3, stop = 7), 
+                                  substr(CD_code, start = 2, stop = 6)))
   
   
   ### Convert to numeric: County, District, and School Codes

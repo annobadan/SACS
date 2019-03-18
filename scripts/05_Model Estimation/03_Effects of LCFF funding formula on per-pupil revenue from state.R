@@ -1,7 +1,7 @@
 
 ###'######################################################################
 ###'
-###' Effects of LCFF on Distric Per-Pupil Revenue from State  
+###' Effects of LCFF on District Per-Pupil Revenue from State  
 ###'
 ###' => Replicate Figure 10. 
 ###'    
@@ -10,6 +10,7 @@
 ###'    according to the fourmula weight / simulated IV
 ###'
 ###' 20180915 JoonHo Lee
+###' 20190113 JoonHo Lee - Plot for AERJ publication
 ###' 
 ###' 
 

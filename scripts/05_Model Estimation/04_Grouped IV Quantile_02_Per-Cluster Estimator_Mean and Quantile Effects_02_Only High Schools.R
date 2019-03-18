@@ -29,6 +29,7 @@
 ###' 20181101 JoonHo Lee 
 ###' 20181113 JoonHo Lee - Complete snippets
 ###' 20181118 JoonHo Lee - Add quantile estimation
+###' 20181231 JoonHo Lee - Update variable lists, Code to save results
 ###' 
 ###' 
 
@@ -46,6 +47,10 @@ rm(list=ls())   # delete all the objects in the workspace
 ### Set working directory 
 work_dir <- c("~/SACS")
 setwd(work_dir)
+
+
+### Set a directory containing large data files
+data_dir <- c("D:/Data/LCFF")
 
 
 ### Call libraries
@@ -68,16 +73,25 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 ###'
 
-### Student compositions + Teacher compositions 2003-2017
-setwd(work_dir)
-load(file = "processed_data/df_Teacher_Student_K12_character.rda")
-df <- df_to_save
+### Ultimate wide dataset 2003-2017
+setwd(data_dir)
+load(file = "df_Ultimate_Merged.rda")
+df <- df_to_save; rm(df_to_save)
+
+
+# ### Check whether the loaded data has issues
+# temp <- df %>%
+#   filter(CountyCode == 1, 
+#          DistrictCode == 61143, 
+#          SchoolCode == 131177) %>%
+#   dplyr::select(contains("Science"), contains("SelfCon"))
 
 
 ###' District information on actual/predicted per-pupil expenditures
 ###' LCFF-induced exogenous increases in district per-pupil expenditures
+setwd(work_dir)
 load(file = "processed_data/LCFF_induced_exogenous_PPE_2003_2016.rda")
-df_pred <- df_to_save
+df_pred <- df_to_save; rm(df_to_save)
 
 
 
@@ -87,58 +101,18 @@ df_pred <- df_to_save
 ###'
 ###'
 
+### Import variable names and labels
+setwd(work_dir)
+df_y <- read.csv(file = "tables/Outcome variable-names and labels.csv", 
+                 header = FALSE)
+
+classmode(df_y, everything())
+
+
 ### Outcome variables
-y_names_vec <- c("PCT_Teacher", "PCT_Admin", "PCT_Pupil_Serv", 
-                 "PCT_female", "PCT_White", "PCT_Latino", "PCT_Black", "PCT_Asian", 
-                 "PCT_Master_Plus", "PCT_Bachelor_Minus", 
-                 "mean_yrs_teach", "mean_yrs_in_dist", 
-                 "PCT_New_teach", "PCT_New_in_dist",   
-                 "PCT_Longterm_Sub",  "PCT_Probationary", 
-                 "PCT_Tenured", "PCT_Other", 
-                 "ST_Ratio", "SS_Ratio", 
-                 "PCT_Reclass", "PCT_Dropout_Total", "PCT_UC_GRADS", 
-                 "TA_Rate_Susp", "TA_Rate_Exps", 
-                 "MN_periods_ELA", "MN_periods_Math", 
-                 "PCT_Always_AG_ELA", "PCT_Sometimes_AG_ELA", "PCT_Not_AG_ELA",
-                 "PCT_Always_AG_Math", "PCT_Sometimes_AG_Math", "PCT_Not_AG_Math", 
-                 "PCT_AP_ELA", "PCT_AP_Math")
+y_names_vec <- as.character(df_y$V1)
 
-
-y_labels_vec <- c("Percentage of Teachers", 
-                  "Percentage of Administrators", 
-                  "Percentage of Pupil Services Staffs", 
-                  "Percentage of Female Teachers", 
-                  "Percentage of White Teachers", 
-                  "Percentage of Hispanic or Latino Teachers", 
-                  "Percentage of African American Teachers", 
-                  "Percentage of Asian Teachers", 
-                  "Percentage of Teachers with more than a Masters degree", 
-                  "Percentage of Teachers with less than Bachelors degree", 
-                  "Total years of teaching experience (school mean)", 
-                  "Total years of service in the district (school mean)", 
-                  "Percentage of novice teachers", 
-                  "Percentage of teachers new in the district", 
-                  "Percentage of longterm substitute or temporary employee", 
-                  "Percentage of probationary teachers", 
-                  "Percentage of tenured teachers", 
-                  "Percentage of teachers with other employment status", 
-                  "Student teacher ratio", 
-                  "Student staff ratio", 
-                  "EL Reclassification Rate", 
-                  "Dropout Rate", 
-                  "Percentage of graduated meeting A-G requirements", 
-                  "Suspension Rate", 
-                  "Expulsion Rate", 
-                  "Average number of class periods assigned to teachers - ELA", 
-                  "Average number of class periods assigned to teachers - Math", 
-                  "Percentage of Always A-G classes - ELA", 
-                  "Percentage of Sometimes A-G classes - ELA", 
-                  "Percentage of Not A-G classes - ELA", 
-                  "Percentage of Always A-G classes - Math", 
-                  "Percentage of Sometimes A-G classes - Math", 
-                  "Percentage of Not A-G classes - Math", 
-                  "Percentage of AP classes - ELA", 
-                  "Percentage of AP classes - Math")
+y_labels_vec <- as.character(df_y$V2)
 
 all.equal(length(y_names_vec), length(y_labels_vec))
 
@@ -148,7 +122,7 @@ quantile_vec <- c(0.2, 0.5, 0.8)
 element_vec <- c(paste0("tau", quantile_vec*100), "mean")
 
 
-for (i in 26:35){
+for (i in seq_along(y_names_vec)){
   
   ###'######################################################################
   ###'
@@ -167,11 +141,12 @@ for (i in 26:35){
   folder_name <- paste0(sprintf("%02d", i), "_", y_label)
   
   folder_dir <- file.path(work_dir, "figures", 
-                          "17_Mean and Quantile Effects of LCFF-induced Increases_02_High Schools", 
+                          "17_Grouped_IV_Effects", "High_Schools", 
                           folder_name)
   
   dir.create(folder_dir, showWarnings = FALSE)
   setwd(folder_dir)
+  
   
   
   ### Rename the outcome variable in the copied dataset
@@ -188,7 +163,7 @@ for (i in 26:35){
   ### Filter only high schools
   tabdf(df_temp, SOC)
   df_temp <- df_temp %>%
-    filter(SOC == "High School")
+    filter(SOC == "High Schools (Public)")
   
   
   ### Nest dataset by District and Year
@@ -475,7 +450,7 @@ for (i in 26:35){
     names(df_pred)
     df_pred <- df_pred %>% 
       mutate(DistrictCode = as.numeric(Dcode), 
-             AcademicYear = as.numeric(as.character(Fiscalyear)) - 2000)
+             AcademicYear = as.numeric(as.character(Fiscalyear)))
     
     
     ###' Choose factors used as a predictor (among 60 factors)
@@ -484,12 +459,17 @@ for (i in 26:35){
     tabdf(df_pred, factor)
     
     pred_factor_vec <- c("Total Expenditures", 
+                         "Non-Student Spending", 
                          "Student Spending", 
                          "Salaries", 
+                         "Certificated Teachers", 
                          "Employee Benefits", 
+                         "Retirement Benefits, Certificated", 
                          "Services & Other Operating Expenditures", 
+                         "Other Student Spending",
                          "General Education, K-12", 
-                         "General Education Instruction", 
+                         "General Education Instruction",
+                         "Special Education Instruction", 
                          "Instruction-related Services", 
                          "Pupil Services")
     
@@ -550,9 +530,12 @@ for (i in 26:35){
       ###' Join dataframe with predictors (df_pred_sub) with 
       ###' the dataframe with df_result_mean and df_result_quantile (df_yest)
       df_step2 <- df_pred_sub %>%
-        left_join(df_yest, by = c("DistrictCode", "AcademicYear"))
+        full_join_track(df_yest, 
+                        by = c("DistrictCode", "AcademicYear"), 
+                        .merge = TRUE) %>%
+        filter(.merge != "right_only")
       
-      
+
       ### Nest dataframe by factor
       df_step2_nested <- df_step2 %>%
         group_by(factor) %>%
@@ -698,11 +681,12 @@ for (i in 26:35){
       factor_name <- level_vec[l]
       
       df_sub <- df_event_est %>%
-        filter(factor == factor_name)
+        filter(factor == factor_name) %>%
+        mutate(year_since = year - ref_year)
       
       
       ### Plot!
-      p <- ggplot(aes(x = year, y = estimate), 
+      p <- ggplot(aes(x = year_since, y = estimate), 
                   data = df_sub) +
         
         # Add point, line, and text for coefficients
@@ -717,7 +701,7 @@ for (i in 26:35){
         geom_hline(aes(yintercept = 0), color = "black", linetype = "dashed") + 
         
         # Add vertical line at event
-        geom_vline(aes(xintercept = ref_year), color = "black", linetype = "dashed") + 
+        geom_vline(aes(xintercept = 0), color = "black", linetype = "dashed") + 
         
         # Facet by element
         facet_wrap(~element) + 
@@ -739,7 +723,7 @@ for (i in 26:35){
              subtitle = paste0("On ", y_label), 
              caption = NULL, 
              y = paste0("Change in ", y_label),  
-             x = "Academic Year")
+             x = "Year minus Initial year of LCFF reform")
       
       # print(p)
       

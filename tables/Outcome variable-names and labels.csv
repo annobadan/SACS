@@ -1,0 +1,172 @@
+PCT_Teacher,Percentage of teachers
+PCT_Admin,Percentage of administrators
+PCT_Pupil_Serv,Percentage of pupil services staffs
+PCT_female_Tch,Percentage of female teachers
+PCT_White_Tch,Percentage of white teachers
+PCT_Latino_Tch,Percentage of hispanic or latino teachers
+PCT_Black_Tch,Percentage of african american teachers
+PCT_Asian_Tch,Percentage of asian teachers
+PCT_Master_Plus,Percentage of teachers with masters or higher degrees
+PCT_Bachelor_Minus,Percentage of teachers with bachelors or lower degrees
+mean_yrs_teach,Total years of teaching experience (school mean)
+mean_yrs_in_dist,Total years of service in the district (school mean)
+PCT_New_teach,Percentage of novice teachers
+PCT_New_in_dist,Percentage of teachers new in the district
+PCT_Longterm_Sub,Percentage of longterm substitute or temporary employee
+PCT_Probationary,Percentage of probationary teachers
+PCT_Tenured,Percentage of tenured teachers
+PCT_Other,Percentage of teachers with other employment status
+mean_FTE_teacher,School average of full time equivalent teaching duties
+PCT_Full_Cred_Total,Percentage of teachers with full credential - Total
+PCT_Univ_Int_Total,Percentage of teachers with university intern credential - Total
+PCT_Dist_Int_Total,Percentage of teachers with district intern credential - Total
+PCT_Emergency_Total,Percentage of teachers with emergency permits - Total
+PCT_Waiver_Total,Percentage of teachers with waiver credential - Total
+MN_Period_Total,Average number of class periods assigned to teachers - Total
+MN_Period_ELA,Average number of class periods assigned to teachers - ELA
+MN_Period_Math,Average number of class periods assigned to teachers - Math
+MN_Period_Social,Average number of class periods assigned to teachers - Social Science
+MN_Period_Science,Average number of class periods assigned to teachers - Science
+MN_Period_FoLan,Average number of class periods assigned to teachers - Foreign Languages
+MN_Period_CTE,Average number of class periods assigned to teachers - CTE
+MN_Period_Other,Average number of class periods assigned to teachers - Other Inst Assign
+MN_Period_SelfCon,Average number of class periods assigned to teachers - Self-contained class
+PCT_Apprvd_Total,Percentage of A-G approved classes - Total
+PCT_Apprvd_ELA,Percentage of A-G approved classes - ELA
+PCT_Apprvd_Math,Percentage of A-G approved classes - Math
+PCT_Apprvd_Social,Percentage of A-G approved classes - Social Science
+PCT_Apprvd_Science,Percentage of A-G approved classes - Science
+PCT_Apprvd_FoLan,Percentage of A-G approved classes - Foreign Languages
+PCT_Apprvd_CTE,Percentage of A-G approved classes - CTE
+PCT_Apprvd_Other,Percentage of A-G approved classes - Other Inst Assign
+PCT_Always_AG_Total,Percentage of classes always required to be A-G classes - Total
+PCT_Always_AG_ELA,Percentage of classes always required to be A-G classes - ELA
+PCT_Always_AG_Math,Percentage of classes always required to be A-G classes - Math
+PCT_Always_AG_Social,Percentage of classes always required to be A-G classes - Social Science
+PCT_Always_AG_Science,Percentage of classes always required to be A-G classes - Science
+PCT_Sometimes_AG_Total,Percentage of classes sometimes required to be A-G classes - Total
+PCT_Sometimes_AG_ELA,Percentage of classes sometimes required to be A-G classes - ELA
+PCT_Sometimes_AG_Math,Percentage of classes sometimes required to be A-G classes - Math
+PCT_Sometimes_AG_Social,Percentage of classes sometimes required to be A-G classes - Social Science
+PCT_Sometimes_AG_Science,Percentage of classes sometimes required to be A-G classes - Science
+PCT_Not_AG_Total,Percentage of classes not required to be A-G classes - Total
+PCT_Not_AG_ELA,Percentage of classes not required to be A-G classes - ELA
+PCT_Not_AG_Math,Percentage of classes not required to be A-G classes - Math
+PCT_Not_AG_Social,Percentage of classes not required to be A-G classes - Social Science
+PCT_Not_AG_Science,Percentage of classes not required to be A-G classes - Science
+PCT_AP_Total,Percentage of AP classes - Total
+PCT_AP_ELA,Percentage of AP classes - ELA
+PCT_AP_Math,Percentage of AP classes - Math
+PCT_AP_Social,Percentage of AP classes - Social Science
+PCT_AP_Science,Percentage of AP classes - Science
+PCT_AP_FoLan,Percentage of AP classes - Foreign Languages
+MN_size_Total,School average class size - Total
+MN_size_ELA,School average class size - ELA
+MN_size_Math,School average class size - Math
+MN_size_Social,School average class size - Social Science
+MN_size_Science,School average class size - Science
+MN_size_FoLan,School average class size - Foreign Languages
+MN_size_CTE,School average class size - CTE
+MN_size_Other,School average class size - Other Inst Assign
+MN_size_SelfCon,School average class size - Self-contained class
+NewT_EL_ELA,%EL taught by the novice - %EL taught by the experienced (ELA)
+NewT_EL_Math,%EL taught by the novice - %EL taught by the experienced (Math)
+NewT_EL_Social,%EL taught by the novice - %EL taught by the experienced (Social Science)
+NewT_EL_Science,%EL taught by the novice - %EL taught by the experienced (Science)
+NewT_EL_FoLan,%EL taught by the novice - %EL taught by the experienced (Foreign Language)
+NewT_EL_CTE,%EL taught by the novice - %EL taught by the experienced (CTE)
+NewT_EL_Other,%EL taught by the novice - %EL taught by the experienced (Other)
+NewT_EL_SelfCon,%EL taught by the novice - %EL taught by the experienced (Self-contained class)
+YrsT_EL_ELA,Years of experience and %EL within the teacher's classes - Linear slope (ELA)
+YrsT_EL_Math,Years of experience and %EL within the teacher's classes - Linear slope (Math)
+YrsT_EL_Social,Years of experience and %EL within the teacher's classes - Linear slope (Social Science)
+YrsT_EL_Science,Years of experience and %EL within the teacher's classes - Linear slope (Science)
+YrsT_EL_FoLan,Years of experience and %EL within the teacher's classes - Linear slope (Foreign Languages)
+YrsT_EL_CTE,Years of experience and %EL within the teacher's classes - Linear slope (CTE)
+YrsT_EL_Other,Years of experience and %EL within the teacher's classes - Linear slope (Other Inst Assign)
+YrsT_EL_SelfCon,Years of experience and %EL within the teacher's classes - Linear slope (Self-contained class)
+Tenure_EL_ELA,%EL taught by the tenured - %EL taught by the nontenured (ELA)
+Tenure_EL_Math,%EL taught by the tenured - %EL taught by the nontenured (Math)
+Tenure_EL_Social,%EL taught by the tenured - %EL taught by the nontenured (Social Science)
+Tenure_EL_Science,%EL taught by the tenured - %EL taught by the nontenured (Science)
+Tenure_EL_FoLan,%EL taught by the tenured - %EL taught by the nontenured (Foreign Language)
+Tenure_EL_CTE,%EL taught by the tenured - %EL taught by the nontenured (CTE)
+Tenure_EL_Other,%EL taught by the tenured - %EL taught by the nontenured (Other Inst Assign)
+Tenure_EL_SelfCon,%EL taught by the tenured - %EL taught by the nontenured (Self-contained class)
+Master_EL_ELA,%EL taught by Master higher - %EL taught by Bachelor lower (ELA)
+Master_EL_Math,%EL taught by Master higher - %EL taught by Bachelor lower (Math)
+Master_EL_Social,%EL taught by Master higher - %EL taught by Bachelor lower (Social Science)
+Master_EL_Science,%EL taught by Master higher - %EL taught by Bachelor lower (Science)
+Master_EL_FoLan,%EL taught by Master higher - %EL taught by Bachelor lower (Foreign Language)
+Master_EL_CTE,%EL taught by Master higher - %EL taught by Bachelor lower (CTE)
+Master_EL_Other,%EL taught by Master higher - %EL taught by Bachelor lower (Other Inst Assign)
+Master_EL_SelfCon,%EL taught by Master higher - %EL taught by Bachelor lower (Self-contained class)
+WhiteT_EL_ELA,%EL taught by the White - %EL taught by the non-White (ELA)
+WhiteT_EL_Math,%EL taught by the White - %EL taught by the non-White (Math)
+WhiteT_EL_Social,%EL taught by the White - %EL taught by the non-White (Social Science)
+WhiteT_EL_Science,%EL taught by the White - %EL taught by the non-White (Science)
+WhiteT_EL_FoLan,%EL taught by the White - %EL taught by the non-White (Foreign Language)
+WhiteT_EL_CTE,%EL taught by the White - %EL taught by the non-White (CTE)
+WhiteT_EL_Other,%EL taught by the White - %EL taught by the non-White (Other)
+WhiteT_EL_SelfCon,%EL taught by the White - %EL taught by the non-White (Self-contained class)
+AGApprvd_EL_ELA,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (ELA)
+AGApprvd_EL_Math,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (Math)
+AGApprvd_EL_Social,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (Social Science)
+AGApprvd_EL_Science,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (Science)
+AGApprvd_EL_FoLan,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (Foreign Language)
+AGApprvd_EL_CTE,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (CTE)
+AGApprvd_EL_Other,%EL enrolled in A-G approved classes - %EL enrolled in not A-G approved classes (Other)
+AP_EL_ELA,%EL enrolled in AP classes - %EL enrolled in not AP classes (ELA)
+AP_EL_Math,%EL enrolled in AP classes - %EL enrolled in not AP classes (Math)
+AP_EL_Social,%EL enrolled in AP classes - %EL enrolled in not AP classes (Social Science)
+AP_EL_Science,%EL enrolled in AP classes - %EL enrolled in not AP classes (Science)
+AP_EL_FoLan,%EL enrolled in AP classes - %EL enrolled in not AP classes (Foreign Language)
+NewInD_EL_ELA,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (ELA)
+NewInD_EL_Math,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Math)
+NewInD_EL_Social,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Social Science)
+NewInD_EL_Science,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Science)
+NewInD_EL_FoLan,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Foreign Language)
+NewInD_EL_CTE,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (CTE)
+NewInD_EL_Other,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Other)
+NewInD_EL_SelfCon,%EL taught by the teacher new in the district - %EL taught by the teacher now new  (Self-contained class)
+YrsInD_EL_ELA,Years of service in district and %EL within the teacher's classes - Linear slope (ELA)
+YrsInD_EL_Math,Years of service in district and %EL within the teacher's classes - Linear slope (Math)
+YrsInD_EL_Social,Years of service in district and %EL within the teacher's classes - Linear slope (Social Science)
+YrsInD_EL_Science,Years of service in district and %EL within the teacher's classes - Linear slope (Science)
+YrsInD_EL_FoLan,Years of service in district and %EL within the teacher's classes - Linear slope (Foreign Languages)
+YrsInD_EL_CTE,Years of service in district and %EL within the teacher's classes - Linear slope (CTE)
+YrsInD_EL_Other,Years of service in district and %EL within the teacher's classes - Linear slope (Other Inst Assign)
+YrsInD_EL_SelfCon,Years of service in district and %EL within the teacher's classes - Linear slope (Self-contained class)
+N_Subject_Total,Count of subjects - Total
+N_Subject_ELA,Count of subjects - ELA
+N_Subject_Math,Count of subjects - Math
+N_Subject_Social,Count of subjects - Social Science
+N_Subject_Science,Count of subjects - Science
+N_Subject_FoLan,Count of subjects - Foreign Languages
+N_Subject_CTE,Count of subjects - CTE
+N_Subject_Other,Count of subjects - Other Inst Assign
+N_Subject_SelfCon,Count of subjects - Self-contained class
+N_Subject_Art,"Count of subjects - Art, Music, Dance, Drama"
+N_Subject_PE,Count of subjects - Physical and Health Education
+N_Course_Total,Count of courses - Total
+N_Course_ELA,Count of courses - ELA
+N_Course_Math,Count of courses - Math
+N_Course_Social,Count of courses - Social Science
+N_Course_Science,Count of courses - Science
+N_Course_FoLan,Count of courses - Foreign Languages
+N_Course_CTE,Count of courses - CTE
+N_Course_Other,Count of courses - Other Inst Assign
+N_Course_SelfCon,Count of courses - Self-contained class
+N_Course_Art,"Count of courses - Art, Music, Dance, Drama"
+N_Course_PE,Count of courses - Physical and Health Education
+N_Period_Total,Count of class periods - Total
+N_Period_ELA,Count of class periods - ELA
+N_Period_Math,Count of class periods - Math
+N_Period_Social,Count of class periods - Social Science
+N_Period_Science,Count of class periods - Science
+N_Period_FoLan,Count of class periods - Foreign Languages
+N_Period_CTE,Count of class periods - CTE
+N_Period_Other,Count of class periods - Other Inst Assign
+N_Period_SelfCon,Count of class periods - Self-contained class
+N_Period_Art,"Count of class periods - Art, Music, Dance, Drama"
+N_Period_PE,Count of class periods - Physical and Health Education

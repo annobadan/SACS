@@ -1,0 +1,10 @@
+"","TransK_Change","Freq","Percent","CumFreq","CumPercent"
+"1","Full day-Full day",2354,42.2,2354,42.2
+"2","Full day-None",116,2.1,2470,44.3
+"3","Full day-Part day",85,1.5,2555,45.8
+"4","None-Full day",150,2.7,2705,48.5
+"5","None-None",1225,22,3930,70.5
+"6","None-Part day",115,2.1,4045,72.5
+"7","Part day-Full day",268,4.8,4313,77.3
+"8","Part day-None",85,1.5,4398,78.9
+"9","Part day-Part day",1179,21.1,5577,100

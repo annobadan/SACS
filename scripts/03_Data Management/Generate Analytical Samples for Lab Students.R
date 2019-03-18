@@ -53,10 +53,6 @@ load("processed_data/df_student_composition_0317.rda")
 df_std <- df_student_composition
 
 
-### Teacher-related variables
-
-
-
 ### PCT_EL
 load("processed_data/Reclass_Rate_by_School_2005-2017.rda")
 df_EL <- df_to_save
@@ -67,6 +63,9 @@ load(file = "processed_data/sba_All_3years.rda")
 df_sba <- sba_All_3years
 
 
+### df_student_teacher_compositions 2003-2017
+load(file = "processed_data/df_student_teacher_composition_2003_2017.rda")
+df_std_tch_comp <- df_to_save
 
 
 
@@ -160,11 +159,12 @@ dualsave(df_Jesus_final, "processed_data/Lab_students/data_Jesus")
 ###'
 
 ### Extract basic information
-df_Nic <- df_std %>%
+df_Nic <- df_std_tch_comp %>%
   select(match_key,  
          ends_with("Name"), DOC, SOC, EIL, 
          GSoffered, GSserved, Charter, 
-         Total_Enroll, PCT_Latino, PCT_Black, PCT_White, PCT_FRPM)
+         Total_Enroll, PCT_Latino, PCT_Black, PCT_White, PCT_FRPM, 
+         mean_yrs_teach, PCT_New_teach, PCT_Master_Plus)
 
 names(df_Nic)
 

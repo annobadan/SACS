@@ -1,0 +1,139 @@
+"","Subject","N_Courses","Freq","Percent","CumFreq","CumPercent"
+"1","Art",1,24184,93.4,24184,93.4
+"2","Art",2,1442,5.6,25626,99
+"3","Art",3,199,0.8,25825,99.8
+"4","Art",4,42,0.2,25867,99.9
+"5","Art",5,15,0.1,25882,100
+"6","Art",6,5,0,25887,100
+"7","Art",7,1,0,25888,100
+"8","Drama/Theater",1,5382,95.9,5382,95.9
+"9","Drama/Theater",2,213,3.8,5595,99.7
+"10","Drama/Theater",3,15,0.3,5610,100
+"11","English Language Arts",1,154074,95.8,154074,95.8
+"12","English Language Arts",2,3798,2.4,157872,98.2
+"13","English Language Arts",3,1228,0.8,159100,98.9
+"14","English Language Arts",4,1078,0.7,160178,99.6
+"15","English Language Arts",5,413,0.3,160591,99.9
+"16","English Language Arts",6,158,0.1,160749,100
+"17","English Language Arts",7,31,0,160780,100
+"18","English Language Arts",8,9,0,160789,100
+"19","English Language Arts",9,2,0,160791,100
+"20","Foreign Languages",1,37826,97,37826,97
+"21","Foreign Languages",2,1045,2.7,38871,99.7
+"22","Foreign Languages",3,96,0.2,38967,100
+"23","Foreign Languages",4,14,0,38981,100
+"24","Foreign Languages",5,3,0,38984,100
+"25","Foreign Languages",6,1,0,38985,100
+"26","Foreign Languages",10,1,0,38986,100
+"27","History/Social Science",1,113412,95.8,113412,95.8
+"28","History/Social Science",2,2539,2.1,115951,98
+"29","History/Social Science",3,1095,0.9,117046,98.9
+"30","History/Social Science",4,807,0.7,117853,99.6
+"31","History/Social Science",5,312,0.3,118165,99.8
+"32","History/Social Science",6,149,0.1,118314,100
+"33","History/Social Science",7,38,0,118352,100
+"34","History/Social Science",8,10,0,118362,100
+"35","History/Social Science",9,8,0,118370,100
+"36","History/Social Science",10,2,0,118372,100
+"37","History/Social Science",11,1,0,118373,100
+"38","Mathematics",1,127869,96.4,127869,96.4
+"39","Mathematics",2,2809,2.1,130678,98.6
+"40","Mathematics",3,1107,0.8,131785,99.4
+"41","Mathematics",4,443,0.3,132228,99.7
+"42","Mathematics",5,182,0.1,132410,99.9
+"43","Mathematics",6,75,0.1,132485,99.9
+"44","Mathematics",7,51,0,132536,100
+"45","Mathematics",8,20,0,132556,100
+"46","Mathematics",9,18,0,132574,100
+"47","Mathematics",10,11,0,132585,100
+"48","Mathematics",11,1,0,132586,100
+"49","Science",1,100721,96.5,100721,96.5
+"50","Science",2,2749,2.6,103470,99.2
+"51","Science",3,614,0.6,104084,99.8
+"52","Science",4,171,0.2,104255,99.9
+"53","Science",5,47,0,104302,100
+"54","Science",6,20,0,104322,100
+"55","Science",7,4,0,104326,100
+"56","Science",8,4,0,104330,100
+"57","Science",9,3,0,104333,100
+"58","Self-Contained Class",1,165230,100,165230,100
+"59","Physical Education",1,64430,95.9,64430,95.9
+"60","Physical Education",2,2259,3.4,66689,99.3
+"61","Physical Education",3,450,0.7,67139,99.9
+"62","Physical Education",4,43,0.1,67182,100
+"63","Physical Education",5,5,0,67187,100
+"64","Special Designated Subjects",1,3505,99.8,3505,99.8
+"65","Special Designated Subjects",2,8,0.2,3513,100
+"66","Education, Child Development, and Family Services",1,3933,94.5,3933,94.5
+"67","Education, Child Development, and Family Services",2,209,5,4142,99.6
+"68","Education, Child Development, and Family Services",3,18,0.4,4160,100
+"69","Health Education",1,11789,99.9,11789,99.9
+"70","Health Education",2,15,0.1,11804,100
+"71","Hospitality, Tourism, and Recreation",1,3117,95.8,3117,95.8
+"72","Hospitality, Tourism, and Recreation",2,101,3.1,3218,98.9
+"73","Hospitality, Tourism, and Recreation",3,35,1.1,3253,100
+"74","Other Instruction-Related Assignments",1,96137,98.2,96137,98.2
+"75","Other Instruction-Related Assignments",2,1618,1.7,97755,99.9
+"76","Other Instruction-Related Assignments",3,133,0.1,97888,100
+"77","Other Instruction-Related Assignments",4,2,0,97890,100
+"78","Other Instruction-Related Assignments",5,1,0,97891,100
+"79","Transportation",1,1521,92.9,1521,92.9
+"80","Transportation",2,102,6.2,1623,99.1
+"81","Transportation",3,11,0.7,1634,99.8
+"82","Transportation",4,2,0.1,1636,99.9
+"83","Transportation",5,1,0.1,1637,100
+"84","Work Experience",1,1777,98.2,1777,98.2
+"85","Work Experience",2,32,1.8,1809,100
+"86","Engineering and Architecture",1,2475,95.2,2475,95.2
+"87","Engineering and Architecture",2,115,4.4,2590,99.6
+"88","Engineering and Architecture",3,10,0.4,2600,100
+"89","Agriculture and Natural Resources",1,3885,94.4,3885,94.4
+"90","Agriculture and Natural Resources",2,206,5,4091,99.4
+"91","Agriculture and Natural Resources",3,23,0.6,4114,99.9
+"92","Agriculture and Natural Resources",4,2,0,4116,100
+"93","Agriculture and Natural Resources",5,1,0,4117,100
+"94","Arts, Media, and Entertainment",1,6827,94.7,6827,94.7
+"95","Arts, Media, and Entertainment",2,351,4.9,7178,99.6
+"96","Arts, Media, and Entertainment",3,25,0.3,7203,99.9
+"97","Arts, Media, and Entertainment",4,4,0.1,7207,100
+"98","Arts, Media, and Entertainment",6,3,0,7210,100
+"99","Building and Construction Trades",1,1740,90.7,1740,90.7
+"100","Building and Construction Trades",2,168,8.8,1908,99.4
+"101","Building and Construction Trades",3,11,0.6,1919,100
+"102","Computer Education",1,5872,98.9,5872,98.9
+"103","Computer Education",2,63,1.1,5935,99.9
+"104","Computer Education",3,3,0.1,5938,100
+"105","Health Science and Medical Technology",1,2534,97.6,2534,97.6
+"106","Health Science and Medical Technology",2,48,1.8,2582,99.4
+"107","Health Science and Medical Technology",3,11,0.4,2593,99.8
+"108","Health Science and Medical Technology",4,2,0.1,2595,99.9
+"109","Health Science and Medical Technology",5,1,0,2596,100
+"110","Health Science and Medical Technology",7,1,0,2597,100
+"111","Manufacturing and Product Development",1,1514,96.6,1514,96.6
+"112","Manufacturing and Product Development",2,48,3.1,1562,99.7
+"113","Manufacturing and Product Development",3,5,0.3,1567,100
+"114","Dance",1,1843,96.8,1843,96.8
+"115","Dance",2,59,3.1,1902,99.9
+"116","Dance",3,2,0.1,1904,100
+"117","Music",1,17779,97.7,17779,97.7
+"118","Music",2,385,2.1,18164,99.8
+"119","Music",3,27,0.1,18191,100
+"120","Music",4,3,0,18194,100
+"121","Music",6,1,0,18195,100
+"122","Business and Finance",1,4283,98.8,4283,98.8
+"123","Business and Finance",2,48,1.1,4331,99.9
+"124","Business and Finance",3,3,0.1,4334,100
+"125","Information and Communication Technologies",1,4692,98.3,4692,98.3
+"126","Information and Communication Technologies",2,75,1.6,4767,99.9
+"127","Information and Communication Technologies",3,6,0.1,4773,100
+"128","Marketing, Sales, and Service",1,1064,97.4,1064,97.4
+"129","Marketing, Sales, and Service",2,28,2.6,1092,100
+"130","Public Services",1,1213,97.5,1213,97.5
+"131","Public Services",2,28,2.3,1241,99.8
+"132","Public Services",3,2,0.2,1243,99.9
+"133","Public Services",5,1,0.1,1244,100
+"134","Energy and Utilities",1,341,98.6,341,98.6
+"135","Energy and Utilities",2,5,1.4,346,100
+"136","Fashion and Interior Design",1,518,92.7,518,92.7
+"137","Fashion and Interior Design",2,33,5.9,551,98.6
+"138","Fashion and Interior Design",3,8,1.4,559,100

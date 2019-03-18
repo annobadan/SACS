@@ -1,0 +1,15 @@
+,factor,element,year,estimate,conf.low,conf.high,y_label
+1,Student Spending,tau50,2003,0.978593299,-2.74967961,4.706866208,% Teachers newly hired in the district
+2,Student Spending,tau50,2004,1.535692477,-2.267259628,5.338644581,% Teachers newly hired in the district
+3,Student Spending,tau50,2005,3.469089112,-0.402150214,7.340328438,% Teachers newly hired in the district
+4,Student Spending,tau50,2006,2.421547919,-1.418667588,6.261763427,% Teachers newly hired in the district
+5,Student Spending,tau50,2007,2.455821289,-1.461905724,6.373548302,% Teachers newly hired in the district
+6,Student Spending,tau50,2008,1.389923975,-2.491521994,5.271369944,% Teachers newly hired in the district
+7,Student Spending,tau50,2009,2.029982775,-0.923836696,4.983802246,% Teachers newly hired in the district
+8,Student Spending,tau50,2010,1.657379239,-1.134663554,4.449422031,% Teachers newly hired in the district
+9,Student Spending,tau50,2011,-0.56098963,-3.338621606,2.216642347,% Teachers newly hired in the district
+10,Student Spending,tau50,2012,0,0,0,% Teachers newly hired in the district
+11,Student Spending,tau50,2013,9.486140788,5.9543367,13.01794488,% Teachers newly hired in the district
+12,Student Spending,tau50,2014,4.444098888,1.630029938,7.258167837,% Teachers newly hired in the district
+13,Student Spending,tau50,2015,9.186095389,5.478701828,12.89348895,% Teachers newly hired in the district
+14,Student Spending,tau50,2016,11.1029625,7.561866241,14.64405877,% Teachers newly hired in the district

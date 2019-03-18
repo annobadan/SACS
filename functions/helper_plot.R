@@ -186,7 +186,8 @@ plot_trend_grp_facet <- function(dataframe,
   ###' Add point, path, and value label layers
   p <- p + geom_point(aes(shape = groupvar, color = groupvar), size = 3.0) + 
     geom_path(aes(linetype = groupvar, color = groupvar), size = 1.0) + 
-    geom_text(aes(label = comma(yvar)), size = 3, hjust = 0.5, vjust = 2.0)
+    # geom_text(aes(label = comma(yvar)), size = 3, hjust = 0.5, vjust = 2.0)
+    geom_text(aes(label = yvar), size = 3, hjust = 0.5, vjust = 2.0)
   
   ### Add vertical line layer
   if (!is.null(yline)){
@@ -313,6 +314,104 @@ plot_proportions_grp <- function(dataframe,
   
   ### Scales
   p <- p + 
+    # scale_x_continuous(breaks = seq(min(dataframe$xvar), max(dataframe$xvar), 
+    #                                 by = xinterval)) + 
+    scale_y_continuous(labels = comma, limits = ylim)
+  
+  ### Themes, temporary labels, and manual colors
+  p <- p + theme_trend + temp_labels + 
+    scale_color_manual(values = color_palette[seq(unique(dataframe$groupvar))]) + 
+    scale_shape_manual(values = shape_palette[seq(unique(dataframe$groupvar))])
+  
+  
+  ### Guide (nrow = 2) and Paired pallette
+  p + guides(fill = guide_legend(nrow = 2, byrow = TRUE)) + 
+    scale_fill_brewer(palette = "Paired")
+}
+
+# ### Test the code
+# plot_trend_grp(df_plot, Fiscalyear, mean_value, key, ylim = c(8000, 18000))
+
+
+
+
+
+###'######################################################################
+###'
+###'  plot_proportions_grp_facet() 
+###'  
+###'  - x-y variables
+###'  - With one group (factor)
+###'  - With facet_grid()
+###'     
+
+### Define function 
+plot_proportions_grp_facet <- function(dataframe, 
+                                       x, 
+                                       y,
+                                       group, 
+                                       facet, 
+                                       facet_formula, 
+                                       facet_scales = "fixed", 
+                                       yline = NULL, 
+                                       ylim = NULL, 
+                                       xinterval = 1){
+  
+  ###' Enquote x, y, and group variables
+  ###' Renamed variables because scale::comma() didn't work with !!yvar
+  xvar <- enquo(x)
+  yvar <- enquo(y)
+  groupvar <- enquo(group)
+  facetvar <- enquo(facet)
+  dataframe <- dataframe %>%
+    rename(xvar = !!xvar, yvar = !!yvar, groupvar = !!groupvar, facetvar = !!facetvar)
+  
+  
+  #' (1) Calculate the percentages based on groups
+  #' (2) Format the labels and calculate their positions
+  dataframe <- dataframe %>%
+    group_by(xvar, facetvar) %>%
+    mutate(group_sum = sum(yvar, na.rm = TRUE), 
+           percent = yvar/group_sum * 100, 
+           # don't need to calculate the label positions from ggplot 2.1.0 
+           # position = cumsum(amount) - 0.5 * amount,  
+           label_text = paste0(sprintf("%.1f", percent), "%")) 
+  
+  
+  ### Calcluate the group total 
+  group_total <- dataframe %>%
+    group_by(xvar, facetvar) %>%
+    summarise(group_sum = first(group_sum))
+  
+  
+  ### Assign data and aesthetic mappings
+  p <- ggplot(dataframe) + 
+    aes(x = xvar, y = yvar, fill = groupvar)
+  
+  ###' Add bar, percent label, and total value label layers
+  p <- p + 
+    geom_bar(position = position_stack(reverse = TRUE), 
+             stat = "identity", width = 0.7) +
+    geom_text(aes(label = label_text), 
+              position = position_stack(vjust = 0.5, reverse = TRUE), size = 3) +
+    # geom_text(data = group_total,
+    #           aes(x = xvar, y = group_sum + mean(dataframe$group_sum)/30,
+    #               label = comma(group_sum), fill = NULL),
+    #           size = 3)
+    
+    
+    ### Add vertical line layer
+    if (!is.null(yline)){
+      p <- p + geom_vline(aes(xintercept = yline), color = "red", linetype = "dashed")
+    }
+  
+  
+  ### Facetting
+  p <- p + facet_grid(facet_formula, scales = facet_scales)
+  
+  
+  ### Scales
+  p <- p + 
     scale_x_continuous(breaks = seq(min(dataframe$xvar), max(dataframe$xvar), 
                                     by = xinterval)) + 
     scale_y_continuous(labels = comma, limits = ylim)
@@ -330,7 +429,6 @@ plot_proportions_grp <- function(dataframe,
 
 # ### Test the code
 # plot_trend_grp(df_plot, Fiscalyear, mean_value, key, ylim = c(8000, 18000))
-
 
 
 ###'######################################################################

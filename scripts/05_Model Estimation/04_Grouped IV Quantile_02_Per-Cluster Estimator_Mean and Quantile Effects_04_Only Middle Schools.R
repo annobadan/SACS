@@ -152,7 +152,7 @@ for (i in seq_along(y_names_vec)){
   folder_name <- paste0(sprintf("%02d", i), "_", y_label)
   
   folder_dir <- file.path(work_dir, "figures", 
-                          "17_Mean and Quantile Effects of LCFF-induced Increases_04_Middle Schools", 
+                          "17_Grouped_IV_Effects", "Middle_Schools", 
                           folder_name)
   
   dir.create(folder_dir, showWarnings = FALSE)
@@ -170,10 +170,10 @@ for (i in seq_along(y_names_vec)){
   df_temp$yvar[is.nan(df_temp$yvar)] <- NA
   
   
-  ### Filter only Elementary schools
+  ### Filter only Intermediate/Middle/Junior High
   tabdf(df_temp, SOC)
   df_temp <- df_temp %>%
-    filter(SOC == "Elementary School")
+    filter(SOC == "Intermediate/Middle/Junior High")
   
   
   ### Nest dataset by District and Year
