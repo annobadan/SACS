@@ -1,0 +1,460 @@
+---
+title: "Does Finance Reform Move Teachers and School Organizations?"
+subtitle: "California's $23 Billion Effort to Narrow Inequality"
+author: |
+  | Joon-Ho Lee & Bruce Fuller
+  | University of California, Berkeley
+date: |
+  | Presentation at 2019 AEFP in Kansas City, Missouri
+  | March 22, 2019
+output: 
+  beamer_presentation: 
+    colortheme: beaver
+    toc: yes
+    slide_level: 2
+    fig_caption: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.cap = "")
+```
+
+# Introduction
+
+## Achievement Gap Fails To Close
+
+![Achievement Gap](~/SACS/documentation/figures/achievement_gap.jpg)
+
+- "Gaps in achievement between the haves and have-nots are mostly unchanged over the past half century" (Hanushek et al., March 2019, [*Education Next*](https://www.educationnext.org/achievement-gap-fails-close-half-century-testing-shows-persistent-divide/))
+
+
+## Why?
+
+- Despite the concurrent improvement in resource equity and adequacy in school finance over the past decades, why does the income achievement gap persist?
+
+- "A growing disparity in teacher quality across the social divide may have offset the impacts of (school finance) policies designed to work in the opposite direction." (Hanushek et al., March 2019, [*Education Next*](https://www.educationnext.org/achievement-gap-fails-close-half-century-testing-shows-persistent-divide/)) 
+
+- In other words, changes in school resource levels have not been able to alter the existing differentiation in teacher quality. 
+
+
+## Focus on *Mediators*
+
+![Causal logic for how student achievement effects from finance reform may be mediated by change in school quality](~/SACS/documentation/figures/figure03_causal diagram.pdf){width=400px} 
+
+- Uncovering not simply *whether* money matters, but *how* money alter teacher qualities or school orgarnizational features
+
+
+## Research Question
+
+- Do large increases in per-pupil spending in districts lead to changes in distribution of educational *inputs* (teacher characteristics, school organizational features, and curricular structure) across schools within district in ways that equalize opportunities to learn?
+
+
+# Data and Measures
+
+## The California Case
+
+![](~/SACS/documentation/figures/California_vs_North Carolina.png){width=400px}
+
+- Annual Survey of School System Finances (F-33) data
+- https://joonho.shinyapps.io/F33_trends/
+
+
+## Data
+
+We draw on an extensive set of longitudinal administrative data from serveral sources:
+
+- [The standardized account code structure (SACS) annual financial data](https://www.cde.ca.gov/ds/fd/fd/)
+
+- [Local Confrol Funding Formula (LCFF) funding snapshot data](http://ias.cde.ca.gov/lcffsnapshot/lcff.aspx?printerfriendly=yes)
+
+- [Monthly statements of general fund cash receipts and disbursements from the state's fiscal controller](https://www.sco.ca.gov/ard_state_cash.html)
+
+- [The California Longitudinal Pupil Achievement Data System (CALPADS) staff demographic, staff assignment and course data](https://www.cde.ca.gov/ds/sd/sd/)
+
+We built school-by-year panel data sets, 2003-04 to 2016-17, for 6,867 traditional elementary (5,764) and high schools (1,103) in 941 districts in California (excluding charter schools)
+
+
+## SACS Annual Financial Data
+
+![](~/SACS/documentation/figures/SACS_Object Code.png){width=400px}
+
+- https://joonho.shinyapps.io/California_School_Finance/
+
+
+## LCFF Funding Snapshot Data
+
+![](~/SACS/documentation/figures/LCFF Funding Snapshot.png){width=400px}
+
+- https://joonho.shinyapps.io/LCFF_Funding_Snapshot/
+
+
+## State Cash Receipts and Disbursements Data
+
+![](~/SACS/documentation/figures/Local_Assistance_Non-Education Expenditures_02_Per-pupil.pdf){width=350px}
+
+- School districts' revenues are a function of what the state spends.
+
+
+## CALPADS Staff Data
+
+![](~/SACS/documentation/figures/staffingtables.pdf){width=430px}
+
+
+## CALPADS: Teacher Characteristics
+
+![](~/SACS/documentation/figures/Figure_01_Descriptive_01_Teacher Staffing_Elementary_Part1.pdf){width=400px}
+
+
+## CALPADS: Teacher Characteristics
+
+![](~/SACS/documentation/figures/Figure_01_Descriptive_01_Teacher Staffing_Elementary_Part2.pdf){width=400px}
+
+
+## CALPADS: Organizational Features & Curricular Structure
+
+![](~/SACS/documentation/figures/Figure_01_Descriptive_02_Class Properties_Elementary and High Part1.pdf){width=400px}
+
+
+## CALPADS: Organizational Features & Curricular Structure
+
+![](~/SACS/documentation/figures/Figure_01_Descriptive_02_Class Properties_Elementary and High Part2.pdf){width=400px}
+
+
+## CALPADS: English Learner's Access to Resources
+
+![](~/SACS/documentation/figures/Figure_01_Descriptive_03_EL's access to resources.pdf){width=400px}
+
+- The average percentage of English learners (ELs) in classes taught by the novice teachers **minus** the average percentage of ELs in classes taught by the experienced teachers (more than 2 years of experience) within the school
+
+
+
+# Analytic and Estimation Strategy
+
+## The Key Empirical Challenge
+
+- School spending is an *endogenous* treatment. 
+
+![A causal diagram](~/SACS/documentation/figures/figure03_causal diagram.pdf){width=400px} 
+
+
+## Sources of Exogeneity
+
+1. **The timing of reform events** $\rightarrow$ an event study framework
+    + assume that the exact timing of school finance reform is as good as random
+
+2. **The funding formula** $\rightarrow$ instrumental variable (IV) estimation
+    + leverage only reform-induced variation in funding brought about by the funding formula
+    
+- California's recent school finance reform, the Local Control Funding Formula (LCFF) signed into law in 2013, allows us to leverage both sources by conducting *an event study with a simulated IV approach* (Johnson & Tanner, 2018).
+
+
+
+## Research Design
+
+- **Step 1**: Prediction of the counterfactural trends of district per-pupil revenue if LCFF had not occured
+
+- **Step 2**: Estimating LCFF-induced exogenous increases in district per-pupil expenditure (The 1st stage of 2SLS)
+
+- **Step 3**: Estimating the effect of LCFF-induced increases in funding on the within-district distribution of teacher and school-organization outcomes (The 2nd stage of 2SLS)
+
+
+## Step 1. Counterfactual Predictions
+
+![Counterfactual Predictions](~/SACS/documentation/figures/figure05_counterfactual predictions.pdf){width=430px} 
+
+
+
+## Step 1. Counterfactual Predictions
+
+$$
+PPR_{dt} = \sum_{r = 1}^{N_{d}}{I_{r=d}\times (\alpha_{0, r} + \alpha_{1, r} \cdot State_{t} + \alpha_{2, r} \cdot Local_{t})} + \lambda_{t} + \epsilon_{dt}.
+$$
+
+- We directly model the predicted district per-pupil revenues as a function of 
+    1. California's economic cycle
+    2. general underlying differences across districts
+    3. district-specific sensitivity of revenues to fluctuations in the statewide business cycle
+    
+
+
+## Step 1. Counterfactual Predictions
+
+$$
+PPR_{dt} = \sum_{r = 1}^{N_{d}}{I_{r=d}\times (\alpha_{0, r} + \alpha_{1, r} \cdot State_{t} + \alpha_{2, r} \cdot Local_{t})} + \lambda_{t} + \epsilon_{dt}.
+$$
+
+- $PPR_{dt}$: the district per-pupil revenue from the state for district $d$ for year $t$
+
+- $State_{t}$: expenditures for total *state operations*, excluding education-related categories such as spending on state universities and colleges
+
+- $Local_{t}$: the total *local assistance* expenditures outside of spending on K-12 schools, community colleges, and the state teacher retirement system
+
+- $\lambda_{t}$: a year fixed effect
+
+- $\alpha_{1,r}$ and $\alpha_{2, r}$ encapsulate the district-specific sensitivity of revenues to changes in statewide expenditures
+
+
+## Step 2. LCFF-induced Exogenous Increases in $PPE_{dt}$
+
+$$
+PPE_{dt} = \sum_{z=1}^{10}{\sum_{p=0}^{4}{(I_{\mathrm{Exposure_{d}}=p} \times I_{\mathrm{Dosage_{d}}=z}) \cdot \alpha_{p, z}}} + 
+$$
+$$
+\gamma_{1} \cdot \widehat{PPR}_{dt} + \mu_{d} + \lambda_{t} + v_{dt}
+$$
+
+- The endogenous treatment $PPE_{dt}$:
+    + the district per-pupil spending for district $d$ for year $t$
+    + we excludes district spending categories that are distant from classroom instruction, teacher salaries or student support services, such as debt services, capital outlay and facilities
+
+
+## Step 2. LCFF-induced Exogenous Increases in $PPE_{dt}$
+
+$$
+PPE_{dt} = \sum_{z=1}^{10}{\sum_{p=0}^{4}{(I_{\mathrm{Exposure_{d}}=p} \times I_{\mathrm{Dosage_{d}}=z}) \cdot \alpha_{p, z}}} + 
+$$
+$$
+\gamma_{1} \cdot \widehat{PPR}_{dt} + \mu_{d} + \lambda_{t} + v_{dt}
+$$
+
+- Control variables
+    + time-varying confounder $\widehat{PPR}_{dt}$: the predicted counterfactual per-pupil revenue for district $d$ for year $t$ estimated from step 1. This reflect the dynamic effect of time-varying structural economic conditions on district revenues that might confound the relationship between the LCFF policy treatment and changes in teacher profiles and school-level organizational features
+    + $\mu_{d}$ and $\lambda_{t}$ are district and year fixed effects respectively
+    
+
+
+
+## Step 2. LCFF-induced Exogenous Increases in $PPE_{dt}$
+
+$$
+PPE_{dt} = \sum_{z=1}^{10}{\sum_{p=0}^{4}{(I_{\mathrm{Exposure_{d}}=p} \times I_{\mathrm{Dosage_{d}}=z}) \cdot \alpha_{p, z}}} + 
+$$
+$$
+\gamma_{1} \cdot \widehat{PPR}_{dt} + \mu_{d} + \lambda_{t} + v_{dt}
+$$
+
+
+- Instruments:
+    + $\mathrm{Exposure_{d}}$: the number of school years after the initial year of LCFF reform for district $d$. This varies from 0 (pre-LCFF years from 2003, before 2013-14) to 4 (post-LCFF year 2016-17)
+    + $\mathrm{Dosage_{d}}$: the LCFF-intended amount of supplemental and concentration grants in 2013. This *simulated IV* is generated from the state funding formula $Dosage_{d} = \{ 0.20 \times Base_{d}^{2013} \times UPP_{d}^{2013} \} + \{ 0.50 \times Base_{d}^{2013} \times \mathrm{max}[UPP_{d}^{2013} - 0.55, 0] \}$.
+
+
+## Step 2. LCFF-induced Exogenous Increases in $PPE_{dt}$
+
+$$
+PPE_{dt} = \sum_{z=1}^{10}{\sum_{p=0}^{4}{(I_{\mathrm{Exposure_{d}}=p} \times I_{\mathrm{Dosage_{d}}=z}) \cdot \alpha_{p, z}}} + 
+$$
+$$
+\gamma_{1} \cdot \widehat{PPR}_{dt} + \mu_{d} + \lambda_{t} + v_{dt}
+$$
+
+- Thus, $\alpha_{p,z}$ summarize the LCFF-reform induced exogenous increases in per-pupil spending in districts with dosage decile $z$ after $p$ years from the reform.
+
+- $\widehat{PPE}_{dt}$ is the per-pupil student spending for district $d$ for year $t$ instrumented by the two sources of exogeneity. 
+
+
+## Step 3. The Grouped IV Quantile Regression 
+
+- In finance reform studies, district-level increases in per-pupil spending may have little effect on the district-level *averages* of school quality measures. 
+
+- But they may still move the lower or higher *quantiles* of school quality distributions within a district. 
+
+![The distributional effect of district-level funding increases](~/SACS/documentation/figures/figure06_grouped_IV_quantile.pdf){width=400px} 
+
+
+## Step 3. The Grouped IV Quantile Regression
+
+- The grouped/multilevel instrumental variable (IV) quantile regresion (Chetverikov, Larsen, & Parmer, 2016) allows us to estimate the *$\color{blue}{\text{distributional}}$* or *$\color{blue}{\text{heterogenous}}$* effects of LCFF-induced funding increases on quantiles of the *within-district distribution* of school-level outcomes.
+
+![The distributional effect of district-level funding increases](~/SACS/documentation/figures/figure06_grouped_IV_quantile.pdf){width=400px} 
+
+
+
+## Step 3. The Grouped IV Quantile Regression
+
+Level-1 within-cluster model:
+
+$$
+Q_{Y_{sdt}}(\tau) = \alpha_{dt}(\tau) + \beta_{1} \cdot Enroll_{sdt} + \beta_{2} \cdot FRPM_{sdt}, \tau \in (0, 1)
+$$
+
+Level-2 between-cluster model:
+
+$$
+\alpha_{dt}(\tau) = \sum_{r = -9}^{4}{(I_{r=t} \times \mathrm{log} \widehat{PPE}_{dt}) \cdot \delta_{r}(\tau) + \gamma_{2}(\tau) \cdot \mathrm{log} \widehat{PPR}_{dt} + u_{dt}(\tau)}
+$$
+
+- The cluster is difined as a district-by-year cell. 
+
+
+## Step 3. The Grouped IV Quantile Regression
+
+Level-1 within-cluster model:
+
+$$
+Q_{Y_{sdt}}(\tau) = \alpha_{dt}(\tau) + \beta_{1} \cdot Enroll_{sdt} + \beta_{2} \cdot FRPM_{sdt}, \tau \in (0, 1)
+$$
+
+- The varying intercept $\alpha_{dt}(\tau)$: the district-by-year-specific conditional quantile of the school level outcome $Y_{sdt}$, after adusting for differences between clusters in the level of the two school-level confounders:
+    + total enrollment ($Enroll_{sdt}$)
+    + percentage of students eligible for free or reduced priced lunch ($FRPM_{sdt}$)
+    
+- Each cluster has one value of $\alpha_{dt}(\tau)$.
+
+
+## Step 3. The Grouped IV Quatile Regression
+
+Level-2 between-cluster model:
+
+$$
+\alpha_{dt}(\tau) = \sum_{r = -9}^{4}{(I_{r=t} \times \mathrm{log} \widehat{PPE}_{dt}) \cdot \delta_{r}(\tau) + \gamma_{2}(\tau) \cdot \mathrm{log} \widehat{PPR}_{dt} + u_{dt}(\tau)}
+$$
+
+- We are primarily interested in estimating the *difference-in-difference* parameters $\delta_{r}(\tau)$. 
+
+- $\delta_{r}(\tau)$ represnets the difference in the effect of $\mathrm{log} \widehat{PPE}_{dt}$ on $\alpha_{dt}(\tau)$ between reference year 2012-13 ($t = 0$, the year prior to June 2013 enactment of LCFF) and $t$ years after (or before) the reference year after controlling for the effect of the time-varying confounder $\mathrm{log} \widehat{PPR}_{dt}$.   
+
+
+
+# Findings
+
+## Teacher Characteristics
+
+1. LCFF-induced increases in funding result in significant increases in the perentages of teachers who were newly hired to their districts, including novice teachers. 
+
+2. The newly hired teachers appear most often to be non-tenured (long-term substitutes, probationary).
+
+3. High-poverty schools hired more white teachers and teachers holding a master's degree or more.
+
+
+## Districts and schools hired rising counts of new teachers
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_01_New in district and Mean yrs in district.pdf){width=400px} 
+
+- 10% increases in LCFF-induced funding $\rightarrow$ a 0.95 percentage point gain in the share of newly hired teachers in the first LCFF year
+
+
+## Districts and schools hired rising counts of new teachers
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_02_Novice teachers.pdf){width=200px}
+
+- The zero pre-LCFF effects lends support to our analytic strategy's ability to isolate the causal effect.
+    + The $\mathrm{log} \widehat{PPR}_{dt}$ completely explains the difference in $\alpha_{dt}(\tau)$ between the reference year and pre-LCFF years
+    + The estimated LCFF-induced increases in funding are not relevant to the changes of outcomes before the reform
+
+
+## Newly hired teachers appear most often to be non-tenured
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_03_Non-tenured teachers.pdf){width=400px} 
+
+- The magnitude of effects was the largest for the share of teachers with probationary status. 
+    + 10% increases in funding lead to 1.75% point increase in %probationary after four years of LCFF exposures
+
+
+## Newly hired teachers appear most often to be non-tenured
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_04_Tenured teachers.pdf){width=200px} 
+
+
+## High-poverty schools hired more white teachers
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_05_White teachers.pdf){width=400px} 
+
+- The schools with lower shares of white teachers tehnd to serve higher-poverty students
+    + 84.5% white teachers in lowest-poverty schools
+    + 47.6% white teachers in highest-poverty schools
+
+
+## $\dots$ and teachers holding a master's degree or more
+
+![](~/SACS/figures/20_AERJ Publication/Figure_01_Teacher Staffing_01_Between School/Cropped_Plot_06_Masdoc teachers.pdf){width=400px} 
+
+- The schools with lower shares of white teachers tehnd to serve higher-poverty students
+    + 48.6% master holders in lowest-poverty schools
+    + 39.2% master holders in highest-poverty schools
+
+
+## Organizational Features & Curricular Structure
+
+1. LCFF-induced funding increases lowered average class size. 
+
+2. Schools in district receiveing larger funding increases shrink the count of college-prep courses in proportion to growing number of elective courses.
+
+3. We found no evidence that LCFF-induced funding successfully reduced disparities in access to experienced teachers or A-G courses by EL students.
+
+
+## LCFF-induced funding increases lowered average class size
+
+![](~/SACS/figures/20_AERJ Publication/Figure_03_Curricula Structure/Cropped_Plot_07_Class size_Elementary School.pdf){width=200px}
+
+- Elementary schools show immediate declines in class size after one year of LCFF exposure.
+
+- Though statistically significant, effect sizes were modest: 10% increase in funding $\rightarrow$ reduce class size by 0.59
+
+
+## LCFF-induced funding increases lowered average class size
+
+![](~/SACS/figures/20_AERJ Publication/Figure_03_Curricula Structure/Cropped_Plot_08_Class size_High School.pdf){width=400px}
+
+- High schools felt the effect incrementally as the exposure to the reform accumulates.
+
+
+
+## The proportional shrinkage of college-prep courses
+
+![](~/SACS/figures/20_AERJ Publication/Figure_03_Curricula Structure/Cropped_Plot_09_A-G Classes.pdf){width=400px}
+
+- 10% increase in LCFF-induced funding $\rightarrow$ lower the % ELA classes always approved as A-G about 0.52 percentage point in the third year of reform
+
+- This occurs most severely at the higher quantile ($\tau = 0.8$), in schools that began with higher shares of college-prep courses in the reference year
+
+
+
+# Discussion and Policy Implications
+
+## School Quality vs. School Quantity
+
+- Klopfer (2017) found that finance infusions did not lead districts or schools to hire more teachers or better qualified instructional staff (*school quality*). But fresh funding did affect the length of the academic year, on average, allowing districts or schools to add additional instructional days (*school quantity*). 
+
+- Our findings from the recent California case show that, at least, new funding did go for addtional teaching positions. 
+
+
+## Between-school Teacher Sorting
+    
+- The grouped IV quantile regression allowed us to find that the infusion of new LCFF dollars helped high-poverty schools (lower tails of the distribution) to attract more white or better highly-educated teachers, mitigating any disproportionate sorting of teachers between schools.
+
+
+## Within-school Teacher Sorting
+
+- We observe the significant disparities in access to experienced teachers or A-G courses by EL students, which has widened particularly in high-poverty schools during the post-LCFF period.
+
+- We found no evidence that LCFF-induced funding successfully reduced the disparities.
+
+
+## Within-school Teacher Sorting
+
+- This raise concern that *within-school* teacher sorting may prevent experienced teachers from being assigned to students who need them most, even when *between-school* teacher sorting can be mitigated by school finance reform.
+
+- "Collective-bargaining agreements and state laws have granted more-experienced teachers seniority rights, leaving disadvantaged students to be taught by less-effective novices" (Hanushek et al., March 2019, [*Education Next*](https://www.educationnext.org/achievement-gap-fails-close-half-century-testing-shows-persistent-divide/))
+
+
+## The Curricular Structure
+
+- The curricular structure of high schools began to de-emphasize college-prep courses after 2013 enactment of LCFF. 
+
+- This may have occurred in response to the partial collapse of NCLB and strict testing-and-accountability policies. 
+
+- Or, the hiring of new teachers may have allowed schools the chance to recover lost elective courses during the recession. 
+
+
+## Reference
+
+- Chetverikov, D., Larsen, B., & Palmer, C. (2016). IV quantile regression for group-level treatments, with an application to the distributional effects of trade. *Econometrica, 84*(2), 809-833.
+
+- Hanushek, E., Peterson, P., Tapley, L., & Woessmann (2019). The achievement gap fails to close - Half century of testing shows persistent divide between haves and have-nots. *Education Next, 19*(3). 
+
+- Johnson, R. C., & Tanner, S. (2018). *Money and freedom: The impact of California’s school finance reform on academic achievement and the composition of district spending*. Goldman School of Public Policy Working Paper. https://gsppi.berkeley.edu/~ruckerj/Johnson_Tanner_LCFFpaper.pdf.
+
+- Klopfer, J. (2017). *Labor supply, learning time, and the efficiency of school spending: Evidence from school finance reforms*. Princeton: manuscript.
+
+

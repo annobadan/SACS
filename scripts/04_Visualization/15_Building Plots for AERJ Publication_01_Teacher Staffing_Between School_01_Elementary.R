@@ -93,6 +93,9 @@ p1 <- event_study_xy(df,
                      year, estimate, conf.low, conf.high, 
                      title = as.character(unique(df$y_label))) + facet_wrap(~ quantile) 
 
+ggsave("Individual Figure_01_New in District.pdf", p1, 
+       width = 6, height = 4.5)
+
 
 ### (B) Mean Years in district
 df <- tau_recoded_df(read.csv(file = "Row_01_mean_yrs_in_dist.csv"))
@@ -100,6 +103,9 @@ df <- tau_recoded_df(read.csv(file = "Row_01_mean_yrs_in_dist.csv"))
 p2 <- event_study_xy(df, 
                      year, estimate, conf.low, conf.high, 
                      title = as.character(unique(df$y_label))) + facet_wrap(~ quantile) 
+
+ggsave("Individual Figure_02_mean_yrs_in_dist.pdf", p2, 
+       width = 6, height = 4.5)
 
 
 ### (C) % Novice teachers
