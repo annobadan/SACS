@@ -9,6 +9,7 @@
 ###'   
 ###' 
 ###' 20181027 JoonHo Lee
+###' 20190426 JoonHo Lee - Update 2017-18 data
 ###' 
 ###' 
 
@@ -51,7 +52,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###' 
 ###' 
 
-years <- c(sprintf("%02d", seq(98, 99)), sprintf("%02d", seq(0, 16))) 
+years <- c(sprintf("%02d", seq(98, 99)), sprintf("%02d", seq(0, 17))) 
 
 for (i in seq_along(years)){
   
@@ -77,11 +78,11 @@ for (i in seq_along(years)){
   
   
   ### Assign filenames
-  if (year_num != c("16")){
+  if (year_num != c("17")){
     
     filename <- paste0("act", years[i], years[i + 1]) 
     
-  } else if (year_num == c("16")){
+  } else if (year_num == c("17")){
     
     filename <- paste0("act", year_num, as.numeric(year_num) + 1)
     
@@ -95,7 +96,7 @@ for (i in seq_along(years)){
     df <- read_excel(paste0(filename, ".xls"), 
                      sheet = 1, skip = 2)
     
-  } else if (year_num %in% sprintf("%02d", c(13:16))){
+  } else if (year_num %in% sprintf("%02d", c(13:17))){
     
     df <- read_excel(paste0(filename, ".xls"), 
                      sheet = 1, skip = 0)
@@ -109,11 +110,16 @@ for (i in seq_along(years)){
   df <- df %>% mutate_all(funs(empty_as_na)) 
   
   
-  ### Delete unnecessary CDS code for FY1617
+  ### Delete unnecessary CDS code for FY1617 and FY1718
   if (year_num %in% sprintf("%02d", c(16))){
     
     df <- df %>%
       select(-ccode, -cdcode, -scode)
+    
+  } else if (year_num %in% sprintf("%02d", c(17))) {
+    
+    df <- df %>%
+      select(-Ccode, -CDcode, -Scode)
     
   }
   
@@ -143,8 +149,16 @@ for (i in seq_along(years)){
                    "Avg_English", "Avg_Reading", "Avg_Math", "Avg_Science",   
                    "N_21_above", "PCT_21_above")
     
-  } 
+  } else if (year_num %in% sprintf("%02d", c(17))){
     
+    names(df) <- c("CDS", "ReportType", 
+                   "SchoolName", "DistrictName", "CountyName", 
+                   "N_Enroll_GR12", "N_TestTakers",  
+                   "Avg_English", "Avg_Reading", "Avg_Math", "Avg_Science",   
+                   "N_21_above", "PCT_21_above", "Year")
+    
+  } 
+  
   
   
   ###'######################################################################
@@ -152,8 +166,8 @@ for (i in seq_along(years)){
   ###' CDS code 
   ###' 
   ###' 
-
-  if (year_num %in% sprintf("%02d", c(13:16))){
+  
+  if (year_num %in% sprintf("%02d", c(13:17))){
     
     ### Check number of characters: should be 14
     table(nchar(df$CDS))
@@ -211,7 +225,7 @@ for (i in seq_along(years)){
   ###'
   ###'
   
-  if (year_num %in% sprintf("%02d", c(13:16))){
+  if (year_num %in% sprintf("%02d", c(13:17))){
     
     classmode(df, everything())
     
