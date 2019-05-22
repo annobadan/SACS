@@ -15,6 +15,7 @@
 ###'            
 ###'          
 ###' Date    : 2019-05-08
+###'           2019-05-11 Updated for more gap definitions
 ###' 
 ###' Author  : JoonHo Lee (joonho@berkeley.edu)
 ###' 
@@ -55,7 +56,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 
 ###'######################################################################
 ###'
-###' Load the managed datasets
+###' Load the managed statewide school information datasets
 ###'
 ###'
 
@@ -69,16 +70,20 @@ df_schinfo <- df_to_save; rm(df_to_save)
 df_schinfo <- df_schinfo %>%
   filter(AcademicYear >= 2013)
 
+tabdf(df_schinfo, AcademicYear)
+
 
 
 ###'######################################################################
 ###'
 ###' Add UPP_level categories to the School info dataset
 ###'
+###' "Absolute" levels, not "relative" levels
+###'
 ###'
 
 ### Define breaks and labels
-breaks <- c(0, 69, 89, 100)
+breaks <- c(0, 59, 89, 100)
 
 labels <- c("Low TSP", 
             "Middle TSP", 
@@ -109,6 +114,7 @@ tbl_temp
 df_schinfo <- df_schinfo %>%
   full_join_track(df_UPP, by = c("CountyCode", "DistrictCode", "SchoolCode", 
                                  "Traditional_SOC"))
+
 
 
 # ###'######################################################################
@@ -167,8 +173,8 @@ schoolinfo_merger <- function(df_schinfo,
                      unique(df_SBA_Gap$Grade), 
                      str_trim(unique(df_SBA_Gap$Subgrp1)), 
                      sep = "_")
-  dualsave(df_schinfo_only, paste0(save_name, "_", "df_schinfo_only"))
-  dualsave(df_SBA_Gap_only, paste0(save_name, "_", "df_SBA_Gap_only"))
+  dualsave(df_schinfo_only, paste0("df_schinfo_only"))
+  dualsave(df_SBA_Gap_only, paste0("df_SBA_Gap_only"))
   
   
   ### Return only matched cases
@@ -188,7 +194,9 @@ schoolinfo_merger <- function(df_schinfo,
 ###' 
 
 plotsave_trend_by_UPP <- function(df_merged_long, 
-                                  save_path){
+                                  save_path, 
+                                  filename = filename,
+                                  factor_labels){
   
   ### Generate data for plotting
   df_plot <- df_merged_long %>%
@@ -197,16 +205,12 @@ plotsave_trend_by_UPP <- function(df_merged_long,
     drop_na() %>% 
     ungroup() 
   
-  save_name <- paste("Gap_df", 
-                     unique(df_merged_long$TestID),
-                     unique(df_merged_long$Grade), 
-                     str_trim(unique(df_merged_long$Subgrp1)), 
-                     sep = "_")
+  save_name <- filename
   
   
   ### Save the df_plot
   setwd(save_path)
-  dualsave(df_plot, filename = paste0(save_name, "_", "df_plot"))
+  dualsave(df_plot, filename = paste0("df_plot"))
   
   
   ### Loop over Traditional_SOC and variable
@@ -223,17 +227,17 @@ plotsave_trend_by_UPP <- function(df_merged_long,
         filter(Gap_variable == Gap_variable_vec[j]) %>%
         mutate(UPP_level = factor(UPP_level, 
                                   levels = levels(df_plot$UPP_level), 
-                                  labels = c("Low TSP (Under 69%)", 
-                                             "Middle TSP (70% to 89%)", 
-                                             "High TSP (90% or more)")))
+                                  labels = factor_labels))
       
       
       ### Plot!
-      p <- plot_trend_grp(df_temp, AcademicYear, value, UPP_level) +
+      p <- plot_trend_grp(df_temp, AcademicYear, value, UPP_level, 
+                          sprintf = "%.1f") +
         scale_color_manual(values = rev(color_palette[seq(unique(df_plot$UPP_level))])) + 
         labs(title = paste0(SOC_vec[i], ": ", Gap_variable_vec[j]),  
-             subtitle = paste0("Measure: ", save_name),  
-             caption = NULL, 
+             subtitle = paste0("Gap: ", 
+                               list_temp[[4]][2], " - ", list_temp[[4]][1]),  
+             caption = save_name, 
              y = "Achievement Gap",  
              x = "Academic Year")
       
@@ -241,8 +245,7 @@ plotsave_trend_by_UPP <- function(df_merged_long,
       ### Save the resulting plot
       SOC_brief_vec <- c("Elementary", "High", "Middle", "K-12")
       ggsave(file.path(save_path, 
-                       paste0(save_name, "_", 
-                              sprintf("%02d", i), "_", SOC_brief_vec[i], "_",  
+                       paste0(sprintf("%02d", i), "_", SOC_brief_vec[i], "_",  
                               sprintf("%02d", j), "_", Gap_variable_vec[j], 
                               ".pdf")), 
              p, width = 6, height = 6)
@@ -253,63 +256,222 @@ plotsave_trend_by_UPP <- function(df_merged_long,
   } # End of loop over SOC
 }
 
+### Default factor labels
+factor_labels <- c("Low TSP (Under 59%)", 
+                   "Middle TSP (60% to 89%)", 
+                   "High TSP (90% or more)")
 
 
 
 ###'######################################################################
 ###'
-###' (1) SBA_ELA / GR_ALL
+###' Execute looping over each gap_df
 ###' 
-###' Gap = Not Economically Disadvantaged - Economically Disadvantaged
+###' (1) Statewide
 ###'
-###' 
+###'
 
-### Load the dataset
+### Call list_gap_definitions
 setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
-load(file = "Gap_df_SBA_ELA_GR_All_Economic Status.rda")
-df_SBA <- df_to_save; rm(df_to_save)
+load(file = "list_gap_definitions.rda")
 
 
-### Merge school information dataset
-df_merged <- schoolinfo_merger(df_schinfo, 
-                               df_SBA, 
-                               match_key = match_key, 
-                               save_path = save_path) %>%
-  arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+### Define subject vector
+subject_vec <- c("SBA_ELA", "SBA_Math")
 
 
-### Sort only Traditional Non-Charter Schools & Save the dataset
-tabdf(df_merged, SOC)
-tabdf(df_merged, Traditional_SOC)
-tabdf(df_merged, Charter)
+for (i in seq(1, 11)){  # Loop over pre-defined lists
+  
+  for (j in seq_along(subject_vec)){  # Loop over subjects
+    
+    ### Call the list
+    list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    
+    
+    ### Load the generated gap dataframe
+    splitted <- list_temp[[1]] %>% str_split_fixed("_", n = 2)
+    subgrp_name <- splitted[1, 2] %>% str_remove(".rda")
 
-df_merged <- df_merged %>% 
-  filter(!is.na(Traditional_SOC)) %>%
-  filter(Charter == 0)
+    filename <- paste0("Gap_df_", 
+                       sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       sprintf("%02d", i), "_", 
+                       subgrp_name, "_", 
+                       list_temp[[4]][2], "-", list_temp[[4]][1])
+    
+    
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    load(file = paste0(filename, ".rda"))
+    df_Gap <- df_to_save; rm(df_to_save)
+    
+    
+    ### Create a new folder
+    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_df", 
+                            filename)
+    
+    dir.create(folder_dir, showWarnings = FALSE)
+    
+    setwd(folder_dir)
+    
+    
+    ### Merge school information dataset
+    match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
+    
+    df_merged <- schoolinfo_merger(df_schinfo, 
+                                   df_Gap, 
+                                   match_key = match_key, 
+                                   save_path = folder_dir) %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+    
+    
+    
+    ### Sort only Traditional Non-Charter Schools & Save the dataset
+    tabdf(df_merged, SOC)
+    tabdf(df_merged, Traditional_SOC)
+    tabdf(df_merged, Charter)
+    
+    df_merged <- df_merged %>% 
+      filter(!is.na(Traditional_SOC)) %>%
+      filter(Charter == 0)
+    
+    setwd(folder_dir)
+    
+    dualsave(df_merged, 
+             paste0("df_merged", "_Traditional Non-charters"))
+    
+    
+    ### Visualize trends by school poverty level and save the results
+    df_merged_long <- df_merged %>%
+      gather(key = Gap_variable, value = Gap_value, contains("Gap_"), 
+             factor_key = TRUE)
+    
+    
+    factor_labels <- c("Low TSP (Under 59%)", 
+                       "Middle TSP (60% to 89%)", 
+                       "High TSP (90% or more)")
+    
+    
+    plotsave_trend_by_UPP(df_merged_long, save_path = folder_dir, 
+                          filename = filename, 
+                          factor_labels = factor_labels) 
+    
+    
+    ### Print the progress
+    cat(paste0(filename, "\n"))
+    
+  }
+}
 
-setwd(save_path)
-save_name <- paste("Gap_df", 
-                   unique(df_SBA$TestID),
-                   unique(df_SBA$Grade), 
-                   str_trim(unique(df_SBA$Subgrp1)), 
-                   sep = "_")
-
-dualsave(df_merged, 
-         paste0(save_name, "_df_merged", "_Traditional Non-charters"))
 
 
-### Visualize trends by school poverty level and save the results
-df_merged_long <- df_merged %>%
-  gather(key = Gap_variable, value = Gap_value, contains("Gap_"), 
-         factor_key = TRUE)
+###'######################################################################
+###'
+###' Execute looping over each gap_df
+###' 
+###' (2) LAUSD
+###'
+###'
 
-plotsave_trend_by_UPP(df_merged_long, save_path = save_path) 
+### Call list_gap_definitions
+setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+load(file = "list_gap_definitions.rda")
 
 
+### Define subject vector
+subject_vec <- c("SBA_ELA", "SBA_Math")
 
 
+for (i in seq(1, 11)){  # Loop over pre-defined lists
+  
+  for (j in seq_along(subject_vec)){  # Loop over subjects
+    
+    ### Call the list
+    list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    
+    
+    ### Load the generated gap dataframe
+    splitted <- list_temp[[1]] %>% str_split_fixed("_", n = 2)
+    subgrp_name <- splitted[1, 2] %>% str_remove(".rda")
+    
+    filename <- paste0("Gap_df_", 
+                       sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       sprintf("%02d", i), "_", 
+                       subgrp_name, "_", 
+                       list_temp[[4]][2], "-", list_temp[[4]][1])
+    
+    
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    load(file = paste0(filename, ".rda"))
+    df_Gap <- df_to_save; rm(df_to_save)
+    
+    
+    ### Create a new folder (Update for LAUSD)
+    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_df", 
+                            paste0(filename, "_LAUSD"))
+    
+    dir.create(folder_dir, showWarnings = FALSE)
+    
+    setwd(folder_dir)
+    
+    
+    ### Merge school information dataset
+    match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
+    
+    df_merged <- schoolinfo_merger(df_schinfo, 
+                                   df_Gap, 
+                                   match_key = match_key, 
+                                   save_path = folder_dir) %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+    
+    
+    ### Subset only LAUSD
+    df_merged <- df_merged %>%
+      filter(DistrictCode == 64733)
+    
+    
+    ### Sort only Traditional Non-Charter Schools & Save the dataset
+    tabdf(df_merged, SOC)
+    tabdf(df_merged, Traditional_SOC)
+    tabdf(df_merged, Charter)
+    
+    df_merged <- df_merged %>% 
+      filter(!is.na(Traditional_SOC)) %>%
+      filter(Charter == 0)
+    
+    tbl_Nschools <- df_merged %>%
+      group_by(CountyCode, DistrictCode, Traditional_SOC, UPP_level) %>%
+      summarise(N_schools = n_distinct(SchoolCode))
+    
+    tbl_Nschools
 
-
+    setwd(folder_dir)
+    
+    dualsave(df_merged, 
+             paste0("df_merged", "_Traditional Non-charters"))
+    
+    
+    ### Visualize trends by school poverty level and save the results
+    df_merged_long <- df_merged %>%
+      gather(key = Gap_variable, value = Gap_value, contains("Gap_"), 
+             factor_key = TRUE)
+    
+    
+    factor_labels <- c("Low TSP (Under 59%)", 
+                       "Middle TSP (60% to 89%)", 
+                       "High TSP (90% or more)")
+    
+    
+    plotsave_trend_by_UPP(df_merged_long, save_path = folder_dir, 
+                          filename = filename, 
+                          factor_labels = factor_labels) 
+    
+    
+    ### Print the progress
+    cat(paste0(paste0(filename, "_LAUSD"), "\n"))
+    
+  }
+}
 
 
 

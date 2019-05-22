@@ -115,169 +115,143 @@ generate_gap_df <- function(df,
 
 ###'######################################################################
 ###'
+###' Prepare the list for looping  
 ###' 
+###' Define lists for the gap calculation   
 ###'
 ###'
 
+### Define lists for the gap calculation 
+list_01 <- list("02_Gender.rda", 
+                c(3, 4), 
+                c("Males", "Females"), 
+                c("Males", "Females"))
 
 
+list_02 <- list("05_Economic Status.rda", 
+                c(31, 111), 
+                c("Economically Disadvantaged", "Not Economically Disadvantaged"), 
+                c("EconDis", "Not_EconDis"))
 
 
+list_03 <- list("03_English-Language Fluency.rda", 
+                c(160, 6), 
+                c("English Learner", "Fluent-English Proficient and English Only"), 
+                c("EL", "FEP"))
+
+
+list_04 <- list("03_English-Language Fluency.rda", 
+                c(160, 8), 
+                c("English Learner", "Reclassified-Fluent English Proficient (RFEP)"), 
+                c("EL", "REFP"))
+
+
+list_05 <- list("06_Ethnicity.rda", 
+                c(78, 80), 
+                c("Hispanic or Latino", "White"), 
+                c("Latino", "White"))
+
+
+list_06 <- list("06_Ethnicity.rda", 
+                c(74, 80), 
+                c("Black or African American", "White"), 
+                c("Black", "White"))
+
+
+list_07 <- list("06_Ethnicity.rda", 
+                c(76, 80), 
+                c("Asian", "White"), 
+                c("Asian", "White"))
+
+
+list_08 <- list("08_Disability Status.rda", 
+                c(128, 99), 
+                c("Students with Disability", "Students with No Reported Disability"), 
+                c("Disable", "Not_Disable"))
+
+
+list_09 <- list("09_Ethnicity for Economically Disadvantaged.rda", 
+                c(204, 206), 
+                c("Hispanic or Latino", "White"), 
+                c("Latino", "White"))
+
+
+list_10 <- list("09_Ethnicity for Economically Disadvantaged.rda", 
+                c(200, 206), 
+                c("Black or African American", "White"), 
+                c("Black", "White"))
+
+
+list_11 <- list("09_Ethnicity for Economically Disadvantaged.rda", 
+                c(202, 206), 
+                c("Asian", "White"), 
+                c("Asian", "White"))
+
+
+### Save the list of these lists
+list_gap_definitions <- list()
+
+for (k in seq(1, 11)){
+  
+  list_gap_definitions[[k]] <- get(paste0("list_", sprintf("%02d", k)))
+  
+}
+
+setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+save(list_gap_definitions, file = "list_gap_definitions.rda")
 
 
 
 ###'######################################################################
 ###'
-###' (1) SBA_ELA / GR_ALL
-###' 
-###' Gap = Not Economically Disadvantaged - Economically Disadvantaged
+###' Execute looping
 ###'
 ###'
 
-### Load the managed dataset
-setwd(file.path(data_dir, "splitted_panel_df"))
-load(file = "01_SBA_ELA_08_GR_All_05_Economic Status.rda")
-df <- df_to_save; rm(df_to_save)
+### Define subject vector
+subject_vec <- c("SBA_ELA", "SBA_Math")
 
 
-###' Define factor order, levels, and labels
-###' This is important to define the "Gap" variables
-tabdf(df, Subgroup)
-factor_level <- c(31, 111)
-factor_label <- c("Economically Disadvantaged", 
-                  "Not Economically Disadvantaged")
+for (i in seq(1, 11)){  # Loop over pre-defined lists
+  
+  for (j in seq_along(subject_vec)){  # Loop over subjects
+    
+    ### Call the list
+    list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    
+    
+    ### Load the managed dataset
+    setwd(file.path(data_dir, "splitted_panel_df"))
+    load(file = paste0(sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       list_temp[[1]]))
+    
+    df <- df_to_save; rm(df_to_save)
+    
+    
+    ### Generate the "Gap" dataset
+    df_temp <- generate_gap_df(df, 
+                               factor_level = list_temp[[2]], 
+                               factor_label = list_temp[[3]])
+    
+    
+    ### Save the generated dataset
+    filename <- paste0("Gap_df_", 
+                       sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       sprintf("%02d", i), "_", 
+                       str_trim(unique(df_temp$Subgrp1)), "_", 
+                       list_temp[[4]][2], "-", list_temp[[4]][1])
+    
+    
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    dualsave(df_temp, filename)
+    
+    
+    ### Print the progress
+    cat(paste0(filename, "\n"))
+    
+  }
+}
 
-
-### Generate the "Gap" dataset
-df_temp <- generate_gap_df(df, 
-                           factor_level = factor_level, 
-                           factor_label = factor_label)
-
-### Save the generated dataset
-filename <- paste("Gap_df", 
-                  unique(df_temp$TestID),
-                  unique(df_temp$Grade), 
-                  str_trim(unique(df_temp$Subgrp1)), 
-                  sep = "_")
-
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
-dualsave(df_temp, filename)
-
-
-
-###'######################################################################
-###'
-###' (2) SBA_Math / GR_ALL
-###' 
-###' Gap = Not Economically Disadvantaged - Economically Disadvantaged
-###'
-###'
-
-### Load the managed dataset
-setwd(file.path(data_dir, "splitted_panel_df"))
-load(file = "02_SBA_Math_08_GR_All_05_Economic Status.rda")
-df <- df_to_save; rm(df_to_save)
-
-
-### Define factor order, levels, and labels
-tabdf(df, Subgroup)
-factor_level <- c(31, 111)
-factor_label <- c("Economically Disadvantaged", 
-                  "Not Economically Disadvantaged")
-
-
-### Generate the "Gap" dataset
-df_temp <- generate_gap_df(df, 
-                           factor_level = factor_level, 
-                           factor_label = factor_label)
-
-### Save the generated dataset
-filename <- paste("Gap_df", 
-                  unique(df_temp$TestID),
-                  unique(df_temp$Grade), 
-                  str_trim(unique(df_temp$Subgrp1)), 
-                  sep = "_")
-
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
-dualsave(df_temp, filename)
-
-
-
-###'######################################################################
-###' 
-###' (3) SBA_ELA / GR_ALL
-###' 
-###' Gap = English Only - English Learner
-###'
-###'
-
-### Load the managed dataset
-setwd(file.path(data_dir, "splitted_panel_df"))
-load(file = "01_SBA_ELA_08_GR_All_03_English-Language Fluency.rda")
-df <- df_to_save; rm(df_to_save)
-
-
-### Define factor order, levels, and labels
-tabdf(df, Subgroup)
-tabdf(df, Subgrp2)
-factor_level <- c(160, 180)
-factor_label <- c("English Learner", 
-                  "English Only")
-
-
-### Generate the "Gap" dataset
-df_temp <- generate_gap_df(df %>% filter(Subgroup %in% factor_level), 
-                           factor_level = factor_level, 
-                           factor_label = factor_label)
-
-
-### Save the generated dataset
-filename <- paste("Gap_df", 
-                  unique(df_temp$TestID),
-                  unique(df_temp$Grade), 
-                  str_trim(unique(df_temp$Subgrp1)), 
-                  sep = "_")
-
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
-dualsave(df_temp, filename)
-
-
-
-###'######################################################################
-###' 
-###' (4) SBA_Math / GR_ALL
-###' 
-###' Gap = English Only - English Learner
-###'
-###'
-
-### Load the managed dataset
-setwd(file.path(data_dir, "splitted_panel_df"))
-load(file = "02_SBA_Math_08_GR_All_03_English-Language Fluency.rda")
-df <- df_to_save; rm(df_to_save)
-
-
-### Define factor order, levels, and labels
-tabdf(df, Subgroup)
-tabdf(df, Subgrp2)
-factor_level <- c(160, 180)
-factor_label <- c("English Learner", 
-                  "English Only")
-
-
-### Generate the "Gap" dataset
-df_temp <- generate_gap_df(df %>% filter(Subgroup %in% factor_level), 
-                           factor_level = factor_level, 
-                           factor_label = factor_label)
-
-
-### Save the generated dataset
-filename <- paste("Gap_df", 
-                  unique(df_temp$TestID),
-                  unique(df_temp$Grade), 
-                  str_trim(unique(df_temp$Subgrp1)), 
-                  sep = "_")
-
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
-dualsave(df_temp, filename)
 

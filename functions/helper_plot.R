@@ -57,7 +57,8 @@ plot_trend_xy <- function(dataframe,
                           y,
                           yline = NULL, 
                           ylim = NULL, 
-                          xinterval = 1){
+                          xinterval = 1, 
+                          sprintf = "%.2f"){
   
   ###' Enquote x-y variables
   ###' Renamed variables because scale::comma() didn't work with !!yvar
@@ -73,7 +74,7 @@ plot_trend_xy <- function(dataframe,
   ###' Add point, path, and value label layers
   p <- p + geom_point(size = 3.0) + 
       geom_path(size = 1.0) + 
-      geom_text(aes(label = comma(yvar)), size = 3, hjust = 0.5, vjust = 2.0)
+      geom_text(aes(label = sprintf(sprintf, yvar)), size = 3, hjust = 0.5, vjust = 2.0)
 
   ### Add vertical line layer
   if (!is.null(yline)){
@@ -111,7 +112,8 @@ plot_trend_grp <- function(dataframe,
                            group, 
                            yline = NULL, 
                            ylim = NULL, 
-                           xinterval = 1){
+                           xinterval = 1, 
+                           sprintf = "%.2f"){
   
   ###' Enquote x, y, and group variables
   ###' Renamed variables because scale::comma() didn't work with !!yvar
@@ -128,7 +130,7 @@ plot_trend_grp <- function(dataframe,
   ###' Add point, path, and value label layers
   p <- p + geom_point(aes(shape = groupvar, color = groupvar), size = 3.0) + 
     geom_path(aes(linetype = groupvar, color = groupvar), size = 1.0) + 
-    geom_text(aes(label = comma(yvar)), size = 3, hjust = 0.5, vjust = 2.0)
+    geom_text(aes(label = sprintf(sprintf, yvar)), size = 3, hjust = 0.5, vjust = 2.0)
   
   ### Add vertical line layer
   if (!is.null(yline)){
@@ -169,7 +171,8 @@ plot_trend_grp_facet <- function(dataframe,
                                  facet_scales = "fixed", 
                                  yline = NULL, 
                                  ylim = NULL, 
-                                 xinterval = 1){
+                                 xinterval = 1, 
+                                 sprintf = "%.2f"){
   
   ###' Enquote x, y, and group variables
   ###' Renamed variables because scale::comma() didn't work with !!yvar
@@ -187,7 +190,7 @@ plot_trend_grp_facet <- function(dataframe,
   p <- p + geom_point(aes(shape = groupvar, color = groupvar), size = 3.0) + 
     geom_path(aes(linetype = groupvar, color = groupvar), size = 1.0) + 
     # geom_text(aes(label = comma(yvar)), size = 3, hjust = 0.5, vjust = 2.0)
-    geom_text(aes(label = yvar), size = 3, hjust = 0.5, vjust = 2.0)
+    geom_text(aes(label = sprintf(sprintf, yvar)), size = 3, hjust = 0.5, vjust = 2.0)
   
   ### Add vertical line layer
   if (!is.null(yline)){

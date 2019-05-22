@@ -383,12 +383,3 @@ setwd(data_dir)
 save(list_collect, file = "SBAC_Splitted Subgroup Panel Data 2015-17.rda")
 
 
-
-
-
-
-
-
-
-
-
