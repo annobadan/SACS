@@ -42,7 +42,7 @@ data_dir <- c("D:/Data/LCFF/Statewide_Student_Assessment/CAASPP/Smarter Balanced
 
 
 ### Saving path
-save_path <- file.path(data_dir, "splitted_panel_df", "Gap_df")
+save_path <- file.path(data_dir, "splitted_panel_df", "Gap_data")
 
 
 ### Call libraries
@@ -272,7 +272,7 @@ factor_labels <- c("Low TSP (Under 59%)",
 ###'
 
 ### Call list_gap_definitions
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
 load(file = "list_gap_definitions.rda")
 
 
@@ -300,13 +300,13 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
                        list_temp[[4]][2], "-", list_temp[[4]][1])
     
     
-    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
     load(file = paste0(filename, ".rda"))
     df_Gap <- df_to_save; rm(df_to_save)
     
     
     ### Create a new folder
-    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_df", 
+    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_data", 
                             filename)
     
     dir.create(folder_dir, showWarnings = FALSE)
@@ -373,7 +373,7 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
 ###'
 
 ### Call list_gap_definitions
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
 load(file = "list_gap_definitions.rda")
 
 
@@ -401,13 +401,13 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
                        list_temp[[4]][2], "-", list_temp[[4]][1])
     
     
-    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
     load(file = paste0(filename, ".rda"))
     df_Gap <- df_to_save; rm(df_to_save)
     
     
     ### Create a new folder (Update for LAUSD)
-    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_df", 
+    folder_dir <- file.path(data_dir, "splitted_panel_df", "Gap_data", 
                             paste0(filename, "_LAUSD"))
     
     dir.create(folder_dir, showWarnings = FALSE)

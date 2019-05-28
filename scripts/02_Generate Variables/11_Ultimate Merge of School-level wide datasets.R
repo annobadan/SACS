@@ -13,8 +13,11 @@
 ###' 
 ###' (4) Within-school teacher assignment measures
 ###'  
+###' (5) Postsecondary_Preparation: SAT, ACT, AP
+###' 
 ###' 
 ###' 20181231 JoonHo Lee
+###' 20190527 JoonHo Lee - SAT_ACT_AP merge
 ###'
 ###'
 
@@ -63,7 +66,8 @@ df_K12 <- df_to_save
 
 
 ### (2) Teacher Demographic & Credential composition 2003-2017   
-temp_path <- file.path(data_dir, "Staff_Data", "Certificated_Staff", "Staff_Demographic")
+temp_path <- file.path(data_dir, "Staff_Data", 
+                       "Certificated_Staff", "Staff_Demographic")
 setwd(temp_path)
 
 load(file = "df_Teacher_Composition_DemoFTE_StaffCred_2003_2017.rda")
@@ -71,7 +75,8 @@ df_DemoCred <- df_to_save; rm(df_to_save)
 
 
 ### (3) Course properties: Class periods and class sizes 2003-2017
-temp_path <- file.path(data_dir, "Staff_Data", "Certificated_Staff", "Staff_Assignment_and_Course")
+temp_path <- file.path(data_dir, "Staff_Data", 
+                       "Certificated_Staff", "Staff_Assignment_and_Course")
 setwd(temp_path)
 
 load(file = "df_Class Periods and Sizes_2003-2017_wide.rda")
@@ -79,11 +84,22 @@ df_Course <- df_to_save; rm(df_to_save)
 
 
 ### (4) Within-school teacher assignment measures 2012-2017
-temp_path <- file.path(data_dir, "Staff_Data", "Certificated_Staff", "Staff_Assignment_and_Course")
+temp_path <- file.path(data_dir, "Staff_Data", 
+                       "Certificated_Staff", "Staff_Assignment_and_Course")
 setwd(temp_path)
 
 load(file = "Within-School teacher sorting regression_04_Estimates_Wide_Final.rda")
 df_Within <- df_to_save; rm(df_to_save)
+
+
+### (5) Postsecondary_Preparation: SAT, ACT, AP 1998-2017
+temp_path <- file.path(data_dir, 
+                       "School_Performance", 
+                       "Postsecondary_Preparation")
+setwd(temp_path)
+
+load(file = "SAT_ACT_AP_Longitudinal_merged_98-17.rda")
+df_Postsecondary <- df_to_save; rm(df_to_save)
 
 
 
@@ -98,10 +114,11 @@ match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
 
 
 ### Check key variable names
-classmode(df_K12, everything())
-classmode(df_DemoCred, everything())
-classmode(df_Course, everything())
-classmode(df_Within, everything())
+classmode(df_K12, AcademicYear)
+classmode(df_DemoCred, AcademicYear)
+classmode(df_Course, AcademicYear)
+classmode(df_Within, AcademicYear)
+classmode(df_Postsecondary, Year)
 
 
 ### Check the values of AcademicYear
@@ -109,6 +126,15 @@ tabdf(df_K12, AcademicYear)
 tabdf(df_DemoCred, AcademicYear)
 tabdf(df_Course, AcademicYear)
 tabdf(df_Within, AcademicYear)
+tabdf(df_Postsecondary, Year)
+
+
+### Change the variable name (Year => AcademicYear)
+df_Postsecondary <- df_Postsecondary %>%
+  rename(AcademicYear = Year)
+
+names(df_Postsecondary)
+tabdf(df_Postsecondary, AcademicYear)
 
 
 ### Change AcademicYear values
@@ -156,7 +182,8 @@ df_K12 <- df_K12 %>%
 
 
 ### Full join
-df_K12_DemoCred <- full_join_track(df_K12, df_DemoCred, by = match_key, .merge = TRUE)
+df_K12_DemoCred <- full_join_track(df_K12, df_DemoCred, 
+                                   by = match_key, .merge = TRUE)
 
 tabdf(df_K12_DemoCred, .merge)
 
@@ -310,10 +337,71 @@ df <- df_K12_DemoCred_Course_Within %>%
 
 ###'######################################################################
 ###'
+###' (4) df + df_Postsecondary
+###'
+###'
+
+### Prepare merge: search for the common variable names
+intersect(names(df), names(df_Postsecondary))
+
+df_Postsecondary_to_merge <- df_Postsecondary %>%
+  dplyr::select(-CountyName, -DistrictName, -SchoolName)
+
+
+### Full join 
+df_temp <- full_join_track(df, 
+                           df_Postsecondary_to_merge, 
+                           by = match_key, 
+                           .merge = TRUE)
+
+tabdf(df_temp, .merge)
+
+
+###' Look into the unmerged cases: (1) right_only (df_Postsecondary)
+###' Many unmatched cases from 1998 to 2002 due to df doesn't cover the span
+df_right_only <- df_temp %>%
+  filter(.merge == "right_only")
+
+tabdf(df_right_only, AcademicYear)
+
+
+###' Look into the unmerged cases: (2) left_only (df)
+###' Elementary (70.4%) and Middle (15.9%) schools
+###' Because SAT, ACT, and AP data are available only for High schools
+###' High schools have only 836 missings
+df_left_only <- df_temp %>%
+  filter(.merge == "left_only")
+
+tabdf(df_left_only, Traditional_SOC)
+
+
+### Remove the cases that school informationa is not available
+df_temp <- df_temp %>%
+  filter(.merge != "right_only") %>%
+  dplyr::select(-.merge)
+
+
+
+###'######################################################################
+###'
 ###' Save the resulting dataset
 ###'
 ###'
 
 setwd(data_dir)
-dualsave(df, "df_Ultimate_Merged")
+dualsave(df_temp, "df_Ultimate_Merged")
+
+
+
+###'######################################################################
+###'
+###' Subset only school information dataframe
+###'
+###'
+
+df_schinfo <- df_temp %>%
+  dplyr::select(CDSCode:PCT_CALPADS_UPC)
+
+setwd(data_dir)
+dualsave(df_schinfo, "df_Ultimate_SchoolInfo")
 

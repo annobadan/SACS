@@ -57,6 +57,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 ###'
 
+
 generate_gap_df <- function(df, 
                             factor_level, 
                             factor_label){
@@ -197,7 +198,7 @@ for (k in seq(1, 11)){
   
 }
 
-setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
 save(list_gap_definitions, file = "list_gap_definitions.rda")
 
 
@@ -244,7 +245,7 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
                        list_temp[[4]][2], "-", list_temp[[4]][1])
     
     
-    setwd(file.path(data_dir, "splitted_panel_df", "Gap_df"))
+    setwd(file.path(data_dir, "splitted_panel_df", "Gap_data"))
     dualsave(df_temp, filename)
     
     

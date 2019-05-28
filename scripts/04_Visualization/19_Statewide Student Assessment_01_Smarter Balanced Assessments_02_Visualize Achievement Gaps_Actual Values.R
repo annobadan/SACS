@@ -210,7 +210,7 @@ plotsave_trend_by_UPP <- function(df_merged_long,
       p <- plot_trend_grp(df_temp, AcademicYear, value, Subgrp2, 
                           sprintf = "%.1f") + 
         facet_wrap(.~ UPP_level) + 
-        scale_color_manual(values = rev(color_palette[seq(unique(df_plot$Subgrp2))])) + 
+        # scale_color_manual(values = color_palette[seq(unique(df_plot$Subgrp2))]) + 
         labs(title = paste0(SOC_vec[i], ": ", variable_vec[j]),  
              subtitle = save_name,  
              caption = NULL, 
@@ -241,90 +241,280 @@ factor_labels <- c("Low TSP (Under 59%)",
 
 ###'######################################################################
 ###'
-###' Snippet
+###' Execute looping over each dataframe
+###' 
+###' (1) Statewide
 ###'
 ###'
 
-### Load the splitted panel dataframe
-setwd(file.path(data_dir, "splitted_panel_df"))
-load(file = "01_SBA_ELA_08_GR_All_05_Economic Status.rda")
-df_SBA <- df_to_save; rm(df_to_save)
+###' Define a pre-defined list containing
+###' (1) Filename
+###' (2) subgroups to plot (with order)
+
+list_01 <- list("02_Gender", 
+                c("Males", "Females"))
+
+list_02 <- list("03_English-Language Fluency", 
+                c("English Learner", 
+                  "Fluent-English Proficient and English Only"))
+
+list_03 <- list("05_Economic Status", 
+                c("Economically Disadvantaged", 
+                  "Not Economically Disadvantaged"))
+
+list_04 <- list("06_Ethnicity", 
+                c("White", 
+                  "Hispanic or Latino",
+                  "Black or African American", 
+                  "Asian"))
+
+list_05 <- list("08_Disability Status", 
+                c("Students with Disability", 
+                  "Students with No Reported Disability"))
+
+list_06 <- list("09_Ethnicity for Economically Disadvantaged", 
+                c("White", 
+                  "Hispanic or Latino",
+                  "Black or African American", 
+                  "Asian"))
+
+list_07 <- list("10_Ethnicity for Not Economically Disadvantaged", 
+                c("White", 
+                  "Hispanic or Latino",
+                  "Black or African American", 
+                  "Asian"))
 
 
-### Create a new folder
-folder_dir <- file.path(save_path, "01_SBA_ELA_08_GR_All_05_Economic Status")
+### Save the list of these lists
+list_filename_subgrp <- list()
 
-dir.create(folder_dir, showWarnings = FALSE)
+for (k in seq(1, 7)){
+  
+  list_filename_subgrp[[k]] <- get(paste0("list_", sprintf("%02d", k)))
+  
+}
 
-setwd(folder_dir)
-
-
-### Merge school information dataset
-match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
-
-df_merged <- schoolinfo_merger(df_schinfo, 
-                               df_SBA, 
-                               match_key = match_key, 
-                               folder_dir = folder_dir) %>%
-  arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+setwd(file.path(data_dir, "splitted_panel_df", "plot_trends_factor"))
+save(list_filename_subgrp, file = "list_filename_subgrp.rda")
 
 
-### Sort only Traditional Non-Charter Schools & Save the dataset
-tabdf(df_merged, SOC)
-tabdf(df_merged, Traditional_SOC)
-tabdf(df_merged, Charter)
-
-df_merged <- df_merged %>% 
-  filter(!is.na(Traditional_SOC)) %>%
-  filter(Charter == 0)
-
-setwd(folder_dir)
-dualsave(df_merged, 
-         paste0("df_merged", "_Traditional Non-charters"))
+### Call list_gap_definitions
+setwd(file.path(data_dir, "splitted_panel_df", "plot_trends_factor"))
+load(file = "list_filename_subgrp.rda")
 
 
-### How many schools are in the merged dataset?
-tbl_N_Schools <- df_merged %>%
-  group_by(Traditional_SOC, Subgrp2, UPP_level, AcademicYear) %>% 
-  summarise(N_Schools = n_distinct(CountyCode, DistrictCode, SchoolCode))
+### Define subject vector
+subject_vec <- c("SBA_ELA", "SBA_Math")
 
 
-### Visualize trends by school poverty level and save the results
-yvar_list <- df_SBA %>% select(contains("PCT_")) %>% names()
+for (i in seq(1, length(list_filename_subgrp))){  # Loop over pre-defined lists
+  
+  for (j in seq_along(subject_vec)){  # Loop over subjects
+    
+    ### Call the list
+    list_temp <- list_filename_subgrp[[i]] 
+      
+    
+    ### Load the generated gap dataframe
+    splitted <- list_temp[[1]] %>% str_split_fixed("_", n = 2)
+    subgrp_name <- splitted[1, 2] 
+    
+    filename <- paste0(sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       list_temp[[1]])
+    
+    setwd(file.path(data_dir, "splitted_panel_df"))
+    load(file = paste0(filename, ".rda"))
+    df_SBA <- df_to_save; rm(df_to_save)
+    
+    
+    ### Create a new folder
+    folder_dir <- file.path(save_path, filename)
+    
+    dir.create(folder_dir, showWarnings = FALSE)
+    
+    setwd(folder_dir)
+    
+    
+    ### Merge school information dataset
+    match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
+    
+    df_merged <- schoolinfo_merger(df_schinfo, 
+                                   df_SBA, 
+                                   match_key = match_key, 
+                                   folder_dir = folder_dir) %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+    
+    
+    ### Sort only Traditional Non-Charter Schools & Save the dataset
+    tabdf(df_merged, SOC)
+    tabdf(df_merged, Traditional_SOC)
+    tabdf(df_merged, Charter)
+    
+    df_merged <- df_merged %>% 
+      filter(!is.na(Traditional_SOC)) %>%
+      filter(Charter == 0)
+    
+    setwd(folder_dir)
+    dualsave(df_merged, 
+             paste0("df_merged", "_Traditional Non-charters"))
+    
+    
+    ### How many schools are in the merged dataset?
+    tbl_N_Schools <- df_merged %>%
+      group_by(Traditional_SOC, Subgrp2, UPP_level, AcademicYear) %>% 
+      summarise(N_Schools = n_distinct(CountyCode, DistrictCode, SchoolCode))
+    
+    tbl_N_Schools
+    
+    
+    ### Filter only relevant subgroups
+    idx <- str_trim(df_merged$Subgrp2) %in% list_temp[[2]]
+    df_merged <- df_merged[idx, ]
+    
+    
+    ### Visualize trends by school poverty level and save the results
+    yvar_list <- df_SBA %>% select(contains("PCT_")) %>% names()
+    
+    df_merged_long <- df_merged %>%
+      gather(key = variable, value = value, 
+             yvar_list, 
+             factor_key = TRUE)
+    
+    
+    factor_labels <- c("Low TSP (Under 59%)", 
+                       "Middle TSP (60% to 89%)", 
+                       "High TSP (90% or more)")
+    
+    
+    plotsave_trend_by_UPP(df_merged_long, 
+                          save_path = folder_dir, 
+                          filename = filename, 
+                          factor_labels = factor_labels) 
+    
+    
+    ### Print the progress
+    cat(paste0(filename, "\n"))
+    
 
-df_merged_long <- df_merged %>%
-  gather(key = variable, value = value, 
-         yvar_list, 
-         factor_key = TRUE)
-
-
-factor_labels <- c("Low TSP (Under 59%)", 
-                   "Middle TSP (60% to 89%)", 
-                   "High TSP (90% or more)")
-
-
-plotsave_trend_by_UPP(df_merged_long, 
-                      save_path = folder_dir, 
-                      filename = filename, 
-                      factor_labels = factor_labels) 
-
-
-### Print the progress
-cat(paste0(filename, "\n"))
+  }  # End of loop over subjects
+}    # End of loop over pre-defined lists
 
 
 
 
+###'######################################################################
+###'
+###' Execute looping over each dataframe
+###' 
+###' (2) LAUSD Only
+###'
+###'
+
+### Call list_gap_definitions
+setwd(file.path(data_dir, "splitted_panel_df", "plot_trends_factor"))
+load(file = "list_filename_subgrp.rda")
 
 
+### Define subject vector
+subject_vec <- c("SBA_ELA", "SBA_Math")
 
 
-
-
-
-
-
-
-
-
+for (i in seq(1, length(list_filename_subgrp))){  # Loop over pre-defined lists
+  
+  for (j in seq_along(subject_vec)){  # Loop over subjects
+    
+    ### Call the list
+    list_temp <- list_filename_subgrp[[i]] 
+    
+    
+    ### Load the generated gap dataframe
+    splitted <- list_temp[[1]] %>% str_split_fixed("_", n = 2)
+    subgrp_name <- splitted[1, 2] 
+    
+    filename <- paste0(sprintf("%02d", j), "_", subject_vec[j], 
+                       "_08_GR_All_", 
+                       list_temp[[1]])
+    
+    setwd(file.path(data_dir, "splitted_panel_df"))
+    load(file = paste0(filename, ".rda"))
+    df_SBA <- df_to_save; rm(df_to_save)
+    
+    
+    ### Create a new folder
+    folder_dir <- file.path(save_path, paste0(filename, "_LAUSD"))
+    
+    dir.create(folder_dir, showWarnings = FALSE)
+    
+    setwd(folder_dir)
+    
+    
+    ### Merge school information dataset
+    match_key <- c("CountyCode", "DistrictCode", "SchoolCode", "AcademicYear")
+    
+    df_merged <- schoolinfo_merger(df_schinfo, 
+                                   df_SBA, 
+                                   match_key = match_key, 
+                                   folder_dir = folder_dir) %>%
+      arrange(CountyCode, DistrictCode, SchoolCode, AcademicYear)
+    
+    
+    ### Subset only LAUSD
+    df_merged <- df_merged %>%
+      filter(DistrictCode == 64733)
+    
+    
+    ### Sort only Traditional Non-Charter Schools & Save the dataset
+    tabdf(df_merged, SOC)
+    tabdf(df_merged, Traditional_SOC)
+    tabdf(df_merged, Charter)
+    
+    df_merged <- df_merged %>% 
+      filter(!is.na(Traditional_SOC)) %>%
+      filter(Charter == 0)
+    
+    setwd(folder_dir)
+    dualsave(df_merged, 
+             paste0("df_merged", "_Traditional Non-charters"))
+    
+    
+    ### How many schools are in the merged dataset?
+    tbl_N_Schools <- df_merged %>%
+      group_by(Traditional_SOC, Subgrp2, UPP_level, AcademicYear) %>% 
+      summarise(N_Schools = n_distinct(CountyCode, DistrictCode, SchoolCode))
+    
+    tbl_N_Schools
+    
+    
+    ### Filter only relevant subgroups
+    idx <- str_trim(df_merged$Subgrp2) %in% list_temp[[2]]
+    df_merged <- df_merged[idx, ]
+    
+    
+    ### Visualize trends by school poverty level and save the results
+    yvar_list <- df_SBA %>% select(contains("PCT_")) %>% names()
+    
+    df_merged_long <- df_merged %>%
+      gather(key = variable, value = value, 
+             yvar_list, 
+             factor_key = TRUE)
+    
+    
+    factor_labels <- c("Low TSP (Under 59%)", 
+                       "Middle TSP (60% to 89%)", 
+                       "High TSP (90% or more)")
+    
+    
+    plotsave_trend_by_UPP(df_merged_long, 
+                          save_path = folder_dir, 
+                          filename = filename, 
+                          factor_labels = factor_labels) 
+    
+    
+    ### Print the progress
+    cat(paste0(filename, "\n"))
+    
+    
+  }  # End of loop over subjects
+}    # End of loop over pre-defined lists
 
