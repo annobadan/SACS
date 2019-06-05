@@ -33,7 +33,8 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF")
+data_folder <- c("D:/OneDrive/Data")
+data_dir <- file.path(data_folder, "LCFF")
 
 
 ### Call libraries
@@ -96,7 +97,7 @@ df_sub <- df_sub %>%
          N_GR_7to8 = N_GR_7 + N_GR_8, 
          N_GR_9to12 = N_GR_9 + N_GR_10 + N_GR_11 + N_GR_12, 
          N_GR_Total = N_GR_Kto3 + N_GR_4to6 + N_GR_7to8 + N_GR_9to12 + 
-           N_UNGR_ELM + N_UNGR_SEC) 
+           N_UNGR_ELM + N_UNGR_SEC)  # Exclude N_Adult 
 
 df_temp <- df_sub %>%
   select(Traditional_SOC, Total_Enroll, N_GR_Total) %>%
@@ -123,6 +124,9 @@ tabdf(df_temp, diff)
 ###' - 9-12: 2.6 percent of base rate
 ###' 
 ###' (3) What to do with the "ungraded" enrollment?
+###'     Error would be significant if we miss any count of students. 
+###'     Reflect ungraded categories anyway.  
+###'     
 ###' - N_UNGR_ELM: Average of K-3 and 4-6 = $6,896
 ###' - N_UNGR_SEC: Average of 7-8 and 9-12 = $7,721.5  
 ###'
@@ -236,6 +240,16 @@ df_final_long <- df_final %>%
          factor_key = TRUE)
 
 
+### Identify and remove duplicated rows
+nrow(df_final_long)        # 1016120
+n_distinct(df_final_long)  # 1016072
+
+df_final_long <- df_final_long %>%
+  distinct()
+
+nrow(df_final_long)
+
+
 ### Convert to 2016 dollars
 df_final_long <- CPI_converter(data = df_final_long, 
                                year_to = 2016, 
@@ -245,58 +259,54 @@ df_final_long <- CPI_converter(data = df_final_long,
 
 ### Reshape to the wide format
 tabdf(df_final_long, key)
+levels(df_final_long$key)
 
 df_final_wide <- df_final_long %>%
+  select(-value) %>%
   spread(key = key, value = value_16)
 
 
 
+###'######################################################################
+###'
+###' Merge with the original df_Ultimate_Merged
+###'
+###'
+
+### Merge!
+match_key <- df_final_wide %>% select(CountyCode:Charter) %>% names()
+
+df_merged <- full_join_track(df, df_final_wide, by = match_key, .merge = TRUE)
 
 
+###' Investigate unmerged cases
+###' Unmerged cases are all non-traditional schools
+tabdf(df_merged, .merge)
+
+df_temp <- df_merged %>%
+  filter(.merge == "left_only")
+
+df_unmerged <- df_temp %>%
+  group_by(SOC, AcademicYear) %>%
+  count()
 
 
+### Remove .merge variable and reorder the merged variables
+df_varnames <- data.frame(names(df_merged))
 
-###' Generate variables for categorizing simulated IV
-###' quartile, quintile, decile
-df_1314_SimIV <- df_1314_SimIV %>%
-  mutate(two_quantile = ntile(SimIV, 2), 
-         quartile = ntile(SimIV, 4), 
-         quintile = ntile(SimIV, 5), 
-         decile = ntile(SimIV, 10))
+df_merged <- df_merged %>%
+  select(-.merge) %>%
+  select(CDSCode:PCT_CALPADS_UPC, UPP:SimIV_PP, everything())
 
 
+### Save the resulting dataframe
+setwd(data_dir)
+dualsave(df_merged, "df_Ultimate_Merged")
 
 
-###' Check the distribution of funding formula weights
-ggplot(df_simIV, aes(formula_weight)) + geom_density()
+### Replace the df_Ultimate_SchoolInfo
+df_schoolinfo <- df_merged %>%
+  select(CDSCode:SimIV_PP)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+setwd(data_dir)
+dualsave(df_schoolinfo, "df_Ultimate_SchoolInfo")
