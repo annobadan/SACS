@@ -33,7 +33,7 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/OneDrive/Data/LCFF")
+data_dir <- c("D:/Data/LCFF")
 
 
 ### Call libraries
@@ -169,11 +169,11 @@ df_sub <- df_sub %>%
 ###'
 ###'
 
-### Rename PCT_CALPADS_UPC as UPP
+### Generate UPP from PCT_CALPADS_UPC
 summary(df_sub$PCT_CALPADS_UPC)
 
 df_sub <- df_sub %>%
-  rename(UPP = PCT_CALPADS_UPC)
+  mutate(UPP = PCT_CALPADS_UPC/100)
 
 names(df_sub)
 
@@ -184,6 +184,8 @@ df_simIV <- df_sub %>%
          Supplemental = Base * 0.2 * UPP, 
          Concentration = ifelse(UPP > 0.55, 0.5 * Base * (UPP - 0.55), 0),
          SimIV = Supplemental + Concentration) 
+
+apply(df_simIV %>% select(Base, Supplemental, Concentration), 2, summary)
 
 
 
@@ -200,11 +202,52 @@ df_simIV <- df_sub %>%
 df_simIV <- df_simIV %>% 
   mutate(Base_PP = Base/N_GR_Total, 
          Supplemental_PP = Supplemental/N_GR_Total, 
-         Concentration_PP = Concentration/N_GR_Total)
+         Concentration_PP = Concentration/N_GR_Total, 
+         SimIV_PP = SimIV/N_GR_Total)
 
 apply(df_simIV %>% select(contains("_PP")), 2, summary) 
 
 
+
+###'######################################################################
+###'
+###' Generate CPI-U deflated per-pupil values
+###' 
+###' and finalize the dataset to export
+###'
+###'
+
+### Select only necessary variables and reorder them
+names(df_simIV)
+
+df_final <- df_simIV %>%
+  select(CountyCode, DistrictCode, SchoolCode, AcademicYear, 
+         Traditional_SOC, Charter, 
+         UPP, formula_weight, 
+         Base, Supplemental, Concentration, SimIV, 
+         Base_PP, Supplemental_PP, Concentration_PP, SimIV_PP)
+
+names(df_final)
+
+
+### Convert to long data format
+df_final_long <- df_final %>%
+  gather(key = key, value = value, Base:SimIV_PP, 
+         factor_key = TRUE)
+
+
+### Convert to 2016 dollars
+df_final_long <- CPI_converter(data = df_final_long, 
+                               year_to = 2016, 
+                               year_from = AcademicYear, 
+                               value)
+
+
+### Reshape to the wide format
+tabdf(df_final_long, key)
+
+df_final_wide <- df_final_long %>%
+  spread(key = key, value = value_16)
 
 
 
