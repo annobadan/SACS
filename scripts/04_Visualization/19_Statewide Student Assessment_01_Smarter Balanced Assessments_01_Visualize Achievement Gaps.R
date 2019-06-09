@@ -38,7 +38,12 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Statewide_Student_Assessment/CAASPP/Smarter Balanced Assessments")
+data_folder <- c("D:/OneDrive/Data")
+data_dir <- file.path(data_folder, 
+                      "LCFF", 
+                      "Statewide_Student_Assessment", 
+                      "CAASPP", 
+                      "Smarter Balanced Assessments")
 
 
 ### Saving path
@@ -61,8 +66,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 
 ### Load the California Statewide school info dataset
-setwd("D:/Data/LCFF")
-load(file = "df_Ultimate_SchoolInfo.rda")
+load(file = file.path(data_folder, "LCFF", "df_Ultimate_SchoolInfo.rda"))
 df_schinfo <- df_to_save; rm(df_to_save)
 
 
@@ -285,7 +289,8 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
   for (j in seq_along(subject_vec)){  # Loop over subjects
     
     ### Call the list
-    list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    # list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    list_temp <- list_gap_definitions[[i]]
     
     
     ### Load the generated gap dataframe
@@ -386,7 +391,8 @@ for (i in seq(1, 11)){  # Loop over pre-defined lists
   for (j in seq_along(subject_vec)){  # Loop over subjects
     
     ### Call the list
-    list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    # list_temp <- get(paste0("list_", sprintf("%02d", i)))
+    list_temp <- list_gap_definitions[[i]]
     
     
     ### Load the generated gap dataframe
