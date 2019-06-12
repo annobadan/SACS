@@ -14,6 +14,7 @@
 ###'           2014-15 ~ 2017-18 
 ###'            
 ###' Date    : 2019-05-17
+###'           2019-06-11 Update with UPP_Q4
 ###'           
 ###' Author  : JoonHo Lee (joonho@berkeley.edu)
 ###' 
@@ -36,7 +37,14 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Statewide_Student_Assessment/CAASPP/Smarter Balanced Assessments")
+# data_folder <- c("D:/OneDrive/Data")
+data_folder <- c("C:/Users/joonh/OneDrive/Data")
+
+data_dir <- file.path(data_folder, 
+                      "LCFF", 
+                      "Statewide_Student_Assessment", 
+                      "CAASPP", 
+                      "Smarter Balanced Assessments")
 
 
 ### Saving path
@@ -59,7 +67,7 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 ###'
 
 ### Load the California Statewide school info dataset
-setwd("D:/Data/LCFF")
+setwd(file.path(data_folder, "LCFF"))
 load(file = "df_Ultimate_SchoolInfo.rda")
 df_schinfo <- df_to_save; rm(df_to_save)
 
@@ -75,7 +83,7 @@ tabdf(df_schinfo, AcademicYear)
 
 ###'######################################################################
 ###'
-###' Add UPP_level categories to the School info dataset
+###' Add "UPP_level" categories to the School info dataset
 ###'
 ###' "Absolute" levels, not "relative" levels
 ###'
