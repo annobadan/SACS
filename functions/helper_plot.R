@@ -145,8 +145,8 @@ plot_trend_grp <- function(dataframe,
   
   ### Themes, temporary labels, and manual colors
   p + theme_trend + temp_labels + 
-    scale_color_manual(values = color_palette[seq(unique(dataframe$groupvar))]) + 
-    scale_shape_manual(values = shape_palette[seq(unique(dataframe$groupvar))])
+    scale_color_manual(values = rev(color_palette[seq(unique(dataframe$groupvar))])) + 
+    scale_shape_manual(values = rev(shape_palette[seq(unique(dataframe$groupvar))]))
 }
 
 # ### Test the code

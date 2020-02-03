@@ -31,7 +31,12 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/Staff_Data/Certificated_Staff/CBEDS Data")
+data_folder <- c("C:/Users/joonh/OneDrive/Data")  
+data_dir <- file.path(data_folder, 
+                      "LCFF", 
+                      "Staff_Data", 
+                      "Certificated_Staff", 
+                      "CBEDS Data")
 
 
 ### Call libraries
@@ -55,7 +60,6 @@ list.files("functions", full.names = TRUE) %>% walk(source)
 setwd(data_dir)
 load(file = "CBEDS_School_Data_01_Kindergarten_Program_Type_3-year-long_managed.rda")
 df_elem <- df_to_save
-
 
 
 

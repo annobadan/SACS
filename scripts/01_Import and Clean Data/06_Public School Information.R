@@ -12,6 +12,7 @@
 ###' 
 ###' 
 ###' 20180924 JoonHo Lee
+###' 20190723 JoonHo Lee - Update with the recent data
 ###' 
 ###' 
 
@@ -33,7 +34,11 @@ setwd(work_dir)
 
 
 ### Set a directory containing large data files
-data_dir <- c("D:/Data/LCFF/School_Listing/Public_Schools_and_Districts")
+data_folder <- c("C:/Users/joonh/OneDrive/Data")
+data_dir <- file.path(data_folder, 
+                      "LCFF", 
+                      "School_Listing", 
+                      "Public_Schools_and_Districts")
 
 
 ### Call libraries
@@ -62,7 +67,10 @@ setwd(data_dir)
 
 
 ### Import tab delimited text file
-pubschls <- read.delim("pubschls_20180923.txt", header = TRUE, 
+# pubschls <- read.delim("pubschls_20180923.txt", header = TRUE, 
+#                        colClasses = "character")
+
+pubschls <- read.delim("pubschls_20190723.txt", header = TRUE, 
                        colClasses = "character")
 
 
@@ -79,21 +87,21 @@ names(df)
 ###'######################################################################
 ###'
 ###' Select only necessary variables
-###' 
+###'
 ###'
 
 names(df)
 
-df <- df %>% 
+df <- df %>%
   select(CDSCode, County, District, School,
-         DOCType, SOCType, 
-         EdOpsName, 
-         EILName, 
-         GSoffered, GSserved, 
-         Charter, CharterNum, FundingType, 
-         Magnet, Virtual, 
-         StatusType, OpenDate, ClosedDate, 
-         NCESDist, NCESSchool, 
+         DOCType, SOCType,
+         EdOpsName,
+         EILName,
+         GSoffered, GSserved,
+         Charter, CharterNum, FundingType,
+         Magnet, Virtual,
+         StatusType, OpenDate, ClosedDate,
+         NCESDist, NCESSchool,
          Latitude, Longitude)
 
 
